@@ -1,2 +1,2 @@
 # KindaSus---Travel-Journal
-Principles of Software Engineering
+Principles of Software Engineering - group project
