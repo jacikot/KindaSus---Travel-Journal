@@ -1,0 +1,57 @@
+<!-- autor: Jana Toljaga -->
+<html>
+  <head>
+    <link rel="stylesheet" href="map.css">
+    <link rel="stylesheet" href="map_tooltip.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="map.js"></script>
+    <script src="https://kit.fontawesome.com/7d57026c7c.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="header">
+        <img src="slike/logo2.png" width=auto height="17%"/>
+        <div id="menu_bar" class="menu_list">
+            <div class="menu_list_link">
+                <p id="passport">PASSPORT</p>
+                <div class="menu_list_content">
+                    <img src="slike/avatar.png" style="display:inline; position: absolute; margin-right: 10px;" width="30px" height="30px"/>
+                    <p id="username" ><b>JACIKOT</b></p>
+                    <br/>
+                    <i class="fas fa-star"></i>
+                    <p style="display:inline; color:white; font-size:15pt">123</p>
+                    <hr>
+                    <a href="que.html">change password</a><br/>
+                    <a href="homepage.html">logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="ttip b-search" tt-title="Search & Trending" tt-text="Explore places through other's eyes!">
+      <a href="search_and_trending_user.html" class="search"><img src="slike/search_trending.png" class="search"/></a>
+    </div>
+    <div class="ttip b-quiz" tt-title="Quiz" tt-text="Ask for a travel advice!">
+      <a href="quiz1.html" class="search"><img src="slike/quizJ.png" class="search quiz"/></a>
+    </div>
+    <div class="ttip b-create" tt-title="Create an impression" tt-text="Collect moments from all over the" tt-text2="world in one place">
+      <a href="create_review.html"><img src="slike/add.png" class="add"/></a>
+    </div>
+    <div class="ttip b-to-go" tt-title="TO-GO list" tt-text="Don't call it a dream, call it a plan!">
+      <a href="to-go_list.html" class="add sticky"><img src="slike/sticky.png" class="add sticky"/></a>
+    </div>
+    <div class="ttip b-journal" tt-title="Journal" tt-text="Revive your travel adventures!">
+      <a href="journal.html" class="journal"><img src="slike/journal.png" class="journal"/></a>
+    </div>
+    <div class="ttip b-badge" tt-title="Badge collection" tt-text="Look what you've accomplished so far!">
+      <a href="badges.html" class="ttip"><img src="slike/badge.png" class="badge"/></a>
+    </div>
+    <img src="slike/kov2.jpg" class="envelope">
+    <div id="regions_div" class='centerChart'></div>
+    
+    
+  </body>
+</html>

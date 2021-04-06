@@ -1,0 +1,107 @@
+ <!-- Autor: Adriana Vidic -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review</title>
+    <link rel="stylesheet" href="style_create_review.css">
+    
+</head>
+<body>
+ <div id='header'>
+    <img src='slike/logo2.png' width="10%" >
+        
+     <a href='map.html' class="back-to-home" >Passport</a>
+     
+ </div >
+
+ <div id='page'>
+     <br>
+     <h1>Keep your dream alive</h1>
+     <div id='page_main'>
+     <div id='page_left'>
+     <table>
+<tr>
+    <td required>Place</td>
+    <td>
+        <input type="text"  class='textField'>
+    </td>
+
+</tr>
+<tr>
+    <td  required>Country</td>
+    <td>
+        <input type="text"  class='textField'>
+    </td>
+
+</tr>
+<td>Date of travelling &nbsp;&nbsp;&nbsp;</td>
+<td><input type="datetime" name="DateOfTravel" id=""  pattern="dd/mm/yy" class='textField'></td>
+</tr>
+<tr>
+    <td>Set privacy status: </td>
+    <td>
+        <input type="radio"  name='groupP' checked >Private
+        <input type="radio" name='groupP'>Public
+    </td>
+</tr>
+<tr>
+    <td  required>Title for your memory &nbsp;&nbsp;&nbsp;</td>
+    <td>
+        <input type="text"  class='textField'>
+    </td>
+
+</tr>
+
+     </table>
+
+     </div>
+     <div id='page_right'>
+
+        <table>
+            <tr>
+                <td colspan="2" align="center">Share your memories</td>
+            
+            </tr>
+            <tr>
+                <td colspan="2"  align="center">
+                <textarea rows='10' cols="75" style="outline: none;"></textarea>
+            </td>
+            <tr>
+                <td>Path to the picture&nbsp;&nbsp;&nbsp;</td>
+                <td><input type="text"  class='textField'></td>
+            </tr>
+            <tr>
+                
+                <td colspan="2" align="center" >
+                  <!--  <label for="button1">Add Pictures</label>
+                    -->
+                    <input type="button" value='Add Pictures' class='bottomButton' id='button1' >
+                </td>
+                <td> </td>
+            </tr>
+        </table>
+     </div>
+ </div>
+ <div id='page_bottom'>
+    <input type="button" value= 'Only mark the place on the map' class='bottomButton'>
+<input type="button" value= 'Write in your Journal' class='bottomButton'>
+
+
+
+ </div>
+
+
+</div>
+<!--
+<div id='footer'>
+    <img src='slike/instant-camera.png'width="7%" height="7%">
+    <img src='slike/paper-plane.png' width="7%" height="7%">
+
+</div>
+-->
+</body>
+
+</html>

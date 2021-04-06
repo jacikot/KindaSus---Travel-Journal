@@ -1,0 +1,130 @@
+/* autor: Jana Toljaga */
+body{
+    margin:0;
+    background: url(slike/proba8.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: myFont;
+}
+
+@font-face {
+    font-family:myFont;
+    src: url(traveljournal.ttf);
+}
+
+button.back{
+    background-color: #4754A2;
+    color:white;
+    border-radius: 25px;
+    float: right;
+    padding-right: 2%;
+    font-size: 16pt;
+    position:absolute;
+    top:6%;
+    right: 4%;
+    border-width: 0;
+    font-family: myFont;
+    outline: none;
+}
+
+#p1{
+    color:white;
+    position: absolute;
+    top: 15%;
+    left: 35%;
+    text-align: center;
+    font-size: 300%;
+}
+
+#p2{
+    color:white;
+    position: absolute;
+    left: 30%;
+    top: 35%;
+    font-size: 200%;
+}
+
+#p3{
+    color:white;
+    position: absolute;
+    left: 30%;
+    top: 45%;
+    font-size: 200%;
+}
+#pas1{
+    width:20%;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    font-size: 200%;
+    outline-width: 0;
+    border-radius: 15px;
+    border-width: 0;
+
+}
+#pas2{
+    width:20%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    font-size: 200%;
+    outline-width: 0;
+    border-radius: 15px;
+    border-width: 0;
+
+}
+button.ok{
+    background-color:transparent;
+    color:white;
+    border-radius: 25px;
+    font-size: 25pt;
+    position:absolute;
+    top:65%;
+    left: 42%;
+    border-width: 0;
+    font-family: myFont;
+    outline: none;
+    cursor: pointer;
+}
+button.ok:hover{
+    color:#333e7d;
+    font-size: 28pt;
+}
+p.note{
+    
+    position: absolute;
+    left: 38%;
+    top: 70%;
+    font-size: 150%;
+    color:#b5ee73;
+}
+div.note{
+    display: none;
+}
+
+.back-to-home{
+    position: absolute;
+    top: 5%;
+    right: 1.75%;
+    border-radius: 25px;
+    padding: 14px;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 4px 4px #333e7d;
+    background: #4754a2;
+    color: white;
+    outline: none;
+    font-family: myFont;
+    font-size: 15px;
+    border:none;
+    cursor: pointer;
+}
+
+.back-to-home:hover{
+    background: #333e7d;
+    font-size: 17px;
+}

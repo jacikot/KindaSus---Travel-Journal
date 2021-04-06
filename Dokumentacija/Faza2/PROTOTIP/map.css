@@ -1,0 +1,219 @@
+/* autor: Jana Toljaga */
+.envelope{
+    width:60%;
+    height:52%;
+    position: absolute;
+    z-index: 0;
+    top:24%;
+    left: 20%;
+
+}
+
+
+.centerChart{
+    margin: 0 auto;
+    align-items: center;
+    width:58%;
+    height:48%;
+    border-radius: 25%;
+    z-index: 5;
+}
+.menu_list{
+    background-color: #36428a;
+    height: 6.8%;
+    opacity: 90%;
+    font-family:myFont;
+    z-index: 1;
+}
+
+@font-face {
+    font-family:myFont;
+    src: url(traveljournal.ttf);
+}
+#passport{
+    color: #f2f2f2;
+    text-align: right;
+    border-radius: 10px;
+    float: right;
+    padding-right: 4%;
+    font-family: 'myFont';
+    font-size: 14pt;
+    cursor: pointer;
+   
+}
+.menu_list_content a{
+    color:#36428a;
+    text-decoration: none;
+    font-size:15pt;
+
+}
+#passport:hover {
+    background-color: #36428a;
+    color:#FBE3AA;
+   
+}
+
+.menu_list_link:hover .menu_list_content{
+    display:block;
+    position: absolute;
+    z-index: 1;
+    
+}
+
+.menu_list_content {
+    display: none;
+    position: absolute;
+    float: right;
+    right:0;
+    top: 23.8%;
+    background-color: #9BA3CA;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-color: #9BA3CA ;
+    border-radius: 5%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    position: absolute;
+    z-index: 50;
+    border-style: solid;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(250,250,250,0.2);
+    padding: 12px 12px;
+    opacity:100%;
+    
+
+    
+   
+ }
+
+ .fas.fa-star{
+
+    display: inline;
+
+    color: #fbe3aa;
+
+}
+
+ .menu_list_content a:hover{
+    background-color: #36428a;
+    padding-right: 5pt;
+    padding-left: 5pt;
+    padding-top: 2pt;
+    padding-bottom: 2pt;
+    border-radius: 20%;
+    color:white;
+    height: 15pt;
+    
+ }
+
+
+ul.menu_list{
+    text-align: right;
+}
+img.search{
+    width:15%;
+    height:40%;
+    margin:auto;
+    object-fit: cover;
+    float:left;
+    position:fixed;
+    left: 2%;
+}
+img.add{
+    width:15%;
+    height:35%;
+    margin-right:1%;
+    object-fit: cover;
+    float: right;
+    right:0%;
+    z-index: 0;
+   
+}
+img.journal{
+    width:13%;
+    height:28%;
+    position:fixed;
+    left:2%;
+    top: 67%;
+}
+img.sticky{
+    width:20%;
+    height:40%;
+    position:fixed;
+    right: 0;
+    top: 60%;
+}
+img.quiz{
+    width:15%;
+    height:40%;
+    margin:auto;
+    object-fit: cover;
+    position:fixed;
+    left: 25%;
+    top: 65%;
+    
+}
+
+img.badge{
+    width:15%;
+    height:40%;
+    margin:auto;
+    object-fit: cover;
+    position:fixed;
+    right: 30%;
+    top: 72%;
+}
+
+body{
+    margin:0;
+    background: url(slike/wall.png) no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+}
+img.add:hover{
+    width:15.75%;
+    height:36.75%;
+}
+img.search:hover{
+    width:15.75%;
+    height:42%;
+}
+img.sticky:hover{
+    width:21%;
+    height:42%;
+}
+img.quiz:hover{
+    width:15.75%;
+    height:42%;
+}
+img.journal:hover{
+    width:13.65%;
+    height:29.4%;
+}
+img.badge:hover{
+    width:15.75%;
+    height:42%;
+}
+#username{
+    font-size: 15pt;
+    color: white;
+    letter-spacing: 3pt;
+    display: inline;
+    position: relative;
+    left:30%;
+
+}
+div.header{
+    background-image: url("slike/header9.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.google-visualization-tooltip{
+    border-radius: 10% !important;
+    text-align: center !important;
+    opacity: 85% !important;
+    
+}

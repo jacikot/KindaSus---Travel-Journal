@@ -1,0 +1,164 @@
+/* author: Dimitrije Panic */
+@font-face {
+    font-family: myFont;
+    src: url(traveljournal.ttf);
+  }
+
+/*.button:hover{
+    cursor: pointer;
+    size:150%;
+    color:pink;
+}*/
+
+.newButton1:hover{
+    cursor: pointer;
+    size:150%;
+    color:pink;
+}
+
+.newButton2:hover{
+    cursor: pointer;
+    size:150%;
+    color:pink;
+}
+
+body{
+    background-image: url(slike/login.jpg);
+    background-repeat: no-repeat;
+    object-fit: contain;
+    background-size: cover /*100% 100%*/;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    font-style:myFont;
+
+}
+
+a:link{
+    font-style:myFont;
+}
+#header{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: myFont;
+}
+.button{
+    outline:none;
+    font-size:100%;
+    font-family:myFont;
+    position: absolute;
+    top: 5%;
+    right: 1.75%;
+    border-radius: 25px;
+    padding: 14px;
+    width: 125px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 4px 4px #333e7d;
+    background: #4754a2;
+    color: white;
+}
+
+.button:hover{
+    cursor: pointer;
+    background: #333e7d;
+    font-size: 17px;
+}
+/*.button{
+    outline:none;
+    font-size: 100%;
+    font-family:MyFont;
+    background-color: #4754a2;
+    border-radius:12px;
+    color:white;
+}
+*/
+.second{
+    width:100%;
+    padding-top:3%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+input { 
+    padding-left:10px;
+    outline:none;
+    border:none;
+    font-size: 250%;
+    color: #4754a2;
+    /*font-style:MyFont;*/ }
+
+#quote{
+    position:relative;
+    top:-25px;
+    color: #4754a2;
+    width: 100%;
+    font-family:MyFont;
+    font-size: 390%;
+    text-align:center;
+    margin-bottom: 0%;
+}
+
+#username1{
+    position:relative;
+    top:-35px;
+    color: #4754a2;
+    font-family:MyFont;
+    font-size: 300%;
+}
+#username{
+    position:relative;
+    top:-35px;
+    color: #4754a2;
+    font-family:MyFont;
+    font-size: 300%;
+
+}
+
+.textbox{
+    position:relative;
+    top:-35px;
+    border-radius: 15px;
+    width: 75%;
+    resize:none;
+    box-sizing: border-box;
+    font-style:myFont;
+}
+
+.newButton1{
+    outline:none;
+    font-size: 220%;
+    font-family:MyFont;
+    background-color:transparent;
+    /*background-color: #4754a2;
+    border-radius:12px;*/
+    border:none;
+    position: absolute;
+    left:25%;
+    bottom:14%;
+    color:white;
+    
+}
+
+.newButton2{
+    outline:none;
+    font-size: 220%;
+    font-family:MyFont;
+    background-color:transparent;
+    /*background-color: #4754a2;
+    border-radius:12px;*/
+    border:none;
+    position: absolute;
+    color:white;
+    left:60%;
+    bottom:14%;
+}
+
+.newLast{
+    padding-top:5%;
+}

@@ -1,0 +1,105 @@
+/* autor: Jana Toljaga */
+@font-face {
+    font-family:myFont;
+    src: url(traveljournal.ttf);
+}
+.ttip::before,
+.ttip::after{
+    --scale: 0;
+    --tooltip-color:#394275;
+    --arrow-size: 15px;
+    position: absolute;
+    opacity: 95%;
+    height:auto;
+    font-family: myFont;
+    font-size: 15px;
+    letter-spacing: 2px;;
+    transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--scale));
+    transition: 120ms transform;
+    transform-origin: bottom center;
+    z-index: 50;
+    
+}
+
+.ttip-special::before,
+.ttip-special::after{
+    --arrow-size: 20px;
+}
+
+.ttip::before{
+    --translate-y: calc(-100% - var(--arrow-size));
+
+    content: attr(tt-title) '\A\A' attr(tt-text);
+    white-space: pre-wrap;
+    height: fit-content;
+    color: white;
+    padding: 8px;
+    padding-bottom: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: max-content;
+    max-width: 250%;
+    background-color: var(--tooltip-color);
+}
+
+.ttip-special::before{
+    max-width: 150%;
+}
+
+.ttip:hover::before,
+.ttip:hover::after{
+    --scale: 1;
+}
+
+.ttip::after{
+    --translate-y: calc(-1 * var(--arrow-size));
+    content: '';
+    border: var(--arrow-size) solid transparent;
+    border-top-color: var(--tooltip-color);
+    transform-origin: top center;
+}
+
+.ttip[tt-title]{
+    font-size: 16px;
+}
+
+.b-search::before,
+.b-search::after{
+    top: 28%;
+    left: 10.25%;
+}
+
+.b-quiz::before,
+.b-quiz::after{
+    top: 76%;
+    left: 32%;
+}
+
+.b-journal::before,
+.b-journal::after{
+    top: 68%;
+    left: 10%;
+}
+
+.b-badge::before,
+.b-badge::after{
+    top: 77%;
+    left: 63%;
+}
+
+
+.b-to-go::before,
+.b-to-go::after{
+    top: 65%;
+    left: 90%;
+}
+
+.b-create::before,
+.b-create::after{
+    top: 28%;
+    left: 90%;
+}
+
+.b-create::before{
+    content: attr(tt-title) '\A\A' attr(tt-text) '\A' attr(tt-text2);   
+}

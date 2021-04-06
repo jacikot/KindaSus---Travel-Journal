@@ -1,0 +1,209 @@
+/* autor: Adriana Vidic  */
+@font-face{
+    font-family: myFont;
+    src:url(traveljournal.ttf);
+}
+body{
+  
+    background-image: url(slike/background1.jpg) ;
+   background-repeat:repeat;
+   
+   background-color: rgb(251, 227, 170);
+   width: 100%;
+   padding-left: 0%;
+   padding-top: 0%;
+   position: absolute;
+  /* height: auto;*/
+    
+    float: left;
+   font-family: myFont;
+   background-position-x: left;
+   margin-top: 0px;
+   margin-left: 0px;
+color:white;
+    
+}
+
+#header{
+    width:100%;
+    background-position:left;
+    height:20%;
+   margin-top: 0px;
+   margin-left: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+   align-items: center;
+    float:left;
+    padding-top: 0%;
+    margin-top: 0;
+    background-color:transparent;
+    background-position:0px;
+    offset-position: 0px;
+    position: relative;
+}
+#line{
+    width:100%;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+   background-color: #4754A2;
+    float:right;
+    padding-top: 0%;
+    margin-top: 0;
+    
+}
+
+#page h1{
+   
+    text-align: center;
+    
+}
+#page_main{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    align-items: center;
+    margin-top: 0%;
+}
+#page #page_left{
+   
+    align-items: center;
+   float:left;
+    font-size: 25px;
+}
+#page #page_right{
+   
+    align-items: center;
+    float:right;
+    font-size: 25px;
+    padding-top: 10px;
+}
+.button{
+  
+   height: 40px;
+   width: 40px;
+   background-color: blueviolet;
+   background-image: url(slike/polaroidnovi.png);
+   border: none;
+   display: inline-block;
+   background-repeat: none;
+   font-family: myFont;
+   color:white;
+   
+}
+#page_bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    align-items: center;
+    margin-top: 5%;
+    
+}
+
+
+.bottomButton{
+    height: 50px;
+  font-size:27px;
+   
+    background-color:transparent;
+    border: none;
+    display: inline-block;
+    background-repeat: none;
+    font-family: myFont;
+    color:white;
+    outline: none;
+}
+.bottomButton:hover{
+    size:larger;
+    color: #333e7d;
+ /*   background-color:#9BA3CA;*/
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+
+a:link{
+   /* height: 35px;
+    
+    background-color:transparent;
+    border: none;
+   
+    font-family: myFont;
+    font-size: 23px;
+    color:white;
+    text-decoration: none;
+   */ 
+}/*
+a:visited{
+    color:white;
+    font-style: normal;
+    text-decoration: none;
+}
+
+a:active{
+    color:white;
+    size:larger;
+    background-color:transparent;
+    
+}
+a:hover{
+    size:larger;
+    background-color:#9BA3CA;
+    border-radius: 20px;
+    color:white;
+    font-family: myFont;
+    text-decoration: none;
+}
+*/
+.button:hover{
+    size:larger;
+    background-color:#9BA3CA;
+    border-radius: 25px;
+    color:white;
+}
+.HasButton{
+    text-align: center;
+}
+
+.textField{
+    font-size: 25px;
+    border-radius: 25px;
+    border: transparent;
+    outline:none;
+}
+
+td{
+    height: 50px;
+}
+#footer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    padding: 0%;
+    margin: 0;
+}
+.back-to-home{
+    position: absolute;
+    top: 5%;
+    right: 1.75%;
+    border-radius: 25px;
+    padding: 14px;
+    width: 125px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 4px 4px #333e7d;
+    background: #4754a2;
+    color: white;
+}
+
+.back-to-home:hover{
+    background: #333e7d;
+    font-size: 17px;
+   
+   
+}
