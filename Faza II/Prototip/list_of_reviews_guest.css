@@ -1,11 +1,11 @@
 /* author: Jovan Djordjevic */
 @font-face{
     font-family: fancyFont;
-    src: url(travel_journal.ttf);
+    src: url(traveljournal.ttf);
 }
 
 body{
-    background: url(slike/3.jpg) no-repeat center center fixed; 
+    background: url(slike/5.png) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -37,6 +37,47 @@ body{
 }
 
 .back-to-home:hover{
+    background: #333e7d;
+    font-size: 17px;
+}
+
+.login{
+    position: absolute;
+    top: 5%;
+    right: 13%;
+    border-radius: 25px;
+    padding: 14px;
+    width: 185px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 4px 4px #333e7d;
+    background: #4754a2;
+    color: white;
+}
+
+.login:hover{
+    background: #333e7d;
+    font-size: 17px;
+}
+
+.register{
+    position: absolute;
+    top: 16%;
+    right: 1.75%;
+    border-radius: 25px;
+    padding: 14px;
+    width: 125px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 4px 4px #333e7d;
+    background: #4754a2;
+    color: white;
+    z-index: 1;
+}
+
+.register:hover{
     background: #333e7d;
     font-size: 17px;
 }
@@ -219,6 +260,7 @@ body{
     font-size: 22px; 
 }
 
+
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -240,39 +282,3 @@ body{
 ::-webkit-scrollbar-thumb:active{
     background: #9ba3ca;
 }
-
-
-/*.star:hover{
-    background-color: #333e7d;
-}
-
-.star::before,
-.star::after{
-    --tooltip-color: #fab6c5;
-    position: absolute;
-    bottom: 15%;
-    left: 120%;
-    opacity: 0;
-    transition: 700ms opacity;
-}
-
-.star::before{
-    content: attr(data);
-    white-space: pre-wrap;
-    height: 20px;
-    width: 50px;
-    color: white;
-    padding: 10px;
-    padding-bottom: 15px;
-    border-radius: 10px;
-    text-align: center;
-    width: max-content;
-    font-size: 16px;
-    max-width: 250%;
-    background-color: var(--tooltip-color);
-}
-
-.star:hover::before,
-.star:hover::after{
-    opacity: 1;
-}/*
