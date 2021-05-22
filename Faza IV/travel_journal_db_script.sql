@@ -1,4 +1,6 @@
--- MySQL dump 10.13  Distrib 8.0.23, for Win64 (x86_64)
+CREATE DATABASE  IF NOT EXISTS `travel_journal_db` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `travel_journal_db`;
+-- MySQL dump 10.13  Distrib 8.0.20, for Win64 (x86_64)
 --
 -- Host: localhost    Database: travel_journal_db
 -- ------------------------------------------------------
@@ -26,7 +28,7 @@ CREATE TABLE `admin` (
   `id_usr` int NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id_usr`),
   CONSTRAINT `FK_id_usr_admin` FOREIGN KEY (`id_usr`) REFERENCES `user` (`id_usr`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,7 +50,7 @@ DROP TABLE IF EXISTS `answer`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `answer` (
   `id_ans` int NOT NULL AUTO_INCREMENT,
-  `text` varchar(25) NOT NULL,
+  `text` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `category_1` tinyint NOT NULL,
   `category_2` tinyint NOT NULL,
   `category_3` tinyint NOT NULL,
@@ -58,7 +60,7 @@ CREATE TABLE `answer` (
   PRIMARY KEY (`id_ans`),
   KEY `FK_id_qst_answer_idx` (`id_qst`),
   CONSTRAINT `FK_id_qst_answer` FOREIGN KEY (`id_qst`) REFERENCES `question` (`id_qst`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -84,7 +86,7 @@ CREATE TABLE `awarded` (
   KEY `FK_id_bdg_won_idx` (`id_bdg`),
   CONSTRAINT `FK_id_bdg_awarded` FOREIGN KEY (`id_bdg`) REFERENCES `badge` (`id_bdg`) ON UPDATE CASCADE,
   CONSTRAINT `FK_id_usr_awarded` FOREIGN KEY (`id_usr`) REFERENCES `registered_user` (`id_usr`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -105,11 +107,11 @@ DROP TABLE IF EXISTS `badge`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `badge` (
   `id_bdg` int NOT NULL AUTO_INCREMENT,
-  `icon_path` varchar(255) NOT NULL,
-  `title` varchar(30) NOT NULL,
-  `description` varchar(120) NOT NULL,
+  `icon_path` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `title` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `description` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id_bdg`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -130,9 +132,9 @@ DROP TABLE IF EXISTS `continent`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `continent` (
   `id_con` tinyint NOT NULL AUTO_INCREMENT,
-  `name` varchar(13) NOT NULL,
+  `name` varchar(13) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id_con`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,13 +156,13 @@ DROP TABLE IF EXISTS `country`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `country` (
   `id_cnt` tinyint NOT NULL AUTO_INCREMENT,
-  `name` varchar(60) NOT NULL,
-  `code` varchar(5) NOT NULL,
+  `name` varchar(60) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `code` varchar(5) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `id_con` tinyint NOT NULL,
   PRIMARY KEY (`id_cnt`),
   KEY `FK_id_con_country_idx` (`id_con`),
   CONSTRAINT `FK_id_con_country` FOREIGN KEY (`id_con`) REFERENCES `continent` (`id_con`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -181,12 +183,12 @@ DROP TABLE IF EXISTS `image`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `image` (
   `id_img` int NOT NULL AUTO_INCREMENT,
-  `image_path` varchar(255) NOT NULL,
+  `image_path` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `id_rev` int DEFAULT NULL,
   PRIMARY KEY (`id_img`),
   KEY `FK_id_rev_image_idx` (`id_rev`),
   CONSTRAINT `FK_id_rev_image` FOREIGN KEY (`id_rev`) REFERENCES `review` (`id_rev`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -207,7 +209,7 @@ DROP TABLE IF EXISTS `place`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `place` (
   `id_plc` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) NOT NULL,
+  `name` varchar(45) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `categorized` tinyint NOT NULL,
   `category_1` tinyint NOT NULL,
   `category_2` tinyint NOT NULL,
@@ -221,7 +223,7 @@ CREATE TABLE `place` (
   KEY `FK_id_cnt_place_idx` (`id_cnt`),
   CONSTRAINT `FK_id_cnt_place` FOREIGN KEY (`id_cnt`) REFERENCES `country` (`id_cnt`) ON UPDATE CASCADE,
   CONSTRAINT `FK_id_img_place` FOREIGN KEY (`id_img`) REFERENCES `image` (`id_img`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -242,12 +244,12 @@ DROP TABLE IF EXISTS `question`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `question` (
   `id_qst` int NOT NULL AUTO_INCREMENT,
-  `text` varchar(80) NOT NULL,
+  `text` varchar(80) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `type_quiz` tinyint NOT NULL,
   `type_review` tinyint NOT NULL,
   `form` tinyint NOT NULL,
   PRIMARY KEY (`id_qst`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -268,21 +270,21 @@ DROP TABLE IF EXISTS `registered_user`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `registered_user` (
   `id_usr` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(40) NOT NULL,
-  `surname` varchar(40) NOT NULL,
-  `e-mail` varchar(50) NOT NULL,
-  `security_answer_1` varchar(30) DEFAULT NULL,
-  `security_answer_2` varchar(30) DEFAULT NULL,
-  `security_answer_3` varchar(30) DEFAULT NULL,
+  `name` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `surname` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `e-mail` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `security_answer_1` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `security_answer_2` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `security_answer_3` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `token_count` int NOT NULL,
-  `avatar_path` varchar(255) DEFAULT NULL,
+  `avatar_path` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `acc_creation_date` date NOT NULL,
   `id_plc` int NOT NULL,
   PRIMARY KEY (`id_usr`),
   KEY `FK_id_plc_registered_user_idx` (`id_plc`),
   CONSTRAINT `FK_id_plc_registered_user` FOREIGN KEY (`id_plc`) REFERENCES `place` (`id_plc`) ON UPDATE CASCADE,
   CONSTRAINT `FK_id_usr_registered_user` FOREIGN KEY (`id_usr`) REFERENCES `user` (`id_usr`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -303,8 +305,8 @@ DROP TABLE IF EXISTS `review`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `review` (
   `id_rev` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(70) NOT NULL,
-  `text` varchar(255) NOT NULL,
+  `title` varchar(70) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `text_path` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `privacy` tinyint NOT NULL,
   `token_count` int NOT NULL,
   `date_posted` date NOT NULL,
@@ -312,7 +314,7 @@ CREATE TABLE `review` (
   PRIMARY KEY (`id_rev`),
   KEY `FK_id_vis_review_idx` (`id_vis`),
   CONSTRAINT `FK_id_vis_review` FOREIGN KEY (`id_vis`) REFERENCES `visited` (`id_vis`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -339,7 +341,7 @@ CREATE TABLE `to-go` (
   KEY `FK_id_plc_to-go_idx` (`id_plc`),
   CONSTRAINT `FK_id_plc_to-go` FOREIGN KEY (`id_plc`) REFERENCES `place` (`id_plc`) ON UPDATE CASCADE,
   CONSTRAINT `FK_id_usr_to-go` FOREIGN KEY (`id_usr`) REFERENCES `registered_user` (`id_usr`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -360,10 +362,10 @@ DROP TABLE IF EXISTS `user`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user` (
   `id_usr` int NOT NULL AUTO_INCREMENT,
-  `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `username` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `password` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id_usr`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -392,7 +394,7 @@ CREATE TABLE `visited` (
   KEY `FK_id_plc_visited_idx` (`id_plc`),
   CONSTRAINT `FK_id_plc_visited` FOREIGN KEY (`id_plc`) REFERENCES `place` (`id_plc`) ON UPDATE CASCADE,
   CONSTRAINT `FK_id_usr_visited` FOREIGN KEY (`id_usr`) REFERENCES `registered_user` (`id_usr`) ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -413,4 +415,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-25 23:43:18
+-- Dump completed on 2021-05-18 18:17:04
