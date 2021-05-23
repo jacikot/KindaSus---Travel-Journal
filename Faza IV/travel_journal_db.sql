@@ -253,7 +253,7 @@ DROP TABLE IF EXISTS `review`;
 CREATE TABLE IF NOT EXISTS `review` (
   `id_rev` int NOT NULL AUTO_INCREMENT,
   `title` varchar(70) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `text_path` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `text` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `privacy` tinyint NOT NULL,
   `token_count` int NOT NULL,
   `date_posted` date NOT NULL,
@@ -266,7 +266,7 @@ CREATE TABLE IF NOT EXISTS `review` (
 -- Dumping data for table `review`
 --
 
-INSERT INTO `review` (`id_rev`, `title`, `text_path`, `privacy`, `token_count`, `date_posted`, `id_vis`) VALUES
+INSERT INTO `review` (`id_rev`, `title`, `text`, `privacy`, `token_count`, `date_posted`, `id_vis`) VALUES
 (3, 'Love', 'City of love <3', 0, 0, '2021-05-07', 1);
 
 -- --------------------------------------------------------
