@@ -85,6 +85,7 @@ CREATE TABLE `awarded` (
   `id_bdg` int NOT NULL,
   PRIMARY KEY (`id_usr`,`id_bdg`),
   KEY `FK_id_bdg_won_idx` (`id_bdg`),
+  KEY `FK_id_usr_awarded_idx` (`id_usr`),
   CONSTRAINT `FK_id_bdg_awarded` FOREIGN KEY (`id_bdg`) REFERENCES `badge` (`id_bdg`) ON UPDATE CASCADE,
   CONSTRAINT `FK_id_usr_awarded` FOREIGN KEY (`id_usr`) REFERENCES `registered_user` (`id_usr`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -341,6 +342,7 @@ CREATE TABLE `to-go` (
   `crossed_off` tinyint NOT NULL,
   PRIMARY KEY (`id_usr`,`id_plc`),
   KEY `FK_id_plc_to-go_idx` (`id_plc`),
+  KEY `FK_id_usr_to-go_idx` (`id_usr`),
   CONSTRAINT `FK_id_plc_to-go` FOREIGN KEY (`id_plc`) REFERENCES `place` (`id_plc`) ON UPDATE CASCADE,
   CONSTRAINT `FK_id_usr_to-go` FOREIGN KEY (`id_usr`) REFERENCES `registered_user` (`id_usr`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -367,8 +369,8 @@ CREATE TABLE `visited` (
   `id_usr` int NOT NULL,
   `id_plc` int NOT NULL,
   PRIMARY KEY (`id_vis`),
-  KEY `FK_id_usr_visited_idx` (`id_usr`),
   KEY `FK_id_plc_visited_idx` (`id_plc`),
+  KEY `FK_id_usr_visited_idx` (`id_usr`),
   CONSTRAINT `FK_id_plc_visited` FOREIGN KEY (`id_plc`) REFERENCES `place` (`id_plc`) ON UPDATE CASCADE,
   CONSTRAINT `FK_id_usr_visited` FOREIGN KEY (`id_usr`) REFERENCES `registered_user` (`id_usr`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -392,4 +394,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-22 13:20:40
+-- Dump completed on 2021-05-23 10:20:25
