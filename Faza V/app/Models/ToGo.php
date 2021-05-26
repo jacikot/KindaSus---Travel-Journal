@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+
 use CodeIgniter\Model;
 
 class ToGo extends Model
 {
+
     protected $table = 'to-go';
     protected $primaryKey = 'id_tgl';
     protected $returnType = 'object';
@@ -26,3 +28,4 @@ class ToGo extends Model
     }
       
 }
+
