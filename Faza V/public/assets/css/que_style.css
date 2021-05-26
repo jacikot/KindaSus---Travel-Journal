@@ -59,12 +59,13 @@ table{
     z-index: 200;
     position: absolute;
     left:10%;
-    top:25%;
-    top:25%;
+    top:28%;
+
 
 }
 table p{
     font-size: 30px;
+    margin:13px;
 
 }
 
@@ -100,7 +101,7 @@ button.continue:hover{
 }
 .env{
     width:78%;
-    height:68%;
+    height:65%;
     position:absolute;
     z-index: 0;
     left:3%;

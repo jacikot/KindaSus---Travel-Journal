@@ -10,26 +10,44 @@
     <script src="<?php echo base_url("assets/js/ch_pass.js")?>"></script>
     <link rel="stylesheet" href="<?php echo base_url("assets/css/ch_pass_style.css")?>">
     <script>
+            var backGuest="<?php echo base_url('GuestLogin/showLogin')?>";
             var baseURL="<?= base_url('Password/setPassword')?>";
-            function ajaxCall(password,pc){
-            $.post(baseURL,
-                {'pass':password,'passC':pc},
-                function (data){
-                   //alert(data);
-                    document.getElementById("note").innerText=data;
-                   if("Password successfully changed"!=data){
-                       document.getElementById("note").style.color="darkred";
-                   }
-                }
-            )
+            function ajaxCall(password,pc) {
+                $.post(baseURL,
+                    {'pass': password, 'passC': pc},
+                    function (data) {
+                        //alert(data);
+                        document.getElementById("note").innerText = data;
+                        if ("Password successfully changed" != data) {
+                            document.getElementById("note").style.color = "darkred";
+                        }
+                    }
+                );
+            }
+            function getUser(){
+                var baseURL2="<?= base_url('Password/getUser')?>";
+                $.ajax(
+                    {
+                        url:baseURL2,
+                        type:"GET",
+                        processData: false,
+                        contentType:false
+                    }
+                ).done(function (data){
+                    if(data==""){
+                        guestMode();
+                    }
+                });
+            }
 
-        }
+
+
     </script>
 </head>
-<body>
+<body onload="getUser();">
     <div>
         <img src="<?php echo base_url("assets/images/logo2.png")?>" width="13%" height="17%"/>
-        <a href="<?php echo base_url('Map')?>"> <button class="back-to-home" type="button">Passport</button></a>
+        <a href="<?php echo base_url('Map')?>" id="back"> <button class="back-to-home" type="button" id="backbutton">Passport</button></a>
         <table>
             <tr>
                 <td colspan="2">
