@@ -1,9 +1,16 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?php 
 
 namespace App\Models;
 =======
 <?php namespace App\Models;
+>>>>>>> Dimitrije
+=======
+<?php 
+
+namespace App\Models;
+
 >>>>>>> Dimitrije
 
 use CodeIgniter\Model;
@@ -11,6 +18,10 @@ use CodeIgniter\Model;
 class ToGo extends Model
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> Dimitrije
     protected $table = 'to-go';
     protected $primaryKey = 'id_tgl';
     protected $returnType = 'object';
@@ -19,7 +30,7 @@ class ToGo extends Model
     public function emptyListForUser($idUsr)
     {
         $this->where('id_usr', $idUsr)->delete();
-
+    }
     public function getToGoPlaces($user)
     {
         $allToGo=$this->where("id_usr",$user)->findAll();
@@ -31,6 +42,7 @@ class ToGo extends Model
     }
       
 }
+<<<<<<< HEAD
 =======
     protected $table      = 'to-go';
     protected $primaryKey = 'id_usr';
@@ -41,4 +53,7 @@ class ToGo extends Model
 
 
 }
+>>>>>>> Dimitrije
+=======
+
 >>>>>>> Dimitrije

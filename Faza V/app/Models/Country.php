@@ -8,8 +8,11 @@ class Country extends Model
     protected $primaryKey = 'id_cnt';
     protected $returnType = 'object';
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Dimitrije
 
-    protected $allowedFields = ['id_cnt', 'name','code'];
+    protected $allowedFields =['name','code','id_con'];
 
     public function getCountry($cntid){
         $visited=$this->find($cntid);
@@ -26,6 +29,7 @@ class Country extends Model
         return $ret;
     }
 }
+<<<<<<< HEAD
 =======
     protected $allowedFields =['name','code','id_con'];
 
@@ -34,5 +38,8 @@ class Country extends Model
 
 
 }
+
+>>>>>>> Dimitrije
+=======
 
 >>>>>>> Dimitrije
