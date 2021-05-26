@@ -7,6 +7,7 @@ class Country extends Model
     protected $table      = 'country';
     protected $primaryKey = 'id_cnt';
     protected $returnType = 'object';
+<<<<<<< HEAD
 
     protected $allowedFields = ['id_cnt', 'name','code'];
 
@@ -25,3 +26,13 @@ class Country extends Model
         return $ret;
     }
 }
+=======
+    protected $allowedFields =['name','code','id_con'];
+
+
+
+
+
+}
+
+>>>>>>> Dimitrije
