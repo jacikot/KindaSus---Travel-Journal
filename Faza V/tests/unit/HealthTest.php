@@ -21,21 +21,21 @@ class HealthTest extends \CodeIgniter\Test\CIUnitTestCase
 		$validation = Services::validation();
 		$env        = false;
 
-		// Check the baseURL in ..env
-		if (is_file(HOMEPATH . '..env'))
+		// Check the baseURL in .env
+		if (is_file(HOMEPATH . '.env'))
 		{
-			$env = (bool) preg_grep('/^app\.baseURL = ./', file(HOMEPATH . '..env'));
+			$env = (bool) preg_grep('/^app\.baseURL = ./', file(HOMEPATH . '.env'));
 		}
 
 		if ($env)
 		{
-			// BaseURL in ..env is a valid URL?
+			// BaseURL in .env is a valid URL?
 			// phpunit.xml.dist sets app.baseURL in $_SERVER
-			// So if you set app.baseURL in ..env, it takes precedence
+			// So if you set app.baseURL in .env, it takes precedence
 			$config = new Config\App();
 			$this->assertTrue(
 				$validation->check($config->baseURL, 'valid_url'),
-				'baseURL "' . $config->baseURL . '" in ..env is not valid URL'
+				'baseURL "' . $config->baseURL . '" in .env is not valid URL'
 			);
 		}
 
