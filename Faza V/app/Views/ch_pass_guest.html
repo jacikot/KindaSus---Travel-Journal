@@ -1,0 +1,30 @@
+<!-- autor: Jana Toljaga -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showMes(){
+            document.getElementById('note').style.display="block";
+        }
+    </script>
+    <link rel="stylesheet" href="../../public/assets/css/ch_pass_style.css">
+</head>
+<body>
+    <div>
+        <img src="../../public/assets/images/logo2.png" width="13%" height="17%"/>
+        <p id="p1">Secure your travel memories!</p>
+        <p id="p2">New password:</p>
+        <br/>
+        <p id="p3">Confirm password:</p>
+        <a href="login.html"> <button class=" back-to-home" type="button">Back</button></a>
+        <input type="password" id="pas1"/>
+        <input type="password" id="pas2"/>
+        <button class="ok" type="button" onclick="showMes()">Change password</button>
+        <div class="note" id="note"><p class="note">Password has been successfully changed</p></div>
+    </div>
+</body>
+</html>
