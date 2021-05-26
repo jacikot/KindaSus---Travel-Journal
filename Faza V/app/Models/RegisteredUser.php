@@ -44,4 +44,10 @@ class RegisteredUser extends Model
         return $data;
     }
 
+    public function getUserId($username){
+        $uid=$this->where("username",$username)->findAll();
+        if($uid==null) return null;
+        return $uid[0]->id_usr;
+    }
+
 }

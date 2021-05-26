@@ -34,4 +34,11 @@ function changePass(){
 
 }
 
+function guestMode(){
+    let link=document.getElementById("back");
+    link.setAttribute("href",backGuest);
+    let button=document.getElementById("backbutton");
+    button.innerText="Back";
+}
+
 

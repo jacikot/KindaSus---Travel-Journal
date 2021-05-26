@@ -34,18 +34,31 @@ class Password extends BaseController
             echo "Your already answered! Press the button to continue!";
             return;
         }
+        $model=new RegisteredUser();
+        $username=$this->request->getVar('username');
+        if($username==""){
+            $user=$this->session->get('usr_id');
+        }
+        else{
+            $user=$model->getUserId($username);
+            if($user==null){
+                echo "User with that username does not exist!";
+                return;
+            }
+            $this->session->set("usr_id",$user);
+        }
 
 
         $q1= $this->request->getVar('q0');
         $q2= $this->request->getVar('q1');
         $q3= $this->request->getVar('q2');
         if($q1==""||$q2==""||$q3==""){
-            echo "Your answers are incorrect";
+            echo "Your answers are incorrect!";
             return;
         }
-        $user=$this->session->get('usr_id');
 
-        $model=new RegisteredUser();
+
+
         $ok=$model->validateAnswers($user,$q1,$q2,$q3);
         if($ok=="Your answers are correct! Press the button to continue!"){
             $this->session->set('status',"answered");
@@ -55,5 +68,13 @@ class Password extends BaseController
 
 
 
+    }
+
+    function getUser(){
+        $user =$this->session->get('usr_id');
+        if($user!=null){
+            echo json_encode("$user");
+        }
+        else echo "";
     }
 }
