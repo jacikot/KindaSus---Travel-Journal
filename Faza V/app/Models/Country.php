@@ -7,11 +7,6 @@ class Country extends Model
     protected $table      = 'country';
     protected $primaryKey = 'id_cnt';
     protected $returnType = 'object';
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> Dimitrije
-
     protected $allowedFields =['name','code','id_con'];
 
     public function getCountry($cntid){
@@ -29,17 +24,3 @@ class Country extends Model
         return $ret;
     }
 }
-<<<<<<< HEAD
-=======
-    protected $allowedFields =['name','code','id_con'];
-
-
-
-
-
-}
-
->>>>>>> Dimitrije
-=======
-
->>>>>>> Dimitrije
