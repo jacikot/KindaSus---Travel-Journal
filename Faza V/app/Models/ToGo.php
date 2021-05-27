@@ -14,7 +14,7 @@ class ToGo extends Model
     public function emptyListForUser($idUsr)
     {
         $this->where('id_usr', $idUsr)->delete();
-
+    }
     public function getToGoPlaces($user)
     {
         $allToGo=$this->where("id_usr",$user)->findAll();
