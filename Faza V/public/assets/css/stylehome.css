@@ -3,10 +3,27 @@
 @font-face {
     font-family: myFont;
     src: url(../fontstyle/traveljournal.ttf);
-}
+  }
+
 a:hover{
     color:#2A134A !important;
     text-decoration-line: none !important;
+}
+
+.login{
+    position: relative;
+    text-align:center;
+    top:-15px;
+    font-family: myFont;
+    font-size: 210%;
+}
+.register{
+    color:white;
+    position: relative;
+    text-align:center;
+    top:-15px;
+    font-family: myFont;
+    font-size: 210%;
 }
 .link{
     color:white;
@@ -21,6 +38,11 @@ a:hover{
     font-family: myFont;
     font-size: 180%;
 }
+
+body {
+    overflow: hidden; 
+ }
+
 .pic{
     display: block;
     margin:auto !important;
