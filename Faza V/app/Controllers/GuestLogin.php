@@ -16,7 +16,11 @@ class GuestLogin extends BaseController
     public function index(){
         // kad ti se ovo inicijalno ucitaj dodaj one quotes tj jednu random quote izaberi da se prikaze!
         // dodaj i toggle da se prikaze lepo na stranici
-        return view('homepage.php');
+
+        $rand = rand(0,count(Quiz::$quotes)-1);
+
+        $data['data'] = ['quote'=>Quiz::$quotes[$rand]];
+        return view('homepage.php',$data);
     }
 
     public function showLogin(){
@@ -48,6 +52,8 @@ class GuestLogin extends BaseController
             return;
         }
 
+
+        //sifrovanje sifre
 
        //$username = addslashes($username);
        //$password = addslases($password);

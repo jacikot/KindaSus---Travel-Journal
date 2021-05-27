@@ -1,43 +1,23 @@
 /* author: Dimitrije Panic */
-body, html{
-    height:100%
-}
 
 @font-face {
     font-family: myFont;
     src: url(../fontstyle/traveljournal.ttf);
   }
 
-
-p{
-    width:100%;
-    cursor: pointer;
-}  
-
 a:hover{
-    color:pink;
-    font-size: 110%;
+    color:#2A134A !important;
+    text-decoration-line: none !important;
 }
-
 
 .login{
-    /*background:#2A134A;
-    border-radius:15px;*/
-    /*color: #2A134A;*/
-    /*color:white;*/
     position: relative;
     text-align:center;
     top:-15px;
     font-family: myFont;
     font-size: 210%;
 }
-
-
 .register{
-    /*background:#2A134A;
-    border-radius:15px;*/
-    /*color:white;*/
-    /*color: #2A134A;*/
     color:white;
     position: relative;
     text-align:center;
@@ -45,73 +25,41 @@ a:hover{
     font-family: myFont;
     font-size: 210%;
 }
-.guest{
-    /*background:#2A134A;
-    border-radius:15px;*/
-    /*color: #2A134A;*/
+.link{
     color:white;
-    position: relative;
-    top:-15px;
     text-align:center;
     font-family: myFont;
     font-size: 210%;
 }
 .quote{
+    text-align:center;
     pointer-events: none;
     color: #2A134A;
-    position: relative;
-    text-align:center;
-    top:-15px;
     font-family: myFont;
-    font-size: 170%;
+    font-size: 180%;
 }
 
 body {
     overflow: hidden; 
  }
 
-
-
-
 .pic{
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    width:42%;
-    height:42%;
+    margin:auto !important;
+    width:47vw !important;
+    height:47vh !important;
     object-fit: contain;
 }
-
 .back {
-    /*background-image: url(trythis.png);
-    background-repeat: no-repeat;
-    object-fit: contain;
-    background-size: cover /*100% 100%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;*/
     background: url(../images/pozadina1.jpg) no-repeat center center fixed;
     background-size: 100% 100%;
-    /*-webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;*/
-
 }
-
-a:hover{
-    color:pink;
-}
+/* vidi sta su bese ovaj link i visited */
 a:link{
     color:white;
-    /*color:#2A134A;*/
     text-decoration: none;
-
 }
-
 a:visited{
     color:white;
-    /*color:#2A134A;*/
     text-decoration: none;
 }
