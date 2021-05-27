@@ -27,8 +27,7 @@ class Quiz extends BaseController
         'Remember that happiness is a way of travel, not a destination.',
         'Travel is the only thing you buy that makes you richer.',
         'In the end, we only regret the chances we didn’t take',
-        'My goal is to run out of pages in my passport.',
-        'Still round the corner, there may wait, a new road or a secret gate'
+        'My goal is to run out of pages in my passport.'
         ];
 
 
@@ -154,6 +153,8 @@ class Quiz extends BaseController
             $currScore += abs($place->sightseeing - $this->score['sightseeing']);
             $currScore += abs($place->weather - $this->score['weather']) ;
             $currScore += abs($place->populated - $this->score['populated'] );
+
+
 
             if($currScore < $bestScore){
                 $bestScore = $currScore;
