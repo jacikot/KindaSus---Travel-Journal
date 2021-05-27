@@ -1,0 +1,243 @@
+CRITICAL - 2021-05-22 03:33:03 --> syntax error, unexpected 'class' (T_CLASS), expecting ')'
+#0 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('map', Array, true)
+#2 C:\wamp64\www\travel_journal\app\Controllers\UserController.php(9): view('map')
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->index()
+#4 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#7 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#8 {main}
+CRITICAL - 2021-05-22 09:29:33 --> Too few arguments to function App\Controllers\UserController::validateQuestions(), 0 passed in C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php on line 931 and exactly 1 expected
+#0 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->validateQuestions()
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#4 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#5 {main}
+CRITICAL - 2021-05-22 09:40:46 --> Too few arguments to function App\Controllers\UserController::validateQuestions(), 0 passed in C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php on line 931 and exactly 1 expected
+#0 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->validateQuestions()
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#4 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#5 {main}
+CRITICAL - 2021-05-22 09:49:05 --> Too few arguments to function App\Controllers\UserController::validateQuestions(), 0 passed in C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php on line 931 and exactly 1 expected
+#0 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->validateQuestions()
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#4 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#5 {main}
+CRITICAL - 2021-05-22 09:55:12 --> Too few arguments to function App\Controllers\UserController::validateQuestions(), 0 passed in C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php on line 931 and exactly 1 expected
+#0 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->validateQuestions()
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#4 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#5 {main}
+CRITICAL - 2021-05-22 09:58:11 --> Undefined property: App\Controllers\UserController::$input
+#0 C:\wamp64\www\travel_journal\app\Controllers\UserController.php(23): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\wamp64\\www\\t...', 23, Array)
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->validateQuestions()
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#6 {main}
+CRITICAL - 2021-05-22 10:01:04 --> Argument 2 passed to dot_array_search() must be of the type array, null given, called in C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\HTTP\IncomingRequest.php on line 600
+#0 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\HTTP\IncomingRequest.php(600): dot_array_search('q', NULL)
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\HTTP\IncomingRequest.php(560): CodeIgniter\HTTP\IncomingRequest->getJsonVar('q', false, NULL, NULL)
+#2 C:\wamp64\www\travel_journal\app\Controllers\UserController.php(23): CodeIgniter\HTTP\IncomingRequest->getVar('q')
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->validateQuestions()
+#4 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#7 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#8 {main}
+CRITICAL - 2021-05-22 10:01:36 --> Argument 2 passed to dot_array_search() must be of the type array, null given, called in C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\HTTP\IncomingRequest.php on line 600
+#0 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\HTTP\IncomingRequest.php(600): dot_array_search('q', NULL)
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\HTTP\IncomingRequest.php(560): CodeIgniter\HTTP\IncomingRequest->getJsonVar('q', false, NULL, NULL)
+#2 C:\wamp64\www\travel_journal\app\Controllers\UserController.php(23): CodeIgniter\HTTP\IncomingRequest->getVar('q')
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->validateQuestions()
+#4 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#7 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#8 {main}
+CRITICAL - 2021-05-22 10:02:57 --> Argument 2 passed to dot_array_search() must be of the type array, null given, called in C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\HTTP\IncomingRequest.php on line 600
+#0 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\HTTP\IncomingRequest.php(600): dot_array_search('q', NULL)
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\HTTP\IncomingRequest.php(560): CodeIgniter\HTTP\IncomingRequest->getJsonVar('q', false, NULL, NULL)
+#2 C:\wamp64\www\travel_journal\app\Controllers\UserController.php(23): CodeIgniter\HTTP\IncomingRequest->getVar('q')
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->validateQuestions()
+#4 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#7 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#8 {main}
+CRITICAL - 2021-05-22 10:05:50 --> Argument 2 passed to dot_array_search() must be of the type array, null given, called in C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\HTTP\IncomingRequest.php on line 600
+#0 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\HTTP\IncomingRequest.php(600): dot_array_search('q', NULL)
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\HTTP\IncomingRequest.php(560): CodeIgniter\HTTP\IncomingRequest->getJsonVar('q', false, NULL, NULL)
+#2 C:\wamp64\www\travel_journal\app\Controllers\UserController.php(23): CodeIgniter\HTTP\IncomingRequest->getVar('q')
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->validateQuestions()
+#4 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#7 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#8 {main}
+CRITICAL - 2021-05-22 10:33:03 --> Argument 2 passed to dot_array_search() must be of the type array, null given, called in C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\HTTP\IncomingRequest.php on line 600
+#0 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\HTTP\IncomingRequest.php(600): dot_array_search('q', NULL)
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\HTTP\IncomingRequest.php(560): CodeIgniter\HTTP\IncomingRequest->getJsonVar('q', false, NULL, NULL)
+#2 C:\wamp64\www\travel_journal\app\Controllers\UserController.php(24): CodeIgniter\HTTP\IncomingRequest->getVar('q')
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->validateQuestions()
+#4 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#7 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#8 {main}
+CRITICAL - 2021-05-22 10:39:52 --> Argument 2 passed to dot_array_search() must be of the type array, null given, called in C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\HTTP\IncomingRequest.php on line 600
+#0 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\HTTP\IncomingRequest.php(600): dot_array_search('q', NULL)
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\HTTP\IncomingRequest.php(560): CodeIgniter\HTTP\IncomingRequest->getJsonVar('q', false, NULL, NULL)
+#2 C:\wamp64\www\travel_journal\app\Controllers\UserController.php(24): CodeIgniter\HTTP\IncomingRequest->getVar('q')
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->validateQuestions()
+#4 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#5 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#7 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#8 {main}
+CRITICAL - 2021-05-22 10:43:09 --> Array to string conversion
+#0 C:\wamp64\www\travel_journal\app\Controllers\UserController.php(23): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\wamp64\\www\\t...', 23, Array)
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->validateQuestions()
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#6 {main}
+CRITICAL - 2021-05-22 10:46:52 --> Array to string conversion
+#0 C:\wamp64\www\travel_journal\app\Controllers\UserController.php(23): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\wamp64\\www\\t...', 23, Array)
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->validateQuestions()
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#6 {main}
+CRITICAL - 2021-05-22 10:47:50 --> Array to string conversion
+#0 C:\wamp64\www\travel_journal\app\Controllers\UserController.php(23): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\wamp64\\www\\t...', 23, Array)
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->validateQuestions()
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#6 {main}
+CRITICAL - 2021-05-22 10:51:49 --> Array to string conversion
+#0 C:\wamp64\www\travel_journal\app\Controllers\UserController.php(23): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\wamp64\\www\\t...', 23, Array)
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->validateQuestions()
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#6 {main}
+CRITICAL - 2021-05-22 12:27:02 --> Class 'App\Controllers\RegisteredUser' not found
+#0 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->validateQuestions()
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#4 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#5 {main}
+CRITICAL - 2021-05-22 12:27:50 --> Class 'App\Controllers\RegisteredUser' not found
+#0 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->validateQuestions()
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#4 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#5 {main}
+CRITICAL - 2021-05-22 12:30:28 --> Class 'App\Controllers\RegisteredUser' not found
+#0 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->validateQuestions()
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#4 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#5 {main}
+ERROR - 2021-05-22 12:34:37 --> Error connecting to the database: Unknown database 'travel_journal'
+CRITICAL - 2021-05-22 12:34:37 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'travel_journal'
+#0 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Database\BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Model.php(197): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\BaseModel.php(603): CodeIgniter\Model->doFindAll(0, 0)
+#4 C:\wamp64\www\travel_journal\app\Models\RegisteredUser.php(16): CodeIgniter\BaseModel->findAll()
+#5 C:\wamp64\www\travel_journal\app\Controllers\UserController.php(36): App\Models\RegisteredUser->validateAnswers(NULL, 'jana', 'sana', 'mana')
+#6 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->validateQuestions()
+#7 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#8 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#11 {main}
+ERROR - 2021-05-22 12:35:33 --> Error connecting to the database: Unknown database 'travel_journal'
+CRITICAL - 2021-05-22 12:35:33 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'travel_journal'
+#0 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Database\BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Model.php(197): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\BaseModel.php(603): CodeIgniter\Model->doFindAll(0, 0)
+#4 C:\wamp64\www\travel_journal\app\Models\RegisteredUser.php(16): CodeIgniter\BaseModel->findAll()
+#5 C:\wamp64\www\travel_journal\app\Controllers\UserController.php(36): App\Models\RegisteredUser->validateAnswers(NULL, 'jana', 'sana', 'mana')
+#6 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->validateQuestions()
+#7 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#8 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#11 {main}
+ERROR - 2021-05-22 12:38:12 --> Error connecting to the database: Unknown database 'travel_journal'
+CRITICAL - 2021-05-22 12:38:12 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'travel_journal'
+#0 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Database\BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Model.php(197): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\BaseModel.php(603): CodeIgniter\Model->doFindAll(0, 0)
+#4 C:\wamp64\www\travel_journal\app\Models\RegisteredUser.php(17): CodeIgniter\BaseModel->findAll()
+#5 C:\wamp64\www\travel_journal\app\Controllers\UserController.php(36): App\Models\RegisteredUser->validateAnswers(NULL, 'jana', 'sana', 'mana')
+#6 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->validateQuestions()
+#7 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#8 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#11 {main}
+ERROR - 2021-05-22 12:39:11 --> Error connecting to the database: Unknown database 'travel_journal'
+CRITICAL - 2021-05-22 12:39:11 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'travel_journal'
+#0 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Database\BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Model.php(197): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\BaseModel.php(603): CodeIgniter\Model->doFindAll(0, 0)
+#4 C:\wamp64\www\travel_journal\app\Models\RegisteredUser.php(17): CodeIgniter\BaseModel->findAll()
+#5 C:\wamp64\www\travel_journal\app\Controllers\UserController.php(36): App\Models\RegisteredUser->validateAnswers(NULL, 'jana', 'sana', 'mana')
+#6 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->validateQuestions()
+#7 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#8 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#11 {main}
+ERROR - 2021-05-22 12:41:06 --> Error connecting to the database: Unknown database 'travel_journal'
+CRITICAL - 2021-05-22 12:41:06 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'travel_journal'
+#0 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Database\BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Model.php(197): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\BaseModel.php(603): CodeIgniter\Model->doFindAll(0, 0)
+#4 C:\wamp64\www\travel_journal\app\Models\RegisteredUser.php(17): CodeIgniter\BaseModel->findAll()
+#5 C:\wamp64\www\travel_journal\app\Controllers\UserController.php(36): App\Models\RegisteredUser->validateAnswers(NULL, 'jana', 'sana', 'mana')
+#6 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->validateQuestions()
+#7 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#8 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#11 {main}
+CRITICAL - 2021-05-22 12:51:52 --> Use of undefined constant length - assumed 'length' (this will throw an Error in a future version of PHP)
+#0 C:\wamp64\www\travel_journal\app\Models\RegisteredUser.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefine...', 'C:\\wamp64\\www\\t...', 18, Array)
+#1 C:\wamp64\www\travel_journal\app\Controllers\UserController.php(36): App\Models\RegisteredUser->validateAnswers(NULL, 'jana', 'sana', 'lana')
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->validateQuestions()
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#4 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#6 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#7 {main}

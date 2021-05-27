@@ -9,4 +9,5 @@ $('document').ready(function(){
     for(let i=3;i<6;i++){
         $("#"+i).fadeIn(2000);
     }
+    let j="jana";
 })

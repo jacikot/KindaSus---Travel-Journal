@@ -1,0 +1,59 @@
+CRITICAL - 2021-05-23 16:36:24 --> Use of undefined constant jana - assumed 'jana' (this will throw an Error in a future version of PHP)
+#0 C:\wamp64\www\travel_journal\app\Controllers\UserController.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefine...', 'C:\\wamp64\\www\\t...', 27, Array)
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->setPassword()
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#6 {main}
+CRITICAL - 2021-05-23 16:52:19 --> Use of undefined constant jana - assumed 'jana' (this will throw an Error in a future version of PHP)
+#0 C:\wamp64\www\travel_journal\app\Controllers\UserController.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefine...', 'C:\\wamp64\\www\\t...', 27, Array)
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->setPassword()
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#6 {main}
+CRITICAL - 2021-05-23 16:54:26 --> Use of undefined constant jana - assumed 'jana' (this will throw an Error in a future version of PHP)
+#0 C:\wamp64\www\travel_journal\app\Controllers\UserController.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefine...', 'C:\\wamp64\\www\\t...', 27, Array)
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->setPassword()
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#6 {main}
+CRITICAL - 2021-05-23 17:30:53 --> match is not a valid rule.
+#0 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Validation\Validation.php(321): CodeIgniter\Validation\Exceptions\ValidationException::forRuleNotFound('match')
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Validation\Validation.php(159): CodeIgniter\Validation\Validation->processRules('pass', 'pass', 'asdF123', Array, Array)
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Controller.php(183): CodeIgniter\Validation\Validation->run()
+#3 C:\wamp64\www\travel_journal\app\Controllers\UserController.php(29): CodeIgniter\Controller->validate(Array)
+#4 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->setPassword()
+#5 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#6 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#8 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#9 {main}
+CRITICAL - 2021-05-23 18:01:40 --> syntax error, unexpected '$correct' (T_VARIABLE), expecting ',' or ';'
+#0 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Router\Router.php(169): CodeIgniter\Router\Router->autoRoute('UserController/...')
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(812): CodeIgniter\Router\Router->handle('UserController/...')
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(392): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#6 {main}
+CRITICAL - 2021-05-23 18:02:14 --> syntax error, unexpected 'answered' (T_STRING), expecting ',' or ';'
+#0 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Router\Router.php(169): CodeIgniter\Router\Router->autoRoute('UserController/...')
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(812): CodeIgniter\Router\Router->handle('UserController/...')
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(392): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#6 {main}
+CRITICAL - 2021-05-23 18:04:51 --> A non-numeric value encountered
+#0 C:\wamp64\www\travel_journal\app\Controllers\UserController.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric v...', 'C:\\wamp64\\www\\t...', 31, Array)
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->setPassword()
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#6 {main}
