@@ -64,6 +64,9 @@ function register(){
         return;
     }
 
+    // provera da l je e-mail validnog oblika
+
+
     fd.append('username',username);
     fd.append('surname',username);
     fd.append('name',name);
