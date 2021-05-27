@@ -10,4 +10,5 @@ $('document').ready(function(){
         $("#"+i).fadeIn(2000);
     }
     alert("pana");
+    let j="jana";
 })

@@ -1,0 +1,23 @@
+CRITICAL - 2021-05-24 14:10:45 --> Class 'App\Controllers\Country' not found
+#0 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->getMap()
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#4 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#5 {main}
+CRITICAL - 2021-05-24 14:13:21 --> Array to string conversion
+#0 C:\wamp64\www\travel_journal\app\Controllers\UserController.php(47): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\wamp64\\www\\t...', 47, Array)
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->getMap()
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#6 {main}
+CRITICAL - 2021-05-24 17:04:37 --> Use of undefined constant country_journal - assumed 'country_journal' (this will throw an Error in a future version of PHP)
+#0 C:\wamp64\www\travel_journal\app\Controllers\UserController.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Use of undefine...', 'C:\\wamp64\\www\\t...', 23, Array)
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\UserController->reviewsByCountries()
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#6 {main}

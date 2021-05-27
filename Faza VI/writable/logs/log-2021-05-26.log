@@ -1,0 +1,61 @@
+CRITICAL - 2021-05-26 08:49:32 --> Undefined property: stdClass::$usr_id
+#0 C:\wamp64\www\travel_journal\app\Models\RegisteredUser.php(50): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\wamp64\\www\\t...', 50, Array)
+#1 C:\wamp64\www\travel_journal\app\Controllers\Password.php(43): App\Models\RegisteredUser->getUserId('adriance')
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Password->validateQuestions()
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Password))
+#4 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#6 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#7 {main}
+CRITICAL - 2021-05-26 08:53:27 --> Undefined property: stdClass::$usr_id
+#0 C:\wamp64\www\travel_journal\app\Models\RegisteredUser.php(50): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined prope...', 'C:\\wamp64\\www\\t...', 50, Array)
+#1 C:\wamp64\www\travel_journal\app\Controllers\Password.php(43): App\Models\RegisteredUser->getUserId('adriance')
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Password->validateQuestions()
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Password))
+#4 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#6 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#7 {main}
+CRITICAL - 2021-05-26 12:03:13 --> syntax error, unexpected 'public' (T_PUBLIC)
+#0 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(282): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\wamp64\\www\\t...')
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Autoloader\Autoloader.php(247): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\ToGo')
+#2 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\ToGo')
+#3 C:\wamp64\www\travel_journal\app\Controllers\Map.php(30): spl_autoload_call('App\\Models\\ToGo')
+#4 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Map->getMap()
+#5 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Map))
+#6 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#8 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#9 {main}
+CRITICAL - 2021-05-26 12:07:32 --> Undefined offset: 0
+#0 C:\wamp64\www\travel_journal\app\Views\pages\badges.php(13): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offse...', 'C:\\wamp64\\www\\t...', 13, Array)
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\View\View.php(230): include('C:\\wamp64\\www\\t...')
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\View\View.php(232): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Common.php(1250): CodeIgniter\View\View->render('pages/badges', Array, true)
+#4 C:\wamp64\www\travel_journal\app\Controllers\Badges.php(12): view('pages/badges', Array)
+#5 C:\wamp64\www\travel_journal\app\Controllers\Badges.php(19): App\Controllers\Badges->displayPage('badges', Array)
+#6 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Badges->index()
+#7 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Badges))
+#8 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#10 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#11 {main}
+CRITICAL - 2021-05-26 18:26:32 --> Deletes are not allowed unless they contain a "where" or "like" clause.
+#0 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Model.php(392): CodeIgniter\Database\BaseBuilder->delete()
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\BaseModel.php(1025): CodeIgniter\Model->doDelete(NULL, false)
+#2 C:\wamp64\www\travel_journal\app\Models\Review.php(85): CodeIgniter\BaseModel->delete(NULL)
+#3 C:\wamp64\www\travel_journal\app\Controllers\Journal.php(53): App\Models\Review->deleteReview(NULL)
+#4 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Journal->deleteReview()
+#5 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Journal))
+#6 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#8 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#9 {main}
+CRITICAL - 2021-05-26 18:35:53 --> A non-numeric value encountered
+#0 C:\wamp64\www\travel_journal\app\Controllers\Journal.php(54): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric v...', 'C:\\wamp64\\www\\t...', 54, Array)
+#1 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(931): App\Controllers\Journal->deleteReview()
+#2 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(439): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Journal))
+#3 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\CodeIgniter.php(339): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\wamp64\www\travel_journal\public\index.php(36): CodeIgniter\CodeIgniter->run()
+#5 C:\wamp64\www\travel_journal\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\wamp64\\www\\t...')
+#6 {main}
