@@ -9,9 +9,6 @@ class Password extends BaseController
 {
     public function listPassQuestions(){
         $this->session->set('status',"not answered");
-//        $data["cssFile"]="que";
-//        $data["jsFile"]="que";
-//        echo view('templates/header_user',$data);
         echo view('que');
     }
 

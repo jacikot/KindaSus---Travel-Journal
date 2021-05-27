@@ -31,23 +31,6 @@
             });
             setListener();
         }
-        var baseURL2="<?= base_url('Journal/deleteReview')?>";
-        function deleteReview(idrev){
-            alert(idrev);
-            $.ajax(
-                {
-                    url:baseURL2,
-                    type:"POST",
-                    data:{
-                        "id_rev":idrev
-                    },
-
-
-                }
-            ).done(function (data){
-                alert(data);
-            });
-        }
 
         function ajaxCall(place=null){
             $.ajax(

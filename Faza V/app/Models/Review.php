@@ -81,8 +81,4 @@ class Review extends Model
         return $revs;
     }
 
-    public function deleteReview($id){
-        $this->where("id_rev",$id)->delete();
-    }
-
 }
