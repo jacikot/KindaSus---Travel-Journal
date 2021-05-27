@@ -77,14 +77,9 @@ class Review extends Model
 
             }
 
-<<<<<<< HEAD
-
-}
-
-=======
         }
         return $revs;
     }
 
 }
->>>>>>> 9759a81454915418bf25d66fb989175a756f801c
+
