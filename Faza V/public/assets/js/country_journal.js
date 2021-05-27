@@ -1,17 +1,22 @@
 
-function insertTrash(){
+function insertTrash(list,parent){
     let trash=document.createElement("button");
     trash.classList.add("bottomButton");
     let itr=document.createElement("i");
     itr.classList.add("fas");
     itr.classList.add("fa-trash-alt");
     trash.appendChild(itr);
+    trash.addEventListener("click",function (){
+        deleteReview(parent.id);
+        list.removeChild(parent);
+    });
     return trash;
 }
 
 function insertReview(data,list,country){
     let elem=document.createElement("li");
-    elem.appendChild(insertTrash());
+    elem.id=data["id_rev"];
+    elem.appendChild(insertTrash(list,elem));
     let link=document.createElement("a");
     link.setAttribute("href",reviewUrl+"/"+data["id_rev"]);
     link.classList.add("revName");
@@ -23,6 +28,7 @@ function insertReview(data,list,country){
     elem.appendChild(place);
     place=document.createElement("div");
     place.innerHTML=data["text"];
+
     elem.appendChild(place);
     list.appendChild(elem);
 

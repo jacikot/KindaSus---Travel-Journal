@@ -73,11 +73,7 @@ class GuestRegister extends BaseController
 
 
         //dodaj sve provere ponovo mrzi me sad ovde
-        // istrazi helpera
 
-        // ne znam sta da radim ako je veca slika
-        // pa je default vreme slanja duze
-        // vidi gde je default vreme zahteva
         $defaultImg = false;
         $ext = "";
         if(!isset($img)){
@@ -107,8 +103,6 @@ class GuestRegister extends BaseController
 
 
         }
-
-        // da l drzava postoji
 
         // dohvati iz baze place, ako ne postoji napravi novo
         // moras da proveris i za drzavu da l je ok
