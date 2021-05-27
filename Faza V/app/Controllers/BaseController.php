@@ -53,9 +53,10 @@ class BaseController extends Controller
 		//--------------------------------------------------------------------
 		// Preload any models, libraries, etc, here.
 		//--------------------------------------------------------------------
-
-        $this->validation = \Config\Services::validation();
-        $this->session = session();
+		 $this->session = \Config\Services::session();
+	//	 $this->session->set('userId',1);
+		 $this->session->set('id_rev',11);
+        $this->session->set('isAdmin',1);
 
 	}
 }
