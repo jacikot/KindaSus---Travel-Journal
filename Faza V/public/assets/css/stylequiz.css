@@ -1,0 +1,163 @@
+/* author: Dimitrije Panic */
+@font-face {
+    font-family: myFont;
+    src: url(../fontstyle/traveljournal.ttf);
+  }
+
+/*.button:hover{
+    cursor: pointer;
+    color:pink;
+}*/
+
+body{
+    background-image: url(../images/kviz.png);
+    background-repeat: no-repeat;
+    object-fit: contain;
+    background-size: cover /*100% 100%*/;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+
+}
+
+#header{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: myFont;
+}
+.button{
+    outline:none;
+    font-size:100%;
+    font-family:myFont;
+    position: absolute;
+    top: 5%;
+    right: 1.75%;
+    border-radius: 25px;
+    padding: 14px;
+    width: 125px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 4px 4px #333e7d;
+    background: #4754a2;
+    color: white;
+    border: none;
+}
+
+.button:hover{
+    cursor: pointer;
+    background: #333e7d;
+    font-size: 17px;
+}
+/*.button{
+    font-size: 100%;
+    font-family:MyFont;
+    background-color: #4754a2;
+    border-radius:12px;
+    color:white;
+}*/
+
+#title{
+    position:relative;
+    top:-20px;
+    text-align: center;
+    font-family: myFont;
+    font-size: 300%;
+    color:white;
+}
+
+#question{
+    font-size:200%;
+    font-family: myFont;
+    color:#4754a2;
+    position: absolute;
+    left:30%;
+    top:30%;
+}
+
+#bar{
+    position: absolute;
+    left:52%;
+    top:32%;
+}
+
+#tabela{
+    font-size:140%;
+    font-family: myFont;
+    color:#4754a2;
+    position:absolute;
+    left:30%;
+    top:41%;
+}
+
+.newButton:hover{
+    cursor: pointer;
+    font-size:190%;
+    color:pink;
+}
+
+.newButton1:hover{
+    cursor: pointer;
+    font-size:190%;
+    color:pink;
+}
+.newButton2:hover{
+    cursor: pointer;
+    font-size:190%;
+    color:pink;
+}
+
+.newButton1{
+    outline: none;
+    font-size: 160%;
+    font-family:MyFont;
+    background-color:transparent;
+    /*background-color: #4754a2;
+    border-radius:12px;*/
+    border:none;
+    position: absolute;
+    bottom:23%;
+    left:30%;
+    color:#4754a2;
+}
+.newButton2{
+    outline: none;
+    font-size: 160%;
+    font-family:MyFont;
+    background-color:transparent;
+    /*background-color: #4754a2;
+    border-radius:12px;*/
+    border:none;
+    position: absolute;
+    bottom:23%;
+    left:58%;
+    color:#4754a2;
+}
+.newButton{
+    outline: none;
+    font-size: 160%;
+    font-family:MyFont;
+    background-color:transparent;
+    /*background-color: #4754a2;
+    border-radius:12px;*/
+    border:none;
+    position: absolute;
+    bottom:23%;
+    left:65%;
+    color:#4754a2;
+}
+
+
+/*input:hover{
+    color:pink;
+    font-size: 145%;
+}*/
+
+label:hover{
+        color:pink;
+        font-size: 145%;
+   
+}
