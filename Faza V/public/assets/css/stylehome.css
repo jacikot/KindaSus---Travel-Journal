@@ -1,0 +1,43 @@
+/* author: Dimitrije Panic */
+
+@font-face {
+    font-family: myFont;
+    src: url(../fontstyle/traveljournal.ttf);
+}
+a:hover{
+    color:#2A134A !important;
+    text-decoration-line: none !important;
+}
+.link{
+    color:white;
+    text-align:center;
+    font-family: myFont;
+    font-size: 210%;
+}
+.quote{
+    text-align:center;
+    pointer-events: none;
+    color: #2A134A;
+    font-family: myFont;
+    font-size: 180%;
+}
+.pic{
+    display: block;
+    margin:auto !important;
+    width:47vw !important;
+    height:47vh !important;
+    object-fit: contain;
+}
+.back {
+    background: url(../images/pozadina1.jpg) no-repeat center center fixed;
+    background-size: 100% 100%;
+}
+/* vidi sta su bese ovaj link i visited */
+a:link{
+    color:white;
+    text-decoration: none;
+}
+a:visited{
+    color:white;
+    text-decoration: none;
+}
