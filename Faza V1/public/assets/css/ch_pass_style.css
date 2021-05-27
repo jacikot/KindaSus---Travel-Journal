@@ -1,0 +1,93 @@
+/* autor: Jana Toljaga */
+body{
+    margin:0;
+    background: url(../images/proba8.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: myFont;
+}
+
+@font-face {
+    font-family:myFont;
+    src: url(../fontstyle/traveljournal.ttf);
+}
+
+
+#p1{
+    color:white;
+    text-align: center;
+    font-size: 40px;
+}
+
+#p2{
+    color:white;
+    font-size: 30px;
+}
+
+#p3{
+    color:white;
+    font-size: 30px;
+}
+.pas{
+    font-size: 30px;
+    outline-width: 0;
+    border-radius: 15px;
+    border-width: 0;
+
+}
+table{
+    text-align: center;
+    position: absolute;
+    left:35%;
+    top:10%;
+
+}
+input{
+    width:250px;
+    margin-left: 30px;
+}
+button.ok{
+    background-color:transparent;
+    color:white;
+    border-radius: 25px;
+    font-size: 25pt;
+    border-width: 0;
+    font-family: myFont;
+    outline: none;
+    cursor: pointer;
+}
+button.ok:hover{
+    color:#333e7d;
+    font-size: 28pt;
+}
+p.note{
+    font-size: 20px;
+    color:#b5ee73;
+}
+
+.back-to-home{
+    position: absolute;
+    top: 5%;
+    right: 1.75%;
+    border-radius: 25px;
+    padding: 14px;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 4px 4px #333e7d;
+    background: #4754a2;
+    color: white;
+    outline: none;
+    font-family: myFont;
+    font-size: 15px;
+    border:none;
+    cursor: pointer;
+}
+
+.back-to-home:hover{
+    background: #333e7d;
+    font-size: 17px;
+}

@@ -1,0 +1,70 @@
+/* author: Jovan Djordjevic */
+@font-face{
+    font-family: fancyFont;
+    src: url(../fontstyle/traveljournal.ttf);
+}
+
+body{
+    background: url(../images/16.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: fancyFont;
+}
+
+.logo{
+    width: 150px;
+    height: auto;
+}
+
+#quote{
+    font-size: 38px;
+    font-style: italic;
+    color: white;
+    padding: 20px;
+    padding-left: 25px;
+}
+
+
+#caption {
+    font-size: 36px;
+    color: white;
+    caption-side: top;
+    font-style: italic;
+}
+
+#badges {
+    background-color: #4754a2;
+    border-radius: 25px;
+    border-collapse: separate;
+    border-spacing: 25px 17px;
+}
+
+#badges .regular-badge {
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+}
+
+.popover {
+    text-align: center;
+}
+
+.popover-header {
+    text-align: center;
+    border-bottom: none !important;
+    background-color: #9ba3ca !important;
+    margin-bottom: -1px !important;
+}
+
+.popover-body {
+    text-align: center;
+    background-color: #9ba3ca !important;
+    border-bottom-left-radius: calc(.3rem - 1px);
+    border-bottom-right-radius: calc(.3rem - 1px);
+}
+
+.bs-popover-top>.arrow::after {
+    border-top-color: #9ba3ca !important;
+}
