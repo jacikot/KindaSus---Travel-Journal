@@ -84,7 +84,7 @@
       <a href="<?= base_url('Journal/countryJournal')?>" class="journal"><img src="<?php echo base_url("assets/images/journal.png")?>" class="journal"/></a>
     </div>
     <div class="ttip b-badge" tt-title="Badge collection" tt-text="Look what you've accomplished so far!">
-      <a href="badges.html" class="ttip"><img src="<?php echo base_url("assets/images/badge.png")?>" class="badge"/></a>
+      <a href="<?php echo base_url("Badges")?>" class="ttip"><img src="<?php echo base_url("assets/images/badge.png")?>" class="badge"/></a>
     </div>
     <img src="<?php echo base_url("assets/images/kov2.jpg")?>" class="envelope">
     <div id="regions_div" class='centerChart'></div>
