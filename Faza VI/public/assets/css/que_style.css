@@ -1,0 +1,144 @@
+/* autor: Jana Toljaga */
+body{
+    margin:0;
+    background: url(../images/proba13.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: myFont !important;
+}
+@font-face {
+    font-family:myFont;
+    src: url(../fontstyle/traveljournal.ttf) !important;
+}
+button.back{
+    background-color: #4754A2;
+    color:white;
+    border-radius: 25px;
+    float: right;
+    padding-right: 2%;
+    font-size: 16pt;
+    position:absolute;
+    top:6%;
+    right: 4%;
+    border-width: 0;
+    font-family: myFont;
+    outline: none;
+    box-shadow: 4px 4px #333e7d;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+button.back:hover{
+    color:#FBE3AA;
+    font-size: 18pt;
+}
+button.continue:hover{
+    font-size: 28pt;
+}
+#p1{
+    color:white;
+    text-align: center;
+    font-size: 350%;
+}
+.text{
+    color:#374492;
+    z-index: 1;
+}
+.errMess{
+    color:darkred;
+    position:absolute;
+
+}
+
+table{
+    z-index: 200 !important ;
+    width: 100px;
+    height: 100px;
+    margin-top:30px;
+    /*position: absolute;*/
+    /*left:10%;*/
+    /*top:28%;*/
+
+
+}
+
+
+table p{
+    font-size: 30px;
+    margin:13px;
+
+
+}
+
+
+.err{
+    text-align: center;
+    color:darkred;
+    display: none;
+
+}
+
+.username{
+    width:250px;
+    font-size: 180%;
+    text-align: center;
+    outline-width: 0;
+    border-radius: 15px;
+    border-width: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+button.continue{
+    right:5%;
+    top:70%;
+    font-size: 30pt;
+    background-color: transparent;
+    box-shadow: none;
+    cursor: pointer;
+}
+button.continue:hover{
+    font-size: 33pt;
+    color:#333e7d;
+}
+.env{
+    width:1000px;
+    height:400px;
+    position:absolute;
+    z-index: 0 !important;
+    /*left:3%;*/
+    /*top:8%;*/
+    /*margin:0;*/
+
+}
+div{
+    margin: 0;
+}
+
+.back-to-home{
+    position: absolute;
+    top: 5%;
+    right: 1.75%;
+    border-radius: 25px;
+    padding: 14px;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 4px 4px #333e7d;
+    background: #4754a2;
+    color: white;
+    outline: none;
+    font-family: myFont;
+    font-size: 15px;
+    border:none;
+    cursor: pointer;
+}
+
+.back-to-home:hover{
+    background: #333e7d;
+    font-size: 17px;
+}
+
