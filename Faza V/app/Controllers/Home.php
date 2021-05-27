@@ -10,4 +10,5 @@ class Home extends BaseController
 		return view('homepage.php');
 	}
 
+
 }

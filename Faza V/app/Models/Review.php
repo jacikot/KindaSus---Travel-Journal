@@ -86,3 +86,4 @@ class Review extends Model
     }
 
 }
+}
