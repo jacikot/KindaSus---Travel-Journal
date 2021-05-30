@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+    $(".container").fadeTo("slow",1,"linear");
     function validateQuestions(){
         let inputs =document.getElementsByTagName("input");
         let add=0;

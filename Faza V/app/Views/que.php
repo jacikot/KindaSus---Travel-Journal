@@ -69,7 +69,7 @@
     <img src="<?php echo base_url("assets/images/logo2.png")?>" width="13%" height="17%"/>
     <a href="<?php echo base_url('Map')?>" id="back"> <button class="back-to-home" id="backbutton" type="button">Passport</button></a>
 
-    <div class="container">
+    <div class="container" style="display: none">
         <div class="row ">
             <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 col-12 k border2" id="c1">
 <!--                <img src="--><?php //echo base_url("assets/images/env.png")?><!--" class="env">-->
@@ -81,21 +81,38 @@
                 </div>
                     <table id="table" class="table table-borderless  my-auto">
                         <tr>
-                            <td><p class="text" id="p3">Favourite country?</p></td>
+                            <td>
+
+                                <p class="text" id="p3">
+                                    <img src="<?php echo base_url("assets/images/patch-question.svg")?>">
+                                    Favourite country?
+                                </p>
+                            </td>
                             <td class="align-middle">
                                 <input type="text" id="t2" class="username border-bottom"/>
                                 <br><div id="err1" class="err" >Polje nije uneseno!</div>
                             </td>
                         </tr>
                         <tr >
-                            <td><p class="text" id="p3">Something you always travel with? &nbsp</p></td>
+                            <td>
+                                <p class="text" id="p3">
+                                    <img src="<?php echo base_url("assets/images/patch-question.svg")?>">
+                                    Something you always travel with? &nbsp
+                                </p>
+                            </td>
                             <td class="align-middle">
                                 <input type="text" id="t3" class="username border-bottom"/>
                                 <br><div id="err2" class="err">Polje nije uneseno!</div>
                             </td>
                         </tr>
                         <tr>
-                            <td><p class="text" id="p3">Someone you always travel with?</p></td>
+                            <td>
+
+                                <p class="text" id="p3">
+                                    <img src="<?php echo base_url("assets/images/patch-question.svg")?>">
+                                    Someone you always travel with?
+                                </p>
+                            </td>
                             <td class="align-middle">
                                 <input type="text" id="t4" class="username border-bottom"/>
                                 <br><div id="err3" class="err">Polje nije uneseno!</div>

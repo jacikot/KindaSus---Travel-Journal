@@ -35,16 +35,19 @@ button.back:hover{
 
 }
 
-.border2{
-   box-shadow: 3px 3px rgba(68, 18, 18, 0.5);
-}
+/*.border2{*/
+/*   box-shadow: 3px 3px rgba(154, 34, 34, 0.5);*/
+/*}*/
 
 .klasa{
     padding:10px;
 
 }
+p img{
+    margin-bottom: 2px;
+}
 .k{
-    backdrop-filter: blur(10px) brightness(70%) drop-shadow(16px 16px 10px black) !important;
+    backdrop-filter: blur(8px) brightness(85%) drop-shadow(16px 16px 10px black) !important;
 
     border-bottom-right-radius: 70px;
     border-top-left-radius: 70px;
@@ -66,6 +69,10 @@ button.back:hover{
 
 #check{
     font-size: 20px;
+
+}
+#check:hover{
+    color:darkred;
 }
 .col-12{
     padding: 0 !important;
@@ -108,10 +115,6 @@ table td.align-middle{
     background-color:rgba(0,0,0,0);
     color: white;
 }
-/*.modal{*/
-/*    opacity:80%;*/
-/*}*/
-
 
 button.continue{
 
