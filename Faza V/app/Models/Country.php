@@ -23,4 +23,5 @@ class Country extends Model
         $ret["code"]=$countries[0]->code;
         return $ret;
     }
+
 }

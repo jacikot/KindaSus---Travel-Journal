@@ -58,27 +58,37 @@ class Review extends Model
             ->findAll();
     }
 
-    public function getReviews($visits,$country,$code){
+    public function getReviewInfo($usr_id,$country,$place,$code){
+
+        $res=$this->select("review.id_rev AS id_rev,review.title AS title, review.text AS text, place.name AS place, country.name AS country,review.date_posted AS date", false)
+            ->join('visited', 'review.id_vis = visited.id_vis')
+            ->join('place', 'visited.id_plc = place.id_plc')
+            ->join('country', 'place.id_cnt = country.id_cnt')
+            ->join('registered_user', 'visited.id_usr = registered_user.id_usr')
+            ->where('visited.id_usr',$usr_id);
+        if($country!=null){
+            $res=$res->where('country.name',$country);
+        }
+        if($place!=null){
+            $res=$res->where('place.name',$place);
+        }
+        $res=$res->orderBy( 'date_posted',"ASC")->findAll();
         $revs=[];
-        $re=[];
         $re["country"]=$country;
         $re["code"]=$code;
         $revs[]=$re;
-        foreach($visits as $visit){
-            $reviews=$this->where('id_vis',$visit['id_vis'])->findAll();
-            foreach($reviews as $r){
-                $re=[];
-                $re["place"]=$visit["name"];
-                $re["title"]=$r->title;
-                $re["text"]=$r->text;
-                $re["date_posted"]=$r->date_posted;
-                $re["id_rev"]=$r->id_rev;
-                $revs[]=$re;
-
-            }
-
+        foreach ($res as $r){
+            $re=[];
+            $re["country"]=$r->country;
+            $re["place"]=$r->place;
+            $re["title"]=$r->title;
+            $re["text"]=$r->text;
+            $re["date_posted"]=$r->date;
+            $re["id_rev"]=$r->id_rev;
+            $revs[]=$re;
         }
         return $revs;
+
     }
 
     public function deleteReview($id){
