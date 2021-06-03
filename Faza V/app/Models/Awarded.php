@@ -7,13 +7,13 @@ use Config\Database;
 
 class Awarded extends Model
 {
-    protected $table      = 'awarded';
-    protected $primaryKey = 'id_usr';
-    protected $returnType     = 'object';
-    protected $allowedFields = ['id_bdg'];
+    protected $table = 'awarded';
+    protected $primaryKey = 'id_awd';
+    protected $returnType = 'object';
+    protected $allowedFields = ['id_usr, id_bdg'];
 
-    public function emptyCollectionForUser($idUsr)
+    /*public function emptyCollectionForUser($idUsr)
     {
         $this->where('id_usr', $idUsr)->delete();
-    }
+    }*/
 }

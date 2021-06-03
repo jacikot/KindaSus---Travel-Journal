@@ -1,4 +1,4 @@
-<?php namespace App\Models;
+<?php 
 
 namespace App\Models;
 
@@ -15,6 +15,7 @@ class ToGo extends Model
     {
         $this->where('id_usr', $idUsr)->delete();
     }
+
     public function getToGoPlaces($user)
     {
         $allToGo=$this->where("id_usr",$user)->findAll();
@@ -26,4 +27,3 @@ class ToGo extends Model
     }
       
 }
-

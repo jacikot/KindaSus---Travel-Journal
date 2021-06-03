@@ -10,93 +10,105 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    font-family: fancyFont;
-    overflow-y: hidden;
+    margin: auto;
+    overflow-x: unset;
+    font-family: fancyFont !important;
+
 }
 
-.logo{
-    position: absolute;
-    top: 15px;
-    left: 10px;
-    width: 150px;
-    height: auto;
-}
-
-#buttons-table {
-    position: absolute;
-    top: 0%; 
-    right: 0%;
-    margin-right: 25px;
-    margin-top: 25px;
-    border-spacing: 12px 10px;
-    border-collapse: separate;
+#header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 17px;
+    margin-top: 17px;
     z-index: 1;
 }
 
-#buttons-table tr {
-    line-height: 70px;
+#header img {
+    width: 120px;
+    height: 70px;
 }
 
-#login:hover, #register:hover, #back-to-home:hover {
-    background: #333e7d;
-    font-size: 17px;
+#header table {
+    border-spacing: 16px 12px;
+    border-collapse: separate;
 }
 
-#login, #register, #back-to-home {
-    border-radius: 25px;
+#header table button {
+    border-radius: 20px;
     width: 185px;
-    padding: 20px 20px;
-    text-decoration: none;
-    box-shadow: 4px 4px #333e7d;
+    font-size: 19px;
+    padding: 7px 15px;
+    box-shadow: 3px 3px #333e7d;
     background: #4754a2;
     color: white;
+}
+
+#header table button:hover {
+    background: #333e7d;
 }
 
 #back-to-home, #register {
     max-width: 125px;
 }
 
-#sort-by {
+.container-fluid {
     position: absolute;
-    top: 28%;
-    left: 3%;
+    top: 120px;
+    z-index: 0;
 }
 
-#sort-by #open-btn:hover {
+#sort-by {
+    position: absolute;
+    top: 88px;
+    left: -15%;
+}
+
+#sort-by form {
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-left: -10px;
+}
+
+#sort-by button,
+#sort-by input {
+    background-color: #333e7d;
+    color: white;
+    border-radius: 8px;
+}
+
+#sort-by button:hover,
+#sort-by input:hover {
     background-color: #4754a2;
 }
 
-#sort-by #open-btn, #sort-by #refresh-btn {
-    background-color: #333e7d;
+#outer-table caption {
+    caption-side: top;
     color: white;
+    text-align: center;
 }
 
-#sort-by #refresh-btn {
-    text-decoration: none;
-}
-
-#sort-by #refresh-btn:hover {
-    background: #4754a2;
-}
-
-#place-title {
-    margin-top: 130px;
-    margin-bottom: 20px;
+#review-table {
+    font-size: 22px;
+    hyphens: auto;
+    word-wrap: break-word;
 }
 
 #review-table td {
     border: none;
-    padding: 8px;
+    padding: 7px;
 }
 
 #review-table .review {
-    border-radius: 25px;
-    min-height: 80px;
+    border-radius: 22px;
+    min-height: 85px;
     display: flex;
     align-items: center;
-    background: #9ba3ca; 
+    background: #9ba3ca;
     color: white;
     text-decoration: none;
+    padding: 12px 0;
 }
 
 #review-table .review:hover {
@@ -106,21 +118,28 @@ body {
 #review-table .review .avatar {
     height: 40px;
     width: 40px;
-    margin-left: 5px;
-    border-radius: 3px;
+    border-radius: 4px;
 }
 
 #review-table .review .tokens {
-    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+#review-table .review .date {
+    font-size: 24px;
+    margin-right: 20px;
 }
 
 .fas.fa-star {
     color: #fbe3aa;
 }
 
-#review-table .review .date {
-    font-size: 22px;
-    margin-right: 20px;
+.star {
+    border-radius: 50%;
+    padding: 5px;
 }
 
 ::-webkit-scrollbar {
@@ -129,7 +148,7 @@ body {
 
 ::-webkit-scrollbar-track {
     border-radius: 5px;
-    background: white; 
+    background: white;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -138,15 +157,19 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #4754a2; 
+    background: #4754a2;
 }
 
 ::-webkit-scrollbar-thumb:active {
     background: #9ba3ca;
 }
 
-.my-custom-scrollbar {
-    position: relative;
-    height: 480px;
-    overflow: auto;
+#fail-banner {
+    margin-top: 40px;
+    font-size: 42px;
+    color: white;
+    background-color: #4754a2;
+    border-radius: 40px;
+    padding: 10px;
+    border: 2px solid #212529;
 }

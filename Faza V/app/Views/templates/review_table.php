@@ -3,11 +3,9 @@
         <div class="row">
             <div class="col-11">
                 <h2 id="place-title">
-                    <i class="fas fa-star"></i>
-                    &nbsp;User reviews - <?php
-                    foreach ($placeAndCountry as $plc) {
-                        echo "$plc->place, $plc->country";
-                    } ?>
+                    <i class="fas fa-star"></i>&nbsp;&nbsp;
+                    &nbsp;User reviews - <?= $placeAndCountry ?>&nbsp;
+                    <img src="<?= "https://flagcdn.com/40x30/$countryCode.png" ?>" style="width:40px;height:30px;">&nbsp;&nbsp;&nbsp;
                     <i class="fas fa-star"></i>
                 </h2>
             </div>
@@ -22,15 +20,26 @@
                                 <td>
                                     <a class="review" href="
                                     <?php
-                                    if (isset($_SESSION['id_usr']))
-                                        echo site_url("ListOfReviews/reviewUser/$review->id");
-                                    else
-                                        echo site_url("ListOfReviews/reviewGuest/$review->id");
-                                    ?>">
+                                            $_SESSION['id_rev'] = $review->id;
+                                            echo site_url("Review/index/");
+                                            ?>">
                                         <div class="col-1"><img class="avatar" src="<?= base_url("assets/images/avatar.png") ?>"></div>
                                         <div class="col-3"><span class="username"><?= $review->username ?></span></div>
                                         <div class="col-4"><span class="review-title"><?= $review->title ?></span></div>
-                                        <div class="col-2"><span class="tokens"><?= $review->tokens ?>&nbsp;&nbsp;<i class="fas fa-star"></i></span></div>
+                                        <div class="col-2"><span class="tokens">
+                                                <span class="token-cnt"><?= $review->tokens ?></span>&nbsp;&nbsp;<i class="
+                                        <?php
+                                                if ($usrSet == true || $review->idOwr == 1) {                  // VRATI
+                                                    echo "fas fa-star";
+                                                }
+                                                else {
+                                                    if ($review->foundUseful == 0)
+                                                        echo "far fa-star tokenStar";
+                                                    else
+                                                        echo "fas fa-star tokenStar";
+                                                    echo "\" data-id_rev=\"$review->id\" data-id_owr=\"$review->idOwr";
+                                                }
+                                                 ?>"></i></span></div>
                                         <div class="col-2"><span class="date"><?php
                                                 $dateParts = explode('-', $review->date);
                                                 echo "$dateParts[2].$dateParts[1].$dateParts[0].";

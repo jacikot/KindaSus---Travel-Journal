@@ -50,7 +50,7 @@
                                         <td>
                                             <a class="review" href="<?php
                                             $_SESSION['id_rev'] = $review->idRev;
-                                            echo site_url("Review/index/");
+                                            echo site_url("Review");
                                             ?>">
                                                 <div class="col-1"><img class="avatar-rev" src="<?= base_url("assets/images/avatar.png") ?>"></div>
 <!--                                                <div class="col-1"><img class="avatar-rev" src="<?//=x base_url($review->avatarPath) ?>"></div>-->

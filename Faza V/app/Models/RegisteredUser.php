@@ -9,13 +9,13 @@ class RegisteredUser extends Model
     protected $table = 'registered_user';
     protected $primaryKey = 'id_usr';
     protected $returnType = 'object';
-    protected $allowedFields = ['id_usr', 'username', 'password', 'name', 'surname', 'e-mail', 'security_answer_1', 
+    protected $allowedFields = ['username', 'password', 'name', 'surname', 'e-mail', 'security_answer_1',
                                 'security_answer_2', 'security_answer_3', 'token_count', 'avatar_path', 'acc_creation_date', 'id_plc'];
     protected $dateFormat = 'date';
 
     public function getAllUsers()
     {
-        return $this->select("registered_user.id_usr AS id,
+        return $this->select("registered_user.id_usr AS idUsr,
                                 registered_user.username AS username, 
                                 registered_user.avatar_path AS avatar_path", false)
                     ->orderBy('registered_user.acc_creation_date', "DESC")
@@ -25,18 +25,28 @@ class RegisteredUser extends Model
     public function deleteUser($idUsr)
     {
         return $this->delete($idUsr);
+        // BRISI IZ FOLDERA ALOOOOOOOOOOOOOOOOOOOOOOOOOOOOOo
+    }
+
+    public function updateOwnerTokens($idOwr, $vote)
+    {
+        if ($vote == 'up') {
+            $this->where("id_usr", $idOwr)->set('token_count', 'token_count + 1', false)->update();
+        } else {
+            $this->where("id_usr", $idOwr)->set('token_count', 'token_count - 1', false)->update();
+        }
     }
 
     public function validateAnswers($uid,$q1,$q2,$q3): string
     {
 
-        $forWhere=["id_usr"=>$uid,"security_answer_1"=>$q1,"security_answer_2"=>$q2,"security_answer_3"=>$q3];
+        $forWhere = ["id_usr" => $uid, "security_answer_1" => $q1, "security_answer_2" => $q2, "security_answer_3" => $q3];
         //$u=$this->where($forWhere)->findAll();
-        $u=$this->find($uid);
-        if($u->security_answer_1==null ||$u->security_answer_2==null ||$u->security_answer_3==null){
+        $u = $this->find($uid);
+        if ($u->security_answer_1 == null || $u->security_answer_2 == null || $u->security_answer_3 == null) {
             return "Password changing is not available!";
         }
-        if($u->security_answer_1!=$q1 ||$u->security_answer_2!=$q2 ||$u->security_answer_3!=$q3){
+        if ($u->security_answer_1 != $q1 || $u->security_answer_2 != $q2 || $u->security_answer_3 != $q3) {
             return "Your answers are incorrect. Try again!";
         }
         return "Your answers are correct! Press the button to continue!";

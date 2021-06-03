@@ -7,17 +7,17 @@ use Config\Database;
 
 class Badge extends Model
 {
-    protected $table      = 'badge';
+    protected $table = 'badge';
     protected $primaryKey = 'id_bdg';
     protected $useAutoIncrement = true;
-    protected $returnType     = 'object';
-    protected $allowedFields = ['icon_path', 'title', 'description'];
+    protected $returnType = 'object';
+    protected $allowedFields = ['badge_path', 'title', 'description'];
 
 
     public function getBadgesForUser($idUsr)
     {
         return $this->select("badge.id_bdg AS id,
-                                badge.icon_path AS icon_path, 
+                                badge.badge_path AS badge_path, 
                                 badge.title AS title, 
                                 badge.description AS description, 
                                 awarded.id_usr AS user", false)
