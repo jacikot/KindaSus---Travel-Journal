@@ -13,7 +13,7 @@ class Review extends Model
     protected $allowedFields = ['title', 'text', 'privacy', 'token_count', 'date_posted', 'id_vis'];
     protected $dateFormat = 'date';
 
-    public function getReviewsForPlaceGuest($idPlc, $type = 'tokens', $direction = 'DESC')
+    public function getReviewsForPlaceGuest($idPlc)
     {
         return $this->select('review.id_rev AS idRev,
                                 registered_user.avatar_path AS avatar_path, 
@@ -24,11 +24,11 @@ class Review extends Model
             ->where('privacy', 0)
             ->join('visited', "review.id_vis = visited.id_vis AND visited.id_plc = $idPlc")
             ->join('registered_user', 'visited.id_usr = registered_user.id_usr')
-            ->orderBy($type, $direction)
+            ->orderBy('tokens', 'DESC')
             ->findAll();
     }
 
-    public function getReviewsForPlaceUser($idPlc, $idUsr, $type = 'tokens', $direction = 'DESC')
+    public function getReviewsForPlaceUser($idPlc, $idUsr)
     {
         return $this->select("review.id_rev AS idRev,
                                 registered_user.id_usr AS idOwr,
@@ -45,11 +45,11 @@ class Review extends Model
             ->join('visited', "review.id_vis = visited.id_vis AND visited.id_plc = $idPlc")
             ->join('registered_user', 'visited.id_usr = registered_user.id_usr')
             ->join('found_useful', "$idUsr = found_useful.id_usr AND review.id_rev = found_useful.id_rev", "left")
-            ->orderBy($type, $direction)
+            ->orderBy('tokens', 'DESC')
             ->findAll();
     }
 
-    public function getAllReviews($type = 'tokens', $direction = 'DESC')
+    public function getAllReviews()
     {
         return $this->select("review.id_rev AS idRev,
                                 registered_user.id_usr AS idOwr,
@@ -65,7 +65,7 @@ class Review extends Model
             ->join('place', 'visited.id_plc = place.id_plc')
             ->join('country', 'place.id_cnt = country.id_cnt')
             ->join('registered_user', 'visited.id_usr = registered_user.id_usr')
-            ->orderBy($type, $direction)
+            ->orderBy('tokens', 'DESC')
             ->findAll();
     }
 
@@ -105,5 +105,54 @@ class Review extends Model
     {
         $this->where("id_rev", $idRev)->set('privacy', '1', false)->update();
     }
-}
 
+    public function orderReviews($type, $direction, $reviews)
+    {
+        usort($reviews, function ($a, $b) use ($type, $direction) {
+            if ($type == 'tokens')
+                return ($a->tokens - $b->tokens) * (($direction == 'ASC') ? 1 : -1);
+            if ($direction == 'DESC')
+                return $a->date < $b->date;
+            return $a->date > $b->date;
+        });
+        return $reviews;
+    }
+
+    public function getReviewInfo($usr_id,$country,$place,$code)
+    {
+        $res=$this->select("review.id_rev AS id_rev,review.title AS title, review.text AS text, place.name AS place, country.name AS country,review.date_posted AS date", false)
+            ->join('visited', 'review.id_vis = visited.id_vis')
+            ->join('place', 'visited.id_plc = place.id_plc')
+            ->join('country', 'place.id_cnt = country.id_cnt')
+            ->join('registered_user', 'visited.id_usr = registered_user.id_usr')
+            ->where('visited.id_usr',$usr_id);
+        if($country!=null){
+            $res=$res->where('country.name',$country);
+        }
+        if($place!=null){
+            $res=$res->where('place.name',$place);
+        }
+        $res=$res->orderBy( 'date_posted',"ASC")->findAll();
+        $revs=[];
+        $re["country"]=$country;
+        $re["code"]=$code;
+        $revs[]=$re;
+        foreach ($res as $r){
+            $re=[];
+            $re["country"]=$r->country;
+            $re["place"]=$r->place;
+            $re["title"]=$r->title;
+            $re["text"]=$r->text;
+            $re["date_posted"]=$r->date;
+            $re["id_rev"]=$r->id_rev;
+            $revs[]=$re;
+        }
+        return $revs;
+
+    }
+
+    public function deleteReview($id){
+        $this->where("id_rev",$id)->delete();
+    }
+
+}

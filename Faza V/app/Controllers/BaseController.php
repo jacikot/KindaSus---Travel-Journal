@@ -55,8 +55,10 @@ class BaseController extends Controller
 		//--------------------------------------------------------------------
 		// Preload any models, libraries, etc, here.
 		//--------------------------------------------------------------------
-        $this->validation = Services::validation();
+
+        $this->validation = \Config\Services::validation();
         $this->session = session();
+
 	}
 
     protected function displayPage($fileName, $data)

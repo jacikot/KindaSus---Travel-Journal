@@ -2,6 +2,10 @@
 
 namespace App\Models;
 
+
+namespace App\Models;
+
+
 use CodeIgniter\Model;
 
 class Place extends Model
@@ -10,19 +14,42 @@ class Place extends Model
     protected $primaryKey = 'id_plc';
     protected $useAutoIncrement = true;
     protected $returnType = 'object';
-    protected $allowedFields = ['name', 'categorized', 'category_1', 'category_2',
-                                'category_3', 'category_4', 'category_5', 'id_img', 'id_cnt'];
+    protected $allowedFields = ['name', 'category','categorized','heritage','relax','sightseeing',
+        'weather','populated','id_img','id_cnt'];
 
-    public function findMatchingPlaceOrCountry($inputVal) {
-        return $this->select("place.id_plc as id,
-                                    place.name as place,
-                                    country.name as country,
-                                    country.code as code", false)
-            ->join('country', 'place.id_cnt = country.id_cnt')
-            ->like('place.name', $inputVal, 'after', true, true)
-            ->orLike('country.name', $inputVal, 'after', true, true)
-            ->findAll();
+    public function getAllCategorized(){
+       return $this->where('categorized',1)->findAll();
     }
+  
+    public function findPlace($name){
+        return $this->where('name',$name)->findAll();
+    }
+
+    public function findPlaceId($name){
+        $place =  $this->where('name',$name)->findAll();
+
+        if($place == null) return null;
+
+        foreach($place as $p){
+            return $p->id_plc;
+        }
+
+    }
+
+    public function insertPlace(){
+
+    }
+	
+	public function findMatchingPlaceOrCountry($inputVal) {
+		return $this->select("place.id_plc as id,
+								place.name as place,
+								country.name as country,
+								country.code as code", false)
+		->join('country', 'place.id_cnt = country.id_cnt')
+		->like('place.name', $inputVal, 'after', true, true)
+		->orLike('country.name', $inputVal, 'after', true, true)
+		->findAll();
+	}
 
     public function getCountry($plcid){
         $visited=$this->find($plcid);

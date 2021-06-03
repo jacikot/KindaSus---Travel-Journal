@@ -8,7 +8,7 @@ class Country extends Model
     protected $primaryKey = 'id_cnt';
     protected $returnType = 'object';
 
-    protected $allowedFields = ['name','code'];
+    protected $allowedFields =['name','code','id_con'];
 
     public function getCountry($cntid){
         $visited=$this->find($cntid);
@@ -24,4 +24,5 @@ class Country extends Model
         $ret["code"]=$countries[0]->code;
         return $ret;
     }
+
 }
