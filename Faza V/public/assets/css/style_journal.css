@@ -9,12 +9,13 @@
     background-image: radial-gradient(rgb(22,68,117),rgb(94,40,68));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    z-index: 150;
 }
 
-.fas.fa-trash-alt:focus{
-    outline: none !important;
-    background-color: transparent !important;
-}
+/*.fas.fa-trash-alt:focus{*/
+/*    outline: none !important;*/
+/*    background-color: transparent !important;*/
+/*}*/
 
 .k2{
     margin-bottom: 0 !important;
@@ -44,6 +45,10 @@
     height: 80% !important;
     background-color: rgba(255,255,255,0.4);
     margin-top:10px;
+}
+
+.forList:hover{
+    background-color: rgba(255,255,255,0.8);
 }
 .ljub{
     color:rgb(129,46,70);
@@ -98,6 +103,7 @@ td{
     text-align: center;
 
 }
+
 #placetime{
 
     border-right: 2px solid white;

@@ -42,6 +42,7 @@
         var baseURL2="<?= base_url('Journal/deleteReview')?>";
         function deleteReview(idrev){
             alert(idrev);
+            alert("jana");
             $.ajax(
                 {
                     url:baseURL2,
@@ -73,7 +74,7 @@
         }
     </script>
 </head>
-<body onload="initialize();">
+<body onload="initialize();" style="display: none">
 <!--    <div id='header'>-->
 <!--        -->
 <!--            height="10%" width="10%"-->
@@ -83,7 +84,7 @@
 <!--        <a href="--><?php //echo base_url('Map')?><!--"> <button class=" back-to-home" type="button">Passport</button></a>-->
 <!--        -->
 <!--    </div >-->
-    <div class="container">
+    <div class="container container-fluid">
         <div class="row">
             <div class="col-12 offset k2 text-center ">
                 <h1 style="letter-spacing: 5pt;"> </h1>

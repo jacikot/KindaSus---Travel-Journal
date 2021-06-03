@@ -1,7 +1,7 @@
 /* autor: Jana Toljaga */
 @font-face {
     font-family:myFont;
-    src: url(../fontstyle/traveljournal.ttf);
+    src: url(../fontstyle/travel_journal_3.ttf);
 }
 .ttip::before,
 .ttip::after{

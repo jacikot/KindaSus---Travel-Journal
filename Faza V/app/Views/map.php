@@ -4,10 +4,18 @@
   <head>
     <link rel="stylesheet" href="<?php echo base_url("/assets/css/map.css")?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/css/map_tooltip.css")?>">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src=<?php echo base_url("assets/js/map.js")?>></script>
-    <script src="https://kit.fontawesome.com/7d57026c7c.js" crossorigin="anonymous"></script>
+
+      <script src="https://kit.fontawesome.com/7d57026c7c.js" crossorigin="anonymous"></script>
       <script>
               var defaultAvatar="<?php echo  base_url("/assets/images/avatar.png")?>"
               var baseURL="<?= base_url('Map/getMap')?>";
@@ -48,24 +56,34 @@
 
   </head>
   <body onload="initialize()">
-    <div class="header">
-        <img src="<?php echo base_url("/assets/images/logo2.png")?>" width=auto height="17%"/>
-        <div id="menu_bar" class="menu_list">
-            <div class="menu_list_link">
-                <p id="passport">PASSPORT</p>
-                <div class="menu_list_content">
-                    <img id="avatar" width="30px" height="30px"/>
-                    <p id="username" ><b></b></p>
-                    <br/>
-                    <i class="fas fa-star"></i>
-                    <p id="tokens" style="display:inline; color:white; font-size:15pt">123</p>
-                    <hr>
-                    <a href="<?php echo base_url("Password/listPassQuestions")?>">change password</a><br/>
-                    <a href="<?php echo base_url("Logout/logout")?>">logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
+      <div class="jumbotron jumbotron-fluid header">
+          <div class="container">
+              <h1>
+                  Travel Journal
+              </h1>
+
+          </div>
+          <div id="menu_bar" class="menu_list">
+          </div>
+      </div>
+<!--    <div class="header">-->
+<!--        <img src="--><?php //echo base_url("/assets/images/logo2.png")?><!--" width=auto height="17%"/>-->
+<!--        <div id="menu_bar" class="menu_list">-->
+<!--            <div class="menu_list_link">-->
+<!--                <p id="passport">PASSPORT</p>-->
+<!--                <div class="menu_list_content">-->
+<!--                    <img id="avatar" width="30px" height="30px"/>-->
+<!--                    <p id="username" ><b></b></p>-->
+<!--                    <br/>-->
+<!--                    <i class="fas fa-star"></i>-->
+<!--                    <p id="tokens" style="display:inline; color:white; font-size:15pt">123</p>-->
+<!--                    <hr>-->
+<!--                    <a href="--><?php //echo base_url("Password/listPassQuestions")?><!--">change password</a><br/>-->
+<!--                    <a href="--><?php //echo base_url("Logout/logout")?><!--">logout</a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
     <br/>
 
     <div class="ttip b-search" tt-title="Search & Trending" tt-text="Explore places through other's eyes!">
@@ -86,7 +104,7 @@
     <div class="ttip b-badge" tt-title="Badge collection" tt-text="Look what you've accomplished so far!">
       <a href="<?php echo base_url("Badges")?>" class="ttip"><img src="<?php echo base_url("assets/images/badge.png")?>" class="badge"/></a>
     </div>
-    <img src="<?php echo base_url("assets/images/kov2.jpg")?>" class="envelope">
+<!--    <img src="--><?php //echo base_url("assets/images/kov2.jpg")?><!--" class="envelope">-->
     <div id="regions_div" class='centerChart'></div>
     
     

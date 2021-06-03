@@ -5,8 +5,8 @@ function insertTrash(list,parent){
     let itr=document.createElement("i");
     itr.classList.add("fas");
     itr.classList.add("fa-trash-alt");
-    trash.addEventListener("click",function (){
-        alert("jana");
+    trash.id="trash"+parent.id;
+    $(document).on("click","#trash"+parent.id,function (){
         deleteReview(parent.id);
         list.removeChild(parent);
     });
@@ -49,13 +49,14 @@ function insertReview(data,list,country){
     d.classList.add("d-flex");
     div.appendChild(d);
 
-    let trash=document.createElement("div");
-    trash.appendChild(insertTrash(list,elem));
-    div.appendChild(trash);
+
+    div.appendChild(insertTrash(list,elem));
     elem.appendChild(div);
     elem.innerHTML+="<br>";
     list.appendChild(elem);
-
+    div.addEventListener("click",function(){
+       alert();
+    });
 }
 let places=[];
 function insertOption(place,select,button,list){
@@ -108,11 +109,7 @@ function insertData(data){
         insertReview(data[i],list,data[0]["country"]);
         insertOption(data[i]["place"],select,button,list);
     }
-
-
-
-
-
+    $("body").fadeTo("slow",1);
 
 }
 function eventHandler(list,selected){
@@ -138,5 +135,8 @@ $(document).ready(function(){
        let list= document.getElementById("JournalList");
        eventHandler(list,$("#all"));
    }) ;
+
+
+
 });
 
