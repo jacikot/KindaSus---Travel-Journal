@@ -27,12 +27,10 @@ class Quiz extends BaseController
         'Remember that happiness is a way of travel, not a destination.',
         'Travel is the only thing you buy that makes you richer.',
         'In the end, we only regret the chances we didn’t take',
-        'My goal is to run out of pages in my passport.'
+        'My goal is to run out of pages in my passport.',
+        'Still round the corner, there may wait, a new road or a secret gate'
         ];
 
-
-    //dodaj current question
-    // dodaj current answersId
 
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
@@ -65,7 +63,10 @@ class Quiz extends BaseController
             'crossed_off' => 0
         ]);
 
-        echo "Success!";
+        $placeModel = new Place();
+        $plc = $placeModel->find($id);
+
+        echo $plc->name;
 
     }
 
@@ -106,7 +107,7 @@ class Quiz extends BaseController
 
     private function generateNextQuestion(){
         while(true) {
-            $id = rand($this->minId, $this->maxId);
+            $id = rand($this->minId, /*$this->maxId*/20);
 
             if (!in_array($id, $this->answeredQuestions)) {
                 array_push($this->answeredQuestions,$id);
@@ -145,7 +146,7 @@ class Quiz extends BaseController
         $bestScore = PHP_INT_MAX;
         $idBest = 0;
 
-        // moras bazu da sredis prvo za ovo
+
         foreach($places as $place){
             $currScore = 0;
             $currScore += abs($place->heritage - $this->score['heritage'] );
@@ -153,8 +154,6 @@ class Quiz extends BaseController
             $currScore += abs($place->sightseeing - $this->score['sightseeing']);
             $currScore += abs($place->weather - $this->score['weather']) ;
             $currScore += abs($place->populated - $this->score['populated'] );
-
-
 
             if($currScore < $bestScore){
                 $bestScore = $currScore;
@@ -189,10 +188,6 @@ class Quiz extends BaseController
             $question = $this->getQuestion($id);
             $answers = $this->getAnswers($question);
         }
-
-        // povremeno pukne vidi sta ste desava sa tim
-        // mroas da dodas da moze da ide back!!!
-        // moras da ubacis i tip forme
 
 
         if($curr == 6){

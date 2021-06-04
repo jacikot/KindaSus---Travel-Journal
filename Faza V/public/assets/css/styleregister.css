@@ -1,168 +1,94 @@
 /* author: Dimitrije Panic */
 @font-face {
     font-family: myFont;
-    src: url(../fontstyle/traveljournal.ttf);
+    src: url(../fontstyle/travel_journal_3.ttf);
+}
+
+.naslov{
+    text-align:center;
 }
 
 body{
-    background-image: url(../images/register1.png);
-    background-repeat: no-repeat;
-    object-fit: contain;
-    background-size: cover /*100% 100%*/;
+    background: url(../images/register1.png) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
 
 }
+input{
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    border: none !important;
+    border-bottom: 1px solid white !important;
+    outline: none !important;
+    background-color: rgba(166, 159, 200, 0);
+    color: white !important;
+    font-size: 3vh !important;
+
+}
+#slikaprofila{
+    opacity: 70%;
+    width: 6.8vw;
+    height: 15vh;
+}
+#profil{
+    text-align:center;
+
+}
+#borderless{
+    border:none !important;
+}
+.btn{
+    font-size: 4vh;
+    font-family:myFont;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+}
+.pozadina{
+    background-color: rgba(114, 80, 152, 0.71);
+    backdrop-filter: blur(3px);
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 60%; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+    opacity: 60%;
+}
+
+.naslov{
+    font-size: 5vh;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+    opacity: 60%;
+}
+
+table{
+    color: white !important;
+    font-family: myFont;
+}
+
+td{
+    border: none !important;
+    padding-top: 2px !important;
+    padding-bottom: 4px !important;
+}
+
+#logo{
+    width: 10vw;
+    height: 10vh;
+    object-fit: contain;
+}
+#inputslike:hover{
+    cursor: pointer;
+}
 
 #header{
-    width:100%;
-    display: flex;
-    flex-direction: row;
+    vertical-align: middle !important;
+    display:flex;
+    flex-direction:row;
     justify-content: space-between;
-    align-items: center;
-    font-family: myFont;
-}
-.button{
-    outline:none;
-    font-size:100%;
-    font-family:myFont;
-    position: absolute;
-    top: 5%;
-    right: 1.75%;
-    border-radius: 25px;
-    padding: 14px;
-    width: 125px;
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
-    box-shadow: 4px 4px #333e7d;
-    background: #4754a2;
-    color: white;
-}
-
-.button:hover{
-    cursor: pointer;
-    background: #333e7d;
-    font-size: 17px;
-}
-
-/*.button{
-    outline:none;
-    font-size: 100%;
-    font-family:MyFont;
-    background-color: #4754a2;
-    border-radius:12px;
-    color:white;
-}
-
-.button:hover{
-    cursor: pointer;
-    size:150%;
-    color:pink;
-}*/
-
-#submitbutton:hover{
-    cursor: pointer;
-    size:150%;
-    font-size:250%;
-}
-
-.move{
-    position:relative;
-    left:-5px;
-
-}
-.modal-content{
-    background-color: #4754a2;
-}
-
-.mybtn{
-    color:white !important;
-    background-color: #4754a2 !important;
-    font-family: myFont;
-    margin:auto !important;
-}
-
-.modal-title{
-    font-size: 200%;
-    font-family: myFont;
-    color: #4754a2;
-    margin:auto !important;
-}
-
-.modal-body{
-    text-align: center !important;
-    font-size: 150%;
-    font-family: myFont;
-    color: #4754a2;
-}
-
-.modal-header{
-    text-align:center !important;
-}
-#title{
-    position:relative;
-    top:-20px;
-    width:100%;
-    height:15%;
-    text-align: center;
-    font-family:myFont;
-    color:white;
-    font-size:350%;
-}
-
-#menu{
-    font-family:myFont;
-    color:white;
-    font-size:170%;
-    height:70%;
-    display: flex;
-    flex-direction: row;
-}
-
-#menuleft{
-    height:25%;
-    width:50%;
-}
-
-#menuright{
-    height:25%;
-    width:50%;
-}
-
-table {
-    width:100%;
-
-}
-
-input {
-    padding-left:6px;
-    outline:none;
-    border:none;
-    border-radius:7px;
-    font-size:/*60%*/10px;
-    color:#4754a2;
-}
-
-#footer{
-    position:absolute;
-    right:5%;
-    bottom:5%;
-    font-family:myFont;
-    color:white;
-    font-size:130%;
-}
-
-
-#submitbutton{
-    outline: none;
-    font-family:myFont;
-    color:#4754a2;
-    background-color:transparent;
-    border:none;
-    position:absolute;
-    font-size:210%;
-    bottom:10%;
-    left:37.5%;
 }
