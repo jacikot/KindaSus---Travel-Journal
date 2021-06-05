@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $(".container").fadeTo("slow",1,"linear");
+    $(".container-fluid").fadeTo("slow",1,"linear");
     function validateQuestions(){
         let inputs =document.getElementsByTagName("input");
         let add=0;
@@ -26,6 +26,9 @@ $(document).ready(function(){
     }
 
     $("#check").on("click",validateQuestions);
+    $("#back").on("click",function(){
+        window.history.back();
+    })
 });
 
 function addUsername(){
@@ -49,10 +52,10 @@ function addUsername(){
 
 
 function guestMode(){
-    let link=document.getElementById("back");
-    link.setAttribute("href",backGuest);
-    let button=document.getElementById("backbutton");
-    button.innerText="Back";
+    // let link=document.getElementById("back");
+    // link.setAttribute("href",backGuest);
+    // let button=document.getElementById("backbutton");
+    // button.innerText="Back";
     addUsername();
     document.getElementsByClassName("row")[0].style.marginTop="0px";
     // let env=document.getElementsByClassName("env");

@@ -194,3 +194,21 @@ body{
 
 }
 
+.modal-footer{
+    display:flex !important;
+    flex-direction:row !important;
+    justify-content: space-between !important;
+}
+#inputslike:hover{
+    cursor:pointer;
+}
+#telo{
+    text-align:center;
+}
+
+#slikaprofila{
+    object-fit:contain;
+    height: 120px;
+    width: 120px;
+}
+

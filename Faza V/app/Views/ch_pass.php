@@ -23,10 +23,8 @@
                     {'pass': password, 'passC': pc},
                     function (data) {
                         //alert(data);
-                        document.getElementById("note").innerText = data;
-                        if ("Password successfully changed" != data) {
-                            document.getElementById("note").style.color = "darkred";
-                        }
+                        document.getElementById("message").innerText = data;
+                        $("#myModal").modal();
                     }
                 );
             }
@@ -45,18 +43,37 @@
                     }
                 });
             }
+            $(document).ready(function(){
+                $("#back").on("click",function (){
+                    window.location.href=
+                    <?php if(!isset($_SESSION['forgot'])) { ?>  window.location.href=
+                        "<?php echo base_url('Map')?>";
+                    <?php } else { ?> window.location.href=
+                        "<?php echo base_url('GuestLogin')?>";
+                    <?php }?>
+                });
+            });
 
 
 
     </script>
 </head>
 <body onload="getUser();">
-<img src="<?php echo base_url("assets/images/logo2.png")?>" width="13%" height="17%"/>
-<a href="<?php echo base_url('Map')?>" id="back"> <button class="back-to-home" type="button" id="backbutton">Passport</button></a>
-    <div class="container" style="display: none">
-
+<!--<img src="--><?php //echo base_url("assets/images/logo2.png")?><!--" width="13%" height="17%"/>-->
+<!--<a href="--><?php //echo base_url('Map')?><!--" id="back"> <button class="back-to-home" type="button" id="backbutton">Passport</button></a>-->
+    <div class="container-fluid" style="display: none">
         <div class="row">
-            <div class="col-lg-8 offset-lg-2 text-center">
+            <div class="col-lg-12 col-md-12 mt-2" id="header">
+                <img src="<?php echo base_url('assets/images/pic.png') ?>" id="logo"/>
+                <button class="btn btn-outline-light moj" id="back">
+                    <?php if(!isset($_SESSION['forgot'])) { ?> Back To Home
+                    <?php } else { ?> Back
+                    <?php }?>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3 text-center mt-5">
                 <table class="table table-borderless k">
                     <tr>
                         <td>
@@ -83,15 +100,24 @@
                             <button class="btn btn-outline-light ok" type="button" id="change2" onclick="changePass()">Change password</button>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <div class="note" ><p class="note" id="note"></p></div>
-                        </td>
-                    </tr>
                 </table>
 
 
 
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Message</h5>
+                </div>
+                <div class="modal-body" id="message">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-dismiss="modal">Close</button>
+                </div>
             </div>
         </div>
     </div>

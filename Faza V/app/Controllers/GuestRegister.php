@@ -28,9 +28,13 @@ class GuestRegister extends BaseController
     }
 
     public function addQuestions(){
-        $q1 = $this->request->getVar('q1');
-        $q2 = $this->request->getVar('q2');
-        $q3 = $this->request->getVar('q3');
+        if($this->session->get('status')=="answered"){
+            echo "You have already answered! Press the button to continue!";
+            return;
+        }
+        $q1 = $this->request->getVar('q0');
+        $q2 = $this->request->getVar('q1');
+        $q3 = $this->request->getVar('q2');
 
         if(!isset($q1) || !isset($q1) || !isset($q1)){
             echo "All questions are a must!";
@@ -49,9 +53,10 @@ class GuestRegister extends BaseController
             $user->security_answer_1=$q1;
             $user->security_answer_2=$q2;
             $user->security_answer_3=$q3;
+            $userModel->save($user);
             break;
         }
-
+        $this->session->set('status','answered');
         echo "Thank you for answering all questions!";
 
 

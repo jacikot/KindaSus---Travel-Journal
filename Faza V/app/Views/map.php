@@ -17,6 +17,7 @@
 
       <script src="https://kit.fontawesome.com/7d57026c7c.js" crossorigin="anonymous"></script>
       <script>
+              var logoutURL="<?php echo base_url("Logout")?>";
               var defaultAvatar="<?php echo  base_url("/assets/images/avatar.png")?>"
               var baseURL="<?= base_url('Map/getMap')?>";
               function ajaxCall() {
@@ -43,6 +44,23 @@
                       let ret=JSON.parse(data);
                       loadMenu(ret);
                   });
+              }
+              function picAjax(fd){
+                  $.ajax({
+                      url: "<?=base_url('ChangePic/changePic')?>",
+                      type: "POST",
+                      data: fd,
+                      processData: false,
+                      contentType: false,
+                  }).done(function(data) {
+                      let val = data.split(",");
+                      if(val.length > 1){
+                          //val[1] je tag za sliku
+                          alert("Successfully changed your profile picture!")
+                      } else {
+                          alert("data");
+                      }
+                  })
               }
       </script>
 
@@ -104,7 +122,7 @@
 
                               <td colspan="2">
                                   <img src="<?php echo base_url("/assets/images/exit.svg")?>">
-                                  &nbsp;<a href="<?php echo base_url("Logout")?>">logout</a>
+                                  &nbsp;<a href="#" id="logout">logout</a>
                               </td>
                           </tr>
 
@@ -152,13 +170,39 @@
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
               <div class="modal-content">
+                  <div class="modal-header" id="head">
+                      <h5 class="modal-title" id="exampleModalLabel">Change your profile picture</h5>
+                  </div>
+                  <div class="modal-body" id="telo">
+                      <img  id="slikaprofila" class="rounded-circle" src="<?php echo base_url('assets/images/default-avatar-2.jpg') ?>" > <br>
+
+                      <label id="inputslike" for="file-upload" class="custom-file-upload">
+                          <div class="mt-2 my-auto">
+                              Upload an image
+                          </div>
+
+                      </label>
+                      <input id="file-upload"  type="file" onchange="document.getElementById('slikaprofila').src = window.URL.createObjectURL(this.files[0])" hidden/>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-dark" onclick="changePic()">Change</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
                   <div class="modal-header">
                       <h5 class="modal-title" id="exampleModalLabel">Message</h5>
                   </div>
                   <div class="modal-body">
+                      Are you sure you want to log out?
                   </div>
                   <div class="modal-footer">
-                      <button type="button" class="btn" data-dismiss="modal">Change image</button>
+                      <button type="button" class="btn" data-dismiss="modal" id="ok">Ok</button>
+                      <button type="button" class="btn" data-dismiss="modal">Cancel</button>
                   </div>
               </div>
           </div>

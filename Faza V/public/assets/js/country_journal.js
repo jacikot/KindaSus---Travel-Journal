@@ -136,6 +136,9 @@ $(document).ready(function(){
        eventHandler(list,$("#all"));
    }) ;
 
+   $("#back").click(function(){
+      window.location.href=backURL;
+   });
 
 
 });

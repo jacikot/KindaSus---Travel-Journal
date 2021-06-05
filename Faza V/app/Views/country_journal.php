@@ -25,6 +25,7 @@
         var envelopeURL="<?php echo base_url("/assets/images/koverta.jpg")?>";
         var plcURL="<?php echo base_url("/assets/images/geo-alt.svg")?>";
         var calURL="<?php echo base_url("/assets/images/calendar.svg")?>";
+        var backURL="<?php echo base_url("Map")?>"
         function initialize() {
             $.ajax(
                 {
@@ -75,15 +76,16 @@
     </script>
 </head>
 <body onload="initialize();" style="display: none">
-<!--    <div id='header'>-->
-<!--        -->
-<!--            height="10%" width="10%"-->
-<!--        -->
-<!--        <img src="--><?php //echo base_url("assets/images/logo2.png")?><!--" width="108" height="71"/>-->
-<!--   -->
-<!--        <a href="--><?php //echo base_url('Map')?><!--"> <button class=" back-to-home" type="button">Passport</button></a>-->
-<!--        -->
-<!--    </div >-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 mt-2" id="header">
+                <img src="<?php echo base_url('assets/images/pic.png') ?>" id="logo"/>
+                <button class="btn btn-outline-light moj" id="back">
+                    Back To Home
+                </button>
+            </div>
+        </div>
+    </div>
     <div class="container container-fluid">
         <div class="row">
             <div class="col-12 offset k2 text-center ">

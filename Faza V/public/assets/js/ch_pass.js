@@ -1,9 +1,6 @@
-function showMes(){
-    document.getElementById('note').style.display="block";
-}
+
 
 function changePass(){
-    document.getElementById("note").innerText="";
     let pas1=document.getElementById("pas1").value;
     let pas2=document.getElementById("pas2").value;
 
@@ -40,7 +37,7 @@ function guestMode(){
 }
 
 $(document).ready(function(){
-   $(".container").fadeTo("slow",1);
+   $(".container-fluid").fadeTo("slow",1);
 });
 
 

@@ -85,8 +85,37 @@ var options = {
   $(document).ready(function(){
       $("#image").on("click",function(){
           $("#myModal").modal('show');
-      })
+      });
+
+      $('#logout').on("click",function (){
+          $("#myModal2").modal('show');
+      });
+
+      $("#ok").on("click",function (){
+          window.location.href=logoutURL;
+      });
   });
+
+function showModal(){
+    $("#myModal").modal({
+        backdrop:'static',
+        keyboard:false
+    });
+}
+
+function changePic(){
+    let fd = new FormData();
+    let files = $('#file-upload')[0].files;
+    if (files.length > 0) {
+        fd.append('file', files[0]);
+
+    } else {
+        alert("You need to choose a picture first!");
+        return;
+    }
+    picAjax(fd);
+
+}
 
 
 
