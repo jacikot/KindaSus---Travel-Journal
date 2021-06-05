@@ -15,7 +15,7 @@ class Map extends BaseController
 
     public function index()
     {
-        $this->session->set('usr_id', 1);
+        $this->session->set('usr_id', 4);
         $this->session->set("country", null);
         echo view('map');
     }

@@ -89,7 +89,7 @@ function insertData(data){
 
     if(country!=null){
         let img=document.createElement("img");
-        img.setAttribute("src","https://flagcdn.com/48x36/"+data[0]["code"]+".png");
+        img.setAttribute("src","https://flagcdn.com/48x36/"+data[0]["code"].toLowerCase()+".png");
         header[0].innerHTML="";
         header[0].appendChild(img);
         header[0].innerHTML+=" "+country+" ";
