@@ -50,7 +50,7 @@ const fonts=
     {
         name:'myFont',
         locals: ['Sunday Snow'],
-        source:'traveljournal.ttf'
+        source: '../fontstyle/traveljournal.ttf'
     };
 
 

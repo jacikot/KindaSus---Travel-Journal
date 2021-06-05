@@ -7,15 +7,10 @@ use App\Models\Awarded;
 use App\Models\ToGo;
 use App\Models\Visited;
 use App\Models\RegisteredUser;
+use CodeIgniter\Model;
 
 class Admin extends BaseController
 {
-    private function displayPage($fileName, $data)
-    {
-        $data['cssFile'] = $fileName;
-        return view("pages/$fileName", $data);
-    }
-
     public function index()
     {
         $reviewModel = new Review();
@@ -29,21 +24,34 @@ class Admin extends BaseController
         return $this->displayPage('admin', $data);
     }
 
-    public function deleteUser($idUsr)
+    public function markReviewAsPrivate()
     {
-        $toGoModel = new Togo();
-        //$toGoModel->emptyListForUser($idUsr);
-        $awardedModel = new Awarded();
-        //$awardedModel->emptyCollectionForUser($idUsr);
-        $visitedModel = new Visited();
-        //$visitedModel->emptyListForUser($idUsr);
-        $userModel = new RegisteredUser();
-        //$userModel->deleteUser($idUsr);
-        return $this->index();
+        $idRev = $this->request->getVar('idRev');
+        $reviewModel = new Review();
+        $reviewModel->makeReviewAsPrivate($idRev);
     }
 
-    public function reviewAdmin($id)
+    public function deleteUser()
     {
-        return $this->displayPage('review_admin', ['id' => $id]);
+//        $toGoModel = new Togo();
+//        $toGoModel->emptyListForUser($idUsr);
+//        $awardedModel = new Awarded();
+//        $awardedModel->emptyCollectionForUser($idUsr);
+//        $visitedModel = new Visited();
+//        $visitedModel->emptyListForUser($idUsr);
+        $idUsr = $this->request->getVar('idUsr');
+        $userModel = new RegisteredUser();
+        $userModel->deleteUser($idUsr);
     }
+
+//    public function refresh()
+//    {
+//        $type = $this->request->getVar('type');
+//        $direction = $this->request->getVar('direction');
+//
+//        $reviewModel = new Review();
+//            $reviews = $reviewModel->getAllReviews($type, $direction);
+//        echo json_encode($reviews);
+//    }
+
 }

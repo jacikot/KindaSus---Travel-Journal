@@ -6,7 +6,14 @@ function sendIt(id,url){
             'id': id
         }
     }).done(function(data) {
-        alert(data);
+        if(data === "Already in to-go list!"){
+            $("#head").text("Sorry..")
+            $("#telo").text(data);
+        } else {
+            $("#head").text("Congratulation!")
+            $("#telo").text("Successfully added " + data + " to To-Go list!");
+        }
+        $("#myModal").modal();
         });
 
 }

@@ -6,21 +6,12 @@ use App\Models\Badge;
 
 class Badges extends BaseController
 {
-    private function displayPage($fileName, $data)
-    {
-        $data['cssFile'] = $fileName;
-        return view("pages/$fileName", $data);
-    }
-
     public function index()
     {
         $badgeModel = new Badge();
-        $badges = $badgeModel->getBadgesForUser(2);
-        return $this->displayPage('badges', ['badges' => $badges]);
-    }
-
-    public function passport()
-    {
-        return $this->displayPage('map', ['jsFile' => 'map']);
+        $idUsr = $this->session->get('id_usr');
+        $data['badges'] = $badgeModel->getBadgesForUser($idUsr);
+        $data['cssFile'] = 'badges';
+        return view("pages/badges", $data);
     }
 }

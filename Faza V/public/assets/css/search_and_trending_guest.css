@@ -1,7 +1,6 @@
 /* author: Jovan Djordjevic */
 @font-face{
     font-family: fancyFont;
-    src: url(../fontstyle/traveljournal.ttf);
 }
 
 body{
@@ -11,65 +10,96 @@ body{
     -o-background-size: cover;
     background-size: cover;
     font-family: fancyFont;
-    color: white;
 }
 
-.search{
+#search {
     position: absolute;
     bottom: 55%;
     right: 22%;
-    width: 27%;
+    width: 30%;
     z-index: 1;
 }
 
-.search-title{
-    font-weight: normal;
+#search-title{
+    font-size: 31px;
     font-style: italic;
-    text-align: center;
-    margin-block-start: 10px;
-    margin-block-end: 10px;
+    margin-bottom: 15px;
 }
 
-.search-box{
-    height: 40px;
-    border-radius: 25px;
+#search-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     padding: 10px;
+    height: fit-content;
+    border-radius: 20px;
     background: #4754a2;
 }
 
-.search-btn{
-    float: right;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+#search-btn {
+    height: 46px;
+    width: 46px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-decoration: none;
+    border-radius: 50%;
+    border: none;
     color: white;
     background: #4754a2;
 }
 
-.search-btn:hover{
+#search-btn:hover{
     background: #333e7d;
 }
 
-.search-txt{
-    border-radius: 15px;
-    border: none;
-    margin-left: 10px;
-    background: white;
-    outline: none;
-    float: left;
-    padding-left: 15px;
-    width: 75%;
-    font-size: 16px;
-    line-height: 40px;
-    color: #4754a2;
-    font-family: fancyFont;
+#search-box {
+    position: relative;
+    display: inline-block;
+    width: 85%;
 }
 
-.logo{
+#search-txt {
+    width: 100%;
+    border-radius: 15px;
+    font-size: 18px;
+    padding: 2px;
+    padding-left: 12px;
+    outline: none;
+    line-height: 40px;
+    border: 1px solid #9ba3ca;
+    font-family: fancyFont;
+}
+  
+#ac-list {
+    max-height: 200px;
+    position: absolute;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border: none;
+    text-align: left;
+}
+
+.ac-list-item {
+    padding: 10px;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid #9ba3ca;
+    border-top: none;
+}
+
+.ac-list-item:hover {
+    background-color: #9ba3ca;
+}
+
+.ac-active {
+    background-color: #333e7d !important;
+    color: white;
+}
+
+.logo {
     position: absolute;
     top: 15px;
     left: 10px;
@@ -242,4 +272,24 @@ body{
 .fas.fa-paper-plane{
     display: inline;
     color: #9ba3ca;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: white; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333e7d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4754a2; 
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #9ba3ca;
 }

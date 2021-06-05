@@ -21,7 +21,7 @@ class User extends Model
             'password' => $password,
             'name' => $name,
             'surname' => $surname,
-            'e-mail' => $name,
+            'e-mail' => $email,
             'avatar_path' => $email,
             'acc_creation_date' => date('Y-m-d'),
             'id_plc' => $id_plc,

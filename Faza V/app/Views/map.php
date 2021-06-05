@@ -106,7 +106,6 @@
               </div>
           </div>
       </div>
-
       <div class="container-fluid px-5">
           <div class="row">
               <div class="col-lg-2 col-12 order-lg-1 order-2 text-center">

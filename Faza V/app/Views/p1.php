@@ -8,9 +8,8 @@
     <title>Document</title>
 </head>
 <body>
-<?php foreach ($badges as $badge) {?>
-    <h1><?= $badge->id ?></h1>
-    <h1><?= $badge->title ?></h1>
-<?php } ?>
+    <h1><?= $i ?></h1>
+    <h1><?= $a ?></h1>
+    <h1><?= $r ?></h1>
 </body>
 </html>

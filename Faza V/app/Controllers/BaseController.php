@@ -6,7 +6,9 @@ use CodeIgniter\Controller;
 use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
 use CodeIgniter\HTTP\RequestInterface;
+use CodeIgniter\Session\Session;
 use CodeIgniter\HTTP\ResponseInterface;
+use Config\Services;
 use Psr\Log\LoggerInterface;
 
 /**
@@ -58,4 +60,10 @@ class BaseController extends Controller
         $this->session = session();
 
 	}
+
+    protected function displayPage($fileName, $data)
+    {
+        $data['cssFile'] = $fileName;
+        return view($fileName, $data);
+    }
 }

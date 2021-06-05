@@ -2,6 +2,13 @@
 var currQuestion = 1;
 var alreadyAnswered = [0,0,0,0,0];
 
+function prevQuestion(url){
+    currQuestion --;
+    let url1 = url+'/prevQuestion';
+
+
+
+}
 function findSelected(){
     let selected = 0;
     selected = $('#1').is(":checked")? 1 : 0;
@@ -40,9 +47,15 @@ function nextQuestion(url){
             $("#dugme").text("Get your recommendation!");
             end = false;
         }
+        let prog = currQuestion - 2;
+        if(prog >= 1) {
+            $("#prev").attr("disabled",false);
+        }
+        $("#prog").attr("style","width:"+prog*20+"%");
+        $("#prog").text(prog+"/5");
         let vr = data.split(",");
         if(vr[0] === "gotovo"){
-            alert(url +"/getRecommendation/"+vr[1]);
+
             window.location.href = url +"/getRecommendation/"+vr[1];
             return;
         }

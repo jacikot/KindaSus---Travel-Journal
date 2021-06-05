@@ -48,16 +48,4 @@ class Journal extends BaseController
         echo json_encode($data);
 
     }
-
-    public function deleteReview(){
-        $rev=$this->request->getVar("id_rev");
-        $model=new Review();
-        $model->deleteReview($rev);
-        echo $rev;
-    }
-
-    public function review($id_rev){
-        $this->session->set("id_rev",$id_rev);
-        echo view('journal');
-    }
 }

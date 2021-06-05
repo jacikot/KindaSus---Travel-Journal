@@ -18,8 +18,6 @@
     <script src="<?php echo base_url('assets/js/que.js')?>"></script>
     <script>
         var baseURL="<?= base_url('Password/validateQuestions')?>";
-
-
         function ajaxCall(questions){
             let username="";
             let shift=0;

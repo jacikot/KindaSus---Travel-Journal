@@ -1,5 +1,5 @@
 
-function insertTrash(list,parent){
+function insertTrash(){
     let trash=document.createElement("button");
     trash.classList.add("bottomButton");
     let itr=document.createElement("i");
@@ -48,7 +48,6 @@ function insertReview(data,list,country){
     d.classList.add("align-items-center");
     d.classList.add("d-flex");
     div.appendChild(d);
-
 
     div.appendChild(insertTrash(list,elem));
     elem.appendChild(div);

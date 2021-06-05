@@ -13,7 +13,6 @@ body{
 
 }
 
-
 button.back{
     color:white;
     font-size: 14pt;
@@ -29,6 +28,9 @@ button.back:hover{
 
 #p1{
     color:white;
+    position: absolute;
+    top: 20%;
+    left: 70%;
     text-align: center;
     font-size: 250%;
     margin:0 !important;
@@ -95,7 +97,6 @@ table td.align-middle{
     margin-top: 20px;
 }
 
-
 .err{
     text-align: center;
     color: #fdfdad;
@@ -131,12 +132,12 @@ button.continue:hover{
 }
 
 .env{
-    width:1000px;
-    height:400px;
+    width:78%;
+    height:65%;
     position:absolute;
     z-index: 0 !important;
-
 }
+
 div{
     margin: 0;
 }
