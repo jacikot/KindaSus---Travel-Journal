@@ -82,6 +82,12 @@ var options = {
       tokens.innerText=data["tokens"];
   }
 
+  $(document).ready(function(){
+      $("#image").on("click",function(){
+          $("#myModal").modal('show');
+      })
+  });
+
 
 
 

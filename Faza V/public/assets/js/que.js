@@ -5,13 +5,14 @@ $(document).ready(function(){
         let add=0;
         if(inputs.length==3)add=1;
         for (let i=0;i<inputs.length;i++){
-            document.getElementById("err"+(i+add)).style.display="none";
+            remove("#t"+(i+2));
         }
         let correct=true;
         let questions=[];
         for (let i=0;i<inputs.length;i++){
             if(inputs[i].value==""){
-                document.getElementById("err"+(i+add)).style.display="block";
+                // document.getElementById("err"+(i+add)).style.display="block";
+                setReturnValues("Message","Field is required!","#t"+(i+2),"right");
                 correct=false;
             }
             else {
@@ -56,5 +57,22 @@ function guestMode(){
     document.getElementsByClassName("row")[0].style.marginTop="0px";
     // let env=document.getElementsByClassName("env");
     // env[0].style.height="68%";
+}
+
+function setReturnValues(t,c,id,pos){
+    $(id).attr('data-toggle',"popover");
+    //$(id).attr("title", t);
+    $(id).attr("data-content", c);
+    $(id).attr("data-placement", pos);
+    $(id).popover();
+    $(id).popover('enable');
+    $(id).popover('show');
+    setTimeout(function(){
+        remove(id);
+    },2000);
+}
+function remove(id){
+    $(id).popover('disable');
+    $(id).popover('hide');
 }
 

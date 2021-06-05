@@ -90,7 +90,6 @@
                             </td>
                             <td class="align-middle">
                                 <input type="text" id="t2" class="username border-bottom"/>
-                                <br><div id="err1" class="err" >Polje nije uneseno!</div>
                             </td>
                         </tr>
                         <tr >
@@ -102,7 +101,6 @@
                             </td>
                             <td class="align-middle">
                                 <input type="text" id="t3" class="username border-bottom"/>
-                                <br><div id="err2" class="err">Polje nije uneseno!</div>
                             </td>
                         </tr>
                         <tr>
@@ -115,7 +113,6 @@
                             </td>
                             <td class="align-middle">
                                 <input type="text" id="t4" class="username border-bottom"/>
-                                <br><div id="err3" class="err">Polje nije uneseno!</div>
                             </td>
                         </tr>
                         <tr>

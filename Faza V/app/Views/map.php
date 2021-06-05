@@ -88,10 +88,16 @@
 
                           </tr>
                           <tr class="links border-top">
-
                               <td colspan="2">
                                   <img src="<?php echo base_url("/assets/images/lockP.svg")?>">
                                   &nbsp;<a href="<?php echo base_url("Password/listPassQuestions")?>">change password</a><br/>
+                              </td>
+                          </tr>
+                          <tr class="links">
+
+                              <td colspan="2">
+                                  <img src="<?php echo base_url("/assets/images/image.svg")?>">
+                                  &nbsp;<a id="image" href="#">change image</a>
                               </td>
                           </tr>
                           <tr class="links">
@@ -101,6 +107,7 @@
                                   &nbsp;<a href="<?php echo base_url("Logout")?>">logout</a>
                               </td>
                           </tr>
+
                       </table>
                   </div>
               </div>
@@ -138,6 +145,20 @@
 
                   <div class="ttip b-badge" tt-title="Badge collection" tt-text="Look what you've accomplished so far!">
                       <a href="<?php echo base_url("Badges")?>"><img src="<?php echo base_url("assets/images/badge1.png")?>" /></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Message</h5>
+                  </div>
+                  <div class="modal-body">
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn" data-dismiss="modal">Change image</button>
                   </div>
               </div>
           </div>
