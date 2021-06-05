@@ -5,18 +5,8 @@
 }
 body{
     font-family: myFont !important;
-    display: none;
 }
-/*.container-fluid{*/
-/*    padding-right: 0px !important;*/
-/*    padding-left: 0px !important;*/
-/*    margin-right: 10px !important;*/
-/*    margin-left: 10px !important;*/
-/*}*/
-.container-fluid td{
-    height: 50% !important;
 
-}
 div.header{
     background-image: url("../images/header9.jpg");
     background-repeat: no-repeat;
@@ -27,129 +17,160 @@ div.header{
 }
 .menu_list{
     background-color: rgba(54, 66, 137, 0.73);
-    backdrop-filter: blur(3px) brightness(90%) drop-shadow(16px 16px 10px white) !important;
     height: 6.8%;
     font-family:myFont;
+    z-index: 1;
     margin-top:30px;
-
-}
-.passport{
-    outline: none !important;
-    border: none !important;
-
-    text-align: right;
-    float: right;
-    padding-right: 4%;
-    font-family: 'myFont';
-    font-size: 18pt !important;
-    height: 100% !important;
-    cursor: pointer;
-    margin-right: 20px;
-    width:200px !important;
 }
 
-.passport:hover{
-    color:#36428a !important;
-    background-color: rgba(255,255,255,0.5) !important;
-}
-
-.links a{
-    color:#36428a;
-    text-decoration: none;
-    font-size:15pt;
-    width:200px !important;
-
-}
-.menu_list_content {
-    /*background-color: rgba(255,255,255, 0.8) !important;*/
-    /*backdrop-filter: blur(6px) brightness(90%) drop-shadow(16px 16px 10px white) !important;*/
-    margin-right: 0px !important;
-    width:200px;
-    padding: 12px !important;
-    margin-top: 10px;
-    position: relative;
-}
-#username{
-    font-size: 12pt;
-    color:#36428a;
-    letter-spacing: 3pt;
-    display: inline;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-
-}
-.links:hover{
-    background-color: rgba(232, 232, 232, 0.81);
-    color:#36428a;
-    height: 15pt;
-}
-.links{
-    padding-top: 15px !important;
-    padding-bottom: 15px !important;
-    font-size: 12px;
-    text-align: left;
-    border-width: medium!important;
-    border-color:#36428a !important;
-}
-.links a:hover{
-    text-decoration: none;
-    color:#36428a;
-}
-
-.links img{
-    width:20px;
-    height: 20px;
-    color:#36428a !important;
-    margin-bottom: 5px;
-}
-
-.table td{
-    padding: 0px !important;
-    margin: 0px !important;
-}
-
-#avatar{
-    display:inline;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    float: left;
-}
-
-table{
-    margin-bottom: 0px !important;
-}
-
-.container-fluid img{
-    width:180px;
-    height:auto;
-    object-fit: cover;
-
-}
-
-.ttip{
-    display: inline-block !important;
-}
-
-
-.jumbotron{
-    padding-top: 35px !important;
-    padding-bottom: 35px !important;
-}
 
 
 
 .centerChart{
     margin: 0 auto;
     align-items: center;
-    width:85%;
-    height:65%;
+    width:58%;
+    height:48%;
     border-radius: 25%;
+    z-index: 5;
 }
+
+
+
+
+
+
+#passport{
+    color: #f2f2f2;
+    text-align: right;
+    border-radius: 10px;
+    float: right;
+    padding-right: 4%;
+    font-family: 'myFont';
+    font-size: 14pt;
+    cursor: pointer;
+   
+}
+.menu_list_content a{
+    color:#36428a;
+    text-decoration: none;
+    font-size:15pt;
+
+}
+#passport:hover {
+    background-color: #36428a;
+    color:#FBE3AA;
+   
+}
+
+.menu_list_link:hover .menu_list_content{
+    display:block;
+    position: absolute;
+    z-index: 1;
+    
+}
+
+.menu_list_content {
+    display: none;
+    position: absolute;
+    float: right;
+    right:0;
+    top: 23.8%;
+    background-color: #9BA3CA;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-color: #9BA3CA ;
+    border-radius: 5%;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    position: absolute;
+    z-index: 50;
+    border-style: solid;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(250,250,250,0.2);
+    padding: 12px 12px;
+    opacity:100%;
+    
+
+    
+   
+ }
+
  .fas.fa-star{
 
     display: inline;
+
     color: #fbe3aa;
 
+}
+
+ .menu_list_content a:hover{
+    background-color: #36428a;
+    padding-right: 5pt;
+    padding-left: 5pt;
+    padding-top: 2pt;
+    padding-bottom: 2pt;
+    border-radius: 20%;
+    color:white;
+    height: 15pt;
+    
+ }
+
+
+ul.menu_list{
+    text-align: right;
+}
+img.search{
+    width:15%;
+    height:40%;
+    margin:auto;
+    object-fit: cover;
+    float:left;
+    position:fixed;
+    left: 2%;
+}
+img.add{
+    width:15%;
+    height:35%;
+    margin-right:1%;
+    object-fit: cover;
+    float: right;
+    right:0%;
+    z-index: 0;
+   
+}
+img.journal{
+    width:13%;
+    height:28%;
+    position:fixed;
+    left:2%;
+    top: 67%;
+}
+img.sticky{
+    width:20%;
+    height:40%;
+    position:fixed;
+    right: 0;
+    top: 60%;
+}
+img.quiz{
+    width:15%;
+    height:40%;
+    margin:auto;
+    object-fit: cover;
+    position:fixed;
+    left: 25%;
+    top: 65%;
+    
+}
+
+img.badge{
+    width:15%;
+    height:40%;
+    margin:auto;
+    object-fit: cover;
+    position:fixed;
+    right: 30%;
+    top: 72%;
 }
 
 body{
@@ -160,37 +181,50 @@ body{
             -o-background-size: cover;
             background-size: cover;
 }
+img.add:hover{
+    width:15.75%;
+    height:36.75%;
+}
+img.search:hover{
+    width:15.75%;
+    height:42%;
+}
+img.sticky:hover{
+    width:21%;
+    height:42%;
+}
+img.quiz:hover{
+    width:15.75%;
+    height:42%;
+}
+img.journal:hover{
+    width:13.65%;
+    height:29.4%;
+}
+img.badge:hover{
+    width:15.75%;
+    height:42%;
+}
+#username{
+    font-size: 10pt;
+    color: white;
+    letter-spacing: 3pt;
+    display: inline;
+    position: relative;
+    left:30%;
 
+}
 
 
 .google-visualization-tooltip{
     border-radius: 10% !important;
     text-align: center !important;
-    opacity: 75%;
-    width:150px;
-    height: auto;
+    opacity: 85% !important;
+    
 }
 
-.jumbotron{
-    z-index:10 !important;
-    position: relative;
+#avatar{
+    display:inline;
+    position: absolute;
+    margin-right: 10px;
 }
-
-.container-fluid img{
-    z-index: 1 !important;
-}
-
-
-
-.menu_list_content{
-    background-color: rgba(255,255,255, 0.8) !important;
-    backdrop-filter: blur(3px) brightness(90%) drop-shadow(16px 16px 10px white) !important;
-
-}
-
-.chart{
-    background-color: rgba(54, 66, 137, 0.49);
-    backdrop-filter: blur(15px) brightness(90%) drop-shadow(16px 16px 10px white) !important;
-
-}
-

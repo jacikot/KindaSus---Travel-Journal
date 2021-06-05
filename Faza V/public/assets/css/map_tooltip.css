@@ -3,16 +3,13 @@
     font-family:myFont;
     src: url(../fontstyle/travel_journal_3.ttf);
 }
-
-.ttip{
-    position: relative;
-}
 .ttip::before,
 .ttip::after{
     --scale: 0;
-    --tooltip-color: rgba(57, 66, 117, 0.79);
+    --tooltip-color:#394275;
     --arrow-size: 15px;
     position: absolute;
+    opacity: 95%;
     height:auto;
     font-family: myFont;
     font-size: 15px;
@@ -21,11 +18,7 @@
     transition: 120ms transform;
     transform-origin: bottom center;
     z-index: 50;
-    /*position: relative !important;*/
     
-}
-.x{
-    display: inline;
 }
 
 .ttip-special::before,
@@ -39,7 +32,6 @@
     content: attr(tt-title) '\A\A' attr(tt-text);
     white-space: pre-wrap;
     height: fit-content;
-
     color: white;
     padding: 8px;
     padding-bottom: 15px;
@@ -48,8 +40,6 @@
     width: max-content;
     max-width: 250%;
     background-color: var(--tooltip-color);
-    backdrop-filter: blur(3px) brightness(90%) drop-shadow(16px 16px 10px white) !important;
-
 }
 
 .ttip-special::before{
@@ -75,39 +65,39 @@
 
 .b-search::before,
 .b-search::after{
-    top: 0%;
-    left: 52%;
+    top: 28%;
+    left: 10.25%;
 }
 
 .b-quiz::before,
 .b-quiz::after{
-    top: 0%;
-    left: 52%;
+    top: 76%;
+    left: 32%;
 }
 
 .b-journal::before,
 .b-journal::after{
-    top: 0%;
-    left: 52%;
+    top: 68%;
+    left: 10%;
 }
 
 .b-badge::before,
 .b-badge::after{
-    top: 0%;
-    left: 48%;
+    top: 77%;
+    left: 63%;
 }
 
 
 .b-to-go::before,
 .b-to-go::after{
-    top: 0%;
-    left: 48%;
+    top: 65%;
+    left: 90%;
 }
 
 .b-create::before,
 .b-create::after{
-    top: 0%;
-    left: 48%;
+    top: 28%;
+    left: 90%;
 }
 
 .b-create::before{
