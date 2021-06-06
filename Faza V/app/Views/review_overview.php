@@ -319,8 +319,14 @@
 
 
 
+               }
+               else{
+                   $("#revText").css({
+                      'display':'flex',
+                      ' align-content': 'center',
+                   'align-items': 'center'
 
-
+                   });
                }
 
 
@@ -384,7 +390,7 @@
      <div class="col-sm-6 " >
 
 
-    <p style="font-size: 25px; color: black" class="reviewParagraph"  name="revText" id="revText">
+    <p style="font-size: 25px; color: black ;height: 50vh; overflow: auto; " class="reviewParagraph"   name="revText" id="revText">
 
     </p>
 
