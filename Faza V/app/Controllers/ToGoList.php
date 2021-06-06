@@ -72,12 +72,12 @@ public function addToToGoList(){
             'name'=>$place_name,
             'id_cnt'=>$country->id_cnt,
             'categorized' =>$num,
-            'category_1'=>$num,
-            'category_2'=>$num,
-            'category_3'=>$num,
-            'category_4'=>$num,
-            'category_5'=>$num,
-            'id_img'=>$one
+            'heritage'=>$num,
+            'relax'=>$num,
+            'sightseeing'=>$num,
+            'weather'=>$num,
+            'populated'=>$num,
+
         ]);
         $id_plc=$tmp_place->getInsertID();
     }

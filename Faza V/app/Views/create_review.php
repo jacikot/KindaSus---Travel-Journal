@@ -247,16 +247,22 @@
 
 
     <link rel="stylesheet" href="<?php echo base_url('assets/css/style_create_review.css') ?>">
+
+    <script>
+        function goHome(){
+            window.href.location="<?php base_url('Map/index') ?>"
+        }
+    </script>
     
 </head>
 
 <body>
- <contain-fluid>
+ <div class=" container-fluid">
      <div class="row">
          <div class="col-lg-12 col-md-12 mt-2" id="header">
              <img src="<?php echo base_url('assets/images/pic.png') ?>" id="logo"/>
              <button class="btn btn-outline-light" onclick="goHome()">
-                 Back To Home
+                 Go to Map
              </button>
          </div>
      </div>
@@ -267,7 +273,7 @@
              &nbsp;&nbsp;
          </div>
          <div class="col-lg-4 col-md-8 col-sm-12 col-xs-10 my-auto pozadina rounded" id="tab">
-             <table class="table mt-3 mb-3" >
+             <table class="table mt-2 mb-2" >
                  <tr>
                      <td colspan="2" class="naslov" style="text-align: center">
                          Keep your dream alive
@@ -275,41 +281,45 @@
                  </tr>
            <tr>
            <td>
-               <input type="text" name="place" id="place" class='textField' placeholder="Place">
+               <input type="text" name="place" id="place"  placeholder="Place">
            </td>
             <td>
-                <input type="text" name="country" id="country" class='textField' placeholder="Country">
+                <input type="text" name="country" id="country"  placeholder="Country">
             </td>
            </tr>
            <tr>
                <td>
-                   <input type="date" name="date" id="date"  placeholder="Date of your travel" class='textField' value="Date of your travel"></td>
+                   <input type="date" name="date" id="date"  placeholder="Date of your travel"  value="Date of your travel"></td>
                </td>
                <td>
-                   <input type="text" name="title" id="title" class='textField' placeholder="Title for your memory!">
+                   <input type="text" name="title" id="title" placeholder="Title for your memory!">
                </td>
            </tr>
            <tr>
                <td colspan="2">
-                   <textarea rows='7' cols="100" name="text" id="text" style="outline: none; text-align: justify">Share your memories!</textarea>
+                   <textarea rows='7' class="rounded" cols="100" name="text" id="text" style="outline: none; text-align: justify">Share your memories!</textarea>
                </td>
            </tr>
            <tr>
 
                <td>Set privacy status: &nbsp;<input type="radio"  name='privacy'  checked >Private
                    <input type="radio" name='privacy'>Public</td>
-               <td onclick="openPicsModal()">
+               <td onclick="openPicsModal()" class="picUpload">
                    Add some pictures!
 
                </td>
            </tr>
+                 <tr>
+                     <td>&nbsp;</td>
+                     <td>&nbsp;</td>
+                 </tr>
 
                  <tr>
-                     <td>
-                         <input type="button" value= 'Only mark the place on the map' class='bottomButton' onclick="pinPlaceOnTheMap()">
+                     <td style="text-align: left">
+                         <button value= 'Only mark the place on the map' class='btn btn-outline-light' onclick="pinPlaceOnTheMap()">Only mark the place on the map</button>
                      </td>
-                     <td>
-                         <input type="button" value= 'Write in your Journal' class='bottomButton' onclick="createRev()">
+                     <td style="text-align: right">
+                         <button value= 'Write in your Journal' class='btn btn-outline-light' onclick="createRev()">Write in your Journal</button>
                      </td>
                  </tr>
              </table>
@@ -481,7 +491,7 @@
          </div>
      </div>
  </div>
- </contain-fluid>
+ </div>
 </body>
 
 </html>

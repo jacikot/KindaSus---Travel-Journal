@@ -55,7 +55,6 @@ public function index(){
                 'category_3'=>$num,
                 'category_4'=>$num,
                 'category_5'=>$num,
-                'id_img'=>$one,
                 'id_cnt'=>$country_obj->id_cnt,
                 'taken_survey'=>$num
             ]);
@@ -228,11 +227,11 @@ public function index(){
 
 
         $num_surveys=$place_obj->taken_survey;
-        $new_points_heritage=(($points_heritage+$place_obj->category_1*$num_surveys))/(($num_surveys+1));
-        $new_points_relax=(($points_relax+$place_obj->category_2*$num_surveys))/(($num_surveys+1));
-        $new_points_sightseeing=(($points_sightseeing+$place_obj->category_3*$num_surveys))/(($num_surveys+1));
-        $new_points_weather=(($points_weather+$place_obj->category_4*$num_surveys))/(($num_surveys+1));
-        $new_points_populated=(($points_populated+$place_obj->category_5*$num_surveys))/(($num_surveys+1));
+        $new_points_heritage=(($points_heritage+$place_obj->heritage*$num_surveys))/(($num_surveys+1));
+        $new_points_relax=(($points_relax+$place_obj->relax*$num_surveys))/(($num_surveys+1));
+        $new_points_sightseeing=(($points_sightseeing+$place_obj->sightseeing*$num_surveys))/(($num_surveys+1));
+        $new_points_weather=(($points_weather+$place_obj->weather*$num_surveys))/(($num_surveys+1));
+        $new_points_populated=(($points_populated+$place_obj-populated*$num_surveys))/(($num_surveys+1));
 
 
         $num=0;
