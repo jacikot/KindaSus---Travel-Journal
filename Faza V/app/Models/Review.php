@@ -116,6 +116,13 @@ class Review extends Model
         return $reviews;
     }
 
+    /*
+     * returns review info needed for review list
+     *
+     * @return array - country, place, title, text, date, id_rev
+     *
+     * */
+
     public function getReviewInfo($usr_id,$country,$place,$code)
     {
         $res=$this->select("review.id_rev AS id_rev,review.title AS title, review.text AS text, place.name AS place, country.name AS country,review.date_posted AS date", false)
@@ -148,6 +155,11 @@ class Review extends Model
         return $revs;
 
     }
+
+    /*
+     * deletes review with given id
+     *
+     * */
 
     public function deleteReview($id){
         $this->where("id_rev",$id)->delete();

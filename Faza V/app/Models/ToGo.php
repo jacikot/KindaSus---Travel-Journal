@@ -26,6 +26,10 @@ class ToGo extends Model
         $this->where('id_usr', $idUsr)->delete();
     }
 
+    /*
+     * return all places which user with given id wants to visit
+     * @return array - place id
+     * */
     public function getToGoPlaces($user)
     {
         $allToGo=$this->where("id_usr",$user)->findAll();

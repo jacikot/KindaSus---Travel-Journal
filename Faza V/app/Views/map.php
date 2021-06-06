@@ -56,7 +56,7 @@
                   }).done(function(data) {
                       let val = data.split(",");
                       if(val.length > 1){
-                          $("#avatar").attr("src",base+val[1]);
+                          $("#avatar").setAttribute("src",base+val[1]);
                           alert("Successfully changed your profile picture!")
                       } else {
                           alert("data");
@@ -90,7 +90,7 @@
                   <div class="dropdown-menu menu_list_content" aria-labelledby="dropdownMenuButton" id="menu">
                       <table class="table table-borderless text-center">
                           <tr>
-                              <td rowspan="2"><img id="avatar" class="rounded rounded-circle" width="50px" height="50px"/></td>
+                              <td rowspan="2" id="avatarp"><img id="avatar" class="rounded rounded-circle" width="50px" height="50px"/></td>
                               <td>
                                   <p id="username" >
                                       <b id="username1"></b>

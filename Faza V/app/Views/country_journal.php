@@ -43,8 +43,8 @@
         }
         var baseURL2="<?= base_url('Journal/deleteReview')?>";
         function deleteReview(idrev){
-            alert(idrev);
-            alert("jana");
+            // alert(idrev);
+            // alert("jana");
             $.ajax(
                 {
                     url:baseURL2,

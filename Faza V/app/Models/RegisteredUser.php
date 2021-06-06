@@ -50,6 +50,12 @@ class RegisteredUser extends Model
         }
     }
 
+    /*
+     * checks if answers user gave for identity validation match answers in database
+     *
+     * @return Response
+     *
+     * */
     public function validateAnswers($uid,$q1,$q2,$q3): string
     {
 
@@ -66,16 +72,30 @@ class RegisteredUser extends Model
 
     }
 
+    /*returns place id for place where user with given id is from
+     *
+     * @return  int id_plc
+     * */
     public function getHomePlace($user){
         $u=$this->find($user);
         return $u->id_plc;
     }
 
+    /*
+     * sets new password for user with given id
+     *
+     * */
     public function setPassword($uid,$newPass){
         $data=['password'=>$newPass];
         $this->update($uid,$data);
     }
 
+    /*
+     * return info for user with given id needed for dropdown menu
+     *
+     * @return array - username, tokens, avatar
+     *
+     * */
     public function getUserInfo($uid){
         $user=$this->find($uid);
         $data["username"]=$user->username;
@@ -86,7 +106,11 @@ class RegisteredUser extends Model
         }
         return $data;
     }
-
+    /* returns user id for given username
+     *
+     * @return int user_id
+     *
+    */
     public function getUserId($username){
         $uid=$this->where("username",$username)->findAll();
         if($uid==null) return null;

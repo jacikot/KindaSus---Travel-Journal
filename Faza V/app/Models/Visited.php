@@ -12,6 +12,13 @@ class Visited extends Model
     public function getVisitById($id){
         return $this->where('id_vis', $id)->find();
     }
+
+    /*
+     * returns all places visisted by user with given id
+     *
+     *@return array - place id
+     * */
+
     public function getVisitedPlaces($user){
         $allVisited=$this->where("id_usr",$user)->findAll();
         $places=[];

@@ -9,6 +9,10 @@ class Country extends Model
     protected $returnType = 'object';
     protected $allowedFields =['name','code','id_con'];
 
+    /*
+     * returns infos for country with given id
+     * @return array - name, code
+     * */
     public function getCountry($cntid){
         $visited=$this->find($cntid);
         $ret=[];
@@ -16,6 +20,11 @@ class Country extends Model
         $ret["code"]=$visited->code;
         return $ret;
     }
+
+    /*
+     * returns id of country with given name
+     * @return int id
+     * */
 
     public function getId($name){
         $countries=$this->where('name',$name)->findAll();

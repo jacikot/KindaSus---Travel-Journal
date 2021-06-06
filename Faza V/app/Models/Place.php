@@ -33,6 +33,10 @@ class Place extends Model
 
     }
 
+    /*
+    * returns country id for given place
+    * @return int cnt_id
+    */
     public function getCountry($plcid){
         $visited=$this->find($plcid);
         return $visited->id_cnt;

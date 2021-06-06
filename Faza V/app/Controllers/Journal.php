@@ -85,8 +85,8 @@ class Journal extends BaseController
         $path="../public/assets/db_files/".$user."/review_img/".$rev.'/';
         helper('filesystem');
         delete_files($path,true);
-        rmdir($path);
         $model->deleteReview($rev);
+//        rmdir($path);
         echo $rev;
     }
 
