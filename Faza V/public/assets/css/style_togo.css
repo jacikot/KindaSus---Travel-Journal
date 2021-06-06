@@ -224,46 +224,4 @@ table{
 
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-    border: none;
-    -webkit-text-fill-color: white;
-    -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset ;
-    transition: background-color 5000s ease-in-out 0s;
-}
 
-input{
-    margin-top: 5px !important;
-    margin-bottom: 5px !important;
-    border: none !important;
-    border-bottom: 1px solid white !important;
-    outline: none !important;
-    background-color: rgba(166, 159, 200, 0);
-    color: white !important;
-    font-size: 3vh !important;
-
-}
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: white;
-    opacity: 60%; /* Firefox */
-}
-
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: white;
-    opacity: 60%;
-}
-
-.naslov{
-    font-size: 5vh;
-}
-::-ms-input-placeholder { /* Microsoft Edge */
-    color: white;
-    opacity: 60%;
-}
