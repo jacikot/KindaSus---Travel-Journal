@@ -2,16 +2,19 @@
 @font-face {
     font-family: myFont;
     src: url(../fontstyle/travel_journal_3.ttf);
-  }
+}
 
 body{
     background: url(../images/background100.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-
 }
-
+#foot {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+}
 #logo{
     width: 10vw;
     height: 10vh;
