@@ -43,8 +43,12 @@
                         let destination=current_item[0]+", "+current_item[1]+"  ";
 
                         let item;
-                        if(current_item[2]=='1') item=$("<li style='text-decoration: line-through;;'></li>").append(destination);
-                        else item=$("<li></li>").append(destination);
+                        let row=$("<tr></tr>");
+
+                        let celDeleteCross=$("<td style='text-align: right'></td>");
+
+                        if(current_item[2]=='1') item=$("<td style='text-decoration: line-through;;'></td>").append(destination);
+                        else item=$("<td></td>").append(destination);
                         let binButton=$("<button value='Dugme' class='bottomButton' ></button>").append($("<i>").addClass('fas fa-trash-alt').append("</i>"));
                         binButton.click(function (){
                             deleteFromToGo(current_item[0],current_item[1]);
@@ -60,9 +64,12 @@
                             item.reload();
 
                         });
-                       $(item).append(binButton);
-                        $(item).append(crossButton);
-                        $("#togo_list").append(item);
+                       $(celDeleteCross).append(binButton);
+                        $(celDeleteCross).append(crossButton);
+                        $(row).append(item);
+                        $(row).append(celDeleteCross);
+
+                        $("#togo_list").append(row);
                     }
 
 
@@ -88,9 +95,12 @@
 
 
                     if(status=='okay'){
-                        alert(status);
+
                         let destination=""+place+", "+country;
-                        let item=$("<li></li>").append(destination);
+                        let row=$("<tr></tr>");
+
+                        let celDeleteCross=$("<td style='text-align: right'></td>");
+                        let item=$("<td></td>").append(destination);
                         let binButton=$("<button value='Dugme' class='bottomButton' ></button>").append($("<i>").addClass('fas fa-trash-alt').append("</i>"));
                         binButton.click(function (){
                             deleteFromToGo(place,country);
@@ -104,9 +114,12 @@
                             item.reload();
 
                         });
-                        $(item).append(binButton);
-                        $(item).append(crossButton);
-                        $('#togo_list').append(item);
+                        $(celDeleteCross).append(binButton);
+                        $(celDeleteCross).append(crossButton);
+                        $(row).append(item);
+                        $(row).append(celDeleteCross);
+
+                        $("#togo_list").append(row);
                     }
                     else{
                         alert(status);
@@ -165,11 +178,24 @@
 
     </script>
 
+    <script>
+        function goHome(){
+            window.href.location="<?php base_url('Map/index') ?>"
+        }
+    </script>
+
 </head>
 <body onload="myToGo()">
-<container-fluid>
+<div class=" container-fluid">
 
-<br>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 mt-2" id="header">
+            <img src="<?php echo base_url('assets/images/pic.png') ?>" id="logo"/>
+            <button class="btn btn-outline-light" onclick="goHome()">
+                Back To Home
+            </button>
+        </div>
+    </div>
     <div class="row" style="display: flex; flex-direction: row">
         <div class="col-12"><h2 style="text-align: center">To-Go List &nbsp;&nbsp;&nbsp;
             <button class="bottomButton" onclick="openListModal()"><i class="fas fa-edit"></i></button>
@@ -181,12 +207,12 @@
     <div class="col-4">
         &nbsp;&nbsp;&nbsp;
     </div>
-    <div class="col-4 togoListDiv" style="height: 80vh; text-align: center" >
+    <div class="col-4 togoListDiv" style="height: 75vh; text-align: center" class="" >
 
 
-            <ol id="togo_list">
+            <table class="h-100 d-inline-block" id="togo_list">
 
-            </ol>
+            </table>
     </div>
     <div class="col-4"></div>
     &nbsp;&nbsp;&nbsp;
@@ -215,7 +241,7 @@
         </div>
     </div>
 </div>
-</container-fluid>
+</div>
 </body>
 
 </html>
