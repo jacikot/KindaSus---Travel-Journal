@@ -5,24 +5,66 @@ use App\Models\User;
 use App\Models\Admin;
 use App\Models\Image;
 
+/*
+ * Author: Dimitrije Panic 18/0205
+ * controller for authorization
+ * @version 1.0
+ */
 class GuestLogin extends BaseController
 {
+    /*
+     * @var int $minPassLength minimum password length
+     */
     private static $minPassLength = 6;
+    /*
+     * @var int $maxPassLength maximum password length
+     */
     private static $maxPassLength = 20;
+    /*
+     * @var int $minUserLength minimum username length
+     */
     private static $minUserLength = 6;
+    /*
+     * @var int $maxUserLength maximum username length
+     */
     private static $maxUserLength = 20;
 
-
+    /*
+     * used for opening homepage and loading a random Quote
+     *
+     * @return view
+     * @return randomized Quote
+     */
     public function index(){
+        $this->session->destroy();
         $rand = rand(0,count(Quiz::$quotes)-1);
         $data['data'] = ['quote'=>Quiz::$quotes[$rand]];
         return view('homepage.php',$data);
     }
 
+    /*
+     * used to load login page
+     *
+     * @return view
+     */
     public function showLogin(){
         return view('login.php');
     }
 
+    /*
+     * used for authorization of users
+     * checks that fields are adequate
+     * all fields are required
+     * authorization is available for
+     * either admin or user with a created account
+     *
+     * @param Request $request Request
+     *
+     * @return Response
+     *
+     * @throws BadRequestHttpException
+     * @throws UnauthorizedHttpException
+     */
     public function login(){
        $username = $this->request->getVar('username');
        $password = $this->request->getVar('password');
@@ -45,8 +87,6 @@ class GuestLogin extends BaseController
             echo $message;
             return;
         }
-
-        //sifrovanje sifre
 
        //$username = addslashes($username);
        //$password = addslases($password);
@@ -85,11 +125,11 @@ class GuestLogin extends BaseController
        $this->session->set("userId",$id);
 
        if($isAdmin){
-           echo "admin";
+           echo "admin,".$username;
            return;
        }
        else{
-           echo "user";
+           echo "user,".$username;
            return;
        }
 

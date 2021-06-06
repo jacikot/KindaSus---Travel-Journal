@@ -1,29 +1,55 @@
-/* author: Dimitrije Panic */
-@font-face {
+/* autor: Adriana Vidic  */
+@font-face{
     font-family: myFont;
-    src: url(../fontstyle/travel_journal_3.ttf);
+    src:url(../fontstyle/travel_journal_3.ttf);
 }
-#mojModal{
+body{
+  
+    background: url(../images/background1.jpg) no-repeat center center fixed;;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     font-family: myFont;
-    font-size: larger;
+
+   // color:white;
+    
 }
-#myModal{
-    font-family: myFont;
-    font-size: larger;
-}
-.naslov{
-    text-align:center;
+body, .container-fluid {
+    height: 100vh;
 }
 
-.modal-footer1{
-    display:flex !important;
-    flex-direction:row !important;
-    justify-content: space-between !important;
+
+.bottomButton{
+    height: 50px;
+  font-size:27px;
+   
+    background-color:transparent;
+    border: none;
+    display: inline-block;
+    background-repeat: none;
+    font-family: myFont;
+    color:white;
+    outline: none;
 }
 
-.modal-footer2{
-    text-align:right;
+.HasButton{
+    text-align: center;
 }
+
+.
+img{
+    width: 14%;
+    height: 14%;
+}
+
+.modalButton{
+    background: #4754a2;
+    color: white;
+    font-size: 15px;
+}
+
+
+
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -39,12 +65,7 @@ select:-webkit-autofill:focus {
     -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset ;
     transition: background-color 5000s ease-in-out 0s;
 }
-body{
-    background: url(../images/register1.png) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-}
+
 input{
     margin-top: 5px !important;
     margin-bottom: 5px !important;
@@ -54,42 +75,7 @@ input{
     background-color: rgba(166, 159, 200, 0);
     color: white !important;
     font-size: 3vh !important;
-    text-indent: 6px;
-}
-body, .container-fluid {
-    height: 100vh;
-}
 
-#slikaprofila{
-    opacity: 70%;
-    width: 80px;
-    height: 80px;
-   /* width: 6.8vw;
-    height: 15vh;*/
-    object-fit: contain;
-
-}
-#profil{
-    text-align:center;
-
-}
-#borderless{
-    border:none !important;
-}
-.btn{
-    font-size: 4vh;
-    font-family:myFont;
-    margin-top: auto !important;
-    margin-bottom: auto !important;
-}
-
-#red{
-    height: 85vh;
-}
-
-.pozadina{
-    background-color: rgba(114, 80, 152, 0.71);
-    backdrop-filter: blur(3px);
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: white;
@@ -109,9 +95,11 @@ body, .container-fluid {
     opacity: 60%;
 }
 
-table{
+table {
     color: white !important;
     font-family: myFont;
+    background-color: rgba(131, 76, 152, 0.77);
+    backdrop-filter: blur(3px);
 }
 
 td{
@@ -120,18 +108,43 @@ td{
     padding-bottom: 4px !important;
 }
 
+
 #logo{
     width: 10vw;
     height: 10vh;
     object-fit: contain;
 }
-#inputslike:hover{
-    cursor: pointer;
+
+.naslov{
+    font-size: 5vh;
+    
+}
+#red{
+    height: 85vh;
 }
 
 #header{
-    vertical-align: middle !important;
-    display:flex;
-    flex-direction:row;
+    vertical-align: middle; !important;
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
+}
+
+
+
+.tableModal{
+    font-size: 17px;   !important;
+    text-align: center;  !important;
+    background-color: white; !important;
+    color: black;          !important;
+}
+
+.picUpload:hover{
+    cursor: pointer;
+}
+.btn{
+
+    font-family:myFont;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
 }

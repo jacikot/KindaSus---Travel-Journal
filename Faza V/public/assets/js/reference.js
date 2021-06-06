@@ -17,3 +17,6 @@ function sendIt(id,url){
         });
 
 }
+
+
+

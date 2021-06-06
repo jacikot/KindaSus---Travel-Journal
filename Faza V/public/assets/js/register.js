@@ -118,7 +118,7 @@ function register(){
 
     if(username.length < minLengthUser || username.length > maxLengthUser){
         req = true;
-        setReturnValues("Sorry..", "Needs to be between "+minLengthUser + " and "+ maxLengthUser, "#username","left");
+        setReturnValues("Sorry..", "Needs to be between "+minLengthUser + " and "+ maxLengthUser +" characters", "#username","left");
 
     }
 
@@ -142,7 +142,7 @@ function register(){
     }
 
     // za sad za email proveri samo da li ima @
-    if(/[a-zA-Z]+@[a-zA-Z]+/.test(email) === false){
+    if(/\w+@\w+/.test(email) === false){
         req = true;
         setReturnValues("Sorry..", "Inadequate email format", "#email","left");
     }
@@ -187,9 +187,7 @@ function register(){
     sendData(fd);
 
 }
-function goToMap(){
-    alert("Mapa");
-}
+
 function setValues(title,button,func){
     $(".modal-title").text(title);
     $("button").filter(".mybtn").text(button);

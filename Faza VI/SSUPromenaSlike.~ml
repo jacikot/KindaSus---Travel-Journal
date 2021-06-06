@@ -37,15 +37,15 @@ SSU: Promena slike
 <XPD:OBJ name="OwnedViews[1]" type="UMLActorView" guid="30qwEmkO9UqwhATPJs9lcQAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">120</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">188</XPD:ATTR>
-<XPD:ATTR name="Width" type="integer">127</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">176</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">216</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">77</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">78</XPD:ATTR>
 <XPD:REF name="Model">GcLde4UY5EaF0rIYjT00IQAA</XPD:REF>
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="gT8SkXGTo0+nwr1d4r9OLQAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="+ykohCWDyEyTbGoszgGeeQAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">Registrovan korisnik</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">Korisnik</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="l229tGTZF0yGevIwyMdiYAAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -66,8 +66,8 @@ SSU: Promena slike
 <XPD:OBJ name="OwnedViews[2]" type="UMLUseCaseView" guid="1+QHtrOuDESDlx4UPuTjWAAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">380</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">144</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">332</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">200</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">197</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">48</XPD:ATTR>
 <XPD:REF name="Model">fIvnFkKuIU+xtQ33MWRD3QAA</XPD:REF>
@@ -99,7 +99,7 @@ SSU: Promena slike
 <XPD:OBJ name="OwnedViews[3]" type="UMLAssociationView" guid="JuyKVh515UudCZiKPcvIUgAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">246,213;380,186</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">252,249;332,237</XPD:ATTR>
 <XPD:REF name="Model">m0/K4+ZENUa4PRN/vLK4sgAA</XPD:REF>
 <XPD:REF name="Head">1+QHtrOuDESDlx4UPuTjWAAA</XPD:REF>
 <XPD:REF name="Tail">30qwEmkO9UqwhATPJs9lcQAA</XPD:REF>
@@ -184,7 +184,7 @@ SSU: Promena slike
 </XPD:OBJ>
 <XPD:ATTR name="#OwnedElements" type="integer">3</XPD:ATTR>
 <XPD:OBJ name="OwnedElements[0]" type="UMLActor" guid="GcLde4UY5EaF0rIYjT00IQAA">
-<XPD:ATTR name="Name" type="string">Registrovan korisnik</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Korisnik</XPD:ATTR>
 <XPD:REF name="Namespace">DGKjLVxcqkmGDjiU8IPatQAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">3</XPD:ATTR>
 <XPD:REF name="Views[0]">30qwEmkO9UqwhATPJs9lcQAA</XPD:REF>
@@ -220,8 +220,8 @@ SSU: Promena slike
 <XPD:REF name="Participant">GcLde4UY5EaF0rIYjT00IQAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">G6VGSucM2EmroQzctICYkAAA</XPD:REF>
-<XPD:REF name="Views[1]">3S1GUQgKT0avFl7pWtALSwAA</XPD:REF>
-<XPD:REF name="Views[2]">pdP/FChKYEKWViAedBCBWQAA</XPD:REF>
+<XPD:REF name="Views[1]">pdP/FChKYEKWViAedBCBWQAA</XPD:REF>
+<XPD:REF name="Views[2]">3S1GUQgKT0avFl7pWtALSwAA</XPD:REF>
 <XPD:REF name="Views[3]">Pk3mNvvMzUC9vrUidClRdgAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="S4Sfke7kzE6EQCSdjbbivAAA">
@@ -229,8 +229,8 @@ SSU: Promena slike
 <XPD:REF name="Participant">fIvnFkKuIU+xtQ33MWRD3QAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">HSDS2xwrO0OGY3NtEkbYmQAA</XPD:REF>
-<XPD:REF name="Views[1]">EqX52N1Dy0O1ff5R0dFdmQAA</XPD:REF>
-<XPD:REF name="Views[2]">d1W5VoMEdUiZGHzHIYGvwgAA</XPD:REF>
+<XPD:REF name="Views[1]">d1W5VoMEdUiZGHzHIYGvwgAA</XPD:REF>
+<XPD:REF name="Views[2]">EqX52N1Dy0O1ff5R0dFdmQAA</XPD:REF>
 <XPD:REF name="Views[3]">v1U2tFHy1EeImDRlulCDswAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -822,8 +822,8 @@ SSU: Promena slike
 <XPD:REF name="Participant">Ykt9VM5GHEuMQSQb8/8YQwAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">VNM6rG+vZkifBC2pGBqfAgAA</XPD:REF>
-<XPD:REF name="Views[1]">ppG5SWPrl0exlKs+TfqIAQAA</XPD:REF>
-<XPD:REF name="Views[2]">Hz8UJkbm3US1dWG5Vpn9fQAA</XPD:REF>
+<XPD:REF name="Views[1]">Hz8UJkbm3US1dWG5Vpn9fQAA</XPD:REF>
+<XPD:REF name="Views[2]">ppG5SWPrl0exlKs+TfqIAQAA</XPD:REF>
 <XPD:REF name="Views[3]">vj/w9v8Dm0SOtIJXUUd1gQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="ZEc4rb9YoUaCQJ5od77k1gAA">
@@ -831,8 +831,8 @@ SSU: Promena slike
 <XPD:REF name="Participant">8rnSC5CGx06t92G7uI8RlwAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">fLnliQTYZEemaWR70CGsjwAA</XPD:REF>
-<XPD:REF name="Views[1]">podWJ9l4CUaQrHzORxCzfwAA</XPD:REF>
-<XPD:REF name="Views[2]">/kz9lEzdi0OnliYe+MXe4gAA</XPD:REF>
+<XPD:REF name="Views[1]">/kz9lEzdi0OnliYe+MXe4gAA</XPD:REF>
+<XPD:REF name="Views[2]">podWJ9l4CUaQrHzORxCzfwAA</XPD:REF>
 <XPD:REF name="Views[3]">KbuJKXsb8Eqnv4hP/GgwhwAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -883,8 +883,8 @@ SSU: Promena slike
 <XPD:REF name="Participant">ZhRSSWEN7kmvETRobYSaWgAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">SjJ9stptVkelOkPoG/TcTAAA</XPD:REF>
-<XPD:REF name="Views[1]">lG1MAycuJ0Cx+BusBm+/jQAA</XPD:REF>
-<XPD:REF name="Views[2]">uXIq3iZFB0iph/uEmc/IPQAA</XPD:REF>
+<XPD:REF name="Views[1]">uXIq3iZFB0iph/uEmc/IPQAA</XPD:REF>
+<XPD:REF name="Views[2]">lG1MAycuJ0Cx+BusBm+/jQAA</XPD:REF>
 <XPD:REF name="Views[3]">GFrGxKuc3U6HsrHTMBBbKAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="+XA26uUCyEKV1wIpq5ehEgAA">
@@ -893,8 +893,8 @@ SSU: Promena slike
 <XPD:REF name="Participant">8rnSC5CGx06t92G7uI8RlwAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">KNhJJkkH3kCrRZaxU3fY+gAA</XPD:REF>
-<XPD:REF name="Views[1]">FcHvxxmewUK/PVA9N7bmmAAA</XPD:REF>
-<XPD:REF name="Views[2]">0FKbPCpd7UK5KyzecoR3EQAA</XPD:REF>
+<XPD:REF name="Views[1]">0FKbPCpd7UK5KyzecoR3EQAA</XPD:REF>
+<XPD:REF name="Views[2]">FcHvxxmewUK/PVA9N7bmmAAA</XPD:REF>
 <XPD:REF name="Views[3]">IX1KLjvYNkKKaP5PSTNvpgAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -913,8 +913,8 @@ SSU: Promena slike
 <XPD:REF name="Participant">ZhRSSWEN7kmvETRobYSaWgAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">5O88Z+CN1U+JySQyJTLf9QAA</XPD:REF>
-<XPD:REF name="Views[1]">OstbGr6BL0OCQEqdJRJsOwAA</XPD:REF>
-<XPD:REF name="Views[2]">dAOUrLeNGEWnUFvTpKjswgAA</XPD:REF>
+<XPD:REF name="Views[1]">dAOUrLeNGEWnUFvTpKjswgAA</XPD:REF>
+<XPD:REF name="Views[2]">OstbGr6BL0OCQEqdJRJsOwAA</XPD:REF>
 <XPD:REF name="Views[3]">djJNpo39Nkyygb5ICuLSWwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="lex/N5IIYkymkuvkvElMcQAA">
@@ -922,8 +922,8 @@ SSU: Promena slike
 <XPD:REF name="Participant">ku1Ap6VGWk+XijHZ47OL0AAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">Y0w2CQgOiE+PyYPpjtpaVgAA</XPD:REF>
-<XPD:REF name="Views[1]">ESrj5+BiyEGmZAmOnK0rmgAA</XPD:REF>
-<XPD:REF name="Views[2]">18IOSqH/40OIsbIzBIrNawAA</XPD:REF>
+<XPD:REF name="Views[1]">18IOSqH/40OIsbIzBIrNawAA</XPD:REF>
+<XPD:REF name="Views[2]">ESrj5+BiyEGmZAmOnK0rmgAA</XPD:REF>
 <XPD:REF name="Views[3]">x5lZ3MLBokuOvSYAZtgaiAAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -942,8 +942,8 @@ SSU: Promena slike
 <XPD:REF name="Participant">8rnSC5CGx06t92G7uI8RlwAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">UBBOLeSCyE+P9C3vX6aQ3wAA</XPD:REF>
-<XPD:REF name="Views[1]">khwRlCS3FkiP+gmztf8s1gAA</XPD:REF>
-<XPD:REF name="Views[2]">oFEFr6M+bkSQqlOnRrE0ZQAA</XPD:REF>
+<XPD:REF name="Views[1]">oFEFr6M+bkSQqlOnRrE0ZQAA</XPD:REF>
+<XPD:REF name="Views[2]">khwRlCS3FkiP+gmztf8s1gAA</XPD:REF>
 <XPD:REF name="Views[3]">cQYT2CSTWUK7szbnse9sOAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="qNlYnGiUo0OOv4b1V0fjEQAA">
@@ -951,8 +951,8 @@ SSU: Promena slike
 <XPD:REF name="Participant">ku1Ap6VGWk+XijHZ47OL0AAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">6E7yxMHI8U+tbEVfvg7pTQAA</XPD:REF>
-<XPD:REF name="Views[1]">c5C7n8xobUOnPL0kRhiteQAA</XPD:REF>
-<XPD:REF name="Views[2]">Jrjecrpua02T2FTgQZzB8AAA</XPD:REF>
+<XPD:REF name="Views[1]">Jrjecrpua02T2FTgQZzB8AAA</XPD:REF>
+<XPD:REF name="Views[2]">c5C7n8xobUOnPL0kRhiteQAA</XPD:REF>
 <XPD:REF name="Views[3]">CiExDc4M6UKnBCtWe3PyowAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>

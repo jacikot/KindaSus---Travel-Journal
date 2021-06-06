@@ -28,13 +28,13 @@
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">160</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">160</XPD:ATTR>
-<XPD:ATTR name="Width" type="integer">86</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">127</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">78</XPD:ATTR>
 <XPD:REF name="Model">+Rr3VFihakipAAQOJd9mswAA</XPD:REF>
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="rY53KSwn8k2PHqnE44KBtwAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="fR1HfgyT0E6/86n5he0ZTgAA">
 <XPD:ATTR name="FontStyle" type="integer">1</XPD:ATTR>
-<XPD:ATTR name="Text" type="string">Korisnik</XPD:ATTR>
+<XPD:ATTR name="Text" type="string">Registrovan korisnik</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="J9mInSTmiEa811H8SUfnzQAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -88,7 +88,7 @@
 <XPD:OBJ name="OwnedViews[2]" type="UMLAssociationView" guid="ouV3ZF3xqEqMsaJG6yXnQQAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">245,199;400,201</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">286,199;400,201</XPD:ATTR>
 <XPD:REF name="Model">dgkIKqxlNkGDbEP81/3wygAA</XPD:REF>
 <XPD:REF name="Head">6OLl2+ZpF0y6JpGXh8jdyAAA</XPD:REF>
 <XPD:REF name="Tail">R426P+zFlUakuaOIZV2wBQAA</XPD:REF>
@@ -184,7 +184,7 @@ SSU: Igranje Kviza
 </XPD:OBJ>
 <XPD:ATTR name="#OwnedElements" type="integer">3</XPD:ATTR>
 <XPD:OBJ name="OwnedElements[0]" type="UMLActor" guid="+Rr3VFihakipAAQOJd9mswAA">
-<XPD:ATTR name="Name" type="string">Korisnik</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">Registrovan korisnik</XPD:ATTR>
 <XPD:REF name="Namespace">Blx3+uuIO0WZ7o0EDvBzbQAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">3</XPD:ATTR>
 <XPD:REF name="Views[0]">R426P+zFlUakuaOIZV2wBQAA</XPD:REF>
@@ -220,8 +220,8 @@ SSU: Igranje Kviza
 <XPD:REF name="Participant">+Rr3VFihakipAAQOJd9mswAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">+T3E8shb8EKvCvnPrNvjagAA</XPD:REF>
-<XPD:REF name="Views[1]">K4vlkohkrk6Ctd6VsbyGfQAA</XPD:REF>
-<XPD:REF name="Views[2]">fdBwUuFZoUOHaNnYGqGwHQAA</XPD:REF>
+<XPD:REF name="Views[1]">fdBwUuFZoUOHaNnYGqGwHQAA</XPD:REF>
+<XPD:REF name="Views[2]">K4vlkohkrk6Ctd6VsbyGfQAA</XPD:REF>
 <XPD:REF name="Views[3]">m0DKLd62Mku7FHke+BXVHwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="z6tolBMOjEuynWjiEtUU3gAA">
@@ -229,8 +229,8 @@ SSU: Igranje Kviza
 <XPD:REF name="Participant">gHf1CWAkfESH8Y2c8RTXoAAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">gWuyfbKPLE6qj4uvOFLXSwAA</XPD:REF>
-<XPD:REF name="Views[1]">AaWxeL8dNEy2VfYvMstufwAA</XPD:REF>
-<XPD:REF name="Views[2]">dz6JbruORkCT1+Xts1ZFdAAA</XPD:REF>
+<XPD:REF name="Views[1]">dz6JbruORkCT1+Xts1ZFdAAA</XPD:REF>
+<XPD:REF name="Views[2]">AaWxeL8dNEy2VfYvMstufwAA</XPD:REF>
 <XPD:REF name="Views[3]">+wbhidmrPk69FBu+mzehigAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -1312,8 +1312,8 @@ SSU: Igranje Kviza
 <XPD:REF name="Participant">Ug7uj0b99kS3z9EReRDSLgAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">nSuO1cXbik6QDOl+DpfDzQAA</XPD:REF>
-<XPD:REF name="Views[1]">nSbtPA+qsEa5iKW6DZxzXQAA</XPD:REF>
-<XPD:REF name="Views[2]">uXtejd41CEa3JU41Tdx6UAAA</XPD:REF>
+<XPD:REF name="Views[1]">uXtejd41CEa3JU41Tdx6UAAA</XPD:REF>
+<XPD:REF name="Views[2]">nSbtPA+qsEa5iKW6DZxzXQAA</XPD:REF>
 <XPD:REF name="Views[3]">A/bTTD8CwE+ScjfbbOl5xAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="s9+nFcVSQkGnicbIUDtSpgAA">
@@ -1321,8 +1321,8 @@ SSU: Igranje Kviza
 <XPD:REF name="Participant">ThTGCdygGUifq9DB+ym3oAAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">ubTbIpvc3kacRtIs9UK+WAAA</XPD:REF>
-<XPD:REF name="Views[1]">O5Ud45I2P0uXlinSWxUijgAA</XPD:REF>
-<XPD:REF name="Views[2]">eu4CwwJgtEuNH6BmQOqc2AAA</XPD:REF>
+<XPD:REF name="Views[1]">eu4CwwJgtEuNH6BmQOqc2AAA</XPD:REF>
+<XPD:REF name="Views[2]">O5Ud45I2P0uXlinSWxUijgAA</XPD:REF>
 <XPD:REF name="Views[3]">+FSoeykCnEehWVNGFDDnDgAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -1356,8 +1356,8 @@ SSU: Igranje Kviza
 <XPD:REF name="Participant">OQr53/ZDeUCEoiWyGyqIYwAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">0FpFIsfTHU2sPWD9xtQWLQAA</XPD:REF>
-<XPD:REF name="Views[1]">MhIJnPR0wECKqXpBtlQ/vAAA</XPD:REF>
-<XPD:REF name="Views[2]">Nz9mTE4+80iY6UyeV1hpegAA</XPD:REF>
+<XPD:REF name="Views[1]">Nz9mTE4+80iY6UyeV1hpegAA</XPD:REF>
+<XPD:REF name="Views[2]">MhIJnPR0wECKqXpBtlQ/vAAA</XPD:REF>
 <XPD:REF name="Views[3]">TDDH8JynakaZ1RR8/I8BgAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="IqR8SAnt9kysh+etW3HuHQAA">
@@ -1365,8 +1365,8 @@ SSU: Igranje Kviza
 <XPD:REF name="Participant">a3lDbMf8MkeDBKaBZlcgDAAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">gWEaoeIvCE26TgBeDTVNbQAA</XPD:REF>
-<XPD:REF name="Views[1]">gC6kj3U4qEiCnZyO/OnGvQAA</XPD:REF>
-<XPD:REF name="Views[2]">eVMXjNDjmkKbDzXu3epYDAAA</XPD:REF>
+<XPD:REF name="Views[1]">eVMXjNDjmkKbDzXu3epYDAAA</XPD:REF>
+<XPD:REF name="Views[2]">gC6kj3U4qEiCnZyO/OnGvQAA</XPD:REF>
 <XPD:REF name="Views[3]">90rwAEZnmkKfVzzL5AY/FwAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -1385,8 +1385,8 @@ SSU: Igranje Kviza
 <XPD:REF name="Participant">Ug7uj0b99kS3z9EReRDSLgAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">uKSd6CRSw02gcI/0hREZcQAA</XPD:REF>
-<XPD:REF name="Views[1]">414klMb10EO2vWsTcPxG0QAA</XPD:REF>
-<XPD:REF name="Views[2]">Q9N4tinqxEyVIytLwG8J8wAA</XPD:REF>
+<XPD:REF name="Views[1]">Q9N4tinqxEyVIytLwG8J8wAA</XPD:REF>
+<XPD:REF name="Views[2]">414klMb10EO2vWsTcPxG0QAA</XPD:REF>
 <XPD:REF name="Views[3]">GpfMJbybOkKDFRDe2iJTggAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="k2zmSOPi2E6Y+eFeiifwJAAA">
@@ -1394,8 +1394,8 @@ SSU: Igranje Kviza
 <XPD:REF name="Participant">OQr53/ZDeUCEoiWyGyqIYwAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">QxgM36STrUW0At37B1vRewAA</XPD:REF>
-<XPD:REF name="Views[1]">kafaTQX37Uy4yZq0SC2NggAA</XPD:REF>
-<XPD:REF name="Views[2]">pohjhTJyqketG7EFbw/QEwAA</XPD:REF>
+<XPD:REF name="Views[1]">pohjhTJyqketG7EFbw/QEwAA</XPD:REF>
+<XPD:REF name="Views[2]">kafaTQX37Uy4yZq0SC2NggAA</XPD:REF>
 <XPD:REF name="Views[3]">zq3lsPhBukyacJ+ywbn5VwAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -1428,8 +1428,8 @@ SSU: Igranje Kviza
 <XPD:REF name="Participant">AiTPEC7twke1DtLKeLyzggAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">4k+wZ095Z0G+6iSSGEjsngAA</XPD:REF>
-<XPD:REF name="Views[1]">PGMtTMFnlESPJX+Z7vsyYgAA</XPD:REF>
-<XPD:REF name="Views[2]">DPkdeH/BrEyi8KRAQm3hQwAA</XPD:REF>
+<XPD:REF name="Views[1]">DPkdeH/BrEyi8KRAQm3hQwAA</XPD:REF>
+<XPD:REF name="Views[2]">PGMtTMFnlESPJX+Z7vsyYgAA</XPD:REF>
 <XPD:REF name="Views[3]">f/X2MvgX5UqaRYAN9btMFQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="zpludkz2xUuvJ0hpWcFGAwAA">
@@ -1438,8 +1438,8 @@ SSU: Igranje Kviza
 <XPD:REF name="Participant">OQr53/ZDeUCEoiWyGyqIYwAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">0Xtozth8QkmRRiw7pEXZdQAA</XPD:REF>
-<XPD:REF name="Views[1]">TGu0EFtJKU+3siD8uaV7bAAA</XPD:REF>
-<XPD:REF name="Views[2]">t3HS0RTO50KKC9X7fSbO7QAA</XPD:REF>
+<XPD:REF name="Views[1]">t3HS0RTO50KKC9X7fSbO7QAA</XPD:REF>
+<XPD:REF name="Views[2]">TGu0EFtJKU+3siD8uaV7bAAA</XPD:REF>
 <XPD:REF name="Views[3]">utgXJbHTPEu+CfBvkBEaJwAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -1512,8 +1512,8 @@ SSU: Igranje Kviza
 <XPD:REF name="Participant">Ug7uj0b99kS3z9EReRDSLgAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">IkQvwn+EMkCMuaeGW5/VngAA</XPD:REF>
-<XPD:REF name="Views[1]">vDU5LYyePkKTJX/RtmoWtQAA</XPD:REF>
-<XPD:REF name="Views[2]">cEpikf15NEWAXsDPJv0qYwAA</XPD:REF>
+<XPD:REF name="Views[1]">cEpikf15NEWAXsDPJv0qYwAA</XPD:REF>
+<XPD:REF name="Views[2]">vDU5LYyePkKTJX/RtmoWtQAA</XPD:REF>
 <XPD:REF name="Views[3]">y2TZ63wqP0Wp3u5Cc9ADUQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="mxqui3zCH0m5+G5hjSEzcwAA">
@@ -1521,8 +1521,8 @@ SSU: Igranje Kviza
 <XPD:REF name="Participant">JjW/9RfRYkagneyIz42ipwAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">ikTGazHG2U61IHQO1yzzFgAA</XPD:REF>
-<XPD:REF name="Views[1]">YGOI+HAnM0++7IfPQIqhigAA</XPD:REF>
-<XPD:REF name="Views[2]">JsDcueDzUk27VpDDjbERowAA</XPD:REF>
+<XPD:REF name="Views[1]">JsDcueDzUk27VpDDjbERowAA</XPD:REF>
+<XPD:REF name="Views[2]">YGOI+HAnM0++7IfPQIqhigAA</XPD:REF>
 <XPD:REF name="Views[3]">2oIdJQVSuUCbo5fwhZbmmgAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -1584,8 +1584,8 @@ SSU: Igranje Kviza
 <XPD:REF name="Participant">JjW/9RfRYkagneyIz42ipwAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">HjdoJ+tPD0m4JAMGYFYRPQAA</XPD:REF>
-<XPD:REF name="Views[1]">KPnY6FDqMkyXaInwABABzwAA</XPD:REF>
-<XPD:REF name="Views[2]">sezsXNrG2kSiLB6GxLEESwAA</XPD:REF>
+<XPD:REF name="Views[1]">sezsXNrG2kSiLB6GxLEESwAA</XPD:REF>
+<XPD:REF name="Views[2]">KPnY6FDqMkyXaInwABABzwAA</XPD:REF>
 <XPD:REF name="Views[3]">EbjM7iyi20qFRLew/E1xzQAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="k4xv4u4TBkOMZvw8Xbz2ngAA">
@@ -1593,8 +1593,8 @@ SSU: Igranje Kviza
 <XPD:REF name="Participant">fepFev94DkeqWrYhpQbiBwAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">UbOgLH5ykEO9T411GxctfQAA</XPD:REF>
-<XPD:REF name="Views[1]">JHi/7pk1sEaCmyPyExZe7wAA</XPD:REF>
-<XPD:REF name="Views[2]">bNf9LuN/+0aPQZJl7+PNOQAA</XPD:REF>
+<XPD:REF name="Views[1]">bNf9LuN/+0aPQZJl7+PNOQAA</XPD:REF>
+<XPD:REF name="Views[2]">JHi/7pk1sEaCmyPyExZe7wAA</XPD:REF>
 <XPD:REF name="Views[3]">bPPm3JQ9dESVBhDaEELJUAAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -1613,8 +1613,8 @@ SSU: Igranje Kviza
 <XPD:REF name="Participant">AiTPEC7twke1DtLKeLyzggAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">dODNYwjqwEqw4BmghlOiKAAA</XPD:REF>
-<XPD:REF name="Views[1]">OW/pd9roIUay/L84mTNJVwAA</XPD:REF>
-<XPD:REF name="Views[2]">H5s3tUwOtE6T0OMozWHO8QAA</XPD:REF>
+<XPD:REF name="Views[1]">H5s3tUwOtE6T0OMozWHO8QAA</XPD:REF>
+<XPD:REF name="Views[2]">OW/pd9roIUay/L84mTNJVwAA</XPD:REF>
 <XPD:REF name="Views[3]">85gxbCji60agb9ZQ5FAMRAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Connections[1]" type="UMLAssociationEnd" guid="LZV81UjTykazgr/UYijPGgAA">
@@ -1622,8 +1622,8 @@ SSU: Igranje Kviza
 <XPD:REF name="Participant">Ug7uj0b99kS3z9EReRDSLgAA</XPD:REF>
 <XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
 <XPD:REF name="Views[0]">h5iAiBZ0YUqBOq+5Oh6MMwAA</XPD:REF>
-<XPD:REF name="Views[1]">HMBND9xqE0+V0qN3yiWkmQAA</XPD:REF>
-<XPD:REF name="Views[2]">BSWIi2D+PUKV+ej7ic8JIAAA</XPD:REF>
+<XPD:REF name="Views[1]">BSWIi2D+PUKV+ej7ic8JIAAA</XPD:REF>
+<XPD:REF name="Views[2]">HMBND9xqE0+V0qN3yiWkmQAA</XPD:REF>
 <XPD:REF name="Views[3]">NKasBskQeEyF2y/e6u4+qwAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
@@ -1800,13 +1800,13 @@ SSU: Igranje Kviza
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="Left" type="integer">36</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">24</XPD:ATTR>
-<XPD:ATTR name="Width" type="integer">70</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">116</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">929</XPD:ATTR>
 <XPD:REF name="Model">V17lXOcG4kaSH7DQyE7+AQAA</XPD:REF>
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="32FIXJVWXUSzXne8OWHSggAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="PiGg7m9UEU2IUyjGMkV6cQAA">
 <XPD:ATTR name="FontStyle" type="integer">4</XPD:ATTR>
-<XPD:ATTR name="Text" type="string"> : Korisnik</XPD:ATTR>
+<XPD:ATTR name="Text" type="string"> : Registrovan korisnik</XPD:ATTR>
 </XPD:OBJ>
 <XPD:OBJ name="StereotypeLabel" type="LabelView" guid="lyXSOyIFkU2pLkx1+lhMuwAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
@@ -1991,7 +1991,7 @@ SSU: Igranje Kviza
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">71,124;191,124</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">94,124;191,124</XPD:ATTR>
 <XPD:REF name="Model">5BRW9ttKFUyStFNjXeamoAAA</XPD:REF>
 <XPD:REF name="Head">2S4aTiL9uU6h2rpfI7ysMgAA</XPD:REF>
 <XPD:REF name="Tail">ZZEBH2rRXESTvfSpFvjDzgAA</XPD:REF>
@@ -2139,7 +2139,7 @@ SSU: Igranje Kviza
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">447,196;71,196</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">447,196;94,196</XPD:ATTR>
 <XPD:REF name="Model">8L7JCvNZ/UeS8RP/fET4QwAA</XPD:REF>
 <XPD:REF name="Head">ZZEBH2rRXESTvfSpFvjDzgAA</XPD:REF>
 <XPD:REF name="Tail">Z2hETEv2l0qKHXm2bjqSwgAA</XPD:REF>
@@ -2166,7 +2166,7 @@ SSU: Igranje Kviza
 </XPD:OBJ>
 <XPD:OBJ name="Activation" type="UMLActivationView" guid="33vwESDCO0aLjxRO2t8KcQAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">71</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">94</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">196</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">25</XPD:ATTR>
@@ -2250,7 +2250,7 @@ SSU: Igranje Kviza
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">447,248;71,248</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">447,248;94,248</XPD:ATTR>
 <XPD:REF name="Model">3UzCvyQQxEGk4hGJFuyNdAAA</XPD:REF>
 <XPD:REF name="Head">ZZEBH2rRXESTvfSpFvjDzgAA</XPD:REF>
 <XPD:REF name="Tail">Z2hETEv2l0qKHXm2bjqSwgAA</XPD:REF>
@@ -2277,7 +2277,7 @@ SSU: Igranje Kviza
 </XPD:OBJ>
 <XPD:OBJ name="Activation" type="UMLActivationView" guid="H7+sD/Yv6UudD0F4e8S/vQAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">71</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">94</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">248</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">25</XPD:ATTR>
@@ -2287,7 +2287,7 @@ SSU: Igranje Kviza
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">71,287;587,287</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">94,287;587,287</XPD:ATTR>
 <XPD:REF name="Model">UH4rNMRR4E2CoVQtHFSCjAAA</XPD:REF>
 <XPD:REF name="Head">n5mPWqcQw0+Josiiyl+/bQAA</XPD:REF>
 <XPD:REF name="Tail">ZZEBH2rRXESTvfSpFvjDzgAA</XPD:REF>
@@ -2324,7 +2324,7 @@ SSU: Igranje Kviza
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">71,340;587,340</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">94,340;587,340</XPD:ATTR>
 <XPD:REF name="Model">w/VzoyeOp0iGzPqXz9EQfgAA</XPD:REF>
 <XPD:REF name="Head">n5mPWqcQw0+Josiiyl+/bQAA</XPD:REF>
 <XPD:REF name="Tail">ZZEBH2rRXESTvfSpFvjDzgAA</XPD:REF>
@@ -2361,7 +2361,7 @@ SSU: Igranje Kviza
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">587,416;71,416</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">587,416;94,416</XPD:ATTR>
 <XPD:REF name="Model">D2WEH49gC0+NwHvEcPeLtwAA</XPD:REF>
 <XPD:REF name="Head">ZZEBH2rRXESTvfSpFvjDzgAA</XPD:REF>
 <XPD:REF name="Tail">n5mPWqcQw0+Josiiyl+/bQAA</XPD:REF>
@@ -2388,7 +2388,7 @@ SSU: Igranje Kviza
 </XPD:OBJ>
 <XPD:OBJ name="Activation" type="UMLActivationView" guid="7bR38PCm+kyTaXlntjZ8KAAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">71</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">94</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">416</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">25</XPD:ATTR>
@@ -2398,7 +2398,7 @@ SSU: Igranje Kviza
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">71,453;587,453</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">94,453;587,453</XPD:ATTR>
 <XPD:REF name="Model">EXouCTBjSk2A5b8YBwaDDgAA</XPD:REF>
 <XPD:REF name="Head">n5mPWqcQw0+Josiiyl+/bQAA</XPD:REF>
 <XPD:REF name="Tail">ZZEBH2rRXESTvfSpFvjDzgAA</XPD:REF>
@@ -2435,7 +2435,7 @@ SSU: Igranje Kviza
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">71,472;587,472</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">94,472;587,472</XPD:ATTR>
 <XPD:REF name="Model">h6E5wYKTFk6xWkzFu/WNRwAA</XPD:REF>
 <XPD:REF name="Head">n5mPWqcQw0+Josiiyl+/bQAA</XPD:REF>
 <XPD:REF name="Tail">ZZEBH2rRXESTvfSpFvjDzgAA</XPD:REF>
@@ -2583,7 +2583,7 @@ SSU: Igranje Kviza
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
 <XPD:ATTR name="LineStyle" type="LineStyleKind">lsRectilinear</XPD:ATTR>
-<XPD:ATTR name="Points" type="Points">447,712;71,712</XPD:ATTR>
+<XPD:ATTR name="Points" type="Points">447,712;94,712</XPD:ATTR>
 <XPD:REF name="Model">14uZszUmY0ylTknEnthhCAAA</XPD:REF>
 <XPD:REF name="Head">ZZEBH2rRXESTvfSpFvjDzgAA</XPD:REF>
 <XPD:REF name="Tail">Z2hETEv2l0qKHXm2bjqSwgAA</XPD:REF>
@@ -2610,7 +2610,7 @@ SSU: Igranje Kviza
 </XPD:OBJ>
 <XPD:OBJ name="Activation" type="UMLActivationView" guid="WKd4CXCumEWp6b+mPFGklgAA">
 <XPD:ATTR name="Visible" type="boolean">False</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">71</XPD:ATTR>
+<XPD:ATTR name="Left" type="integer">94</XPD:ATTR>
 <XPD:ATTR name="Top" type="integer">712</XPD:ATTR>
 <XPD:ATTR name="Width" type="integer">14</XPD:ATTR>
 <XPD:ATTR name="Height" type="integer">25</XPD:ATTR>

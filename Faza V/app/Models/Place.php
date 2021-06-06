@@ -1,26 +1,19 @@
-<?php
-
-namespace App\Models;
-
-
-namespace App\Models;
-
+<?php namespace App\Models;
 
 use CodeIgniter\Model;
 
 class Place extends Model
 {
-    protected $table = 'place';
+    protected $table      = 'place';
     protected $primaryKey = 'id_plc';
-    protected $useAutoIncrement = true;
     protected $returnType = 'object';
     protected $allowedFields = ['name', 'categorized', 'heritage', 'relax',
-                                'sightseeing', 'weather', 'populated', 'id_cnt'];
+        'sightseeing', 'weather', 'populated', 'id_cnt', 'taken_survey'];
 
     public function getAllCategorized(){
-       return $this->where('categorized',1)->findAll();
+        return $this->where('categorized',1)->findAll();
     }
-  
+
     public function findPlace($name){
         return $this->where('name',$name)->findAll();
     }
@@ -39,7 +32,7 @@ class Place extends Model
     public function insertPlace(){
 
     }
-	
+
     public function getCountry($plcid){
         $visited=$this->find($plcid);
         return $visited->id_cnt;
@@ -99,4 +92,22 @@ class Place extends Model
 
         return $query->getResultArray();
     }
+
+
+
+    public function getPlaceById($id){
+        return $this->where('id_plc', $id)->findAll();
+    }
+
+    public function getPlaceByName($name){
+        return $this->where('name',$name)->find();
+    }
+    public function getPlaceByNameAndCountry($name, $country){
+
+           return $this->where('name',$name)->where('id_cnt', $country)->findAll();
+
+    }
+
+
+
 }

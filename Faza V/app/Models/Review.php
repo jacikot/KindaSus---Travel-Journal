@@ -1,6 +1,4 @@
-<?php 
-
-namespace App\Models;
+<?php namespace App\Models;
 
 use CodeIgniter\Model;
 
@@ -154,4 +152,22 @@ class Review extends Model
     public function deleteReview($id){
         $this->where("id_rev",$id)->delete();
     }
+
+
+    public function getRevById($id){
+        return $this->where('id_rev', $id)->find();
+    }
+
+
 }
+
+/*
+ field:
+id_rev
+title
+text_path
+privacy
+token_count
+id_vis
+date_posted
+ */
