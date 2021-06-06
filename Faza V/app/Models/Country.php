@@ -32,16 +32,26 @@ class Country extends Model
 
 
 
-
+/*
+ * findCountry fetches country with given name
+ * function returns a Country object
+ * */
 
     public function findCountry($cntr) {
         return like('name', $cntr)->findAll();
     }
+    /*
+ * findCountry fetches country with given id
+ * function returns a Country object
+ * */
     public function getCountryById($id){
         return $this->where('id_cnt', $id)->find();
-        //pazi na fin da bi ti vratio samo 1 objekat jer je svakako po primarnom kljucu!!!
-    }
 
+    }
+    /*
+     * findCountry fetches country with given name
+     * function returns a Country object
+     * */
     public function getCountryByName($name){
         return $this->where('name',$name)->findAll();
     }

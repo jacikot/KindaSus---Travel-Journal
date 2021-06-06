@@ -148,12 +148,16 @@ class Review extends Model
         return $revs;
 
     }
-
+/*function deleteReview deletes (if exists) review with given id
+ * function returns void
+ * */
     public function deleteReview($id){
         $this->where("id_rev",$id)->delete();
     }
 
-
+    /*function getRevById fetches (if exists) review with given id
+     * function returns Review object
+     * */
     public function getRevById($id){
         return $this->where('id_rev', $id)->find();
     }

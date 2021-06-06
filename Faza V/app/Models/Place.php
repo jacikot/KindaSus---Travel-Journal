@@ -94,14 +94,24 @@ class Place extends Model
     }
 
 
-
+/*
+ * function getPlaceById fetches place (if exists) with given id
+ * function returns a Place object
+ * */
     public function getPlaceById($id){
         return $this->where('id_plc', $id)->findAll();
     }
-
+    /*
+     * function getPlaceByName fetches place (if exists) with given name
+     * function returns a Place object
+     * */
     public function getPlaceByName($name){
         return $this->where('name',$name)->find();
     }
+    /*
+ * function getPlaceByNameAndCountry fetches places (if exists) with given name and country id
+ * function returns a Place object
+ * */
     public function getPlaceByNameAndCountry($name, $country){
 
            return $this->where('name',$name)->where('id_cnt', $country)->findAll();

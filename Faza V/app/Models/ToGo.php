@@ -8,6 +8,10 @@ class ToGo extends Model
     protected $primaryKey = 'id_tgl';
     protected $returnType = 'object';
     protected $allowedFields = ['id_usr', 'id_plc','crossed_off'];
+    /*
+ * function getToGo fetches items from the To-Go list (travelling goals made by given user and to given place)
+     *function returns a To-Go object array
+ * */
 
     public function getToGo($id_usr){
         return $this->where('id_usr',$id_usr)->find();
@@ -16,7 +20,10 @@ class ToGo extends Model
     public function getListItem($id_usr, $id_pls){
         return $this->where('id_usr',$id_usr)->where('id_plc', $id_pls)->findAll();
     }
-
+/*
+ * function deleteFromToGoList deletes an item from the To-Go list (travelling goal made by given user and to given place)
+ * returns void
+ * */
     public function deleteFromToGoList( $id_usr, $id_pls){
         return $this->where('id_usr',$id_usr)->where('id_plc', $id_pls)->delete();
     }

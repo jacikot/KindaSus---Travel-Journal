@@ -9,6 +9,10 @@ class Visited extends Model
     protected $returnType = 'object';
     protected $allowedFields = ['id_plc', 'id_usr'];
 
+    /* function getVisitById returns (if exists) visit with given id
+     function returns Visited object
+     * */
+
     public function getVisitById($id){
         return $this->where('id_vis', $id)->find();
     }
