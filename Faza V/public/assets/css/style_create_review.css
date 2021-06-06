@@ -1,7 +1,7 @@
 /* autor: Adriana Vidic  */
 @font-face{
     font-family: myFont;
-    src:url(../fontstyle/traveljournal.ttf);
+    src:url(../fontstyle/travel_journal_3.ttf);
 }
 body{
   
@@ -31,56 +31,12 @@ body, .container-fluid {
     color:white;
     outline: none;
 }
-.bottomButton:hover{
-    size:larger;
-    color: #333e7d;
- /*   background-color:#9BA3CA;*/
-    border-radius: 30px;
-    cursor: pointer;
-}
 
-
-.button:hover{
-    size:larger;
-    background-color:#9BA3CA;
-    border-radius: 25px;
-    color:white;
-}
 .HasButton{
     text-align: center;
 }
 
-.textField{
-    font-size: 25px;
-    border-radius: 25px;
-    border: transparent;
-    outline:none;
-}
-
-
-
-.back-to-home{
-    position: absolute;
-    top: 5%;
-    right: 1.75%;
-    border-radius: 25px;
-    padding: 14px;
-    width: 125px;
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
-    box-shadow: 4px 4px #333e7d;
-    background: #4754a2;
-    color: white;
-}
-
-.back-to-home:hover{
-    background: #333e7d;
-    font-size: 17px;
-   
-   
-}
-
+.
 img{
     width: 14%;
     height: 14%;
@@ -91,11 +47,7 @@ img{
     color: white;
     font-size: 15px;
 }
-.modalButton:hover{
-    background: #4754a2;
-    color: white;
-    font-size: 17px;
-}
+
 
 
 
@@ -185,4 +137,14 @@ td{
     text-align: center;  !important;
     background-color: white; !important;
     color: black;          !important;
+}
+
+.picUpload:hover{
+    cursor: pointer;
+}
+.btn{
+
+    font-family:myFont;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
 }

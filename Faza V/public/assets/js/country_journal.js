@@ -76,13 +76,18 @@ function insertOption(place,select,button,list){
     select.appendChild(opt);
 }
 
-/*
-* <option class="content" value="All visited cities" onclick="fAll()">All visited cities</option>
-        <option class="content" value="Moscow" onclick="fM()">Moscow</option>
-        <option class="content" value="Sankt Petersburg"onclick="fP()">Sankt Petersburg</option>
-*
-*
-* */
+function insertDefaultMsg(list,country){
+    let elem=document.createElement("li");
+    elem.classList.add("forList");
+    let excl=document.createElement("img");
+    excl.src=exclURL;
+    excl.style.marginBottom="10px";
+    elem.appendChild(excl);
+    elem.innerHTML+=" It looks like you haven't wrote anything about your experiences in "+country+" jet! Hurry up and save your memories!";
+    elem.style.fontSize="30px";
+    list.appendChild(elem);
+}
+
 function insertData(data){
     let country=data[0]["country"];
     let header=document.getElementsByTagName("h1");
@@ -101,10 +106,10 @@ function insertData(data){
 
     let list= document.getElementById("JournalList");
     let select=document.getElementById("menu");
-    // if(country==null){
-    //     select.style.display="none";
-    // }
     let button=document.getElementById("dropdownMenuButton");
+    if(data.length<=1){
+        insertDefaultMsg(list,data[0]["country"]);
+    }
     for(let i=1;i<data.length;i++){
         insertReview(data[i],list,data[0]["country"]);
         insertOption(data[i]["place"],select,button,list);

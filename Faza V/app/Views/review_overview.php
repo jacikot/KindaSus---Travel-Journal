@@ -60,7 +60,7 @@
 
            }
            ,function (tokens){
-            alert(tokens);
+
                document.getElementById('tokenNum').innerHTML=tokens;
                //   document.location.header();
 
@@ -193,9 +193,8 @@
        let cell5=$("<td style='border: none' id='tokenNum'></td>").append(token_count).css({
            "text-align":"right"
        });
-       let cell6=$("<td style='border: none'></td>").append($("<button class='bottomButton' onclick='giveToken()'><i class='fas fa-star'></i></button>")).css({
-           "background-color":"transparent",
-           "outline":"none"
+       let cell6=$("<td style='border: none'></td>").append($("<button class='btn btn-outline-light' onclick='giveToken()'><i class='fas fa-star'></i></button>")).css({
+
        });
 
        row3.append(cell5);
@@ -353,23 +352,22 @@
 
 </script>
 
-
+<script>
+    function goHome(){
+        javascript:history.go(-1);
+    }
+</script>
 
 </head>
 <body onload="getReview()">
-<container-fluid>
+<div class=" container-fluid">
     <div class="row">
-    <div class="col-12" >
-<!--
-        <img src="<?php echo base_url('assets/images/logo2.png')  ?>" style=" width: 14%;
-    height: 14%;">
-        
-        
-        <a href='map.html' class="back-to-home">Passport</a>
-
-        -->
-        <br>
-    </div>
+        <div class="col-lg-12 col-md-12 mt-2" id="header">
+            <img src="<?php echo base_url('assets/images/pic.png') ?>" id="logo"/>
+            <button class="btn btn-outline-light" onclick="goHome()">
+                Back To Home
+            </button>
+        </div>
     </div>
 
     <div class="row">
@@ -395,16 +393,18 @@
        <div class="col-3"></div>
     </div>
     <div class="row">
-        <div class="col-9"></div>
-        <div class="col-3">
-            <table class="table" id="revInfo">
+        <div class="col-5"></div>
+        <div class="col-2" style="text-align: center">
+
+            <table class="table" id="revInfo" >
 
             </table>
         </div>
+        <div class="col-5"></div>
     </div>
 
 
-</container-fluid>
+</div>
    </body>
    
    </html>

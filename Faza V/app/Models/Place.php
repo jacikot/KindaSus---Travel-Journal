@@ -39,7 +39,12 @@ class Place extends Model
     public function insertPlace(){
 
     }
-	
+
+    /*
+    * returns country id for given place
+    * @return int cnt_id
+    */
+
     public function getCountry($plcid){
         $visited=$this->find($plcid);
         return $visited->id_cnt;
@@ -105,5 +110,29 @@ class Place extends Model
                             AS p2 ON p1.id_plc = p2.id_plc");
 
         return $query->getResultArray();
+    }
+
+/*
+ * function getPlaceById fetches place (if exists) with given id
+ * function returns a Place object
+ * */
+    public function getPlaceById($id){
+        return $this->where('id_plc', $id)->findAll();
+    }
+    /*
+     * function getPlaceByName fetches place (if exists) with given name
+     * function returns a Place object
+     * */
+    public function getPlaceByName($name){
+        return $this->where('name',$name)->find();
+    }
+    /*
+ * function getPlaceByNameAndCountry fetches places (if exists) with given name and country id
+ * function returns a Place object
+ * */
+    public function getPlaceByNameAndCountry($name, $country){
+
+           return $this->where('name',$name)->where('id_cnt', $country)->findAll();
+
     }
 }

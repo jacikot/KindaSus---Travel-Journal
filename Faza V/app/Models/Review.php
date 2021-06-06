@@ -116,6 +116,13 @@ class Review extends Model
         $this->where("id_rev", $idRev)->set('privacy', ($type == 'private' ? '1' : '0'), false)->update();
     }
 
+    /*
+     * function returns review info needed for review list, joins with tables: visited, place, country, registered_user
+     *
+     * @return array - country, place, title, text, date, id_rev
+     *
+     * */
+
     public function getReviewInfo($usr_id,$country,$place,$code)
     {
         $res=$this->select("review.id_rev AS id_rev,review.title AS title, review.text AS text, place.name AS place, country.name AS country,review.date_posted AS date", false)
@@ -149,7 +156,20 @@ class Review extends Model
 
     }
 
+    /*function deleteReview deletes (if exists) review with given id
+    * function returns void
+    * */
+
     public function deleteReview($id){
         $this->where("id_rev",$id)->delete();
     }
+
+
+    /*function getRevById fetches (if exists) review with given id
+     * function returns Review object
+     * */
+    public function getRevById($id){
+        return $this->where('id_rev', $id)->find();
+    }
+
 }

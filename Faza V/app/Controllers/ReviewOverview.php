@@ -8,13 +8,27 @@ use App\Models\Place;
 use App\Models\Country;
 use App\Models\Image;
 
+/*
+ * Author: Adriana Vidic 2018/0311
+ * */
+
+/*
+ *
+ * This controller enables overview of the chosen review, and it adjusts the client page depending on the type of user
+ * that is looking at the review
+ */
+
 class ReviewOverview extends BaseController
 {
 
     public function index(){
-        echo view('review.php');
+        echo view('review_overview.php');
     }
-
+/*
+ * function getRev gets the chosen review from the database and all of the data required for it (text, privacy status, date, title,
+ * author of the review, and if the review has images attached to it, it also gets the path to them
+ * function returns all of the mentioned data encapsulated into JSON object
+ * */
     public function getRev(){
 
         $id=$this->session->get('id_rev');
@@ -88,6 +102,11 @@ class ReviewOverview extends BaseController
 
     }
 
+    /*
+ * function changeToPrivate changes the privacy status of the chosen review into private
+     * function returns void
+ */
+
     public function changeToPrivate(){
         $id=$this->session->get('id_rev');
         $tmp_review=new Review();
@@ -103,7 +122,10 @@ class ReviewOverview extends BaseController
             'date_posted'=>$review->date_posted
         ]);
     }
-
+    /*
+     * function changeToPublic changes the privacy status of the chosen review into public
+         * function returns void
+     */
     public function changeToPublic(){
         $num=1;
         $id=$this->session->get('id_rev');
@@ -126,6 +148,13 @@ class ReviewOverview extends BaseController
     /**
      * @throws \ReflectionException
      */
+
+    /*
+     * function giveTokens check if the user has already given token to the review, and if not, it gives token to the review,
+     * while updating the token number of the owner of the review and save information in the table FoundUseful that the token has been given
+     * by user to the review
+     * function return void
+     * */
     public function giveTokens(){
 
         $id=$this->session->get('id_rev');

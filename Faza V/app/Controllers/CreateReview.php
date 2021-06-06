@@ -8,30 +8,30 @@ use App\Models\Visited;
 use App\Models\Place;
 use App\Models\Country;
 use CodeIgniter\Model;
-
+/*
+ *
+ * This controller enables creating a review
+ *
+ */
 class CreateReview extends BaseController{
 
 public function index(){
     echo view('create_review.php');
 }
 
+/*
+ *
+ * Author: Adriana Vidic 2018/0311
+ */
 
-    public function validateRev($data){
-
-        //check if all the fields were filled correctly
-        //proveriti duzinu polja, da li postoji ta zemlja, da li su svi parametri uneti
-
-        //OVO URADITI!!! + dodati da se napravi poruka koja ce se onda ispisivati na ekranu
-        return true;
-    }
-
-    protected function getPlace($plc, $country){
-        //proveriti da li mesto postoji u bazi
-        //ako postoji vratiti njegov id
-        //ako ne postoji ubaciti i onda vratiti njegov id
-
-        return 1;
-    }
+/*
+ * function addVisit inserts a new visit into Visited table, while checking if the country exists in database (if not, it
+ * alerts user about that, and checks if the place exists in the Place table (if not, the place is inserted into that table)
+ * function also checks if user has made that destination one of his To-Go goals, and if so, it deletes that from his To-Go list
+ * it also awards user with a badge for a continent he has visited by visiting that destination
+ *
+ * function returns integer value of the id of the inserted visit
+ * */
 
 
     public function addVisit($plc, $country){
@@ -54,7 +54,6 @@ public function index(){
                 'category_3'=>$num,
                 'category_4'=>$num,
                 'category_5'=>$num,
-                'id_img'=>$one,
                 'id_cnt'=>$country_obj->id_cnt,
                 'taken_survey'=>$num
             ]);
@@ -88,11 +87,21 @@ public function index(){
 
         return $tmp_visit->getInsertID();
     }
-
+/*
+ * function pinOnTheMap inserts visit into Visited table so that it can be shown on user's map
+ * function returns string value that represents the success of the function
+ * */
     public function pinOnTheMap(){
         $id_vis=$this->addVisit($this->request->getVar('place'), $this->request->getVar('country'));
         echo "Congrats! You pinned a place on the map!";
     }
+
+    /*
+    function addRev creates a review while checking if all of the data collected from the form is valid (country exists,
+    all of the form fields were filled,if images are added they have valid extensions and are not too big, etc.),
+     if not it alerts the user about that
+function returns string value that represents the success of the function
+     */
 
     public function addRev() {
         $id_vis=$this->addVisit($this->request->getVar('place'), $this->request->getVar('country'));
@@ -176,7 +185,10 @@ public function index(){
 
     }
 
-
+/*
+ * function getSurveyQuestions collects survey questions from the database and returns them encapsulated into a JSON object
+ *
+ */
 
     public function getSurveyQuestions(){
             $tmp_question=new Question();
@@ -206,7 +218,11 @@ public function index(){
 
 
     }
-
+/*
+ * unction completeSurveyInfo collects answers the user has given to the survey at the end of writing into his/hers journal and
+ * calculates new points in each of the category for the reviewed place
+ * function returns void
+ * */
     public function completeSurveyInfo(){
         $place=$this->request->getVar('place');
         $country=$this->request->getVar('country');
@@ -227,11 +243,11 @@ public function index(){
 
 
         $num_surveys=$place_obj->taken_survey;
-        $new_points_heritage=(($points_heritage+$place_obj->category_1*$num_surveys))/(($num_surveys+1));
-        $new_points_relax=(($points_relax+$place_obj->category_2*$num_surveys))/(($num_surveys+1));
-        $new_points_sightseeing=(($points_sightseeing+$place_obj->category_3*$num_surveys))/(($num_surveys+1));
-        $new_points_weather=(($points_weather+$place_obj->category_4*$num_surveys))/(($num_surveys+1));
-        $new_points_populated=(($points_populated+$place_obj->category_5*$num_surveys))/(($num_surveys+1));
+        $new_points_heritage=(($points_heritage+$place_obj->heritage*$num_surveys))/(($num_surveys+1));
+        $new_points_relax=(($points_relax+$place_obj->relax*$num_surveys))/(($num_surveys+1));
+        $new_points_sightseeing=(($points_sightseeing+$place_obj->sightseeing*$num_surveys))/(($num_surveys+1));
+        $new_points_weather=(($points_weather+$place_obj->weather*$num_surveys))/(($num_surveys+1));
+        $new_points_populated=(($points_populated+$place_obj-populated*$num_surveys))/(($num_surveys+1));
 
 
         $num=0;

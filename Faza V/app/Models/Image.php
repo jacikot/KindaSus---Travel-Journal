@@ -9,17 +9,22 @@ class Image extends Model
     protected $returnType = 'object';
     protected $allowedFields = ['image_path', 'id_rev'];
 
-    public function insertImage($image_path,$id_rev=null){
+    /*
+     * function getPicsForReview fetches all of the images that are attached to given review
+     * function returns an Image array
+     * */
 
-        $this->save([
-            'image_path' => $image_path,
-            'id_rev' => $id_rev
-        ]);
+	public function getPicsForReview($id_rev){
+		return $this->where('id_rev', $id_rev)->findAll();
+	}
 
-         return $this->getInsertID();
-    }
+	public function insertImage($image_path,$id_rev=null){
 
+		$this->save([
+			'image_path' => $image_path,
+			'id_rev' => $id_rev
+		]);
 
-
-
+		 return $this->getInsertID();
+	}
 }

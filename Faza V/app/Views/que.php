@@ -39,7 +39,7 @@
                 {'q0':questions[0+shift], 'q1':questions[1+shift], 'q2':questions[2+shift],'username':username},
                 function (data){
                     if("You have already answered! Press the button to continue!"==data){
-                        window.location.href="<?= base_url('Password/chPassword')?>";
+                        window.location.href="<?= base_url('Password')?>";
                         return;
                     }
                     $(".modal-body").html(data);
@@ -95,9 +95,9 @@
             <div class="col-lg-12 col-md-12 mt-2" id="header">
                 <img src="<?php echo base_url('assets/images/pic.png') ?>" id="logo"/>
                 <button class="btn btn-outline-light moj" id="back">
-                    <?php if(isset($_SESSION['userId'])) { ?> Back To Home
-                    <?php } else { ?> Back
-                    <?php }?>
+                    <?php if(isset($_SESSION['userId']) &&isset($_SESSION['flag'])) { ?> Skip
+                    <?php } else if(isset($_SESSION['userId'])){ ?> Go To Map
+                    <?php } else{?> Back <?php }?>
                 </button>
             </div>
         </div>
@@ -148,7 +148,7 @@
                         </tr>
                         <tr>
                             <td colspan="2" class="text-center">
-                                <?php if(!isset($flag)||$flag!=1){?>
+                                <?php if(!isset($_SESSION['flag'])||$_SESSION['flag']!=1){?>
                                 <button class="btn btn-outline-light text-center rounded" type="button" id="check">Check & Continue</button>
                                 <?php } else{ ?>
                                 <button class="btn btn-outline-light text-center rounded" type="button" id="check">Save answers</button>

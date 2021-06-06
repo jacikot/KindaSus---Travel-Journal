@@ -11,6 +11,14 @@ class FoundUseful extends Model
     protected $returnType = 'object';
     protected $allowedFields = ['id_usr', 'id_rev'];
 
+    /*
+     * function liked checks if given user reacted to given review
+     * function returns Found_useful object
+     * */
+public function liked($id_usr,$id_rev){
+    return $this->where('id_usr',$id_usr)->where('id_rev',$id_rev)->findAll();
+}
+
     public function giveVote($idUsr, $idRev, $vote)
     {
         // if a user gave / didn't give a token on a review, that information is stored in the found_useful

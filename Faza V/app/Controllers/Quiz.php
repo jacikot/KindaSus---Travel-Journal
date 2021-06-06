@@ -15,6 +15,12 @@ use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Model;
 use Psr\Log\LoggerInterface;
 
+/*
+ * Author: Dimitrije Panic 18/0205
+ * controller for the quiz
+ * @version 1.0
+ */
+
 class Quiz extends BaseController
 {
     private $answeredQuestions =[];

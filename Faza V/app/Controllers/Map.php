@@ -9,14 +9,28 @@ use App\Models\Review;
 use App\Models\ToGo;
 use App\Models\Visited;
 use CodeIgniter\Model;
-
+/*
+ * Author: Jana Toljaga 18/0023
+ *
+ * Map Controller - class for handling interactive map and all options of main page
+ * Version 1.0
+ *
+ *
+ * */
 class Map extends BaseController
 {
+    /*
+    * used for opening map and setting all used flags in session to default values
+    * @return view
+     *
+    * @throws BadRequestHttpException
+    * @throws UnauthorizedHttpException
+    *
+    * */
 
     public function index()
     {
-        $this->session->set('userId', 4);
-        $this->session->set('username','adriance');
+
         $this->session->set('answered',null);
         $this->session->set('flag',null);
         $this->session->set("country", null);
@@ -24,7 +38,17 @@ class Map extends BaseController
         echo view('map');
     }
 
-
+    /*
+        * used for getting info needed coloring visited, togo and home countries on a map and tooltip content
+        * uses ToGo, Place, Country, Visited and RegisteredUser models to get info from database
+        * @session $country and $userId
+        *
+        * @return Response
+        * @throws BadRequestHttpException
+        * @throws UnauthorizedHttpException
+        *
+        *
+     * */
 
     public function getMap(){
 
@@ -60,6 +84,18 @@ class Map extends BaseController
 
 
     }
+
+    /*
+        * used for getting user's info needed for dropdown menu
+        * uses RegisteredUser model to get info from database
+        * @session $country and $userId
+        *
+        * @return Response
+        * @throws BadRequestHttpException
+        * @throws UnauthorizedHttpException
+        *
+        *
+     * */
 
     public function getUserInfo(){
         $user=$this->session->get('userId');

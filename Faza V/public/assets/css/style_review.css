@@ -1,7 +1,7 @@
 /* autor: Adriana Vidic  */
 @font-face{
     font-family: myFont;
-    src:url(../fontstyle/traveljournal.ttf);
+    src:url(../fontstyle/travel_journal_3.ttf);
 }
 
 
@@ -14,15 +14,13 @@
 
 body{
   
-    background-image: url(../images/background100.jpg) ;
-
-   font-family: myFont;
-  /*  margin: auto !important;
-*/
-color:white;
+    background: url(../images/background100.jpg) no-repeat center center fixed;;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+    font-family: myFont;
+
+// color:white;
     
 }
 
@@ -350,4 +348,31 @@ td{
     background-color: rgba(252,106,146,0.4);
 }
 
+#logo{
+    width: 10vw;
+    height: 10vh;
+    object-fit: contain;
+}
+
+.naslov{
+    font-size: 5vh;
+
+}
+#red{
+    height: 85vh;
+}
+
+#header{
+    vertical-align: middle; !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btn{
+
+    font-family:myFont;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+}
 

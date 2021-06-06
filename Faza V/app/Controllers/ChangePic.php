@@ -5,6 +5,12 @@ namespace App\Controllers;
 use App\Models\User;
 use CodeIgniter\Model;
 
+/*
+ * Author: Dimitrije Panic 18/0205
+ * ChangePic - class for changing the user profile picture
+ * @version 1.0
+ */
+
 class ChangePic extends BaseController
 {
     public function changePic(){

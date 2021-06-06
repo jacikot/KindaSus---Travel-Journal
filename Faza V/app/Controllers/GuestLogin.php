@@ -5,6 +5,12 @@ use App\Models\User;
 use App\Models\Admin;
 use App\Models\Image;
 
+/*
+ * Author: Dimitrije Panic 18/0205
+ * controller for authorization
+ * @version 1.0
+ */
+
 class GuestLogin extends BaseController
 {
     private static $minPassLength = 6;
@@ -14,6 +20,7 @@ class GuestLogin extends BaseController
 
 
     public function index(){
+        $this->session->destroy();
         $rand = rand(0,count(Quiz::$quotes)-1);
         $data['data'] = ['quote'=>Quiz::$quotes[$rand]];
         return view('homepage.php',$data);

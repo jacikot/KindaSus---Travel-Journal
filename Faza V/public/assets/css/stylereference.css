@@ -2,7 +2,15 @@
 @font-face {
     font-family: myFont;
     src: url(../fontstyle/travel_journal_3.ttf);
-  }
+}
+#mojModal{
+    font-family: myFont;
+    font-size: larger;
+}
+#myModal{
+    font-family: myFont;
+    font-size: larger;
+}
 
 body{
     background: url(../images/background100.jpg) no-repeat center center fixed;
