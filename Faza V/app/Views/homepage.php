@@ -14,6 +14,40 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="<?php echo base_url('assets/js/homepage.js')?>"></script>
     <title>Travel Journal</title>
+    <script>
+        function showModal(){
+            $("#myModal").modal({
+                backdrop:'static',
+                keyboard:false
+            });
+        }
+        function changePic(){
+            let fd = new FormData();
+                let files = $('#file-upload')[0].files;
+                if (files.length > 0) {
+                    fd.append('file', files[0]);
+
+                } else {
+                    alert("You need to choose a picture first!");
+                    return;
+                }
+            $.ajax({
+                url: "<?=base_url('ChangePic/changePic')?>",
+                type: "POST",
+                data: fd,
+                processData: false,
+                contentType: false,
+            }).done(function(data) {
+                let val = data.split(",");
+                if(val.length > 1){
+                    //val[1] je tag za sliku
+                    alert("Successfully changed your profile picture!")
+                } else {
+                    alert("data");
+                }
+            })
+        }
+    </script>
 </head>
 <!-- dodaj ako treba i alternative za vh i wv -->
 <body class="back">
@@ -36,7 +70,7 @@
         </div>
         <div class="row">
             <div id="3" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-lg-3 mt-md-3 mt-sm-0 mt-xs-0 link">
-                <a href="" > Be My Guest </a>
+                <a href="<?php echo base_url('/SearchAndTrending/index') ?>" > Be My Guest </a>
             </div>
         </div>
         <div class="row">

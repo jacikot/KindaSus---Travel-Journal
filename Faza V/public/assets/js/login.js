@@ -66,13 +66,13 @@ function login(){
 
     if(username.length < minLengthUser || username.length > maxLengthUser){
         setReturnValues("Sorry..","Username field needs to have between "
-            +minLengthUser+" and "+maxLengthUser+ "characters " ,'#userId');
+            +minLengthUser+" and "+maxLengthUser+ " characters " ,'#userId');
         error = true;
     }
 
     if(pass.length < minLengthPass || pass.length > maxLengthPass){
         setReturnValues("Sorry..","Password field needs to have between "
-            +minLengthPass+" and "+maxLengthPass+ "characters" ,'#passId');
+            +minLengthPass+" and "+maxLengthPass+ " characters" ,'#passId');
         error = true;
     }
 
@@ -91,14 +91,8 @@ function login(){
     sendData(username,pass);
 }
 
-function goToAdmin(){
 
-    // joletova stranica
-}
 
-function goToMap(){
-    //janina stranica
-}
 
 function setValues(title,button,func){
     $(".modal-title").text(title);
