@@ -1,0 +1,195 @@
+/* autor: Adriana Vidic  */
+@font-face{
+    font-family: myFont;
+    src:url(../fontstyle/traveljournal.ttf);
+}
+
+.fas.fa-trash-alt{
+    display: inline;
+    color:  #587ba0;
+
+
+}
+.far.fa-check-square{
+    display: inline;
+    color:  #587ba0;
+}
+
+.fas.fa-edit{
+    display: inline;
+    color:  #587ba0;
+}
+
+::-webkit-scrollbar {
+    width: 7px;  
+   align-self:center;
+   margin-top: 10px;
+ }
+  
+ ::-webkit-scrollbar-thumb {   
+   border-radius: 25px;
+   background:transparent;
+  }
+  
+ ::-webkit-scrollbar-track {     
+   background-color:transparent;
+ }
+ .imgDiff{
+   position: absolute;
+    text-align:left;
+    align-content: center;
+    margin-top: -7%;
+    margin-left: -3%;
+    z-index: -1;
+    
+}
+body{
+  
+    background: url(../images/background11.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    font-family: myFont;
+
+
+color:white;
+    
+}
+
+#header{
+    width:100%;
+    background-position:left;
+    height:20%;
+   margin-top: 0px;
+   margin-left: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+   align-items: center;
+    float:left;
+    padding-top: 0%;
+    margin-top: 0;
+    background-color:transparent;
+    background-position:0px;
+    offset-position: 0px;
+    position: relative;
+}
+
+
+#page h1{
+   
+    text-align: center;
+    font-size: 40px;
+    
+}
+
+.button{
+  
+   height: 40px;
+   width: 40px;
+   background-color: transparent;
+
+   border: none;
+   display: inline-block;
+   background-repeat: none;
+   font-family: myFont;
+   color:white;
+   
+}
+
+
+.modalButton{
+    background-color: #4754a2;;
+    color: white;
+    font-size: 15px;
+}
+.modalButton:hover{
+    background-color: #4754a2;;
+    color: white;
+    font-size: 17px;
+}
+
+.bottomButton{
+    height: 50px;
+  font-size:27px;
+   
+    background-color: transparent;
+    border: none;
+    display: inline-block;
+    background-repeat: none;
+    font-family: myFont;
+    color:white;
+    outline: none;
+}
+.bottomButton:hover{
+    size:larger;
+    color: #333e7d;
+ /*   background-color:#9BA3CA;*/
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.button:hover{
+    size:larger;
+    background-color:#9BA3CA;
+    border-radius: 25px;
+    color:white;
+}
+.HasButton{
+    text-align: center;
+}
+
+.textField{
+    font-size: 20px;
+    border-radius: 25px;
+    border: transparent;
+    outline: none;
+}
+
+td{
+    height: 50px;
+    margin-bottom: 5px;
+}
+
+
+
+
+ ol{
+    
+    text-align:justify;
+     align-self: center;
+    
+    font-size: 25px;
+
+    overflow: auto;
+
+
+    
+    
+}
+.togoListDiv{
+    background-color: rgba(165, 132, 205, 0.97);
+}
+.back-to-home{
+    position: absolute;
+    top: 5%;
+    right: 1.75%;
+    border-radius: 25px;
+    padding: 14px;
+    width: 125px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 4px 4px #333e7d;
+    background: #4754a2;
+    color: white;
+}
+
+.back-to-home:hover{
+    background: #333e7d;
+    font-size: 17px;
+}
+
+.crossed{
+    text-decoration: line-through;
+}

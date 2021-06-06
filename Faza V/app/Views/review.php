@@ -17,6 +17,10 @@
     <!-- dovlacenje javascript-a za bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js">
     </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
 
 
     <link rel="stylesheet" href="<?php echo base_url('assets/css/style_review.css') ?>">
@@ -56,7 +60,7 @@
 
            }
            ,function (tokens){
-
+            alert(tokens);
                document.getElementById('tokenNum').innerHTML=tokens;
                //   document.location.header();
 
@@ -74,30 +78,30 @@
        let row2=$("<tr></tr>");
        let row3=$("<tr></tr>");
 
-       let cell1=$("<td></td>").append("Traveller").css({
+       let cell1=$("<td style='border: none'></td>").append("Traveller").css({
            "text-align":"right"
        });
-       let cell2=$("<td></td>").append(username);
+       let cell2=$("<td style='border: none'></td>").append(username);
 
        row1.append(cell1);
        row1.append(cell2);
 
 
 
-       let cell3=$("<td></td>").append("Change privacy status").css({
+       let cell3=$("<td style='border: none'></td>").append("Change privacy status").css({
            "text-align":"right"
        });
-       let cell4=$("<td></td>").append(
+       let cell4=$("<td style='border: none'></td>").append(
            $("<input type='checkbox' onchange='markAsPrivate()'>")
        ).append("Private");
 
        row2.append(cell3);
        row2.append(cell4);
 
-       let cell5=$("<td></td>").append(token_count).css({
+       let cell5=$("<td style='border: none'></td>").append(token_count).css({
            "text-align":"right"
        });
-       let cell6=$("<td></td>").append($("<i>").addClass('fas fa-star').append("</i>"));
+       let cell6=$("<td style='border: none'></td>").append($("<i>").addClass('fas fa-star').append("</i>"));
 
        row3.append(cell5);
        row3.append(cell6);
@@ -121,30 +125,30 @@
        let row2=$("<tr></tr>");
        let row3=$("<tr></tr>");
 
-       let cell1=$("<td></td>").append("Traveller").css({
+       let cell1=$("<td style='border: none'></td>").append("Traveller").css({
            "text-align":"right"
        });
-       let cell2=$("<td></td>").append(username);
+       let cell2=$("<td style='border: none'></td>").append(username);
 
        row1.append(cell1);
        row1.append(cell2);
 
 
 
-       let cell3=$("<td></td>").append("Change privacy status").css({
+       let cell3=$("<td style='border: none'></td>").append("Change privacy status").css({
            "text-align":"right"
        });
        let cell4;
 
        if(privacy==0) {
-           cell4 = $("<td></td>").append(
+           cell4 = $("<td style='border: none'></td>").append(
                $("<input type='radio' id='privacyGroup' name='privacyGroup' checked onclick='markAsPrivate()'>")
            ).append("Private").append(
                $("<input type='radio' id='privacyGroup' name='privacyGroup'  onclick='markAsPublic()'>")
            ).append("Public");
        }
        else{
-           cell4 = $("<td></td>").append(
+           cell4 = $("<td style='border: none'></td>").append(
                $("<input type='radio' id='privacyGroup' name='privacyGroup' onclick='markAsPrivate()'>")
            ).append("Private").append(
                $("<input type='radio' id='privacyGroup' name='privacyGroup' checked  onclick='markAsPublic()'>")
@@ -154,10 +158,10 @@
        row2.append(cell3);
        row2.append(cell4);
 
-       let cell5=$("<td></td>").append(token_count).css({
+       let cell5=$("<td style='border: none'></td>").append(token_count).css({
            "text-align":"right"
        });
-       let cell6=$("<td></td>").append($("<i>").addClass('fas fa-star').append("</i>"));
+       let cell6=$("<td style='border: none'></td>").append($("<i>").addClass('fas fa-star').append("</i>"));
 
        row3.append(cell5);
        row3.append(cell6);
@@ -176,20 +180,20 @@
        let row2=$("<tr></tr>");
        let row3=$("<tr></tr>");
 
-       let cell1=$("<td></td>").append("Traveller").css({
+       let cell1=$("<td style='border: none'></td>").append("Traveller").css({
            "text-align":"right"
        });
-       let cell2=$("<td></td>").append(username);
+       let cell2=$("<td style='border: none'></td>").append(username);
 
        row1.append(cell1);
        row1.append(cell2);
 
 
 
-       let cell5=$("<td id='tokenNum'></td>").append(token_count).css({
+       let cell5=$("<td style='border: none' id='tokenNum'></td>").append(token_count).css({
            "text-align":"right"
        });
-       let cell6=$("<td></td>").append($("<button class='bottomButton' onclick='giveToken()'><i class='fas fa-star'></i></button>")).css({
+       let cell6=$("<td style='border: none'></td>").append($("<button class='bottomButton' onclick='giveToken()'><i class='fas fa-star'></i></button>")).css({
            "background-color":"transparent",
            "outline":"none"
        });
@@ -210,20 +214,20 @@
        let row2=$("<tr></tr>");
        let row3=$("<tr></tr>");
 
-       let cell1=$("<td></td>").append("Traveller").css({
+       let cell1=$("<td style='border: none'></td>").append("Traveller").css({
            "text-align":"right"
        });
-       let cell2=$("<td></td>").append(username);
+       let cell2=$("<td style='border: none'></td>").append(username);
 
        row1.append(cell1);
        row1.append(cell2);
 
 
 
-       let cell5=$("<td id='tokenNum'></td>").append(token_count).css({
+       let cell5=$("<td style='border: none' id='tokenNum'></td>").append(token_count).css({
            "text-align":"right"
        });
-       let cell6=$("<td></td>").append($("<i>").addClass('fas fa-star').append("</i>"));
+       let cell6=$("<td style='border: none'></td>").append($("<i>").addClass('fas fa-star').append("</i>"));
 
        row3.append(cell5);
        row3.append(cell6);
@@ -255,7 +259,7 @@
                let place=data.place;
                let country=data.country;
                let type_of_user=data.type_of_user;
-               alert(type_of_user);
+              
                let username=data.username;
 
                let place_cnt_date=""+place+", "+country+"  "+date;
@@ -264,8 +268,63 @@
                document.getElementById('place_cnt_date').innerHTML=place_cnt_date;
                document.getElementById('revText').innerHTML=text;
 
+               let picsExist=data.hasPic;
+               let numberOfPictures=data.numOfPics;
+               let numInGallery=0;
+               if(picsExist=='1'){
+                   $("#revText").append("<br>");
+                   $("#revText").append("<br>");
+                   //carousel slide
+                   let galleryOutline=$("<div id='gallery1' class='carousel slide' data-ride='' style='text-align: center'></div>");
+                   let galleryList=$("<ul id='galleryList' class='carousel-indicators'></ul>");
+                   let innerGallery=$(" <div id='innerGallery' class='carousel-inner'></div>");
+                   let prev=$(" <a class='carousel-control-prev' href='#gallery1' data-slide='prev'></a>").append($("<span class='carousel-control-prev-icon'></span>"));
+                   let next=$(" <a class='carousel-control-next' href='#gallery1' data-slide='next'></a>").append($("<span class='carousel-control-next-icon'></span>"));
 
-             //  type_of_user='regUser';
+
+
+
+                   while(numberOfPictures>0){
+                            let galleryListItem=$("<li datatarget='#gallery1'></li>");
+                       let innerGalleryItem=$("<div class='carousel-item '></div>");
+                            if(numInGallery==0) {
+                                galleryListItem.addClass("active");
+                                innerGalleryItem.addClass("active");
+                            }
+                            numInGallery++;
+                            let numOfPic=""+numInGallery;
+
+                            galleryListItem.attr("data-slide-to", numOfPic);
+
+                            galleryList.append(galleryListItem);
+
+
+
+                       let picName="pic"+numberOfPictures;
+                       numberOfPictures--;
+                       let path=data[picName];
+                       let base_url = $("#BaseUrl").val();
+
+                       let picture=$("<img style='height: 300px; width: 300px'>").attr("src",base_url+path);
+
+                       innerGalleryItem.append(picture);
+                      innerGallery.append(innerGalleryItem);
+
+                   }
+                 //  galleryOutline.append(galleryList);
+                   galleryOutline.append(innerGallery);
+                   galleryOutline.append(prev);
+                   galleryOutline.append(next);
+                   $("#revText").append(galleryOutline);
+
+
+
+
+
+
+               }
+
+
 
                if(type_of_user=='admin'){
 
@@ -292,21 +351,6 @@
 
    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </script>
 
 
@@ -315,13 +359,16 @@
 <body onload="getReview()">
 <container-fluid>
     <div class="row">
-    <div class="col-12" id='header'>
-
+    <div class="col-12" >
+<!--
         <img src="<?php echo base_url('assets/images/logo2.png')  ?>" style=" width: 14%;
     height: 14%;">
         
         
         <a href='map.html' class="back-to-home">Passport</a>
+
+        -->
+        <br>
     </div>
     </div>
 
@@ -332,28 +379,29 @@
             <br>
         </div>
     </div>
-
+    <input type="hidden" id="BaseUrl" value="<?php echo base_url();?>">
     <div class="row">
-    <div class="col-1"></div>
-     <div class="col-10 pg">
-         <!--
-         <img src="<?php echo base_url('assets/images/Untitledjp2.png')  ?>" class="image-fluid"
-         style="width: inherit; text-align: center"
-         >
-  <p style="font-size: 25px; color: black" class="carousel-caption" name="revText" id="revText">
-         -->
+ <div class="col-3"></div>
+        <!-- col-10 pg -->
+     <div class="col-sm-6 " >
 
-    <p style="font-size: 25px; color: black"  name="revText" id="revText">
+
+    <p style="font-size: 25px; color: black" class="reviewParagraph"  name="revText" id="revText">
 
     </p>
-         <table class="table" id="revInfo">
 
-         </table>
 
      </div>
-     <div class="col-1"></div>
+       <div class="col-3"></div>
     </div>
+    <div class="row">
+        <div class="col-9"></div>
+        <div class="col-3">
+            <table class="table" id="revInfo">
 
+            </table>
+        </div>
+    </div>
 
 
 </container-fluid>
