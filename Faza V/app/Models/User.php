@@ -2,6 +2,10 @@
 
 use CodeIgniter\Model;
 
+/*
+ * Model class for accessing the travel journal database
+ * @version 1.0
+ */
 class User extends Model
 {
     protected $table      = 'registered_user';
@@ -11,18 +15,35 @@ class User extends Model
         'security_answer_3', 'token_count', 'avatar_path', 'acc_creation_date'
     ];
 
-public function getUserById($id_usr){
-    return $this->where('id_usr',$id_usr)->findAll();
-}
+    /*
+     * get user by his id
+     * @return user object
+     */
+    public function getUserById($id_usr){
+        return $this->where('id_usr',$id_usr)->findAll();
+    }
 
-public function updateTokens( $id_usr){
-    return $this->where('id_usr',$id_usr)->set('token_count','token_count+1',false)->update();
-}
+    /*
+     * updates all token for the user
+     *
+     */
+    public function updateTokens( $id_usr){
+        return $this->where('id_usr',$id_usr)->set('token_count','token_count+1',false)->update();
+    }
 
+    /*
+     *  finds the user based on his username
+     *
+     * @return register_user object
+     */
     public function findUser($user){
         return $this->where('username',$user)->findAll();
     }
 
+    /*
+     * used to upsert into the database
+     *
+     */
     public function insertUser($username,$password,$name,$surname,$email,
                                $id_plc,$token_count=0){
         $this->save([

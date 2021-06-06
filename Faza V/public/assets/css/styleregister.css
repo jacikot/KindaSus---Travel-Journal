@@ -3,7 +3,14 @@
     font-family: myFont;
     src: url(../fontstyle/travel_journal_3.ttf);
 }
-
+#mojModal{
+    font-family: myFont;
+    font-size: larger;
+}
+#myModal{
+    font-family: myFont;
+    font-size: larger;
+}
 .naslov{
     text-align:center;
 }

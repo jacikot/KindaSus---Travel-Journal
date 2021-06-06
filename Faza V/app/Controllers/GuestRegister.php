@@ -10,6 +10,8 @@ use CodeIgniter\Model;
 
 /*
  * Author: Dimitrije Panic 18/0205
+ * controller for registration
+ * @version 1.0
  */
 class GuestRegister extends BaseController
 {

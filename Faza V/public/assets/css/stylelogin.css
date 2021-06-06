@@ -4,6 +4,14 @@
     src: url(../fontstyle/travel_journal_3.ttf);
   }
 
+#mojModal{
+    font-family: myFont;
+    font-size: larger;
+}
+#myModal{
+    font-family: myFont;
+    font-size: larger;
+}
 #logo{
     width: 10vw;
     height: 10vh;

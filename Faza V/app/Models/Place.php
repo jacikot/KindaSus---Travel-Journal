@@ -4,6 +4,9 @@ use CodeIgniter\Model;
 
 class Place extends Model
 {
+    protected $table      = 'place';
+    protected $primaryKey = 'id_plc';
+    protected $returnType = 'object';
     protected $allowedFields = ['name', 'categorized', 'heritage', 'relax',
         'sightseeing', 'weather', 'populated', 'id_cnt', 'taken_survey'];
 

@@ -7,7 +7,8 @@ use App\Models\Image;
 
 /*
  * Author: Dimitrije Panic 18/0205
- *
+ * controller for authorization
+ * @version 1.0
  */
 class GuestLogin extends BaseController
 {
@@ -35,6 +36,7 @@ class GuestLogin extends BaseController
      * @return randomized Quote
      */
     public function index(){
+        $this->session->destroy();
         $rand = rand(0,count(Quiz::$quotes)-1);
         $data['data'] = ['quote'=>Quiz::$quotes[$rand]];
         return view('homepage.php',$data);

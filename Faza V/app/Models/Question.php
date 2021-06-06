@@ -16,7 +16,7 @@ class Question extends Model
 
     public function getMaxId(){
         $max = 0;
-        $questions = $this->findAll();
+        $questions = $this->where('type_quiz',1)->findAll();
         foreach($questions as $question){
             if($question->id_qst > $max){
                 $max = $question->id_qst;
