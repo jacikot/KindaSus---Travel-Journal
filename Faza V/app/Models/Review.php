@@ -117,7 +117,7 @@ class Review extends Model
     }
 
     /*
-     * returns review info needed for review list
+     * function returns review info needed for review list, joins with tables: visited, place, country, registered_user
      *
      * @return array - country, place, title, text, date, id_rev
      *
@@ -156,30 +156,20 @@ class Review extends Model
 
     }
 
-    /*
-     * deletes review with given id
-     *
-     * */
+    /*function deleteReview deletes (if exists) review with given id
+    * function returns void
+    * */
 
     public function deleteReview($id){
         $this->where("id_rev",$id)->delete();
     }
 
-
+    /*function getRevById fetches (if exists) review with given id
+     * function returns Review object
+     * */
     public function getRevById($id){
         return $this->where('id_rev', $id)->find();
     }
 
 
 }
-
-/*
- field:
-id_rev
-title
-text_path
-privacy
-token_count
-id_vis
-date_posted
- */
