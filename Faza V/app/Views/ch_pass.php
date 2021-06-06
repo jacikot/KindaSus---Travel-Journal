@@ -66,8 +66,8 @@
             <div class="col-lg-12 col-md-12 mt-2" id="header">
                 <img src="<?php echo base_url('assets/images/pic.png') ?>" id="logo"/>
                 <button class="btn btn-outline-light moj" id="back">
-                    <?php if(!isset($_SESSION['forgot'])) { ?> Back To Home
-                    <?php } else { ?> Back
+                    <?php if(!isset($_SESSION['forgot'])) { ?> Go To Map
+                    <?php } else { ?> Back To Home
                     <?php }?>
                 </button>
             </div>

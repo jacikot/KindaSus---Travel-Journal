@@ -20,6 +20,7 @@
               var logoutURL="<?php echo base_url("Logout")?>";
               var defaultAvatar="<?php echo  base_url("/assets/images/avatar.png")?>"
               var baseURL="<?= base_url('Map/getMap')?>";
+              var base="<?= base_url()?>";
               function ajaxCall() {
                   $.ajax(
                       {
@@ -55,7 +56,7 @@
                   }).done(function(data) {
                       let val = data.split(",");
                       if(val.length > 1){
-                          //val[1] je tag za sliku
+                          $("#avatar").attr("src",base+val[1]);
                           alert("Successfully changed your profile picture!")
                       } else {
                           alert("data");
@@ -136,13 +137,13 @@
           <div class="row">
               <div class="col-lg-2 col-12 order-lg-1 order-2 text-center">
                   <div class="ttip b-search" tt-title="Search & Trending" tt-text="Explore places through other's eyes!">
-                      <a href="search_and_trending_user.html" ><img src="<?php echo base_url("assets/images/search_trending1.png")?>"/></a>
+                      <a href="<?php echo base_url("SearchAndTrending")?>" ><img src="<?php echo base_url("assets/images/search_trending1.png")?>"/></a>
                   </div>
                   <div class="ttip b-journal" tt-title="Journal" tt-text="Revive your travel adventures!">
                       <a href="<?= base_url('Journal/countryJournal')?>" ><img src="<?php echo base_url("assets/images/journal1.png")?>"/></a>
                   </div>
                   <div class="ttip b-quiz" tt-title="Quiz" tt-text="Ask for a travel advice!">
-                      <a href="quiz1.html"><img src="<?php echo base_url("assets/images/quiz1.png")?>"/></a>
+                      <a href="<?= base_url('Quiz/startQuiz')?>"><img src="<?php echo base_url("assets/images/quiz1.png")?>"/></a>
                   </div>
 
               </div>
@@ -152,12 +153,12 @@
               <div class="col-lg-2 col-12 order-3 text-center ">
                   <div class="x">
                       <div class="ttip b-create" tt-title="Create an impression" tt-text="Collect moments from all over the" tt-text2="world in one place">
-                          <a href="create_review.html"><img src="<?php echo base_url("assets/images/add1.png")?>"/></a>
+                          <a href="<?php echo base_url("CreateReview")?>"><img src="<?php echo base_url("assets/images/add1.png")?>"/></a>
                       </div>
                   </div>
                   <div class="x">
                       <div class="ttip b-to-go" tt-title="TO-GO list" tt-text="Don't call it a dream, call it a plan!">
-                          <a href="to-go_list.html"><img src="<?php echo base_url("assets/images/sticky1.png")?>"/></a>
+                          <a href="<?php echo base_url("ToGoList")?>"><img src="<?php echo base_url("assets/images/sticky1.png")?>"/></a>
                       </div>
                   </div>
 

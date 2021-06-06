@@ -5,20 +5,55 @@ namespace App\Controllers;
 use App\Models\RegisteredUser;
 use CodeIgniter\Model;
 
+/*
+ * Author: Jana Toljaga 18/0023
+ *
+ * Password Controller - class for changing password and validation of user identity
+ * Version 1.0
+ *
+ *
+ * */
+
 class Password extends BaseController
 {
+    /*
+    * used for opening page with questions used to confirm user identity and sets flag into session
+    * @return view
+     *
+    * @throws BadRequestHttpException
+    * @throws UnauthorizedHttpException
+    *
+    * */
     public function listPassQuestions(){
         $this->session->set('status',"not answered");
-//        $data["cssFile"]="que";
-//        $data["jsFile"]="que";
-//        echo view('templates/header_user',$data);
         echo view('que');
     }
 
-    public function chPassword(){
+    /*
+   * used for opening page with a form for entering new password
+   * @return view
+   *
+   * @throws BadRequestHttpException
+   * @throws UnauthorizedHttpException
+   *
+   * */
+    public function index(){
 
         echo view('ch_pass');
     }
+
+    /*
+        * used for setting new password if it passed validation - format has to be correct and it has to bi long enough
+        * it uses RegisteredUser model to set password
+        * @param Request $request Request - $pass and $passC
+        * @session $userId
+        *
+        * @return Response
+        * @throws BadRequestHttpException
+        * @throws UnauthorizedHttpException
+        *
+        *
+     * */
     public function setPassword(){
         $password=$this->request->getVar('pass');
         $correct=$this->request->getVar('passC');
@@ -32,6 +67,19 @@ class Password extends BaseController
         echo "Password has been successfully changed";
 
     }
+    /*
+       * used for answer validation to questions used for user identity confirmation
+       * it uses RegisteredUser model for validation
+       *
+       * @param Request $request Request - $username and answers
+       * @session $userId and flags
+       *
+       * @return Response
+       * @throws BadRequestHttpException
+       * @throws UnauthorizedHttpException
+       *
+       *
+    * */
     public function validateQuestions(){
         $flag=$this->session->get("flag");
 
@@ -41,16 +89,16 @@ class Password extends BaseController
         }
         $model=new RegisteredUser();
         $username=$this->request->getVar('username');
-        if($username==""){
+        if(!isset($username)||$username==""){
             $user=$this->session->get('userId');
         }
         else{
             $user=$model->getUserId($username);
-            if($user==null){
+            if(!isset($user)||$user==null){
                 echo "User with that username does not exist!";
                 return;
             }
-            $this->session->set("usr_id",$user);
+            $this->session->set("usrId",$user);
             $this->session->set("forgot",1);
         }
 
@@ -79,6 +127,18 @@ class Password extends BaseController
 
 
     }
+
+    /*
+       * used for getting userId from session
+       *
+       * @session $userId
+       *
+       * @return Response
+       * @throws BadRequestHttpException
+       * @throws UnauthorizedHttpException
+       *
+       *
+    * */
 
     function getUser(){
         $user =$this->session->get('userId');

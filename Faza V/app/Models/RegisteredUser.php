@@ -81,6 +81,9 @@ class RegisteredUser extends Model
         $data["username"]=$user->username;
         $data["tokens"]=$user->token_count;
         $data["avatar"]=$user->avatar_path;
+        if($data["avatar"]==null){
+            $data["avatar"]="/assets/images/avatar.png";
+        }
         return $data;
     }
 

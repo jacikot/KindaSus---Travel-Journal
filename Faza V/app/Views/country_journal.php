@@ -25,6 +25,7 @@
         var envelopeURL="<?php echo base_url("/assets/images/koverta.jpg")?>";
         var plcURL="<?php echo base_url("/assets/images/geo-alt.svg")?>";
         var calURL="<?php echo base_url("/assets/images/calendar.svg")?>";
+        var exclURL="<?php echo base_url("/assets/images/exclamation-triangle.svg")?>";
         var backURL="<?php echo base_url("Map")?>"
         function initialize() {
             $.ajax(
@@ -81,7 +82,7 @@
             <div class="col-lg-12 col-md-12 mt-2" id="header">
                 <img src="<?php echo base_url('assets/images/pic.png') ?>" id="logo"/>
                 <button class="btn btn-outline-light moj" id="back">
-                    Back To Home
+                    Go To Map
                 </button>
             </div>
         </div>

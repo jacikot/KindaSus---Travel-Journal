@@ -73,8 +73,8 @@ var options = {
   function loadMenu(data){
 
       let avatar=document.getElementById("avatar");
-      if(data["avatar"]!="")avatar.setAttribute("src",data["avatar"]);
-      else avatar.setAttribute("src",defaultAvatar);
+      avatar.setAttribute("src",base+data["avatar"]);
+      // alert(base+data["avatar"]);
       let username=document.getElementById("username1");
       username.innerHTML=data["username"];
       username.style.textTransform="uppercase";
