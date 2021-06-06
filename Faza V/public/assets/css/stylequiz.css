@@ -1,163 +1,82 @@
 /* author: Dimitrije Panic */
 @font-face {
     font-family: myFont;
-    src: url(../fontstyle/traveljournal.ttf);
+    src: url(../fontstyle/travel_journal_3.ttf);
   }
 
-/*.button:hover{
-    cursor: pointer;
-    color:pink;
-}*/
-
 body{
-    background-image: url(../images/kviz.png);
-    background-repeat: no-repeat;
-    object-fit: contain;
-    background-size: cover /*100% 100%*/;
+    background: url(../images/quiz.png) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
 
 }
 
-#header{
-    width:100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    font-family: myFont;
+#pozadina{
+    background-color: rgba(166, 81, 173, 0.52);
+    backdrop-filter: blur(3px);
 }
-.button{
-    outline:none;
-    font-size:100%;
-    font-family:myFont;
-    position: absolute;
-    top: 5%;
-    right: 1.75%;
-    border-radius: 25px;
-    padding: 14px;
-    width: 125px;
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
-    box-shadow: 4px 4px #333e7d;
-    background: #4754a2;
-    color: white;
-    border: none;
+.bgp{
+    background-color: #00105E !important;
 }
-
-.button:hover{
-    cursor: pointer;
-    background: #333e7d;
-    font-size: 17px;
-}
-/*.button{
-    font-size: 100%;
-    font-family:MyFont;
-    background-color: #4754a2;
-    border-radius:12px;
-    color:white;
-}*/
-
-#title{
-    position:relative;
-    top:-20px;
-    text-align: center;
-    font-family: myFont;
-    font-size: 300%;
-    color:white;
+td{
+    border:none !important;
 }
 
 #question{
-    font-size:200%;
-    font-family: myFont;
-    color:#4754a2;
-    position: absolute;
-    left:30%;
-    top:30%;
+    font-family:myFont;
+    color:white;
+    opacity: 95%;
+    font-size: 5vh;
 }
 
-#bar{
-    position: absolute;
-    left:52%;
-    top:32%;
+.progress{
+    margin:auto !important;
+    opacity: 60%;
 }
+label{
+    font-family:myFont;
+    color:white;
+    font-size: 4vh;
 
-#tabela{
-    font-size:140%;
-    font-family: myFont;
-    color:#4754a2;
-    position:absolute;
-    left:30%;
-    top:41%;
 }
-
-.newButton:hover{
-    cursor: pointer;
-    font-size:190%;
-    color:pink;
+#naslov{
+    text-align:center;
+    font-size:10vh;
+    font-family:myFont;
+    color:white;
+    opacity: 80%;
 }
-
-.newButton1:hover{
-    cursor: pointer;
-    font-size:190%;
-    color:pink;
+#header{
+    vertical-align: middle !important;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
 }
-.newButton2:hover{
-    cursor: pointer;
-    font-size:190%;
-    color:pink;
-}
-
-.newButton1{
-    outline: none;
-    font-size: 160%;
-    font-family:MyFont;
-    background-color:transparent;
-    /*background-color: #4754a2;
-    border-radius:12px;*/
-    border:none;
-    position: absolute;
-    bottom:23%;
-    left:30%;
-    color:#4754a2;
-}
-.newButton2{
-    outline: none;
-    font-size: 160%;
-    font-family:MyFont;
-    background-color:transparent;
-    /*background-color: #4754a2;
-    border-radius:12px;*/
-    border:none;
-    position: absolute;
-    bottom:23%;
-    left:58%;
-    color:#4754a2;
-}
-.newButton{
-    outline: none;
-    font-size: 160%;
-    font-family:MyFont;
-    background-color:transparent;
-    /*background-color: #4754a2;
-    border-radius:12px;*/
-    border:none;
-    position: absolute;
-    bottom:23%;
-    left:65%;
-    color:#4754a2;
-}
-
-
-/*input:hover{
-    color:pink;
-    font-size: 145%;
-}*/
-
 label:hover{
-        color:pink;
-        font-size: 145%;
-   
+    cursor:pointer;
+}
+.rasporedi{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+
+.dugme{
+    font-size:4vh !important;
+    font-family:myFont;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+}
+.moj{
+
+    font-family:myFont;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+}
+
+#logo{
+    width: 10vw;
+    height: 10vh;
+    object-fit: contain;
 }

@@ -9,6 +9,9 @@ class Password extends BaseController
 {
     public function listPassQuestions(){
         $this->session->set('status',"not answered");
+//        $data["cssFile"]="que";
+//        $data["jsFile"]="que";
+//        echo view('templates/header_user',$data);
         echo view('que');
     }
 
@@ -23,21 +26,23 @@ class Password extends BaseController
             echo "Validation failed";
             return;
         }
-        $user=$this->session->get('usr_id');
+        $user=$this->session->get('userId');
         $model=new RegisteredUser();
         $model->setPassword($user,$password);
-        echo "Password successfully changed";
+        echo "Password has been successfully changed";
 
     }
     public function validateQuestions(){
+        $flag=$this->session->get("flag");
+
         if($this->session->get('status')=="answered"){
-            echo "Your already answered! Press the button to continue!";
+            echo "You have already answered! Press the button to continue!";
             return;
         }
         $model=new RegisteredUser();
         $username=$this->request->getVar('username');
         if($username==""){
-            $user=$this->session->get('usr_id');
+            $user=$this->session->get('userId');
         }
         else{
             $user=$model->getUserId($username);
@@ -46,6 +51,7 @@ class Password extends BaseController
                 return;
             }
             $this->session->set("usr_id",$user);
+            $this->session->set("forgot",1);
         }
 
 
@@ -53,6 +59,7 @@ class Password extends BaseController
         $q2= $this->request->getVar('q1');
         $q3= $this->request->getVar('q2');
         if($q1==""||$q2==""||$q3==""){
+            $this->session->set("forgot",null);
             echo "Your answers are incorrect!";
             return;
         }
@@ -63,6 +70,9 @@ class Password extends BaseController
         if($ok=="Your answers are correct! Press the button to continue!"){
             $this->session->set('status',"answered");
         }
+        else{
+            $this->session->set("forgot",null);
+        }
 
         echo $ok;
 
@@ -71,7 +81,7 @@ class Password extends BaseController
     }
 
     function getUser(){
-        $user =$this->session->get('usr_id');
+        $user =$this->session->get('userId');
         if($user!=null){
             echo json_encode("$user");
         }

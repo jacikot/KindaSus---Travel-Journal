@@ -4,6 +4,8 @@ namespace App\Controllers;
 use App\Models\User;
 use App\Models\Admin;
 use App\Models\Image;
+use App\Models\Country;
+use App\Models\Place;
 use CodeIgniter\Model;
 
 class GuestRegister extends BaseController
@@ -15,7 +17,7 @@ class GuestRegister extends BaseController
 
 
     public function getDefaultImagePath(){
-        return $defaultImagePath = "".base_url("/assets/db_files/avatar_img/1.png");
+        return $defaultImagePath = ""."/assets/images/default-avatar-2.jpg";
     }
 
     public function showRegister(){
@@ -26,9 +28,13 @@ class GuestRegister extends BaseController
     }
 
     public function addQuestions(){
-        $q1 = $this->request->getVar('q1');
-        $q2 = $this->request->getVar('q2');
-        $q3 = $this->request->getVar('q3');
+        if($this->session->get('status')=="answered"){
+            echo "You have already answered! Press the button to continue!";
+            return;
+        }
+        $q1 = $this->request->getVar('q0');
+        $q2 = $this->request->getVar('q1');
+        $q3 = $this->request->getVar('q2');
 
         if(!isset($q1) || !isset($q1) || !isset($q1)){
             echo "All questions are a must!";
@@ -39,7 +45,7 @@ class GuestRegister extends BaseController
         $users = $userModel->findUser($this->session->get('username'));
 
         if($users == null){
-            echo "need to be logged in..";
+            echo "You need to log in first";
             return;
         }
 
@@ -47,11 +53,12 @@ class GuestRegister extends BaseController
             $user->security_answer_1=$q1;
             $user->security_answer_2=$q2;
             $user->security_answer_3=$q3;
+            $userModel->save($user);
             break;
         }
+        $this->session->set('status','answered');
+        echo "Thank you for answering all questions!";
 
-        echo "all good!";
-        return;
 
     }
 
@@ -65,20 +72,82 @@ class GuestRegister extends BaseController
         $country = $this->request->getVar('country');
         $img = $this->request->getFile('file');
 
-        if(!isset($name) || !isset($surname) || !isset($username) || !isset($email)
-            || !isset($city) || !isset($country)){
-            echo "Required fields not set!";
+        $errorMsg = "";
+        if(!isset($name) ){
+           $errorMsg += "Firstname is required. ";
+        }
+
+        if(!isset($surname) ){
+            $errorMsg += "Lastname is required. ";
+        }
+
+        if(!isset($username) ){
+            $errorMsg += "Username is required. ";
+        }
+
+        if(!isset($email) ){
+            $errorMsg += "E-mail is required. ";
+        }
+
+        if(!isset($city) ){
+            $errorMsg += "City is required. ";
+        }
+
+        if(!isset($country) ){
+            $errorMsg += "Country is required. ";
+        }
+
+        if(!isset($password) ){
+            $errorMsg += "Country is required. ";
+        }
+
+        if($errorMsg != ""){
+            echo $errorMsg;
             return;
         }
 
 
-        //dodaj sve provere ponovo mrzi me sad ovde
+        $expr1 = "/^\w/";
+        $expr2 = "/^\d/";
 
+        if(preg_match($expr1,$username) == 0 || preg_match($expr2,$username) == 1){
+            $errorMsg += "Username needs to start with a letter or _. ";
+        }
+
+        $expr1 = "/^\w+$/";
+        if(preg_match($expr1,$username) == 0){
+            $errorMsg += "Username needs to have _, A or a. ";
+        }
+
+        $expr1 = "/[a-zA-Z]+@[a-zA-Z]+/";
+        if(preg_match($expr1,$email) == 0){
+            $errorMsg += "Inadequate email format. ";
+        }
+
+        $expr1 ="/[a-z]/";
+        $expr2 ="/[A-Z]/" ;
+        $expr3 ="/\d/" ;
+
+        if(preg_match($expr1,$password) == 0 || preg_match($expr2,$password) == 0 || preg_match($expr3,$password) == 0){
+            $errorMsg += "Password needs to containt a single upper case, lower case  and number";
+        }
+
+        if($errorMsg != ""){
+            echo $errorMsg;
+            return;
+        }
+
+        // jel treba ponovna provera da l su sifra i potvr sifra iste? ja bih rekao da ne
+
+        // ne znam sta da radim ako je veca slika
+        // pa je default vreme slanja duze
+        // vidi gde je default vreme zahteva
         $defaultImg = false;
         $ext = "";
         if(!isset($img)){
             $defaultImg = true;
             $img = $this->getDefaultImagePath();
+
         } else{
             if(!is_uploaded_file($img)){
                 echo "Not a good file..";
@@ -96,7 +165,7 @@ class GuestRegister extends BaseController
                 return;
             }
             //vidi za ovu vr
-            if($img->getSize() > 100000){
+            if($img->getSize() > 150000){
                 echo "File is too large!";
                 return;
             }
@@ -104,21 +173,43 @@ class GuestRegister extends BaseController
 
         }
 
-        // dohvati iz baze place, ako ne postoji napravi novo
-        // moras da proveris i za drzavu da l je ok
-        // moras i da ubacis ako ne postoji
-        // nije puno posla, ali moras da odradis
-        // samo prvo razmisli !
-        $id_plc = 1;
+        // da l drzava postoji
+
+        $countryModel = new Country();
+        $count = $countryModel->getId($country);
+        if($count == null){
+            echo "Country doesn't exist..";
+            return;
+        }
+        $id_cnt = $count['id'];
+
+        //sta da se radi ako nema sliku mesto?
+        // VIDI ZA OVU SLIKU STA DA SE RADI!
+        $placeModel = new Place();
+        $id_plc = $placeModel->findPlaceId($city);
+        if($id_plc == null){
+            $placeModel->save([
+                'name'=> $city,
+                'categorized' => 0,
+                'heritage' => 0,
+                'relax'=>0,
+                'weather' => 0,
+                'populated'=>0,
+                'sightseeing'=> 0,
+                'id_cnt' => $id_cnt,
+                'id_img' => 1
+                ]);
+
+            $id_plc = $placeModel->getInsertID();
+        }
 
 
         $userModel = new User();
 
-        // mora provera da l postoji prvo druze!
         $users = $userModel->findUser($username);
 
         if($users != null){
-            echo "Already exists!";
+            echo "Username is already taken.";
             return;
         }
 
@@ -126,11 +217,9 @@ class GuestRegister extends BaseController
         $user = $userModel->find($id);
 
         if(!$defaultImg) {
-            // dodaj folder da bude id korisnika
-            // promeni db_files
-            $img->store("../../public/assets/db_files/avatar_img", $id .".". $ext);
+            $img->store("../../public/assets/db_files/".$id."/avatar_img/", "avatar.". $ext);
             // da li ce ovo raditi da se procita?
-            $user->avatar_path = "" . base_url("/assets/db_files/avatar_img/" . $id .".". $ext);
+            $user->avatar_path = "" . "/assets/db_files/".$id."/avatar_img/"."avatar.". $ext;
         } else{
             $user->avatar_path = $img;
         }

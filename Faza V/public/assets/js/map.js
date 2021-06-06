@@ -31,14 +31,17 @@ google.charts.load('current', {
       });
 
       chart.draw(data, options);
+      $("body").fadeTo("slow",1);
       function f(){
           chart.draw(data, options);
+
       }
+
       window.addEventListener("resize",f());
   }
 function createTooltipContent(country,text){
     return '<div>'+
-        '<img src="https://flagcdn.com/24x18/' + country +'.png" style="width:24px;height:18px;">'+
+        '<img src="https://flagcdn.com/24x18/' + country.toLowerCase() +'.png" style="width:24px;height:18px;">'+
         '<p style="text-align:center">status:'+text+'</p></div>';
 
 }
@@ -47,7 +50,7 @@ const fonts=
     {
         name:'myFont',
         locals: ['Sunday Snow'],
-        source: '../fontstyle/traveljournal.ttf'
+        source:'traveljournal.ttf'
     };
 
 
@@ -72,12 +75,47 @@ var options = {
       let avatar=document.getElementById("avatar");
       if(data["avatar"]!="")avatar.setAttribute("src",data["avatar"]);
       else avatar.setAttribute("src",defaultAvatar);
-      let username=document.getElementById("username");
-      username.innerHTML="<b>"+data["username"]+"</b>"
+      let username=document.getElementById("username1");
+      username.innerHTML=data["username"];
       username.style.textTransform="uppercase";
       let tokens=document.getElementById("tokens");
       tokens.innerText=data["tokens"];
   }
+
+  $(document).ready(function(){
+      $("#image").on("click",function(){
+          $("#myModal").modal('show');
+      });
+
+      $('#logout').on("click",function (){
+          $("#myModal2").modal('show');
+      });
+
+      $("#ok").on("click",function (){
+          window.location.href=logoutURL;
+      });
+  });
+
+function showModal(){
+    $("#myModal").modal({
+        backdrop:'static',
+        keyboard:false
+    });
+}
+
+function changePic(){
+    let fd = new FormData();
+    let files = $('#file-upload')[0].files;
+    if (files.length > 0) {
+        fd.append('file', files[0]);
+
+    } else {
+        alert("You need to choose a picture first!");
+        return;
+    }
+    picAjax(fd);
+
+}
 
 
 

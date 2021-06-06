@@ -46,7 +46,130 @@
     </script>
 </head>
 <body>
-    <div id="header"><img src="<?php echo base_url('assets/images/pic.png') ?>" height=10% width=10%/>
+    <div class="container-fluid">
+        <!-- vidi da na resize uklonis ovaj red-->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="btn11" class="btn" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn mybtn" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 mt-2" id="header">
+                <img src="<?php echo base_url('assets/images/pic.png') ?>" id="logo"/>
+                <button class="btn btn-outline-light">
+                    Back To Home
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                &nbsp;
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-lg-4 col-md-4">
+            &nbsp;&nbsp;
+        </div>
+        <div class="col-lg-4 col-md-4 my-auto pozadina rounded" id="tab">
+            <table class="table mt-3 mb-3" >
+                <tr>
+                    <td colspan="2" class="naslov">
+                        Become a Traveller
+                    </td>
+                </tr>
+               <tr>
+                    <td colspan="2" id="profil">
+
+                        <img  id="slikaprofila" class="rounded-circle" src="<?php echo base_url('assets/images/default-avatar-2.jpg') ?>" > <br>
+
+                        <label id="inputslike" for="file-upload" class="custom-file-upload">
+                            <div class="mt-2 my-auto">
+                                Upload an image
+                               <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-paperclip" viewBox="0 0 16 16">
+                                    <path d="M4.5 3a2.5 2.5 0 0 1 5 0v9a1.5 1.5 0 0 1-3 0V5a.5.5 0 0 1 1 0v7a.5.5 0 0 0 1 0V3a1.5 1.5 0 1 0-3 0v9a2.5 2.5 0 0 0 5 0V5a.5.5 0 0 1 1 0v7a3.5 3.5 0 1 1-7 0V3z"/>
+                                </svg>-->
+                            </div>
+
+                        </label>
+                        <input id="file-upload"  type="file" onchange="document.getElementById('slikaprofila').src = window.URL.createObjectURL(this.files[0])" hidden/>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        <label>
+                            <input type="text" id="name" placeholder="Firstname">
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="text" id="city" placeholder="City">
+
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="text" id="surname" placeholder="Lastname">
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="text" id="country" placeholder="Country">
+
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="text" id="username" placeholder="Username">
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="password" id="pass" placeholder="Password">
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="text" id="email" placeholder="E-mail">
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="password" id="passconf" placeholder="Confirm Password" >
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="naslov">
+                       <button class="btn btn-outline-light" onclick="register()" >
+                           Start Making Memories
+                       </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-lg-4 col-md-4">
+            &nbsp;
+        </div>
+    </div>
+    </div>
+   <!-- <div id="header"><img src="<?php echo base_url('assets/images/pic.png') ?>" height=10% width=10%/>
         <a href="<?php echo base_url('GuestLogin/index.php') ?>"><input class="button" type="button" value="Back To Home"> </a></div>
     <div id="title"> Become a Traveller </div>
     <div id="menu">
@@ -113,7 +236,7 @@
 
         </div>
     </div>
-     <!-- dodaj ovde pop up ako zelis-->
-    <input id="submitbutton" type="button" value="Start making memories" onclick="register()">
+    dodaj ovde pop up ako zelis
+    <input id="submitbutton" type="button" value="Start making memories" onclick="register()">-->
 </body>
 </html>

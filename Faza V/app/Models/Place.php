@@ -36,6 +36,10 @@ class Place extends Model
 
     }
 
+    public function insertPlace(){
+
+    }
+	
     public function getCountry($plcid){
         $visited=$this->find($plcid);
         return $visited->id_cnt;

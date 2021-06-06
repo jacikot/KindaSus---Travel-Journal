@@ -15,8 +15,12 @@ class Map extends BaseController
 
     public function index()
     {
-        $this->session->set('usr_id', 1);
+        $this->session->set('userId', 4);
+        $this->session->set('username','adriance');
+        $this->session->set('answered',null);
+        $this->session->set('flag',null);
         $this->session->set("country", null);
+        $this->session->set("forgot",null);
         echo view('map');
     }
 
@@ -24,7 +28,7 @@ class Map extends BaseController
 
     public function getMap(){
 
-        $user=$this->session->get('usr_id');
+        $user=$this->session->get('userId');
         $map=[];
         $visitedModel=new Visited();
         $togoModel=new ToGo();
@@ -58,7 +62,7 @@ class Map extends BaseController
     }
 
     public function getUserInfo(){
-        $user=$this->session->get('usr_id');
+        $user=$this->session->get('userId');
         $model=new RegisteredUser();
         echo json_encode($model->getUserInfo($user));
 

@@ -1,5 +1,5 @@
 
-function insertTrash(){
+function insertTrash(list,parent){
     let trash=document.createElement("button");
     trash.classList.add("bottomButton");
     let itr=document.createElement("i");
@@ -49,6 +49,7 @@ function insertReview(data,list,country){
     d.classList.add("d-flex");
     div.appendChild(d);
 
+
     div.appendChild(insertTrash(list,elem));
     elem.appendChild(div);
     elem.innerHTML+="<br>";
@@ -88,7 +89,7 @@ function insertData(data){
 
     if(country!=null){
         let img=document.createElement("img");
-        img.setAttribute("src","https://flagcdn.com/48x36/"+data[0]["code"]+".png");
+        img.setAttribute("src","https://flagcdn.com/48x36/"+data[0]["code"].toLowerCase()+".png");
         header[0].innerHTML="";
         header[0].appendChild(img);
         header[0].innerHTML+=" "+country+" ";
@@ -135,6 +136,9 @@ $(document).ready(function(){
        eventHandler(list,$("#all"));
    }) ;
 
+   $("#back").click(function(){
+      window.location.href=backURL;
+   });
 
 
 });

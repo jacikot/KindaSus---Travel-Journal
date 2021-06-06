@@ -20,7 +20,7 @@ class Journal extends BaseController
     public function reviewsByCountries()
     {
 
-        $user = $this->session->get('usr_id');
+        $user = $this->session->get('userId');
         $country = $this->session->get("country");
         $place = $this->request->getVar('place');
         $countryModel = new Country();
@@ -30,22 +30,24 @@ class Journal extends BaseController
 
         $revModel = new Review();
         $data=$revModel->getReviewInfo($user,$country,$place,$cntId["code"]);
-//
-//        $visitedModel = new Visited();
-//        $visits = $visitedModel->getVisited($user);
-//        /*id_vis id_plc*/
-//
-//        $placeModel = new Place();
-//        if ($place == null) $plcInCnt = $placeModel->visitsInCountry($visits, $cntId);
-//        else $plcInCnt = $placeModel->visitsInPlace($visits, $place);
-//        /*id_vis id_plc name*/
-//
-//
-//        if ($country != null) $data = $rev->getReviews($plcInCnt, $country, $cntId["code"]);
-//        else $data = $rev->getReviews($plcInCnt, $country, null);
-//        /*place title text date country*/
-//        $data=$countryModel->setCountriyNames($data);
         echo json_encode($data);
 
+    }
+
+    public function deleteReview(){
+        $user=$this->session->get('userId');
+        $rev=$this->request->getVar("id_rev");
+        $model=new Review();
+        $path="../public/assets/db_files/".$user."/review_img/".$rev.'/';
+        helper('filesystem');
+        delete_files($path,true);
+        rmdir($path);
+        $model->deleteReview($rev);
+        echo $rev;
+    }
+
+    public function review($id_rev){
+        $this->session->set("id_rev",$id_rev);
+        echo view('journal');
     }
 }

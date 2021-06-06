@@ -1,164 +1,59 @@
 /* author: Dimitrije Panic */
 @font-face {
     font-family: myFont;
-    src: url(../fontstyle/traveljournal.ttf);
+    src: url(../fontstyle/travel_journal_3.ttf);
   }
 
-/*.button:hover{
-    cursor: pointer;
-    color:pink;
-}*/
-.button{
-    outline:none;
-    font-size:100%;
-    font-family:myFont;
-    position: absolute;
-    top: 5%;
-    right: 1.75%;
-    border-radius: 25px;
-    padding: 14px;
-    width: 125px;
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
-    box-shadow: 4px 4px #333e7d;
-    background: #4754a2;
-    color: white;
-    border:none;
-}
-
-.button:hover{
-    cursor: pointer;
-    background: #333e7d;
-    font-size: 17px;
-}
-
-#add:hover{
-    cursor: pointer;
-    color:pink;
-}
-
-#check:hover{
-    cursor: pointer;
-    color:pink;
-}
-
 body{
-    background-image: url(../images/preporuka.png);
-    background-repeat: no-repeat;
-    object-fit: contain;
-    background-size: cover /*100% 100%*/;
+    background: url(../images/background100.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
 
 }
-#header{
-    width:100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    font-family: myFont;
-}
 
-/*.button{
-    font-size: 100%;
-    font-family:MyFont;
-    background-color: #4754a2;
-    border-radius:12px;
-    color:white;
-
-}*/
-
-#title{
-    position:relative;
-    top:73px;
-    text-align: center;
-    font-family: myFont;
-    font-size: 250%;
-    color:black;
-}
-
-
-.pic{
-    position:absolute;
-    top:53%;
-    left:32.5%;
+#logo{
+    width: 10vw;
+    height: 10vh;
     object-fit: contain;
-
 }
 
-a:link{
-    text-decoration: none;
-
+#header{
+    vertical-align: middle !important;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
 }
-a:visited{
-    text-decoration: none;
+.moj{
+    ;
+    font-family:myFont;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
 }
-a:hover{
-    color:pink;
-    text-decoration: none;
-}
-
-#place{
-    font-size: 120%;
-    font-family:MyFont;
-    color: black;
-    position:absolute;
-    top:45%;
-    left:32.5%;
-}
-
-#tabela{
-    width:18%;
-    font-size: 90%;
-    font-family:MyFont;
-    color: black;
-    position:absolute;
-    top:42%;
-    left:51.75%;
-}
-
-#add{ 
-    outline: none;
-    background-color:transparent;
-    border:none;
-    font-size: 200%;
-    font-family:MyFont;
+#naslov{
+    text-align:center;
+    font-size:10vh;
+    font-family:myFont;
     color:black;
-    position:absolute;
-    left: 5%;
-    top:50%;
-    /*bottom:5%;
-    left:26%;*/
+    opacity: 80%;
 }
-
-#check{
-    outline: none;
-    background-color:transparent;
-    border:none;
-    font-size: 200%;
-    font-family:MyFont;
-   color:black;
-    position:absolute;
-    /*bottom:5%;
-    left:62%;*/
-    left: 85%;
-    top:50%;
-}
-
-#link{
+#pozadina{
+    background-color: rgba(130, 177, 183, 0.7);
+    /*background-color: rgba(255, 255, 255, 0.66);*/
+    backdrop-filter: blur(3px);
+    text-align:center;
+    font-family:myFont;
     color:black;
+    opacity: 90%;
+    font-size: 7vh;
 }
 
+#quote {
+    font-size: 5vh !important;
+}
 
-#mess{
-    font-size:150%;
-    font-family:MyFont;
-    color:black;
-    position:absolute;
-    bottom:5%;
-    left:40%;
-    display:none;
+.dugme{
+    font-size: 4vh;
+    font-family:myFont;
+
 }
