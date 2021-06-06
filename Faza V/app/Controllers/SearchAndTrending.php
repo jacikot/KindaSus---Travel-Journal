@@ -10,18 +10,17 @@ class SearchAndTrending extends BaseController
     public function index()
     {
         $data['jsFile'] = 'search_and_trending';
-        $data['idUsr'] = $this->session->get('idUsr');
+        $data['idUsr'] = $this->session->get('userId');
         if ($data['idUsr'] !=  null) {                                                      // USER / GUEST 3
-            return $this->displayPage('list_of_reviews_user', $data);
+            return $this->displayPage('search_and_trending_user', $data);
         }
         return $this->displayPage('search_and_trending_guest', $data);
     }
 
-    public function search()
+    public function getTrendingPlaces()
     {
-        $inputVal = $this->request->getVar('inputVal');
         $placeModel = new Place();
-        $results = $placeModel->findMatchingPlaceOrCountry($inputVal);
+        $results = $placeModel->getTrendingPlaces();
         echo json_encode($results);
     }
 }

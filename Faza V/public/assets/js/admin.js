@@ -4,7 +4,6 @@
 // 1 - Delete user's account
 // 2 - Log out of the application
 
-
 $(document).ready(function () {
 
     let failBannerAll = $("#fail-banner-all");
@@ -149,44 +148,3 @@ function sortBy() {
         return aDate.localeCompare(bDate) * ((direction == 'ASC') ? 1 : -1);
     }).appendTo(tBody);
 }
-
-// $.get("http://localhost:8080/Admin/refresh", {
-//     'type' : $('input[name="type"]:checked').val(),
-//     'direction' : $('input[name="direction"]:checked').val(),
-// }, function(data) {
-//     let table = $("#review-table");
-//     let reviews = JSON.parse(data);
-//
-//     // AVATAR PATH IDIIIOTEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-//     let reviewAdmin = "http://localhost:8080/Admin/reviewAdmin/";
-//
-//     table.empty();
-//
-//     for (let i = 0; i < reviews.length; i++) {
-//         let avatarPath = "http://localhost:8080/assets/images/avatar.png";
-//         let oldDate = reviews[i].date.split("-");
-//         let newDate = oldDate[2] + "." + oldDate[1] + "." + oldDate[0] + ".";
-//
-//         let row = $("<tr></tr>").append(
-//             $("<td></td>").append(
-//                 $("<a></a>").addClass("review")
-//                     .attr("href", (reviewAdmin + reviews[i].id)).append(
-//                     $("<div></div>").addClass("col-1").append(
-//                         $("<img>").addClass("avatar").attr("src", avatarPath)
-//                     )).append(
-//                     $("<div></div>").addClass("col-3").append(
-//                         $("<span></span>").addClass("username").text(reviews[i].username)
-//                     )).append(
-//                     $("<div></div>").addClass("col-4").append(
-//                         $("<span></span>").addClass("review-title").text(reviews[i].title)
-//                     )).append(
-//                     $("<div></div>").addClass("col-2").append(
-//                         $("<span></span>").addClass("tokens").text(reviews[i].tokens + "\xa0 ")
-//                             .append($("<i></i>").addClass("fas fa-star"))
-//                     )).append(
-//                     $("<div></div>").addClass("col-2").append(
-//                         $("<span></span>").addClass("date").text(newDate)
-//                     ))));
-//         table.append(row);
-//     }
-// });

@@ -21,5 +21,5 @@
 <body>
     <div id="header">
         <img src="<?= base_url("assets/images/logo.png") ?>">
-        <button id="back-to-home" class="btn" onclick="<?php redirect()->to(site_url('Map')); ?>">Back to Home</button>
+        <button id="back-to-home" class="btn">Passport</button>
     </div>

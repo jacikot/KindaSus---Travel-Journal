@@ -3,192 +3,213 @@
 
 $(document).ready(function () {
 
-    let currentFocus, currentId, currentCode;
+    initApi();
 
-    // MOZDA OGRANICENJE KOLIKO SLOVA NA POCETKU TREBA DA UNESE ZBOG VELIKOG BROJA MESTA
+    let autocomplete, service;
 
-    $("#search-txt").on("input", function () {
-      var searchTxt = $(this);
+    function initApi() {
+      let script = document.createElement('script');
+      script.src = 'https://maps.googleapis.com/maps/api/js?' +
+          'key=AIzaSyCUy2DENYeQ9G2zDbrSw0Dr06ESnDUHWNk&libraries=places&callback=initAutocompleteAndTrending';
+      script.async = true;
 
-      clearTimeout(searchTxt.data('timeout'));
+      window.initAutocompleteAndTrending = function() {
 
-      searchTxt.data('timeout', setTimeout(function() {
-        let val = searchTxt.val();
-        let list = $("#ac-list");
-        currentFocus = -1;
-        currentId = -1;
-        currentCode = -1;
+          initAutocomplete(autocomplete);
+          initTrendingService(service);
+      };
 
-        if (val === "") return;
-
-        if (list.children().length > 0) {
-          let listItems = list.find("div");
-          for (let i = 0; i < listItems.length; i++) {
-            let curr = listItems.eq(i);
-            let matchingPlace = curr.attr("data-place").substr(0, val.length);
-            let matchingCountry = curr.attr("data-country").substr(0, val.length);
-            if (matchingPlace.toLowerCase() === val.toLowerCase()) {
-              curr.empty();
-              curr.append("<strong>" + matchingPlace + "</strong>");
-              curr.append(curr.attr("data-place").substr(val.length));
-              curr.append(", ");
-              curr.append(curr.attr("data-country"));
+    window.addEventListener("load", event => {
+        setTimeout(function () {
+            for (let i = 0; i < 6; i++) {
+                let image = document.querySelector("#tr-gallery-item-" + i + " .tr-gallery-img");
+                let isLoaded = image.complete && image.naturalHeight !== 0;
+                if (!isLoaded) {
+                    // alert("not loaded " + i);
+                    let imageHandler = setInterval(function () {
+                        loadImage(service, image, imageHandler, i);
+                    }, 100);
+                }
             }
-            else if (matchingCountry.toLowerCase() === val.toLowerCase()) {
-              curr.empty();
-              curr.append(curr.attr("data-place"));
-              curr.append(", ");
-              curr.append("<strong>" + matchingCountry + "</strong>");
-              curr.append(curr.attr("data-country").substr(val.length));
-            }
-            else curr.remove();
-          }
-          makeRound(list.children().length === 0);
-          return;
-        }
+        }, 100);
 
-        $.get("http://localhost:8080/SearchAndTrending/search", {
-          'inputVal' : val
-        }, function(data) {
-          let results = JSON.parse(data);
-
-          for (let i = 0; i < results.length; i++) {
-            let listItem = $("<div></div>").addClass("ac-list-item");
-            let matchingPlace = results[i].place.substr(0, val.length);
-            let matchingCountry = results[i].country.substr(0, val.length);
-
-            if (matchingPlace.toLowerCase() === val.toLowerCase()) {
-              listItem.append("<strong>" + matchingPlace + "</strong>");
-              listItem.append(results[i].place.substr(val.length));
-              listItem.append(", ");
-              listItem.append(results[i].country);
-            }
-            else {
-              listItem.append(results[i].place);
-              listItem.append(", ");
-              listItem.append("<strong>" + matchingCountry + "</strong>");
-              listItem.append(results[i].country.substr(val.length));
-            }
-            listItem.attr("data-id-plc", results[i].id);
-            listItem.attr("data-place", results[i].place);
-            listItem.attr("data-country", results[i].country);
-            listItem.attr("data-code", results[i].code);
-            list.append(listItem);
-          }
-          makeRound(list.children().length === 0);
-        });
-
-        // for (let i = 0; i < arr.length; i++) {
-        //   let matchingPart = arr[i].substr(0, val.length);
-        //   if (matchingPart.toLowerCase() === val.toLowerCase()) {
-        //     let listItem = $("<div></div>").addClass("ac-list-item");
-        //     listItem.append("<strong>" + matchingPart + "</strong>");
-        //     listItem.append(arr[i].substr(val.length));
-        //     listItem.attr("data-value", arr[i]);
-        //     list.append(listItem);
-        //   }
-        // }
-        // makeRound(list.children().length === 0);
-      }, 250));
     });
-
-    $("#search-txt").on("keydown", function(e) {
-      let list = $("#ac-list div");
-  
-      if (e.keyCode === 40) {                            // DOWN
-        if (currentFocus !== -1) {
-          list.eq(currentFocus).removeClass("ac-active");
-        }
-        currentFocus = (currentFocus + 1) % list.length;
-        list.eq(currentFocus).addClass("ac-active");
-      }
-      else if (e.keyCode === 38) {                       // UP
-        if (currentFocus !== -1) {
-          list.eq(currentFocus).removeClass("ac-active");
-          currentFocus = (currentFocus + list.length - 1) % list.length;
-
-        }
-        else currentFocus = list.length - 1;
-        list.eq(currentFocus).addClass("ac-active");
-      }
-      else if (e.keyCode === 13) {                       // ENTER
-        e.preventDefault();
-        if (currentFocus !== -1) {
-          let selected = $(".ac-active");
-          $(this).val(selected.attr("data-place") + ", " + selected.attr("data-country"));
-          currentId = selected.attr("data-id-plc");
-          currentCode = selected.attr("data-code");
-          currentFocus = -1;
-          makeRound(true);
-          $("#ac-list").empty();
-        }
-        //window.location.href = "http://www.etf.rs";
-      }
-      else if (e.keyCode === 9) {                        // TAB
-        e.preventDefault();
-        if ($('#ac-list').children().length > 0) {
-          let first = $(".ac-list-item").first();
-          $(this).val(first.attr("data-place") + ", " + first.attr("data-country"));
-          currentId = first.attr("data-id-plc");
-          currentCode = first.attr("data-code");
-          makeRound(true);
-          $("#ac-list").empty();
-        }
-      }
-      else if (e.keyCode === 8) {                        // BACKSPACE
-        makeRound(true);
-        $("#ac-list").empty();
-      }
-    });
-
-    $("#search-txt").on("focus", function () {
-      let list = $("#ac-list");
-      makeRound(list.children().length === 0);
-      list.show();
-    });
-
-    $("#search-txt").on("blur", function () {
-      makeRound(true);
-      $("#ac-list").hide();
-    });
-
-    $("#ac-list").on("mousedown", ".ac-list-item", function() {
-      let clicked = $(this);
-      $("#search-txt").val(clicked.attr("data-place") + ", " + clicked.attr("data-country"));
-      currentId = clicked.attr("data-id-plc");
-      currentCode = clicked.attr("data-code");
-      makeRound(true);
-      $("#ac-list").empty();
-      //window.location.href = "http://www.etf.rs";
-    });
-
-    $("#search-btn").on("click",function () {
-      let idPlc = currentId;
-      let countryCode = currentCode;
-
-      if (idPlc === -1 || countryCode === -1) {
-        $("#bad-input-modal").modal('show');
-        $("#search-txt").val("");
-        makeRound(true);
-        $("#ac-list").empty();
-        return;
-      }
-
-      let placeAndCountry = $("#search-txt").val();
-
-      window.location.href = "http://localhost:8080/ListOfReviews/index?idPlc=" + idPlc +
-          "&placeAndCountry=" + placeAndCountry + "&countryCode=" + countryCode;
-      // $.get("http://localhost:8080/ListOfReviews/index", {
-      //   'idPlc' : idPlc,
-      //   'placeAndCountry' : placeAndCountry,
-      //   'countryCode' : countryCode
-      // });
-    });
+      document.head.appendChild(script);
+    }
 });
 
-function makeRound(bool) {
-  $("#search-txt").css({
-    "border-bottom-left-radius" : (bool ? "15px" : "0"),
-    "border-bottom-right-radius" : (bool ? "15px" : "0")
-  });
+let cnt = [0, 0, 0, 0, 0, 0];
+
+function loadImage(service, image, imageHandler, i) {
+    let placeName = image.getAttribute("data-place_name");
+    let countryName = image.getAttribute("data-country_name");
+    let countryCode = image.getAttribute("data-country_code");
+
+    if (cnt[i] < 5) {
+        service.findPlaceFromQuery({
+                fields : ['photos'],
+                query : placeName + " " + countryName
+            },
+            function(results, status) {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    //console.log(placeName);
+                    let photos = results[0].photos;
+                    image.setAttribute("src", photos[0].getUrl());
+                }
+                else {
+                    console.log('error');
+                }
+            }
+        );
+    }
+    else {
+        image.src = 'https://flagcdn.com/w2560/' + countryCode.toLowerCase() + '.png';
+        image.style.height = 'auto';
+    }
+
+    let isLoaded = image.complete && image.naturalHeight !== 0;
+    if (isLoaded) {
+        clearInterval(imageHandler);
+        // alert("finally loaded " + placeName);
+    }
+    else {
+        cnt[i]++;
+    }
+}
+
+function initAutocomplete(autocomplete) {
+    autocomplete = new google.maps.places.Autocomplete(
+        document.getElementById('search-txt'), {
+            types: ['(cities)'],
+            fields: ['name', 'address_components']
+        });
+
+    google.maps.event.addListener(autocomplete, 'place_changed', function () {
+
+        let result = autocomplete.getPlace();
+        // alert(JSON.stringify(result));
+
+        if (!result.address_components) {
+            $("#bad-input-modal").modal('show');
+            $("#search-txt").val("");
+            return;
+        }
+
+        let place, country;
+        let placeFound = false, countryFound = false;
+
+        for (let i = 0; i < result.address_components.length; i++) {
+            for (let j = 0; j < result.address_components[i].types.length; j++) {
+                if (result.address_components[i].types[j] == 'country') {
+                    countryFound = true;
+                    country = result.address_components[i];
+                }
+                if (result.address_components[i].types[j] == 'locality') {
+                    placeFound = true;
+                    place = result.address_components[i];
+                }
+            }
+        }
+
+        if (!countryFound || !placeFound) {
+            $("#bad-input-modal").modal('show');
+            $("#search-txt").val("");
+            return;
+        }
+
+        let placeName = place.long_name;
+        let countryName = country.long_name;
+        let countryCode = country.short_name;
+        // alert("place = " + placeName + ", country = " + countryName + ", country code = " + countryCode);
+        window.location.href = "http://localhost:8080/ListOfReviews/?" + "&idPlc=" + "" +
+            "&placeName=" + placeName + "&countryName=" + countryName + "&countryCode=" + countryCode;
+    });
+}
+
+function initTrendingService(service) {
+    service = new google.maps.places.PlacesService(document.createElement('div'));
+
+    $.post("http://localhost:8080/SearchAndTrending/getTrendingPlaces", function (data) {
+
+        let trending, a = 0;
+        if (a == 0) {
+            trending = JSON.parse(data);
+            // alert(JSON.stringify(trending));
+        }
+        else {
+            trending = [{
+                'placeName' : "Rock",
+                'countryName' : 'United States of America',
+                'countryCode' : "US"
+            }, {
+                'placeName' : "Zaovine",
+                'countryName' : 'Serbia',
+                'countryCode' : "RS"
+            }, {
+                'placeName' : "Monte Carlo",
+                'countryName' : 'Monaco',
+                'countryCode' : "MC"
+            }, {
+                'placeName' : "Lima",
+                'countryName' : 'Peru',
+                'countryCode' : "PE"
+            }, {
+                'placeName' : "Dakar",
+                'countryName' : 'Senegal',
+                'countryCode' : "SN"
+            }, {
+                'placeName' : "Zanzibar",
+                'countryName' : 'Tanzania',
+                'countryCode' : "TZ"
+            }];
+        }
+        initTrending(service, trending);
+    });
+}
+
+function initTrending(service, trending) {
+    let trendingObj = $("#trending");
+    let gallery = $("<div></div>").attr("id", "tr-gallery");
+    for (let i = 0; i < trending.length; i++) {
+        let idPlc = trending[i].idPlc;
+        let placeName = trending[i].placeName;
+        let countryName = trending[i].countryName;
+        let countryCode = trending[i].countryCode;
+
+        let figure = $("<figure></figure>").attr("id", "tr-gallery-item-" + i).addClass("tr-gallery-frame");
+        let image = $("<img>").addClass("tr-gallery-img").attr("alt", "Loading...");
+
+        image.attr("data-place_name", placeName)
+            .attr("data-country_name", countryName)
+            .attr("data-country_code", countryCode);
+
+        service.findPlaceFromQuery({
+                fields : ['photos'],
+                query : placeName + " " + countryName
+            },
+            function(results, status) {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    //console.log(placeName);
+                    let photos = results[0].photos;
+                    image.attr("src", photos[0].getUrl());
+                }
+                else {
+                    console.log('error');
+                }
+            }
+        );
+
+        let span = $("<span></span>").text(placeName + ", " + countryName);
+        let caption = $("<figcaption></figcaption>").append(span);
+
+        image.on("click", function() {
+            let img = $(this);
+            window.location.href = "http://localhost:8080/ListOfReviews/?" +
+                "&idPlc=" + idPlc + "&placeName=" + placeName +
+                "&countryName=" + countryName + "&countryCode=" + countryCode;
+        });
+
+        gallery.append(figure.append(image).append(caption));
+    }
+    trendingObj.append(gallery);
 }

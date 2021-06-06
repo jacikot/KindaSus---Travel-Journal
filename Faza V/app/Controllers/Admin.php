@@ -43,15 +43,4 @@ class Admin extends BaseController
         $userModel = new RegisteredUser();
         $userModel->deleteUser($idUsr);
     }
-
-//    public function refresh()
-//    {
-//        $type = $this->request->getVar('type');
-//        $direction = $this->request->getVar('direction');
-//
-//        $reviewModel = new Review();
-//            $reviews = $reviewModel->getAllReviews($type, $direction);
-//        echo json_encode($reviews);
-//    }
-
 }

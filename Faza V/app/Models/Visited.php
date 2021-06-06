@@ -12,10 +12,10 @@ class Visited extends Model
     protected $returnType = 'object';
     protected $allowedFields = ['id_usr, id_plc'];
 
-    public function emptyListForUser($idUsr)
-    {
-        $this->where('id_usr', $idUsr)->delete();
-    }
+//    public function emptyListForUser($idUsr)
+//    {
+//        $this->where('id_usr', $idUsr)->delete();
+//    }
 
     public function getVisitedPlaces($user){
         $allVisited=$this->where("id_usr",$user)->findAll();
@@ -38,4 +38,8 @@ class Visited extends Model
         return $visited;
     }
 
+    public function getTravelCount($idUsr)
+    {
+        return $this->where('id_usr', $idUsr)->countAllResults();
+    }
 }

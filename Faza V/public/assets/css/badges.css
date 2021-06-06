@@ -13,56 +13,72 @@ body{
     font-family: fancyFont;
 }
 
-.logo{
+#header {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 17px;
+    margin-top: 17px;
+    margin-bottom: 17px;
+}
+
+#header img {
+    width: 120px;
+    height: 70px;
+}
+
+#header button {
+    border-radius: 20px;
     width: 150px;
-    height: auto;
-}
-
-#quote{
-    font-size: 38px;
-    font-style: italic;
+    font-size: 19px;
+    padding: 7px 10px;
+    box-shadow: 3px 3px #333e7d;
+    background: #4754a2;
     color: white;
-    padding: 20px;
-    padding-left: 25px;
 }
 
-
-#caption {
-    font-size: 36px;
-    color: white;
-    caption-side: top;
-    font-style: italic;
+#header button:hover {
+    background: #333e7d;
 }
 
-#badges {
+#badges-table {
     background-color: #4754a2;
     border-radius: 25px;
     border-collapse: separate;
     border-spacing: 25px 17px;
 }
 
-#badges .regular-badge {
-    width: 115px;
-    height: 115px;
+#badges-table caption {
+    font-size: 40px;
+    color: white;
+    caption-side: top;
+    font-style: italic;
+    text-align: center;
+}
+
+#badges-table img {
+    width: 100%;
     border-radius: 50%;
+}
+
+#quote{
+    font-size: 48px;
+    font-style: italic;
+    color: white;
+    text-align: center;
 }
 
 .popover {
     text-align: center;
+    background-color: #9ba3ca;
 }
 
 .popover-header {
-    text-align: center;
     border-bottom: none !important;
     background-color: #9ba3ca !important;
     margin-bottom: -1px !important;
 }
 
 .popover-body {
-    text-align: center;
-    background-color: #9ba3ca !important;
-    border-bottom-left-radius: calc(.3rem - 1px);
-    border-bottom-right-radius: calc(.3rem - 1px);
 }
 
 .bs-popover-top>.arrow::after {

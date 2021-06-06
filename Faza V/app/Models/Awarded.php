@@ -12,6 +12,13 @@ class Awarded extends Model
     protected $returnType = 'object';
     protected $allowedFields = ['id_usr, id_bdg'];
 
+    public function giveBadgeIfNotGiven($idUsr, $idBdg) {
+        $idAwd = $this->where(['id_usr' => $idUsr, 'id_bdg' => $idBdg])->first();
+        if ($idAwd == null) {
+            $this->db->table('awarded')->insert(['id_usr' => $idUsr, 'id_bdg' => $idBdg]);
+        }
+    }
+
     /*public function emptyCollectionForUser($idUsr)
     {
         $this->where('id_usr', $idUsr)->delete();

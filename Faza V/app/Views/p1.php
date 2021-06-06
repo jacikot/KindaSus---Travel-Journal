@@ -7,9 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
-    <h1><?= $i ?></h1>
-    <h1><?= $a ?></h1>
-    <h1><?= $r ?></h1>
+<body style="background-color: red">
+    <script>alert(JSON.stringify(<?= $i ?>))</script>
 </body>
 </html>

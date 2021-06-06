@@ -19,7 +19,7 @@ $(document).ready(function () {
         let tokenCnt = parseInt(tokenContainer.text());
         tokenCnt += (vote === 'up' ? 1 : -1);
         tokenContainer.html(tokenCnt + "&nbsp;");
-        $.post("http://localhost:8080/ListOfReviews/updateTokens", { // zahtev serveru da u bazu upise promenu oko toga sta je lajkovano
+        $.post("http://localhost:8080/ListOfReviews/updateTokens", {
             'idRev' : starContainer.attr("data-id_rev"),
             'idOwr' : starContainer.attr("data-id_owr"),
             'vote' : vote
@@ -45,71 +45,3 @@ function sortBy() {
         return aDate.localeCompare(bDate) * ((direction == 'ASC') ? 1 : -1);
     }).appendTo(tBody);
 }
-
-// function sortBy(idPlc, usrSet) {
-//     $.get("http://localhost:8080/ListOfReviews/refresh", {
-//         'type' : $('input[name="type"]:checked').val(),
-//         'direction' : $('input[name="direction"]:checked').val(),
-//         'place' : idPlc,
-//         'usrSet': usrSet
-//     }, function(data) {
-//         let table = $("#review-table");
-//         table.empty();
-//         let reviews = JSON.parse(data);
-//
-//         let reviewGuest = "http://localhost:8080/ListOfReviews/reviewGuest/";
-//         let reviewUser = "http://localhost:8080/ListOfReviews/reviewUser/";
-//
-//         for (let i = 0; i < reviews.length; i++) {
-//             // AVATAR PATH IDIIIOTEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-//
-//             let avatarPath = "http://localhost:8080/assets/images/avatar.png";
-//             let oldDate = reviews[i].date.split("-");
-//             let newDate = oldDate[2] + "." + oldDate[1] + "." + oldDate[0] + ".";
-//             let tokens = $("<div></div>").addClass("tokens");
-//
-//             if (usrSet == false && reviews[i].idOwr != 1) {              // VRATI 4
-//                 tokens.append($("<span></span>").html(reviews[i].tokens + "&nbsp;").addClass("token-cnt"));
-//                 let tokenStar = $("<i></i>").addClass("tokenStar");
-//
-//                 tokenStar.addClass(reviews[i].foundUseful == 0 ? "far fa-star" : "fas fa-star");
-//
-//                 tokenStar.attr("data-id_rev", reviews[i].idRev);
-//                 tokenStar.attr("data-id_owr", reviews[i].idOwr);
-//
-//                 let star = $("<div></div>").addClass("star");
-//                 star.attr("data-content", reviews[i].foundUseful == 0 ? "Helpful": "Not helpful");
-//                 star.attr("data-placement", "bottom");
-//                 star.attr("data-trigger", "hover");
-//
-//                 tokens.append(star.append(tokenStar));
-//             }
-//             else {
-//                 tokens.html(reviews[i].tokens +"&nbsp;&nbsp;<i class='fas fa-star'></i>");
-//             }
-//
-//             let row = $("<tr></tr>").append(
-//                 $("<td></td>").append(
-//                     $("<a></a>").addClass("review")
-//                     .attr("href", ((usrSet === true) ? reviewUser : reviewGuest) + reviews[i].idRev).append(
-//                         $("<div></div>").addClass("col-1").append(
-//                             $("<img>").addClass("avatar").attr("src", avatarPath)
-//                         )).append(
-//                         $("<div></div>").addClass("col-3").append(
-//                             $("<span></span>").addClass("username").text(reviews[i].username)
-//                         )).append(
-//                         $("<div></div>").addClass("col-4").append(
-//                             $("<span></span>").addClass("title").text(reviews[i].title)
-//                         )).append(
-//                         $("<div></div>").addClass("col-2").append(tokens)
-//                         ).append(
-//                         $("<div></div>").addClass("col-2").append(
-//                             $("<span></span>").addClass("date").text(newDate)
-//                         ))));
-//             table.append(row);
-//         }
-//         $(".star").popover();
-//     });
-// }
-
-

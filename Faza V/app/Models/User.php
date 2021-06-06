@@ -30,6 +30,4 @@ class User extends Model
 
         return $this->getInsertID();
     }
-
-
 }

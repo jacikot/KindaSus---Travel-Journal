@@ -14,8 +14,8 @@ class Place extends Model
     protected $primaryKey = 'id_plc';
     protected $useAutoIncrement = true;
     protected $returnType = 'object';
-    protected $allowedFields = ['name', 'category','categorized','heritage','relax','sightseeing',
-        'weather','populated','id_img','id_cnt'];
+    protected $allowedFields = ['name', 'categorized', 'heritage', 'relax',
+                                'sightseeing', 'weather', 'populated', 'id_cnt'];
 
     public function getAllCategorized(){
        return $this->where('categorized',1)->findAll();
@@ -35,21 +35,6 @@ class Place extends Model
         }
 
     }
-
-    public function insertPlace(){
-
-    }
-	
-	public function findMatchingPlaceOrCountry($inputVal) {
-		return $this->select("place.id_plc as id,
-								place.name as place,
-								country.name as country,
-								country.code as code", false)
-		->join('country', 'place.id_cnt = country.id_cnt')
-		->like('place.name', $inputVal, 'after', true, true)
-		->orLike('country.name', $inputVal, 'after', true, true)
-		->findAll();
-	}
 
     public function getCountry($plcid){
         $visited=$this->find($plcid);
@@ -84,5 +69,30 @@ class Place extends Model
             }
         }
         return $ret;
+    }
+
+    public function getPlaceId($idCnt, $placeName)
+    {
+        $res = $this->where(['id_cnt' => $idCnt, 'name' => $placeName])->first();
+        if ($res == null) return null;
+        return $res->id_plc;
+    }
+
+    public function getTrendingPlaces()
+    {
+        $query = $this->db->query("SELECT p1.id_plc AS idPlc, p1.name AS placeName, country.name AS countryName, country.code AS countryCode
+                            FROM place AS p1 JOIN country ON p1.id_cnt = country.id_cnt
+                            INNER JOIN (SELECT id_plc
+                                        FROM place
+                                        ORDER BY (SELECT SUM(review.token_count)
+                                                  FROM review
+                                                  JOIN visited on review.id_vis = visited.id_vis
+                                                  WHERE visited.id_plc = place.id_plc
+                                                  AND review.date_posted BETWEEN CURDATE() - INTERVAL 30 DAY AND CURDATE()
+                                                  GROUP BY place.id_plc) DESC
+                                        LIMIT 6)
+                            AS p2 ON p1.id_plc = p2.id_plc");
+
+        return $query->getResultArray();
     }
 }

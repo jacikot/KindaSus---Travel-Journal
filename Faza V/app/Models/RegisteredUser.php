@@ -17,15 +17,28 @@ class RegisteredUser extends Model
     {
         return $this->select("registered_user.id_usr AS idUsr,
                                 registered_user.username AS username, 
-                                registered_user.avatar_path AS avatar_path", false)
+                                registered_user.avatar_path AS avatarPath", false)
                     ->orderBy('registered_user.acc_creation_date', "DESC")
                     ->findAll();
     }
 
     public function deleteUser($idUsr)
     {
+        $path = '../public/assets/db_files/'.$idUsr.'/';
+        helper('filesystem');
+        delete_files($path, true);
+        rmdir($path);
         return $this->delete($idUsr);
-        // BRISI IZ FOLDERA ALOOOOOOOOOOOOOOOOOOOOOOOOOOOOOo
+    }
+
+    public function getTokenCount($idUsr)
+    {
+        return $this->find($idUsr)->token_count;
+    }
+
+    public function getAccCreationDate($idUsr)
+    {
+        return strval($this->find($idUsr)->acc_creation_date);
     }
 
     public function updateOwnerTokens($idOwr, $vote)
@@ -76,5 +89,4 @@ class RegisteredUser extends Model
         if($uid==null) return null;
         return $uid[0]->id_usr;
     }
-
 }

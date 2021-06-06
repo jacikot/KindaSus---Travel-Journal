@@ -7,11 +7,6 @@ class Answer extends Model
     protected $table      = 'answer';
     protected $primaryKey = 'id_ans';
     protected $returnType = 'object';
-    protected $allowedFields =['text','heritage','relax','sightseeing',
-        'weather','populated','id_qst'];
-
-
-
-
+    protected $allowedFields = ['text', 'heritage', 'relax', 'sightseeing', 'weather', 'populated', 'id_qst'];
 
 }

@@ -154,5 +154,4 @@ class Review extends Model
     public function deleteReview($id){
         $this->where("id_rev",$id)->delete();
     }
-
 }

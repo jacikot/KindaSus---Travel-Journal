@@ -25,4 +25,9 @@ class Country extends Model
         return $ret;
     }
 
+    public function getCountryIdByCode($countryCode)
+    {
+        return $this->where('code', $countryCode)->first()->id_cnt;
+    }
+
 }

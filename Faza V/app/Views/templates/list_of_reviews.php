@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row">
       <div class="offset-1 col-1">
-         <?php if (count($reviews) > 0) {
+         <?php if (isset($reviews) && count($reviews) > 0) {
             echo $this->include('templates/sort_by');
           } ?>
       </div>
@@ -12,7 +12,7 @@
             <h1>
               <i class="fas fa-star"></i>
               &nbsp;User reviews - <?= $placeAndCountry ?>&nbsp;
-                <img src="<?= "https://flagcdn.com/40x30/$countryCode.png" ?>" style="width:40px;height:30px;">&nbsp;
+                <img src="<?= "https://flagcdn.com/40x30/".strtolower($countryCode).".png" ?>" style="width:40px;height:30px;">&nbsp;
               <i class="fas fa-star"></i>
             </h1>
           </caption>
@@ -22,10 +22,10 @@
                 <div class="overflow-auto"  style="height: 470px;">
                   <table id="review-table" class="table">
                       <?php
-                      if (count($reviews) == 0) {  ?>
+                      if (!isset($reviews) || count($reviews) == 0) {  ?>
                           <div id="fail-banner"></div>
                       <?php }
-                      foreach ($reviews as $review) { ?>
+                      else foreach ($reviews as $review) { ?>
                           <tr>
                               <td>
                                   <a class="review" href="<?php
