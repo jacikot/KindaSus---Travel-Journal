@@ -8,11 +8,21 @@ use App\Models\Place;
 use App\Models\Country;
 use CodeIgniter\Model;
 
+/*
+ * Author: Adriana Vidic 2018/0311
+ * */
+
+/*
+ * this controller enables viewing, inserting, deleting and crossing from the To-Go list
+ * */
 class ToGoList extends BaseController{
     public function index(){
         echo view('to-go_list.php');
     }
-
+/*
+ * function getMyToGo reads from the database which places are on the user's To-Go list and are they crossed off
+ * function returns data encapsulated into JSON object
+ * */
 public function getMyToGo(){
 
     $id_usr=$this->session->get('userId');
@@ -42,7 +52,10 @@ public function getMyToGo(){
 
 
 }
-
+/* function addToToGoList() checks if country exists and if so, it checks if the place exists (if not, it is inserted into Places table)
+and inserts destination into To-Go table; if country does not exist function alerts user about that fact
+function return string value that represents success of adding the place to To-Go list
+ * */
 
 public function addToToGoList(){
     $tmp_togo=new ToGo();
@@ -97,6 +110,12 @@ public function addToToGoList(){
 
 
 }
+    /* function crossFromList() checks if country exists and if so, it checks if the place exists; if country does not exist function
+    alerts user about that fact; function then checks if there is such place in the user's To-Go list and if so it crosses it off and
+     updates the database, and if not it alerts user about that
+    function return string value that represents success of crossing place from the To-Go list
+
+     * */
 
 function crossFromList(){
     $tmp_togo=new ToGo();
@@ -142,7 +161,11 @@ function crossFromList(){
 
 
 }
-
+    /* function deleteFromList() checks if country exists and if so, it checks if the place exists; if country does not exist function
+       alerts user about that fact; function then checks if there is such place in the user's To-Go list and if so deletes it and updated the database, and if not
+       it alerts user about that
+       function return string value that represents success of deleting place from the To-Go list
+        * */
 public function deleteFromList(){
     $tmp_togo=new ToGo();
     $tmp_place=new Place();
