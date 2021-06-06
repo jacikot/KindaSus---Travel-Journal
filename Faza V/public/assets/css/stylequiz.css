@@ -56,17 +56,10 @@ label{
 label:hover{
     cursor:pointer;
 }
-
-.modal-footer{
-    display:flex !important;
-    flex-direction:row !important;
-    justify-content: space-between !important;
-}
-#foot{
-    text-align: left !important;
-}
 .rasporedi{
-    text-align:right;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
 }
 
 .dugme{

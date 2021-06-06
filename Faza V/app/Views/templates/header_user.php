@@ -19,7 +19,3 @@
     <title>Travel Journal</title>
 </head>
 <body>
-    <div id="header">
-        <img src="<?= base_url("assets/images/logo.png") ?>">
-        <button id="back-to-home" class="btn">Passport</button>
-    </div>

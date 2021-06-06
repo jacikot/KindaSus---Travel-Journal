@@ -1,6 +1,14 @@
 
 var currQuestion = 1;
 var alreadyAnswered = [0,0,0,0,0];
+
+function prevQuestion(url){
+    currQuestion --;
+    let url1 = url+'/prevQuestion';
+
+
+
+}
 function findSelected(){
     let selected = 0;
     selected = $('#1').is(":checked")? 1 : 0;
@@ -21,10 +29,7 @@ function nextQuestion(url){
     let selected = 0;
     selected = findSelected();
     if(currQuestion !== 1 && selected === 0){
-        $("#mojModal").modal({
-            backdrop:'static',
-            keyboard:false
-        });
+        alert("U need to answer!");
         return;
     }
     if(currQuestion === 5) end = true;
@@ -43,6 +48,9 @@ function nextQuestion(url){
             end = false;
         }
         let prog = currQuestion - 2;
+        if(prog >= 1) {
+            $("#prev").attr("disabled",false);
+        }
         $("#prog").attr("style","width:"+prog*20+"%");
         $("#prog").text(prog+"/5");
         let vr = data.split(",");

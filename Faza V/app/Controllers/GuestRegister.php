@@ -8,73 +8,33 @@ use App\Models\Country;
 use App\Models\Place;
 use CodeIgniter\Model;
 
-/*
- * Author: Dimitrije Panic 18/0205
- */
 class GuestRegister extends BaseController
 {
-    /*
-     * @var int $minPassLength minimum password length
-     */
     private static $minPassLength = 6;
-    /*
-     * @var int $maxPassLength maximum password length
-     */
     private static $maxPassLength = 20;
-    /*
-     * @var int $minUserLength minimum username length
-     */
     private static $minUserLength = 6;
-    /*
-     * @var int $maxUserLength maximum username length
-     */
     private static $maxUserLength = 20;
 
 
-    /*
-     * used to get the default image path if the user doesnt upload
-     * his avatar image
-     *
-     * @return string defaultImagePath
-     */
     public function getDefaultImagePath(){
         return $defaultImagePath = ""."/assets/images/default-avatar-2.jpg";
     }
 
-    /*
-     * used to display the register page
-     *
-     * @return view
-     */
     public function showRegister(){
         return view('register.php');
     }
-
-    /*
-     * used to show the security questions if the
-     * user decides he wants to secure his account
-     *
-     * @return view
-     */
     public function showQuestions(){
-        $this->session->set("flag",1);
         return view('que.php');
     }
 
-    /*
-     * used to add user questions so he can restore his password
-     *
-     * @param Request $request Request
-     *
-     * @return Response
-     *
-     * @throws BadRequestHttpException
-     * @throws UnauthorizedHttpException
-     */
     public function addQuestions(){
-        $q1 = $this->request->getVar('q1');
-        $q2 = $this->request->getVar('q2');
-        $q3 = $this->request->getVar('q3');
+        if($this->session->get('status')=="answered"){
+            echo "You have already answered! Press the button to continue!";
+            return;
+        }
+        $q1 = $this->request->getVar('q0');
+        $q2 = $this->request->getVar('q1');
+        $q3 = $this->request->getVar('q2');
 
         if(!isset($q1) || !isset($q1) || !isset($q1)){
             echo "All questions are a must!";
@@ -96,24 +56,12 @@ class GuestRegister extends BaseController
             $userModel->save($user);
             break;
         }
-
         $this->session->set('status','answered');
         echo "Thank you for answering all questions!";
 
+
     }
-    /*
-     * used to add user account to the database
-     * except for avatar image
-     * set default image path if the user hasnt chosen an avatar image
-     * username needs to be unique
-     *
-     * @param Request $request Request
-     *
-     * @return Response
-     *
-     * @throws BadRequestHttpException
-     * @throws UnauthorizedHttpException
-     */
+
     public function register(){
         $name = $this->request->getVar('name');
         $surname = $this->request->getVar('surname');
@@ -125,33 +73,32 @@ class GuestRegister extends BaseController
         $img = $this->request->getFile('file');
 
         $errorMsg = "";
-
         if(!isset($name) ){
-           $errorMsg .= "Firstname is required. ";
+           $errorMsg += "Firstname is required. ";
         }
 
         if(!isset($surname) ){
-            $errorMsg .= "Lastname is required. ";
+            $errorMsg += "Lastname is required. ";
         }
 
         if(!isset($username) ){
-            $errorMsg .= "Username is required. ";
+            $errorMsg += "Username is required. ";
         }
 
         if(!isset($email) ){
-            $errorMsg .= "E-mail is required. ";
+            $errorMsg += "E-mail is required. ";
         }
 
         if(!isset($city) ){
-            $errorMsg .= "City is required. ";
+            $errorMsg += "City is required. ";
         }
 
         if(!isset($country) ){
-            $errorMsg .= "Country is required. ";
+            $errorMsg += "Country is required. ";
         }
 
         if(!isset($password) ){
-            $errorMsg .= "Country is required. ";
+            $errorMsg += "Country is required. ";
         }
 
         if($errorMsg != ""){
@@ -159,42 +106,30 @@ class GuestRegister extends BaseController
             return;
         }
 
-        if(strlen($username) < self::$minUserLength || strlen($username)  > self::$maxUserLength ){
-            $errorMsg .="Username field invalid size!";
-        }
-
-        if(strlen($password) < self::$minPassLength || strlen($username) > self::$maxPassLength ){
-            $errorMsg .="Password field invalid size!";
-        }
-
-        if($errorMsg != ""){
-            echo $errorMsg;
-            return;
-        }
 
         $expr1 = "/^\w/";
         $expr2 = "/^\d/";
 
         if(preg_match($expr1,$username) == 0 || preg_match($expr2,$username) == 1){
-            $errorMsg .= "Username needs to start with a letter or _. ";
+            $errorMsg += "Username needs to start with a letter or _. ";
         }
 
         $expr1 = "/^\w+$/";
         if(preg_match($expr1,$username) == 0){
-            $errorMsg .= "Username needs to have _, A or a. ";
+            $errorMsg += "Username needs to have _, A or a. ";
         }
 
-        $expr1 = '/\w+@\w+/';
-         if(preg_match($expr1,$email) == 0){
-            $errorMsg .= "Inadequate email format. ";
+        $expr1 = "/[a-zA-Z]+@[a-zA-Z]+/";
+        if(preg_match($expr1,$email) == 0){
+            $errorMsg += "Inadequate email format. ";
         }
 
-        $expr1 ='/[a-z]/';
-        $expr2 ='/[A-Z]/' ;
-        $expr3 ='/\d/' ;
+        $expr1 ="/[a-z]/";
+        $expr2 ="/[A-Z]/" ;
+        $expr3 ="/\d/" ;
 
         if(preg_match($expr1,$password) == 0 || preg_match($expr2,$password) == 0 || preg_match($expr3,$password) == 0){
-            $errorMsg .= "Password needs to containt a single upper case, lower case  and number";
+            $errorMsg += "Password needs to containt a single upper case, lower case  and number";
         }
 
         if($errorMsg != ""){

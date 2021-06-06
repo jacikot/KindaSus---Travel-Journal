@@ -15,6 +15,8 @@ class RegisteredUser extends Model
 
     public function getAllUsers()
     {
+        // retrieving information about all the users in the database
+
         return $this->select("registered_user.id_usr AS idUsr,
                                 registered_user.username AS username, 
                                 registered_user.avatar_path AS avatarPath", false)
@@ -24,6 +26,11 @@ class RegisteredUser extends Model
 
     public function deleteUser($idUsr)
     {
+        // deleting a user, along with all of his information from the database
+        // this is guaranteed from the database design itself
+
+        // deleting the folder assigned to the user with its content
+
         $path = '../public/assets/db_files/'.$idUsr.'/';
         helper('filesystem');
         delete_files($path, true);
@@ -33,16 +40,20 @@ class RegisteredUser extends Model
 
     public function getTokenCount($idUsr)
     {
+        // returns token count for the user - used with badges
         return $this->find($idUsr)->token_count;
     }
 
     public function getAccCreationDate($idUsr)
     {
+        // returns account creation date for the user - used with badges
         return strval($this->find($idUsr)->acc_creation_date);
     }
 
     public function updateOwnerTokens($idOwr, $vote)
     {
+        // updating tokens of the owner of a review that was given a token / a review a token was taken away from
+
         if ($vote == 'up') {
             $this->where("id_usr", $idOwr)->set('token_count', 'token_count + 1', false)->update();
         } else {

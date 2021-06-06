@@ -7,7 +7,6 @@ use App\Models\ToGo;
 use App\Models\Visited;
 use App\Models\Place;
 use App\Models\Country;
-use App\Models\Awarded;
 use CodeIgniter\Model;
 
 class CreateReview extends BaseController{
@@ -77,14 +76,14 @@ public function index(){
             'id_usr'=>intval(session()->get("userId"))
         ]);
 
-
+        /*
          $tmp_awarded=new Awarded();
         $id_con=$country_obj->id_con;
         $id_bdg=($id_con-1)/2*5+1+($id_con-1)%2;
 
         $tmp_awarded->giveBadgeIfNotGiven($this->session->get('userId'),$id_bdg);
 
-
+         */
 
 
         return $tmp_visit->getInsertID();
@@ -244,11 +243,11 @@ public function index(){
             'id_plc'=>$place_obj->id_plc,
             'id_cnt'=>$place_obj->id_cnt,
             'categorized'=>$one,
-            'heritage'=>$new_points_heritage,
-            'relax'=>$new_points_relax,
-            'sightseeing'=>$new_points_sightseeing,
-            'weather'=>$new_points_weather,
-            'populated'=>$new_points_populated,
+            'category_1'=>$new_points_heritage,
+            'category_2'=>$new_points_relax,
+            'category_3'=>$new_points_sightseeing,
+            'category_4'=>$new_points_weather,
+            'category_5'=>$new_points_populated,
             'taken_survey'=>$num_surveys,
             'name'=>$place_obj->name,
             'id_img'=>$place_obj->id_img

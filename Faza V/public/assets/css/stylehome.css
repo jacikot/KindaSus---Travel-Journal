@@ -7,24 +7,6 @@ a:hover{
     color:#2A134A !important;
     text-decoration-line: none !important;
 }
-.modal-footer{
-    display:flex !important;
-    flex-direction:row !important;
-    justify-content: space-between !important;
-}
-#inputslike:hover{
-    cursor:pointer;
-}
-#telo{
-    text-align:center;
-}
-
-#slikaprofila{
-    object-fit:contain;
-    height: 120px;
-    width: 120px;
-}
-
 .link{
     color:white;
     text-align:center;

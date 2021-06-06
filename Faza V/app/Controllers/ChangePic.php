@@ -5,26 +5,8 @@ namespace App\Controllers;
 use App\Models\User;
 use CodeIgniter\Model;
 
-/*
- * Author: Dimitrije Panic 18/0205
- * ChangePic - class for changing the user profile picture
- *
- */
-
 class ChangePic extends BaseController
 {
-    /*
-     * function for changing the profile picture
-     * gets the image from POST request
-     * validates that its the right size, type and that it exists..
-     * @param Request $request Request
-     *
-     * @return Response
-     *
-     * @throws BadRequestHttpException
-     * @throws UnauthorizedHttpException
-     *
-     */
     public function changePic(){
         $img = $this->request->getFile('file');
         //obrisi ovo posle

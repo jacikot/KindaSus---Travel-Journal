@@ -1,4 +1,6 @@
-<?php namespace App\Models;
+<?php 
+
+namespace App\Models;
 
 use CodeIgniter\Model;
 
@@ -13,6 +15,8 @@ class Review extends Model
 
     public function getReviewsForPlaceGuest($idPlc)
     {
+        // retrieving information about all the reviews for a certain place - called for guest
+
         return $this->select('review.id_rev AS idRev,
                                 registered_user.avatar_path AS avatar_path, 
                                 registered_user.username AS username, 
@@ -28,6 +32,8 @@ class Review extends Model
 
     public function getReviewsForPlaceUser($idPlc, $idUsr)
     {
+        // retrieving information about all the reviews for a certain place - called for user
+
         return $this->select("review.id_rev AS idRev,
                                 registered_user.id_usr AS idOwr,
                                 registered_user.avatar_path AS avatarPath, 
@@ -49,6 +55,8 @@ class Review extends Model
 
     public function getAllReviews()
     {
+        // retrieving information about all the reviews in the database
+
         return $this->select("review.id_rev AS idRev,
                                 registered_user.id_usr AS idOwr,
                                 registered_user.avatar_path AS avatarPath, 
@@ -92,6 +100,8 @@ class Review extends Model
 
     public function updateReviewTokens($idRev, $vote)
     {
+        // updating tokens of a review that was given a token / a review a token was taken away from
+
         if ($vote == 'up') {
             $this->where("id_rev", $idRev)->set('token_count', 'token_count + 1', false)->update();
         } else {
@@ -99,21 +109,11 @@ class Review extends Model
         }
     }
 
-    public function makeReviewAsPrivate($idRev)
+    public function changePrivacy($idRev, $type)
     {
-        $this->where("id_rev", $idRev)->set('privacy', '1', false)->update();
-    }
+        // changing privacy of a review, depending on the type of change
 
-    public function orderReviews($type, $direction, $reviews)
-    {
-        usort($reviews, function ($a, $b) use ($type, $direction) {
-            if ($type == 'tokens')
-                return ($a->tokens - $b->tokens) * (($direction == 'ASC') ? 1 : -1);
-            if ($direction == 'DESC')
-                return $a->date < $b->date;
-            return $a->date > $b->date;
-        });
-        return $reviews;
+        $this->where("id_rev", $idRev)->set('privacy', ($type == 'private' ? '1' : '0'), false)->update();
     }
 
     public function getReviewInfo($usr_id,$country,$place,$code)
@@ -152,22 +152,4 @@ class Review extends Model
     public function deleteReview($id){
         $this->where("id_rev",$id)->delete();
     }
-
-
-    public function getRevById($id){
-        return $this->where('id_rev', $id)->find();
-    }
-
-
 }
-
-/*
- field:
-id_rev
-title
-text_path
-privacy
-token_count
-id_vis
-date_posted
- */

@@ -18,27 +18,36 @@ class ListOfReviews extends BaseController
         $countryName = $this->request->getVar('countryName');
         $countryCode = $this->request->getVar('countryCode');
 
-        if ($idPlc == "") {                                                         // JOLETOV SEARCH
+
+        // if idPlc is an empty string, the user was redirected from the search & trending page whilst using search
+        // hence, there must be a check whether the parsed place exists in the database
+
+        // in all other cases, idPlc will be set, so no need to retrieve it from the database
+
+        if ($idPlc == "") {
             $countryModel = new Country();
             $idCnt = $countryModel->getCountryIdByCode($countryCode);
 
             $placeModel = new Place();
             $idPlc = $placeModel->getPlaceId($idCnt, $placeName);
         }
-        else {
-
-        }
 
         $reviewModel = new Review();
-        $data = ['jsFile' => 'list_of_reviews', 'placeAndCountry' => "$placeName, $countryName",
+        $data = ['placeAndCountry' => "$placeName, $countryName",
             'countryCode' => $countryCode, 'idUsr' => $this->session->get('userId')];
 
-        if ($data['idUsr'] != null) {                                                      // USER / GUEST 1
-            if ($idPlc != null) {
-                $data['reviews'] = $reviewModel->getReviewsForPlaceUser($idPlc, $data['idUsr']);         // $data['idUsr']
+
+        if ($data['idUsr'] != null) {           // checking if a registered user or a guest is on this page
+
+            // a registered user is on this page
+
+            if ($idPlc != null) {               // checking if the place does exist in the database
+                $data['reviews'] = $reviewModel->getReviewsForPlaceUser($idPlc, $data['idUsr']);
             }
             return $this->displayPage('list_of_reviews_user', $data);
         }
+
+        // a guest is on this page
 
         if ($idPlc != null) {
             $data['reviews'] = $reviewModel->getReviewsForPlaceGuest($idPlc);
@@ -48,21 +57,21 @@ class ListOfReviews extends BaseController
     }
 
 
-    public function updateTokens()
+    public function updateTokens()                                      // a method called using AJAX
     {
-        $idUsr = $this->session->get('userId');                      // $this->session->get('userId');
+        $idUsr = $this->session->get('userId');
         $idRev = $this->request->getVar('idRev');
         $idOwr = $this->request->getVar('idOwr');
         $vote = $this->request->getVar('vote');
 
         $foundUsefulModel = new FoundUseful();
-        $foundUsefulModel->giveVote($idUsr, $idRev, $vote);
+        $foundUsefulModel->giveVote($idUsr, $idRev, $vote);         // note that the user has given a vote for this reviews
 
         $reviewModel = new Review();
-        $reviewModel->updateReviewTokens($idRev, $vote);
+        $reviewModel->updateReviewTokens($idRev, $vote);            // update tokens of that review
 
         $userModel = new RegisteredUser();
-        $userModel->updateOwnerTokens($idOwr, $vote);
+        $userModel->updateOwnerTokens($idOwr, $vote);               // update tokens of the owner of the review
     }
 
 }

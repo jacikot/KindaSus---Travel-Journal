@@ -26,25 +26,9 @@ class Country extends Model
 
     public function getCountryIdByCode($countryCode)
     {
+        // using a country code to find a country name
+
         return $this->where('code', $countryCode)->first()->id_cnt;
     }
-
-
-
-
-
-
-    public function findCountry($cntr) {
-        return like('name', $cntr)->findAll();
-    }
-    public function getCountryById($id){
-        return $this->where('id_cnt', $id)->find();
-        //pazi na fin da bi ti vratio samo 1 objekat jer je svakako po primarnom kljucu!!!
-    }
-
-    public function getCountryByName($name){
-        return $this->where('name',$name)->findAll();
-    }
-
 
 }

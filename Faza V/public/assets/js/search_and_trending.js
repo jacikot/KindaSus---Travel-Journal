@@ -7,6 +7,9 @@ $(document).ready(function () {
 
     let autocomplete, service;
 
+    // initialization of the Google Maps Javascript API used to implement the search of places,
+    // and to get photos of places on demand
+
     function initApi() {
       let script = document.createElement('script');
       script.src = 'https://maps.googleapis.com/maps/api/js?' +
@@ -16,16 +19,30 @@ $(document).ready(function () {
       window.initAutocompleteAndTrending = function() {
 
           initAutocomplete(autocomplete);
-          initTrendingService(service);
+
+          service = new google.maps.places.PlacesService(document.createElement('div'));
+
+          // an AJAX request to the controller to get all the trending places information
+
+          $.post("http://localhost:8080/SearchAndTrending/getTrendingPlaces", function (data) {
+
+              let trending = JSON.parse(data);
+              // alert(JSON.stringify(trending));
+              initTrending(service, trending);
+          });
       };
 
     window.addEventListener("load", event => {
+
+        // if an image fails to load, reinitialization of each such
+        // image is tried a few more times during the loading of the page
+
         setTimeout(function () {
             for (let i = 0; i < 6; i++) {
                 let image = document.querySelector("#tr-gallery-item-" + i + " .tr-gallery-img");
                 let isLoaded = image.complete && image.naturalHeight !== 0;
                 if (!isLoaded) {
-                    // alert("not loaded " + i);
+                     // alert("not loaded " + i);
                     let imageHandler = setInterval(function () {
                         loadImage(service, image, imageHandler, i);
                     }, 100);
@@ -36,6 +53,22 @@ $(document).ready(function () {
     });
       document.head.appendChild(script);
     }
+
+    $(this).on("click", "#go-to-map", function (e) {
+        window.location.href = "http://localhost:8080/Map";
+    });
+
+    $(this).on("click", "#back", function (e) {
+        window.location.href = "http://localhost:8080/GuestLogin";
+    });
+
+    $(this).on("click", "#login", function (e) {
+        window.location.href = "http://localhost:8080/GuestLogin/login";
+    });
+
+    $(this).on("click", "#register", function (e) {
+        window.location.href = "http://localhost:8080/GuestRegister/register";
+    });
 });
 
 let cnt = [0, 0, 0, 0, 0, 0];
@@ -63,12 +96,19 @@ function loadImage(service, image, imageHandler, i) {
         );
     }
     else {
+
+        // failed to load the image for the 6th time, so
+        // a flag is displayed instead
+
         image.src = 'https://flagcdn.com/w2560/' + countryCode.toLowerCase() + '.png';
         image.style.height = 'auto';
     }
 
     let isLoaded = image.complete && image.naturalHeight !== 0;
     if (isLoaded) {
+
+        // the image has been successfully loaded
+
         clearInterval(imageHandler);
         // alert("finally loaded " + placeName);
     }
@@ -85,6 +125,8 @@ function initAutocomplete(autocomplete) {
         });
 
     google.maps.event.addListener(autocomplete, 'place_changed', function () {
+
+        // whenever a user types something into the search bar, this event is fired
 
         let result = autocomplete.getPlace();
         // alert(JSON.stringify(result));
@@ -111,7 +153,7 @@ function initAutocomplete(autocomplete) {
             }
         }
 
-        if (!countryFound || !placeFound) {
+        if (!countryFound || !placeFound) {             // bad results given, abort
             $("#bad-input-modal").modal('show');
             $("#search-txt").val("");
             return;
@@ -121,49 +163,8 @@ function initAutocomplete(autocomplete) {
         let countryName = country.long_name;
         let countryCode = country.short_name;
         // alert("place = " + placeName + ", country = " + countryName + ", country code = " + countryCode);
-        window.location.href = "http://localhost:8080/ListOfReviews/?" + "&idPlc=" + "" +
+        window.location.href = "http://localhost:8080/ListOfReviews?" + "idPlc=" + "" +
             "&placeName=" + placeName + "&countryName=" + countryName + "&countryCode=" + countryCode;
-    });
-}
-
-function initTrendingService(service) {
-    service = new google.maps.places.PlacesService(document.createElement('div'));
-
-    $.post("http://localhost:8080/SearchAndTrending/getTrendingPlaces", function (data) {
-
-        let trending, a = 0;
-        if (a == 0) {
-            trending = JSON.parse(data);
-            // alert(JSON.stringify(trending));
-        }
-        else {
-            trending = [{
-                'placeName' : "Rock",
-                'countryName' : 'United States of America',
-                'countryCode' : "US"
-            }, {
-                'placeName' : "Zaovine",
-                'countryName' : 'Serbia',
-                'countryCode' : "RS"
-            }, {
-                'placeName' : "Monte Carlo",
-                'countryName' : 'Monaco',
-                'countryCode' : "MC"
-            }, {
-                'placeName' : "Lima",
-                'countryName' : 'Peru',
-                'countryCode' : "PE"
-            }, {
-                'placeName' : "Dakar",
-                'countryName' : 'Senegal',
-                'countryCode' : "SN"
-            }, {
-                'placeName' : "Zanzibar",
-                'countryName' : 'Tanzania',
-                'countryCode' : "TZ"
-            }];
-        }
-        initTrending(service, trending);
     });
 }
 
@@ -203,9 +204,8 @@ function initTrending(service, trending) {
         let caption = $("<figcaption></figcaption>").append(span);
 
         image.on("click", function() {
-            let img = $(this);
-            window.location.href = "http://localhost:8080/ListOfReviews/?" +
-                "&idPlc=" + idPlc + "&placeName=" + placeName +
+            window.location.href = "http://localhost:8080/ListOfReviews?" +
+                "idPlc=" + idPlc + "&placeName=" + placeName +
                 "&countryName=" + countryName + "&countryCode=" + countryCode;
         });
 

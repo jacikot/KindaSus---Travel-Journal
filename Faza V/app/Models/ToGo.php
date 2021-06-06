@@ -1,25 +1,15 @@
-<?php namespace App\Models;
+<?php 
+
+namespace App\Models;
 
 use CodeIgniter\Model;
 
 class ToGo extends Model
 {
-    protected $table      = 'to-go';
+    protected $table = 'to-go';
     protected $primaryKey = 'id_tgl';
     protected $returnType = 'object';
-    protected $allowedFields = ['id_usr', 'id_plc','crossed_off'];
-
-    public function getToGo($id_usr){
-        return $this->where('id_usr',$id_usr)->find();
-    }
-
-    public function getListItem($id_usr, $id_pls){
-        return $this->where('id_usr',$id_usr)->where('id_plc', $id_pls)->findAll();
-    }
-
-    public function deleteFromToGoList( $id_usr, $id_pls){
-        return $this->where('id_usr',$id_usr)->where('id_plc', $id_pls)->delete();
-    }
+    protected $allowedFields = ['id_usr', 'id_plc', 'crossed_off'];
 
     public function emptyListForUser($idUsr)
     {
@@ -35,6 +25,5 @@ class ToGo extends Model
         }
         return $places;
     }
-
-
+      
 }

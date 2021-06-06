@@ -17,6 +17,3 @@ function sendIt(id,url){
         });
 
 }
-
-
-

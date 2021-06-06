@@ -1,16 +1,26 @@
-<?php namespace App\Models;
+<?php
+
+namespace App\Models;
+
+
+namespace App\Models;
+
 
 use CodeIgniter\Model;
 
 class Place extends Model
 {
+    protected $table = 'place';
+    protected $primaryKey = 'id_plc';
+    protected $useAutoIncrement = true;
+    protected $returnType = 'object';
     protected $allowedFields = ['name', 'categorized', 'heritage', 'relax',
-        'sightseeing', 'weather', 'populated', 'id_cnt', 'taken_survey'];
+                                'sightseeing', 'weather', 'populated', 'id_cnt'];
 
     public function getAllCategorized(){
-        return $this->where('categorized',1)->findAll();
+       return $this->where('categorized',1)->findAll();
     }
-
+  
     public function findPlace($name){
         return $this->where('name',$name)->findAll();
     }
@@ -29,7 +39,7 @@ class Place extends Model
     public function insertPlace(){
 
     }
-
+	
     public function getCountry($plcid){
         $visited=$this->find($plcid);
         return $visited->id_cnt;
@@ -67,6 +77,9 @@ class Place extends Model
 
     public function getPlaceId($idCnt, $placeName)
     {
+        // checking whether a place with the given parameters exists in the database
+        // if not, null value is returned
+
         $res = $this->where(['id_cnt' => $idCnt, 'name' => $placeName])->first();
         if ($res == null) return null;
         return $res->id_plc;
@@ -74,6 +87,10 @@ class Place extends Model
 
     public function getTrendingPlaces()
     {
+        // retrieving the information on all the most popular places in the last 30 days,
+        // i.e. places with the most tokens combined (on reviews referring to those places) in that period
+
+
         $query = $this->db->query("SELECT p1.id_plc AS idPlc, p1.name AS placeName, country.name AS countryName, country.code AS countryCode
                             FROM place AS p1 JOIN country ON p1.id_cnt = country.id_cnt
                             INNER JOIN (SELECT id_plc
@@ -89,22 +106,4 @@ class Place extends Model
 
         return $query->getResultArray();
     }
-
-
-
-    public function getPlaceById($id){
-        return $this->where('id_plc', $id)->findAll();
-    }
-
-    public function getPlaceByName($name){
-        return $this->where('name',$name)->find();
-    }
-    public function getPlaceByNameAndCountry($name, $country){
-
-           return $this->where('name',$name)->where('id_cnt', $country)->findAll();
-
-    }
-
-
-
 }

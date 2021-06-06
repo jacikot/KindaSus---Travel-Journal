@@ -16,26 +16,27 @@
     <title>Travel Journal</title>
 </head>
 <body>
-<div id="header">
-    <img id="logo" src="<?= base_url("assets/images/logo.png") ?>">
-    <button id="log-out" data-toggle="modal" data-target="#admin-modal">Log Out</button>
-</div>
-
-<h1 id="welcome">Welcome back, boss!</h1>
 <?php if (count($reviews) > 0) {
     echo $this->include('templates/sort_by');
 } ?>
 
-<div class="container-fluid text-center" style="position: absolute; top: 120px;">
+<div class="container-fluid text-center">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 mt-3" id="header">
+            <img src="<?php echo base_url('assets/images/pic.png') ?>" id="logo"/>
+            <button id="log-out" data-toggle="modal" data-target="#admin-modal" class="btn btn-outline-light">
+                Log Out
+            </button>
+        </div>
+    </div>
+    <h1 id="welcome">Welcome back, boss!</h1>
     <div class="row">
         <div class="offset-2 col-8 mt-4">
             <div id="fail-banner-all"></div>
         </div>
         <div class="col-8">
             <table id="outer-table-1">
-                <caption>
-                    <h2>User reviews</h2>
-                </caption>
+                <caption>User reviews</caption>
                 <tbody>
                 <tr>
                     <td>
@@ -50,7 +51,7 @@
                                         <td>
                                             <a class="review" href="<?php
                                             $_SESSION['id_rev'] = $review->idRev;
-                                            echo site_url("Review");
+                                            echo site_url("ReviewOverview");
                                             ?>">
                                                 <div class="col-1"><img class="avatar-rev" src="<?= base_url("assets/images/avatar.png") ?>"></div>
 <!--                                                <div class="col-1"><img class="avatar-rev" src="<?//=x base_url($review->avatarPath) ?>"></div>-->
@@ -95,9 +96,7 @@
         </div>
         <div class="col-4">
             <table id="outer-table-2">
-                <caption>
-                    <h2>Users</h2>
-                </caption>
+                <caption>Users</caption>
                 <tbody>
                 <tr>
                     <td>

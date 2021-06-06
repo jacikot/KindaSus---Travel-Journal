@@ -5,7 +5,6 @@ namespace App\Controllers;
 use App\Models\Awarded;
 use App\Models\Badge;
 use App\Models\RegisteredUser;
-use App\Models\Review;
 use App\Models\Visited;
 use CodeIgniter\Model;
 use \Datetime;
@@ -17,15 +16,17 @@ class Badges extends BaseController
 
         $idUsr = 1; //$this->session->get('userId');
 
-        $this->checkTokenBadges($idUsr);
-        $this->checkTravelBadges($idUsr);
+        $this->checkTokenBadges($idUsr);                        // checking if the user has won any of the badges
+        $this->checkTravelBadges($idUsr);                       // on loading the page itself
         $this->checkTimeBadges($idUsr);
 
         $badgeModel = new Badge();
-        $data['badges'] = $badgeModel->getBadgesForUser($idUsr);
+        $data['badges'] = $badgeModel->getBadgesForUser($idUsr);    // information about the badges the user has won
         $data['cssFile'] = 'badges';
         return $this->displayPage('badges', $data);
     }
+
+    // if the user has a token count up to some value, he might get a badge
 
     private function checkTokenBadges($idUsr)
     {
@@ -45,6 +46,8 @@ class Badges extends BaseController
         }
     }
 
+    // if the user has travelled a certain amount of times, he might get a badge
+
     private function checkTravelBadges($idUsr)
     {
         $visitedModel = new Visited();
@@ -62,6 +65,8 @@ class Badges extends BaseController
             $awardedModel->giveBadgeIfNotGiven($idUsr, 8);
         }
     }
+
+    // if the user has been using this app for a certain period of time, he might get a badge
 
     private function checkTimeBadges($idUsr)
     {

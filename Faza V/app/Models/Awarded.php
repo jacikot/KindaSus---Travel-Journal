@@ -13,6 +13,10 @@ class Awarded extends Model
     protected $allowedFields = ['id_usr, id_bdg'];
 
     public function giveBadgeIfNotGiven($idUsr, $idBdg) {
+
+        // a badge is awarded to a user only once - if he already won this badge,
+        // nothing will happen
+
         $idAwd = $this->where(['id_usr' => $idUsr, 'id_bdg' => $idBdg])->first();
         if ($idAwd == null) {
             $this->db->table('awarded')->insert(['id_usr' => $idUsr, 'id_bdg' => $idBdg]);

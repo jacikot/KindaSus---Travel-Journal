@@ -1,17 +1,22 @@
-<?php namespace App\Models;
+<?php 
+
+namespace App\Models;
 
 use CodeIgniter\Model;
 
+
 class Visited extends Model
 {
-    protected $table      = 'visited';
+    protected $table = 'visited';
     protected $primaryKey = 'id_vis';
     protected $returnType = 'object';
-    protected $allowedFields = ['id_plc', 'id_usr'];
+    protected $allowedFields = ['id_usr, id_plc'];
 
-    public function getVisitById($id){
-        return $this->where('id_vis', $id)->find();
-    }
+//    public function emptyListForUser($idUsr)
+//    {
+//        $this->where('id_usr', $idUsr)->delete();
+//    }
+
     public function getVisitedPlaces($user){
         $allVisited=$this->where("id_usr",$user)->findAll();
         $places=[];
@@ -35,7 +40,8 @@ class Visited extends Model
 
     public function getTravelCount($idUsr)
     {
+        // counting how many times a user has completed a travel
+
         return $this->where('id_usr', $idUsr)->countAllResults();
     }
-
 }

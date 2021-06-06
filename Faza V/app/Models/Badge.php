@@ -16,6 +16,9 @@ class Badge extends Model
 
     public function getBadgesForUser($idUsr)
     {
+        // getting all the information about all the badges, and also about
+        // which of these badges the user has won
+
         return $this->select("badge.id_bdg AS id,
                                 badge.badge_path AS badge_path, 
                                 badge.title AS title, 

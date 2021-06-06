@@ -6,9 +6,13 @@
 
 $(document).ready(function () {
 
+    // used for when there aren't any users in the database whatsoever :(
+
     let failBannerAll = $("#fail-banner-all");
     failBannerAll.html("OOPS! Looks like there are no users here, and therefore no reviews.. Let's start" +
         " sharing this masterpiece of an app!");
+
+    // used for when there aren't any reviews in the database whatsoever :(
 
     $("#fail-banner-rev").html("OOPS! Looks like we haven't had reviews so far.. Let's just wait for these guys" +
         " to start travelling!");
@@ -23,6 +27,9 @@ $(document).ready(function () {
     }
 
     $(document).on("click", ".mark-private", function (e) {
+
+        // displaying a modal for confirmation
+
         e.preventDefault();
         $("#modal-confirm").show();
         $("#modal-close").html("Cancel");
@@ -39,6 +46,9 @@ $(document).ready(function () {
     });
 
     $(document).on("click", ".delete-user", function (e) {
+
+        // displaying a modal for confirmation
+
         e.preventDefault();
         $("#modal-confirm").show();
         $("#modal-close").html("Cancel");
@@ -56,6 +66,8 @@ $(document).ready(function () {
     });
 
     $(document).on("click", "#log-out", function (e) {
+
+        // displaying a modal for confirmation
         e.preventDefault();
         $("#modal-confirm").show();
         $("#modal-close").html("Cancel");
@@ -74,9 +86,13 @@ $(document).ready(function () {
         $("#modal-close").html("Close");
 
         let type = message.attr("data-type");
+
+        // depending on the value of the type variable, a different kind
+        // of action should be performed when the user clicks "Confirm"
+
         if (type == 0) {                                                // mark review as private
             let idRev = message.attr("data-id_rev");
-            $.post("http://localhost:8080/Admin/markReviewAsPrivate", {
+            $.post("http://localhost:8080/Admin/markReviewAsPrivate", {   // an AJAX request to the controller
                 'idRev' : idRev
             }, function () {
                 $(".mark-private[data-id_rev='" + idRev + "']").remove();
@@ -88,10 +104,13 @@ $(document).ready(function () {
         else if (type == 1) {                                           // delete user's account
             let idUsr = message.attr("data-id_usr");
             let username = message.attr("data-username");
-            $.post("http://localhost:8080/Admin/deleteUser", {
+            $.post("http://localhost:8080/Admin/deleteUser", {          // an AJAX request to the controller
                 'idUsr': idUsr
             }, function () {
-                $("#review-table tr:has(.delete-user[data-id_usr='" + idUsr + "'])").remove();        // variant 1 - no refreshing
+
+                // delete the user and his reviews from the page
+
+                $("#review-table tr:has(.delete-user[data-id_usr='" + idUsr + "'])").remove();
                 $("#user-table tr:has(.delete-user[data-id_usr='" + idUsr + "'])").remove();
 
                 if ($("#user-table tbody tr").length === 0) {
@@ -130,7 +149,7 @@ $(document).ready(function () {
     $(".user .delete-user").popover();
 });
 
-function sortBy() {
+function sortBy() {                                     // sorting the reviews using a certain criteria
 
     let type = $('input[name="type"]:checked').val();
     let direction = $('input[name="direction"]:checked').val();

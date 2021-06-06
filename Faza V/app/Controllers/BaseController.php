@@ -63,7 +63,6 @@ class BaseController extends Controller
 
     protected function displayPage($fileName, $data)
     {
-        $data['cssFile'] = $fileName;
         return view($fileName, $data);
     }
 }
