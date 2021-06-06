@@ -7,7 +7,12 @@ class Question extends Model
     protected $table      = 'question';
     protected $primaryKey = 'id_qst';
     protected $returnType = 'object';
-    protected $allowedFields =['text','type_quiz','type_review','form'];
+    protected $allowedFields = ['text', 'type_quiz', 'type_review','form'];
+
+
+    public function getQuestionByForm($form){
+        return $this->where('form', $form)->findAll();
+    }
 
     public function getMaxId(){
         $max = 0;
@@ -20,4 +25,7 @@ class Question extends Model
 
         return $max;
     }
+
+
+
 }

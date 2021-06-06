@@ -9,6 +9,10 @@ class Image extends Model
     protected $returnType = 'object';
     protected $allowedFields = ['image_path', 'id_rev'];
 
+
+public function getPicsForReview($id_rev){
+    return $this->where('id_rev', $id_rev)->findAll();
+}
     public function insertImage($image_path,$id_rev=null){
 
         $this->save([
@@ -16,10 +20,7 @@ class Image extends Model
             'id_rev' => $id_rev
         ]);
 
-         return $this->getInsertID();
+        return $this->getInsertID();
     }
-
-
-
 
 }

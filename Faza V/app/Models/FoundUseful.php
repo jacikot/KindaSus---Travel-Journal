@@ -1,16 +1,17 @@
-<?php
-
-namespace App\Models;
+<?php namespace App\Models;
 
 use CodeIgniter\Model;
 
 class FoundUseful extends Model
 {
-    protected $table = 'found_useful';
-    protected $primaryKey = 'if_fnd';
+    protected $table      = 'found_useful';
+    protected $primaryKey = 'id_fnd';
     protected $returnType = 'object';
     protected $allowedFields = ['id_usr', 'id_rev'];
 
+public function liked($id_usr,$id_rev){
+    return $this->where('id_usr',$id_usr)->where('id_rev',$id_rev)->findAll();
+}
     public function giveVote($idUsr, $idRev, $vote)
     {
         if ($vote == 'up')
@@ -18,4 +19,7 @@ class FoundUseful extends Model
         else
             $this->where(['id_usr' => $idUsr, 'id_rev' => $idRev])->delete();           // downvote, tc--
     }
+
+
 }
+
