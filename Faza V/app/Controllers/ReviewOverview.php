@@ -12,7 +12,7 @@ class ReviewOverview extends BaseController
 {
 
     public function index(){
-        echo view('review.php');
+        echo view('review_overview.php');
     }
 
     public function getRev(){
