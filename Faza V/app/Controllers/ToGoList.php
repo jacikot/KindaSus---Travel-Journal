@@ -99,7 +99,7 @@ public function addToToGoList(){
         $id_plc = $place->id_plc;
     }
 
-    $tmp_togo->save([
+    $tmp_togo->insert([
         'id_usr'=>$this->session->get('userId'),
         'id_plc'=>$id_plc,
         'crossed_off'=>$num

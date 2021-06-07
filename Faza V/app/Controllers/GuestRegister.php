@@ -267,13 +267,13 @@ class GuestRegister extends BaseController
                 ]);
 
             $id_plc = $placeModel->getInsertID();
-        } else {
+        } /*else {
             $place = $placeModel->find($id_plc);
             if($place->id_cnt != $count['id']){
                 echo "Country and place don't match!";
                 return;
             }
-        }
+        }*/
 
 
         $userModel = new User();

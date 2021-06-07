@@ -43,6 +43,9 @@ public function index(){
         $tmp_place=new Place();
 
         $country_list=$tmp_country->getCountryByName($country);
+        if($country_list==null){
+            return -1;
+        }
         $country_obj=$country_list[0];
         $place_list=$tmp_place->getPlaceByNameAndCountry($plc, $country_obj->id_cnt);
         if(!$place_list){
@@ -72,9 +75,9 @@ public function index(){
 
 
         $tmp_visit=new Visited();
-        $tmp_visit->save([
+        $tmp_visit->insert([
             'id_plc'=>$place_obj->id_plc,
-            'id_usr'=>intval(session()->get("userId"))
+            'id_usr'=>$this->session->get("userId")
         ]);
 
 
@@ -95,6 +98,10 @@ public function index(){
  * */
     public function pinOnTheMap(){
         $id_vis=$this->addVisit($this->request->getVar('place'), $this->request->getVar('country'));
+        if($id_vis==-1){
+            echo 'It looks like the country does not exist';
+            return;
+        }
         echo "Congrats! You pinned a place on the map!";
     }
 
@@ -109,6 +116,10 @@ function returns string value that represents the success of the function
         $id_vis=$this->addVisit($this->request->getVar('place'), $this->request->getVar('country'));
         $num=0;
         $id_pic=0;
+        if($id_vis==-1){
+            echo 'It looks like the country does not exist';
+            return;
+        }
 
         //create new review
         $review = new Review();

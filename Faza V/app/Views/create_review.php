@@ -50,39 +50,45 @@
             let img_cnt=0;
 
             let fd = new FormData();
+            let picName="file";
             if(document.getElementById('file-upload1').files.length !== 0) {
                 let files = $('#file-upload1')[0].files;
                 if (files.length > 0) {
                     img_cnt++;
-                    fd.append('file1', files[0]);
+                    let tmpName=picName+img_cnt;
+                    fd.append(tmpName, files[0]);
                 }
             }
             if(document.getElementById('file-upload2').files.length !== 0) {
                 let files = $('#file-upload2')[0].files;
                 if (files.length > 0) {
                     img_cnt++;
-                    fd.append('file2', files[0]);
+                    let tmpName=picName+img_cnt;
+                    fd.append(tmpName, files[0]);
                 }
             }
             if(document.getElementById('file-upload3').files.length !== 0) {
                 let files = $('#file-upload3')[0].files;
                 if (files.length > 0) {
                     img_cnt++;
-                    fd.append('file3', files[0]);
+                    let tmpName=picName+img_cnt;
+                    fd.append(tmpName, files[0]);
                 }
             }
             if(document.getElementById('file-upload4').files.length !== 0) {
                 let files = $('#file-upload4')[0].files;
                 if (files.length > 0) {
                     img_cnt++;
-                    fd.append('file4', files[0]);
+                    let tmpName=picName+img_cnt;
+                    fd.append(tmpName, files[0]);
                 }
             }
             if(document.getElementById('file-upload5').files.length !== 0) {
                 let files = $('#file-upload5')[0].files;
                 if (files.length > 0) {
                     img_cnt++;
-                    fd.append('file5', files[0]);
+                    let tmpName=picName+img_cnt;
+                    fd.append(tmpName, files[0]);
                 }
             }
 
@@ -98,11 +104,11 @@
 
             //potencijalno provera da li je dobra zemlja
             let message="";
-            if(!title1) message+="Please enter the title for your memory! "
-            if(!place1) message+="Please enter the place you visited! "
-            if(!country1) message+="Please enter the country you visited! "
-            if(!date1) message+="Please choose the date of your travel! "
-            if(!text1) message+="Please write your memory! "
+            if(!title1) message+="Please enter the title for your memory! ";
+            if(!place1) message+="Please enter the place you visited! ";
+            if(!country1) message+="Please enter the country you visited! ";
+            if(!date1) message+="Please choose the date of your travel! ";
+            if(!text1) message+="Please write your memory! ";
 
             if(message!=""){
                 alert(message);
@@ -122,6 +128,9 @@
 
                     $(".modal-title").text("Would you like to answer a few questions?");
                     $("#createdReview").modal();
+                }
+                else{
+                    alert(vr);
                 }
             });
 
@@ -297,7 +306,7 @@
            </tr>
            <tr>
                <td colspan="2">
-                   <textarea rows='7' class="rounded" cols="100" name="text" id="text" style="outline: none; text-align: justify">Share your memories!</textarea>
+                   <textarea rows='5' class="rounded" cols="100" name="text" id="text" style="outline: none; text-align: justify">Share your memories!</textarea>
                </td>
            </tr>
            <tr>
@@ -316,10 +325,10 @@
 
                  <tr>
                      <td style="text-align: left">
-                         <button value= 'Only mark the place on the map' class='btn btn-outline-light' onclick="pinPlaceOnTheMap()">Only mark the place on the map</button>
+                         <button class='btn btn-outline-light' onclick="pinPlaceOnTheMap()">Only mark the place on the map</button>
                      </td>
                      <td style="text-align: right">
-                         <button value= 'Write in your Journal' class='btn btn-outline-light' onclick="createRev()">Write in your Journal</button>
+                         <button  class='btn btn-outline-light' onclick="createRev()">Write in your Journal</button>
                      </td>
                  </tr>
              </table>
