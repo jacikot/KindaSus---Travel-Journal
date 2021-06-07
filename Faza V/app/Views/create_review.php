@@ -292,7 +292,7 @@
                    <input type="date" name="date" id="date"  placeholder="Date of your travel"></td>
                </td>
                <td>
-                   <input type="text" name="title" id="title" placeholder="Title for your memory!">
+                   <input type="text" name="title" id="title" placeholder="Title of your memory!">
                </td>
            </tr>
            <tr>
