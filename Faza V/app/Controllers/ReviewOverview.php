@@ -22,7 +22,7 @@ class ReviewOverview extends BaseController
 {
 
     public function index(){
-        echo view('review_overview.php');
+        return view('review_overview.php');
     }
 /*
  * function getRev gets the chosen review from the database and all of the data required for it (text, privacy status, date, title,

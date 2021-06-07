@@ -17,7 +17,7 @@ use CodeIgniter\Model;
  * */
 class ToGoList extends BaseController{
     public function index(){
-        echo view('to-go_list.php');
+        return view('to-go_list.php');
     }
 /*
  * function getMyToGo reads from the database which places are on the user's To-Go list and are they crossed off

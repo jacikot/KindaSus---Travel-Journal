@@ -180,7 +180,7 @@
 
     <script>
         function goHome(){
-            window.href.location="<?php base_url('Map/index') ?>"
+            window.location.href=("<?= base_url('Map/index')?>");
         }
     </script>
 
@@ -192,7 +192,7 @@
         <div class="col-lg-12 col-md-12 mt-2" id="header">
             <img src="<?php echo base_url('assets/images/pic.png') ?>" id="logo"/>
             <button class="btn btn-outline-light" onclick="goHome()">
-                Back To Home
+                Go to Map
             </button>
         </div>
     </div>
