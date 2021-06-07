@@ -78,7 +78,7 @@ class GuestRegister extends BaseController
         $q2 = $this->request->getVar('q1');
         $q3 = $this->request->getVar('q2');
 
-        if(!isset($q1) || !isset($q1) || !isset($q1)){
+        if(!isset($q1) || !isset($q2) || !isset($q3)){
             echo "All questions are a must!";
             return;
         }
@@ -196,7 +196,7 @@ class GuestRegister extends BaseController
         $expr3 ='/\d/' ;
 
         if(preg_match($expr1,$password) == 0 || preg_match($expr2,$password) == 0 || preg_match($expr3,$password) == 0){
-            $errorMsg .= "Password needs to containt a single upper case, lower case  and number";
+            $errorMsg .= "Password needs to contain a single upper case, lower case  and number";
         }
 
         if($errorMsg != ""){
@@ -240,8 +240,7 @@ class GuestRegister extends BaseController
 
         }
 
-        // da l drzava postoji
-
+        // provera ako se drzava i mesto ne poklapaju
         $countryModel = new Country();
         $count = $countryModel->getId($country);
         if($count == null){
@@ -268,6 +267,12 @@ class GuestRegister extends BaseController
                 ]);
 
             $id_plc = $placeModel->getInsertID();
+        } else {
+            $place = $placeModel->find($id_plc);
+            if($place->id_cnt != $count['id']){
+                echo "Country and place don't match!";
+                return;
+            }
         }
 
 

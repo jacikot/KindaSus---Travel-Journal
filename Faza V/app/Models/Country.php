@@ -28,6 +28,7 @@ class Country extends Model
 
     public function getId($name){
         $countries=$this->where('name',$name)->findAll();
+        if($countries == null) return null;
         $ret["id"]=$countries[0]->id_cnt;
         $ret["code"]=$countries[0]->code;
         return $ret;

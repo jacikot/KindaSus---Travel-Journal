@@ -371,7 +371,7 @@
         <div class="col-lg-12 col-md-12 mt-2" id="header">
             <img src="<?php echo base_url('assets/images/pic.png') ?>" id="logo"/>
             <button class="btn btn-outline-light" onclick="goHome()">
-                Back To Home
+                Back
             </button>
         </div>
     </div>

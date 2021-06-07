@@ -63,7 +63,7 @@ body{
     outline: none;
     line-height: 40px;
     border: 1px solid #9ba3ca;
-    font-family: fancyFont;
+    font-family: fancyFont !important;
 }
 
 #trending {
@@ -200,12 +200,14 @@ body{
 .pac-container {
     border-top: none;
     margin-top: 5px;
+    font-family: fancyFont !important;
 }
 
 .pac-item {
-    font-size: 12px;
+    padding: 5px;
+    font-size: 18px;
 }
 
 .pac-item-query {
-    font-size: 16px;
+    font-size: 22px;
 }

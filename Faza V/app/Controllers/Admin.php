@@ -3,12 +3,17 @@
 namespace App\Controllers;
 
 use App\Models\Review;
-use App\Models\Awarded;
-use App\Models\ToGo;
-use App\Models\Visited;
 use App\Models\RegisteredUser;
 use CodeIgniter\Model;
 
+/**
+ * Author: Jovan Djordjevic 0159/2018
+ */
+/**
+ * Admin – class for maintaining admin activities
+ *
+ * @version 1.0
+ */
 class Admin extends BaseController
 {
     public function index()

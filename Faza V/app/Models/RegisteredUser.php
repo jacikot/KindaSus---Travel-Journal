@@ -31,7 +31,7 @@ class RegisteredUser extends Model
 
         // deleting the folder assigned to the user with its content
 
-        $path = '../public/assets/db_files/'.$idUsr.'/';
+        $path = '../public/assets/db_files/'.$idUsr;
         helper('filesystem');
         delete_files($path, true);
         rmdir($path);
@@ -56,7 +56,8 @@ class RegisteredUser extends Model
 
         if ($vote == 'up') {
             $this->where("id_usr", $idOwr)->set('token_count', 'token_count + 1', false)->update();
-        } else {
+        }
+        if ($vote == 'down') {
             $this->where("id_usr", $idOwr)->set('token_count', 'token_count - 1', false)->update();
         }
     }

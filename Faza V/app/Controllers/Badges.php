@@ -9,12 +9,21 @@ use App\Models\Visited;
 use CodeIgniter\Model;
 use \Datetime;
 
+/**
+ * Author: Jovan Djordjevic 0159/2018
+ */
+/**
+ * Badges – class for presenting badges
+ *
+ * @version 1.0
+ */
 class Badges extends BaseController
 {
     public function index()
     {
 
-        $idUsr = $this->session->get("userId");
+
+        $idUsr = $this->session->get('userId');
 
         $this->checkTokenBadges($idUsr);                        // checking if the user has won any of the badges
         $this->checkTravelBadges($idUsr);                       // on loading the page itself
@@ -22,7 +31,6 @@ class Badges extends BaseController
 
         $badgeModel = new Badge();
         $data['badges'] = $badgeModel->getBadgesForUser($idUsr);    // information about the badges the user has won
-        $data['cssFile'] = 'badges';
         return $this->displayPage('badges', $data);
     }
 
@@ -32,6 +40,7 @@ class Badges extends BaseController
     {
         $userModel = new RegisteredUser();
         $tokenCount = $userModel->getTokenCount($idUsr);
+//        echo view("p1", ['i' => $tokenCount]);
 
         $awardedModel = new Awarded();
 

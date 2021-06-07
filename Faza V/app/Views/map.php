@@ -57,9 +57,9 @@
                       let val = data.split(",");
                       if(val.length > 1){
                           $("#avatar").attr("src",base+val[1]+"?"+new Date().getTime()).load(" #avatar");
-                          alert("Successfully changed your profile picture!")
+                          alert("Successfully changed your profile picture!");
                       } else {
-                          alert("data");
+                          alert(JSON.stringify(data));
                       }
                   })
               }

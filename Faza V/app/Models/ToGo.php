@@ -31,11 +31,6 @@ class ToGo extends Model
         return $this->where('id_usr',$id_usr)->where('id_plc', $id_pls)->delete();
     }
 
-    public function emptyListForUser($idUsr)
-    {
-        $this->where('id_usr', $idUsr)->delete();
-    }
-
     /*
      * return all places which user with given id wants to visit
      * @return array - place id

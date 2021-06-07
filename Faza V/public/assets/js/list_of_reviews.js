@@ -33,16 +33,16 @@ $(document).ready(function () {
         window.location.href = "http://localhost:8080/Map";
     });
 
-    $(this).on("click", "#back", function (e) {
+    $(this).on("click", "#search-and-trending", function (e) {
         window.location.href = "http://localhost:8080/SearchAndTrending";
     });
 
     $(this).on("click", "#login", function (e) {
-        window.location.href = "http://localhost:8080/GuestLogin/login";
+        window.location.href = "http://localhost:8080/GuestLogin/showLogin";
     });
 
     $(this).on("click", "#register", function (e) {
-        window.location.href = "http://localhost:8080/GuestRegister/register";
+        window.location.href = "http://localhost:8080/GuestRegister/showRegister";
     });
 });
 

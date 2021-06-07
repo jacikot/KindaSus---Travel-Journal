@@ -63,11 +63,11 @@ $(document).ready(function () {
     });
 
     $(this).on("click", "#login", function (e) {
-        window.location.href = "http://localhost:8080/GuestLogin/login";
+        window.location.href = "http://localhost:8080/GuestLogin/showLogin";
     });
 
     $(this).on("click", "#register", function (e) {
-        window.location.href = "http://localhost:8080/GuestRegister/register";
+        window.location.href = "http://localhost:8080/GuestRegister/showRegister";
     });
 });
 
@@ -98,7 +98,7 @@ function loadImage(service, image, imageHandler, i) {
     else {
 
         // failed to load the image for the 6th time, so
-        // a flag is displayed instead
+        // a country flag is displayed instead
 
         image.src = 'https://flagcdn.com/w2560/' + countryCode.toLowerCase() + '.png';
         image.style.height = 'auto';
