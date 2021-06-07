@@ -21,8 +21,8 @@
         <div class="col-lg-12 col-md-12 mt-3" id="header">
             <img src="<?php echo base_url('assets/images/pic.png') ?>" id="logo"/>
             <div>
-                <button id="back" class="btn btn-outline-light" style="margin: 0 10px">
-                    Back
+                <button id="search-and-trending" class="btn btn-outline-light" style="margin: 0 10px">
+                    Search & Trending
                 </button>
                 <button id="go-to-map" class="btn btn-outline-light">
                     Go to Map
@@ -62,14 +62,13 @@
                                             $_SESSION['id_rev'] = $review->idRev;
                                             echo site_url("ReviewOverview");
                                             ?>">
-                                                <div class="col-1"><img class="avatar" src="<?= base_url("assets/images/avatar.png") ?>"></div>
-                                                <!--                                      <div class="col-1"><img class="avatar" src="<?//= base_url($review->avatarPath) ?>"></div>-->
+                                                        <div class="col-1"><img class="avatar" src="<?= base_url($review->avatarPath) ?>"></div>
                                                 <div class="col-3"><span class="username"><?= $review->username ?></span></div>
                                                 <div class="col-4"><span class="title"><?= $review->title ?></span></div>
                                                 <div class="col-2">
                                                     <div class="tokens">
                                                         <span class="token-cnt"><?= $review->tokens; ?>&nbsp;</span>
-                                                        <?php if ($idUsr != null && $review->idOwr != 1) {          // USER / GUEST 2
+                                                        <?php if ($review->idOwr != $_SESSION['userId']) {
                                                             ?><div class="tokenStar"
                                                                    data-content="<?= $review->foundUseful == 0 ? "Helpful": "Not helpful" ?>"
                                                                    data-placement="bottom" data-trigger="hover"

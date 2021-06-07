@@ -196,7 +196,7 @@ class GuestRegister extends BaseController
         $expr3 ='/\d/' ;
 
         if(preg_match($expr1,$password) == 0 || preg_match($expr2,$password) == 0 || preg_match($expr3,$password) == 0){
-            $errorMsg .= "Password needs to containt a single upper case, lower case  and number";
+            $errorMsg .= "Password needs to contain a single upper case, lower case  and number";
         }
 
         if($errorMsg != ""){

@@ -56,10 +56,10 @@
                   }).done(function(data) {
                       let val = data.split(",");
                       if(val.length > 1){
-                          $("#avatar").setAttribute("src",base+val[1]);
+                          $("#avatar").attr("src",base+val[1]);
                           alert("Successfully changed your profile picture!")
                       } else {
-                          alert("data");
+                          alert(JSON.stringify(data));
                       }
                   })
               }

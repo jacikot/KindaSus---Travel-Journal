@@ -104,7 +104,8 @@ class Review extends Model
 
         if ($vote == 'up') {
             $this->where("id_rev", $idRev)->set('token_count', 'token_count + 1', false)->update();
-        } else {
+        }
+        if ($vote == 'down') {
             $this->where("id_rev", $idRev)->set('token_count', 'token_count - 1', false)->update();
         }
     }
@@ -113,7 +114,12 @@ class Review extends Model
     {
         // changing privacy of a review, depending on the type of change
 
-        $this->where("id_rev", $idRev)->set('privacy', ($type == 'private' ? '1' : '0'), false)->update();
+        if ($type == 'private') {
+            $this->where("id_rev", $idRev)->set('privacy', '1', false)->update();
+        }
+        if ($type == 'public') {
+            $this->where("id_rev", $idRev)->set('privacy', '0', false)->update();
+        }
     }
 
     /*

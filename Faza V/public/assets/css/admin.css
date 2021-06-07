@@ -228,6 +228,12 @@ body {
     border-bottom-color: #333e7d !important;
 }
 
+.bs-popover-top>.arrow::before,
+.bs-popover-top>.arrow::after {
+    bottom: 2px;
+    border-top-color: #333e7d !important;
+}
+
 #fail-banner-all {
     margin-top: 40px;
     font-size: 40px;

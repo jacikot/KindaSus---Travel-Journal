@@ -53,8 +53,7 @@
                                             $_SESSION['id_rev'] = $review->idRev;
                                             echo site_url("ReviewOverview");
                                             ?>">
-                                                <div class="col-1"><img class="avatar-rev" src="<?= base_url("assets/images/avatar.png") ?>"></div>
-<!--                                                <div class="col-1"><img class="avatar-rev" src="<?//=x base_url($review->avatarPath) ?>"></div>-->
+                                                <div class="col-1"><img class="avatar-rev" src="<?= base_url($review->avatarPath) ?>"></div>
                                                 <div class="col-2"><span class="username-rev"><?= $review->username ?></span></div>
                                                 <div class="col-3 ml-3"><span class="title"><?= $review->title ?></span></div>
                                                 <div class="col-2 ml-3"><span class="place"><?= $review->place.', '.$review->country ?></span></div>
@@ -106,8 +105,7 @@
                                     <tr>
                                         <td>
                                             <div class="user">
-                                                <div class="col-3"><img class="avatar-usr" src="<?= base_url("assets/images/avatar.png") ?>"></div>
-<!--                                                <div class="col-3"><img class="avatar-usr" src="<?//= base_url($review->avatarPath) ?>"></div>-->
+                                                <div class="col-3"><img class="avatar-usr" src="<?= base_url($user->avatarPath) ?>"></div>
                                                 <div class="col-6"><span class="username-usr"><?= $user->username ?></span></div>
                                                 <div class="col-3">
                                                     <button class="btn delete-user shadow-none"
