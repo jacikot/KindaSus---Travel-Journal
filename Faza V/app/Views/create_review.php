@@ -128,6 +128,11 @@
 
                     $(".modal-title").text("Would you like to answer a few questions?");
                     $("#createdReview").modal();
+                    $('#file-upload1').val('');
+                    $('#file-upload2').val('');
+                    $('#file-upload3').val('');
+                    $('#file-upload4').val('');
+                    $('#file-upload5').val('');
                 }
                 else{
                     alert(vr);
@@ -156,6 +161,11 @@
                     let question4=questions['weather'];
                     let question5=questions['populated'];
 
+                    $("#cell1").empty();
+                    $("#cell3").empty();
+                    $("#cell5").empty();
+                    $("#cell7").empty();
+                    $("#cell9").empty();
                     $("#cell1").append(question1);
                     $("#cell3").append(question2);
                     $("#cell5").append(question3);
@@ -449,7 +459,7 @@
                      </div>
 
                  </label>
-                 <input id="file-upload1"  type="file" hidden/>
+                 <input id="file-upload1"   type="file" hidden/>
                  <hr>
                  <label id="inputslike2" for="file-upload2" class="custom-file-upload">
                      <div class="mt-2 my-auto">

@@ -83,9 +83,15 @@ public function index(){
 
          $tmp_awarded=new Awarded();
         $id_con=$country_obj->id_con;
-        $id_bdg=($id_con-1)/2*5+1+($id_con-1)%2;
+
+ /* there is a badge for visiting every continent, except Antarctica
+ * */
+
+         if($id_con<7){
+        $id_bdg=floor(($id_con-1)/2)*5+($id_con-1)%2+1;
 
         $tmp_awarded->giveBadgeIfNotGiven($this->session->get('userId'),$id_bdg);
+        }
 
 
 
@@ -169,7 +175,7 @@ function returns string value that represents the success of the function
                         return;
                     }
 
-                    if ($img->getSize() > 150000) {
+                    if ($img->getSize() > 150000000) {
                         echo "File is too large!";
                         return;
                     }
