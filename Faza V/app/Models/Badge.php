@@ -11,7 +11,7 @@ class Badge extends Model
     protected $primaryKey = 'id_bdg';
     protected $useAutoIncrement = true;
     protected $returnType = 'object';
-    protected $allowedFields = ['badge_path', 'title', 'description'];
+    protected $allowedFields = ['title', 'description'];
 
 
     public function getBadgesForUser($idUsr)
@@ -20,7 +20,6 @@ class Badge extends Model
         // which of these badges the user has won
 
         return $this->select("badge.id_bdg AS id,
-                                badge.badge_path AS badge_path, 
                                 badge.title AS title, 
                                 badge.description AS description, 
                                 awarded.id_usr AS user", false)
