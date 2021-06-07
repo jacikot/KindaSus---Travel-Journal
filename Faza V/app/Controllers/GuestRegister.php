@@ -74,11 +74,11 @@ class GuestRegister extends BaseController
      * @throws UnauthorizedHttpException
      */
     public function addQuestions(){
-        $q1 = $this->request->getVar('q1');
-        $q2 = $this->request->getVar('q2');
-        $q3 = $this->request->getVar('q3');
+        $q1 = $this->request->getVar('q0');
+        $q2 = $this->request->getVar('q1');
+        $q3 = $this->request->getVar('q2');
 
-        if(!isset($q1) || !isset($q1) || !isset($q1)){
+        if(!isset($q1) || !isset($q2) || !isset($q3)){
             echo "All questions are a must!";
             return;
         }
@@ -240,8 +240,7 @@ class GuestRegister extends BaseController
 
         }
 
-        // da l drzava postoji
-
+        // provera ako se drzava i mesto ne poklapaju
         $countryModel = new Country();
         $count = $countryModel->getId($country);
         if($count == null){
@@ -268,6 +267,12 @@ class GuestRegister extends BaseController
                 ]);
 
             $id_plc = $placeModel->getInsertID();
+        } else {
+            $place = $placeModel->find($id_plc);
+            if($place->id_cnt != $count['id']){
+                echo "Country and place don't match!";
+                return;
+            }
         }
 
 
