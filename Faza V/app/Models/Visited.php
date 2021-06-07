@@ -10,7 +10,7 @@ class Visited extends Model
     protected $table = 'visited';
     protected $primaryKey = 'id_vis';
     protected $returnType = 'object';
-    protected $allowedFields = ['id_usr, id_plc'];
+    protected $allowedFields = ['id_usr', 'id_plc'];
 
     /* function getVisitById returns (if exists) visit with given id
      function returns Visited object
