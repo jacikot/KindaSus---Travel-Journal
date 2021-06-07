@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 07, 2021 at 09:28 AM
+-- Generation Time: Jun 07, 2021 at 05:41 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -546,7 +546,7 @@ CREATE TABLE IF NOT EXISTS `found_useful` (
   PRIMARY KEY (`id_fnd`),
   KEY `FK_id_usr_found_useful_idx` (`id_usr`),
   KEY `FK_id_rev_found_useful_idx` (`id_rev`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `found_useful`
@@ -557,7 +557,8 @@ INSERT INTO `found_useful` (`id_fnd`, `id_usr`, `id_rev`) VALUES
 (3, 1, 12),
 (4, 1, 13),
 (49, 7, 1),
-(50, 7, 2);
+(50, 7, 2),
+(52, 7, 15);
 
 -- --------------------------------------------------------
 
@@ -717,7 +718,7 @@ CREATE TABLE IF NOT EXISTS `registered_user` (
   `id_plc` int(11) NOT NULL,
   PRIMARY KEY (`id_usr`),
   KEY `FK_id_plc_registered_user_idx` (`id_plc`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `registered_user`
@@ -725,12 +726,12 @@ CREATE TABLE IF NOT EXISTS `registered_user` (
 
 INSERT INTO `registered_user` (`id_usr`, `username`, `password`, `name`, `surname`, `e-mail`, `security_answer_1`, `security_answer_2`, `security_answer_3`, `token_count`, `avatar_path`, `acc_creation_date`, `id_plc`) VALUES
 (1, 'sova', 'Kmdd5262', 'sova', 'sovlic', 'sova@sova.gm.com', NULL, NULL, NULL, 0, NULL, '2021-02-03', 4),
-(2, 'micko', 'Kmdd5262', 'milan', 'stamenic', 'milans288@gmail.com', 'crna', 'strela', 'radi', 0, 'path/micko1', '2021-05-26', 2),
-(3, 'jocko', 'Kmdd5262', 'jovan', 'djordjevic', 'ab.jovan99@gmail.com', NULL, NULL, NULL, -1, 'cd/sdads/asd/ad', '2021-05-26', 3),
-(4, 'adriance', 'Kmdd5262', 'Adriana', 'Vidic', 'vidic79adriana@gmail.com', 'da', 'ne', 'mozda', 1, 'assets\\images\\avatar.png', '2021-05-26', 1),
-(5, 'panaasonic', 'Kmdd5262', 'Jana', 'Jolic', 'joxa789@gmail.com', NULL, NULL, NULL, 0, '/assets/images/default-avatar-2.jpg', '2021-06-06', 11),
-(6, 'mika123', 'Kmdd5262', 'Pana', 'Panic', 'mika123@gmail.com', NULL, NULL, NULL, 0, '/assets/images/default-avatar-2.jpg', '2021-06-06', 11),
-(7, 'jacikot', 'Kmdd5262', 'Jana', 'Toljaga', 'jana.toljaga725@yahoo.com', 'Srbija', 'cebe', 'Marina', 2, '/assets/db_files/7/avatar_img/avatar.png', '2021-06-06', 11);
+(2, 'micko', 'micko123', 'milan', 'stamenic', 'milans288@gmail.com', 'crna', 'strela', 'radi', 0, 'path/micko1', '2021-05-26', 2),
+(3, 'jocko', 'jocko123', 'jovan', 'djordjevic', 'ab.jovan99@gmail.com', NULL, NULL, NULL, -1, 'cd/sdads/asd/ad', '2021-05-26', 3),
+(4, 'adriance', 'adriana79', 'Adriana', 'Vidic', 'vidic79adriana@gmail.com', 'da', 'ne', 'mozda', 1, 'assets\\images\\avatar.png', '2021-05-26', 1),
+(5, 'panaasonic', 'WSADwsad123', 'Jana', 'Jolic', 'joxa789@gmail.com', NULL, NULL, NULL, 0, '/assets/images/default-avatar-2.jpg', '2021-06-06', 11),
+(6, 'mika123', 'mika123', 'Pana', 'Panic', 'mika123@gmail.com', NULL, NULL, NULL, 0, '/assets/images/default-avatar-2.jpg', '2021-06-06', 11),
+(7, 'jacikot', 'sifraSIFRICA10', 'Jana', 'Toljaga', 'jana.toljaga725@yahoo.com', 'Srbija', 'cebe', 'Marina', 3, '/assets/db_files/7/avatar_img/avatar.png', '2021-06-06', 11);
 
 -- --------------------------------------------------------
 
@@ -770,7 +771,7 @@ INSERT INTO `review` (`id_rev`, `title`, `text`, `privacy`, `token_count`, `date
 (12, 'Bogota was incredible', 'Amazing experience!', 0, 177, '2021-05-17', 12),
 (13, 'Munich was awesome', 'Amazing experience!', 0, 136, '2020-09-11', 13),
 (14, 'Sankt Petersburg - THE BEST', 'Amazing experience!', 0, 0, '2020-07-22', 14),
-(15, 'Peterhof', 'fewjonfjewnqf vjk jk v jk j jk kf k kjf q jf jj fj ejwj j jfs', 0, 0, '2021-06-07', 17);
+(15, 'Peterhof', 'fewjonfjewnqf vjk jk v jk j jk kf k kjf q jf jj fj ejwj j jfs', 0, 1, '2021-06-07', 17);
 
 -- --------------------------------------------------------
 
