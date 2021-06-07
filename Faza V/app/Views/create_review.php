@@ -250,7 +250,7 @@
 
     <script>
         function goHome(){
-            window.href.location="<?php base_url('Map/index') ?>"
+            window.location.href="<?= base_url('Map/index') ?>"
         }
     </script>
     
@@ -289,7 +289,7 @@
            </tr>
            <tr>
                <td>
-                   <input type="date" name="date" id="date"  placeholder="Date of your travel"  value="Date of your travel"></td>
+                   <input type="date" name="date" id="date"  placeholder="Date of your travel"></td>
                </td>
                <td>
                    <input type="text" name="title" id="title" placeholder="Title for your memory!">
