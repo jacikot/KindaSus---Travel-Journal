@@ -58,7 +58,7 @@ var options = {
     title:'Naslov',
     backgroundColor: '#eeeeee',
     datalessRegionColor: '#fbe3aa',
-    colorAxis: {colors: ['#FA5B3B','#4754A2','#CA2B0B']},
+    colorAxis: {colors: ['#FA5B3B','#4754A2','#CA2B0B'], values:[1,2,3]},
     legend :'none',
     focusTarget: 'category',
     tooltip: {isHtml:true, textStyle:{color:'#273482',fontName:'Sunday Snow', fontSize:16, bold:false},borderColor:'red'},

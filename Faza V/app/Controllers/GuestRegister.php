@@ -74,9 +74,9 @@ class GuestRegister extends BaseController
      * @throws UnauthorizedHttpException
      */
     public function addQuestions(){
-        $q1 = $this->request->getVar('q1');
-        $q2 = $this->request->getVar('q2');
-        $q3 = $this->request->getVar('q3');
+        $q1 = $this->request->getVar('q0');
+        $q2 = $this->request->getVar('q1');
+        $q3 = $this->request->getVar('q2');
 
         if(!isset($q1) || !isset($q1) || !isset($q1)){
             echo "All questions are a must!";

@@ -86,7 +86,7 @@ class Journal extends BaseController
         helper('filesystem');
         delete_files($path,true);
         $model->deleteReview($rev);
-//        rmdir($path);
+        if(is_dir($path)) rmdir($path);
         echo $rev;
     }
 

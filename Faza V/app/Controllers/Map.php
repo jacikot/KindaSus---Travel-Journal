@@ -59,6 +59,14 @@ class Map extends BaseController
         $placeModel=new Place();
         $countryModel=new Country();
         $userModel=new RegisteredUser();
+        $placesGo=$togoModel->getToGoPlaces($user);
+        foreach($placesGo as $place){
+            $country=$placeModel->getCountry($place);
+            $dataC=$countryModel->getCountry($country);
+            $dataC["type"]=2;
+            $map[$country]=$dataC;
+        }
+
         $placesV=$visitedModel->getVisitedPlaces($user);
         foreach($placesV as $place){
             $country=$placeModel->getCountry($place);
@@ -67,13 +75,7 @@ class Map extends BaseController
             $map[$country]=$dataC;
         }
 
-        $placesGo=$togoModel->getToGoPlaces($user);
-        foreach($placesGo as $place){
-            $country=$placeModel->getCountry($place);
-            $dataC=$countryModel->getCountry($country);
-            $dataC["type"]=2;
-            $map[$country]=$dataC;
-        }
+
 
         $home=$userModel->getHomePlace($user);
         $country=$placeModel->getCountry($home);

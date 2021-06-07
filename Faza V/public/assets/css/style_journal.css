@@ -233,3 +233,11 @@ td{
     border-radius: 25px;
     color:white;
 }
+#myModal{
+    color:black;
+}
+.modal-footer{
+    display:flex !important;
+    flex-direction:row !important;
+    justify-content: space-between !important;
+}

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 06, 2021 at 06:46 PM
+-- Generation Time: Jun 07, 2021 at 09:28 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -158,7 +158,7 @@ CREATE TABLE IF NOT EXISTS `awarded` (
   PRIMARY KEY (`id_awd`),
   KEY `FK_id_usr_awarded_idx` (`id_usr`),
   KEY `FK_id_bdg_awarded_idx` (`id_bdg`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `awarded`
@@ -188,7 +188,9 @@ INSERT INTO `awarded` (`id_awd`, `id_usr`, `id_bdg`) VALUES
 (21, 4, 5),
 (22, 4, 16),
 (23, 1, 8),
-(24, 1, 13);
+(24, 1, 13),
+(25, 7, 1),
+(26, 7, 8);
 
 -- --------------------------------------------------------
 
@@ -544,7 +546,7 @@ CREATE TABLE IF NOT EXISTS `found_useful` (
   PRIMARY KEY (`id_fnd`),
   KEY `FK_id_usr_found_useful_idx` (`id_usr`),
   KEY `FK_id_rev_found_useful_idx` (`id_rev`)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `found_useful`
@@ -553,7 +555,9 @@ CREATE TABLE IF NOT EXISTS `found_useful` (
 INSERT INTO `found_useful` (`id_fnd`, `id_usr`, `id_rev`) VALUES
 (2, 1, 2),
 (3, 1, 12),
-(4, 1, 13);
+(4, 1, 13),
+(49, 7, 1),
+(50, 7, 2);
 
 -- --------------------------------------------------------
 
@@ -610,7 +614,7 @@ CREATE TABLE IF NOT EXISTS `place` (
   `id_cnt` int(11) NOT NULL,
   PRIMARY KEY (`id_plc`),
   KEY `FK_id_cnt_place_idx` (`id_cnt`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `place`
@@ -627,7 +631,11 @@ INSERT INTO `place` (`id_plc`, `name`, `categorized`, `heritage`, `relax`, `sigh
 (8, 'Munich', 0, 0, 0, 0, 0, 0, 0, 56),
 (9, 'Los Angeles', 1, 10, 15, 23, 27, 24, 0, 230),
 (10, 'Bajina Basta', 1, 23, 27, 22, 20, 5, 0, 189),
-(11, 'Belgrade', 0, 0, 0, 0, 0, 0, 0, 189);
+(11, 'Belgrade', 0, 0, 0, 0, 0, 0, 0, 189),
+(12, 'Zanzibar', 0, 0, 0, 0, 0, 0, 0, 226),
+(13, 'Milan', 0, 0, 0, 0, 0, 0, 0, 109),
+(14, 'Berlin', 0, 0, 0, 0, 0, 0, 0, 56),
+(15, 'Sicily', 0, 0, 0, 0, 0, 0, 0, 109);
 
 -- --------------------------------------------------------
 
@@ -709,19 +717,20 @@ CREATE TABLE IF NOT EXISTS `registered_user` (
   `id_plc` int(11) NOT NULL,
   PRIMARY KEY (`id_usr`),
   KEY `FK_id_plc_registered_user_idx` (`id_plc`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `registered_user`
 --
 
 INSERT INTO `registered_user` (`id_usr`, `username`, `password`, `name`, `surname`, `e-mail`, `security_answer_1`, `security_answer_2`, `security_answer_3`, `token_count`, `avatar_path`, `acc_creation_date`, `id_plc`) VALUES
-(1, 'sova', 'sova123', 'sova', 'sovlic', 'sova@sova.gm.com', NULL, NULL, NULL, 0, NULL, '2021-02-03', 4),
-(2, 'micko', 'micko123', 'milan', 'stamenic', 'milans288@gmail.com', 'crna', 'strela', 'radi', 0, 'path/micko1', '2021-05-26', 2),
-(3, 'jocko', 'jocko123', 'jovan', 'djordjevic', 'ab.jovan99@gmail.com', NULL, NULL, NULL, -1, 'cd/sdads/asd/ad', '2021-05-26', 3),
-(4, 'adriance', 'Adriana79', 'Adriana', 'Vidic', 'vidic79adriana@gmail.com', 'da', 'ne', 'mozda', 0, 'assets\\images\\avatar.png', '2021-05-26', 1),
-(5, 'panaasonic', 'WSADwsad123', 'Jana', 'Jolic', 'joxa789@gmail.com', NULL, NULL, NULL, 0, '/assets/images/default-avatar-2.jpg', '2021-06-06', 11),
-(6, 'mika123', 'WSADwsad123', 'Pana', 'Panic', 'mika123@gmail.com', NULL, NULL, NULL, 0, '/assets/images/default-avatar-2.jpg', '2021-06-06', 11);
+(1, 'sova', 'Kmdd5262', 'sova', 'sovlic', 'sova@sova.gm.com', NULL, NULL, NULL, 0, NULL, '2021-02-03', 4),
+(2, 'micko', 'Kmdd5262', 'milan', 'stamenic', 'milans288@gmail.com', 'crna', 'strela', 'radi', 0, 'path/micko1', '2021-05-26', 2),
+(3, 'jocko', 'Kmdd5262', 'jovan', 'djordjevic', 'ab.jovan99@gmail.com', NULL, NULL, NULL, -1, 'cd/sdads/asd/ad', '2021-05-26', 3),
+(4, 'adriance', 'Kmdd5262', 'Adriana', 'Vidic', 'vidic79adriana@gmail.com', 'da', 'ne', 'mozda', 1, 'assets\\images\\avatar.png', '2021-05-26', 1),
+(5, 'panaasonic', 'Kmdd5262', 'Jana', 'Jolic', 'joxa789@gmail.com', NULL, NULL, NULL, 0, '/assets/images/default-avatar-2.jpg', '2021-06-06', 11),
+(6, 'mika123', 'Kmdd5262', 'Pana', 'Panic', 'mika123@gmail.com', NULL, NULL, NULL, 0, '/assets/images/default-avatar-2.jpg', '2021-06-06', 11),
+(7, 'jacikot', 'Kmdd5262', 'Jana', 'Toljaga', 'jana.toljaga725@yahoo.com', 'Srbija', 'cebe', 'Marina', 2, '/assets/db_files/7/avatar_img/avatar.png', '2021-06-06', 11);
 
 -- --------------------------------------------------------
 
@@ -740,15 +749,15 @@ CREATE TABLE IF NOT EXISTS `review` (
   `id_vis` int(11) NOT NULL,
   PRIMARY KEY (`id_rev`),
   KEY `FK_id_vis_review_idx` (`id_vis`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `review`
 --
 
 INSERT INTO `review` (`id_rev`, `title`, `text`, `privacy`, `token_count`, `date_posted`, `id_vis`) VALUES
-(1, 'My beautiful trip to Moscow', 'Such an adventure', 0, 120, '2019-01-01', 2),
-(2, 'LA woman', 'USA!!', 0, 80, '2021-05-26', 7),
+(1, 'My beautiful trip to Moscow', 'Such an adventure', 0, 121, '2019-01-01', 2),
+(2, 'LA woman', 'USA!!', 0, 81, '2021-05-26', 7),
 (3, 'I love Paris', 'City of love <3', 0, 13, '2018-03-06', 1),
 (4, 'Paris is goals', 'I love it <3', 1, 244, '2020-05-26', 4),
 (5, 'City of light', 'France fest', 0, 406, '2021-05-26', 6),
@@ -760,7 +769,8 @@ INSERT INTO `review` (`id_rev`, `title`, `text`, `privacy`, `token_count`, `date
 (11, 'Shanghai incredible <3', 'It was amazing to visit it.', 0, 18, '2008-02-04', 5),
 (12, 'Bogota was incredible', 'Amazing experience!', 0, 177, '2021-05-17', 12),
 (13, 'Munich was awesome', 'Amazing experience!', 0, 136, '2020-09-11', 13),
-(14, 'Sankt Petersburg - THE BEST', 'Amazing experience!', 0, 0, '2020-07-22', 14);
+(14, 'Sankt Petersburg - THE BEST', 'Amazing experience!', 0, 0, '2020-07-22', 14),
+(15, 'Peterhof', 'fewjonfjewnqf vjk jk v jk j jk kf k kjf q jf jj fj ejwj j jfs', 0, 0, '2021-06-07', 17);
 
 -- --------------------------------------------------------
 
@@ -777,7 +787,7 @@ CREATE TABLE IF NOT EXISTS `to-go` (
   PRIMARY KEY (`id_tgl`),
   KEY `FK_id_plc_to-go_idx` (`id_plc`),
   KEY `FK_id_usr_to-go_idx` (`id_usr`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `to-go`
@@ -796,7 +806,11 @@ INSERT INTO `to-go` (`id_tgl`, `id_usr`, `id_plc`, `crossed_off`) VALUES
 (10, 4, 2, 1),
 (11, 3, 1, 0),
 (12, 2, 4, 1),
-(13, 1, 8, 0);
+(13, 1, 8, 0),
+(17, 7, 12, 1),
+(19, 7, 14, 0),
+(20, 7, 9, 0),
+(21, 7, 5, 0);
 
 -- --------------------------------------------------------
 
@@ -812,7 +826,7 @@ CREATE TABLE IF NOT EXISTS `visited` (
   PRIMARY KEY (`id_vis`),
   KEY `FK_id_plc_visited_idx` (`id_plc`),
   KEY `FK_id_usr_visited_idx` (`id_usr`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `visited`
@@ -834,7 +848,8 @@ INSERT INTO `visited` (`id_vis`, `id_usr`, `id_plc`) VALUES
 (13, 4, 8),
 (14, 1, 4),
 (15, 2, 6),
-(16, 3, 8);
+(16, 3, 8),
+(17, 7, 4);
 
 --
 -- Constraints for dumped tables

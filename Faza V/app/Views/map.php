@@ -56,7 +56,7 @@
                   }).done(function(data) {
                       let val = data.split(",");
                       if(val.length > 1){
-                          $("#avatar").setAttribute("src",base+val[1]);
+                          $("#avatar").attr("src",base+val[1]+"?"+new Date().getTime()).load(" #avatar");
                           alert("Successfully changed your profile picture!")
                       } else {
                           alert("data");
@@ -202,8 +202,8 @@
                       Are you sure you want to log out?
                   </div>
                   <div class="modal-footer">
-                      <button type="button" class="btn" data-dismiss="modal" id="ok">Ok</button>
-                      <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-dark" data-dismiss="modal" id="ok">Ok</button>
+                      <button type="button" class="btn btn-dark" data-dismiss="modal">Cancel</button>
                   </div>
               </div>
           </div>

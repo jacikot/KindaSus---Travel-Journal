@@ -11,7 +11,6 @@ $(document).ready(function(){
         let questions=[];
         for (let i=0;i<inputs.length;i++){
             if(inputs[i].value==""){
-                // document.getElementById("err"+(i+add)).style.display="block";
                 setReturnValues("Message","Field is required!","#t"+(i+2),"right");
                 correct=false;
             }
@@ -27,7 +26,7 @@ $(document).ready(function(){
 
     $("#check").on("click",validateQuestions);
     $("#back").on("click",function(){
-        window.history.back();
+        back();
     })
 });
 

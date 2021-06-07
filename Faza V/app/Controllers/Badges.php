@@ -14,7 +14,7 @@ class Badges extends BaseController
     public function index()
     {
 
-        $idUsr = 1; //$this->session->get('userId');
+        $idUsr = $this->session->get("userId");
 
         $this->checkTokenBadges($idUsr);                        // checking if the user has won any of the badges
         $this->checkTravelBadges($idUsr);                       // on loading the page itself

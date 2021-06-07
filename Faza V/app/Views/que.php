@@ -87,6 +87,11 @@
                 }
             });
         }
+        function back(){
+            <?php if(isset($_SESSION['flag'])){?>window.location.href="<?= base_url('Map')?>";
+            <?php }else{ ?> window.history.back();
+            <?php }?>
+        }
     </script>
 </head>
 <body onload="getUser()">
@@ -161,11 +166,6 @@
 
         </div>
         <br><br>
-<!--        <div class="row">-->
-<!--            <div class="col-xl-4 offset-xl-9 col-lg-6 offset-lg-4 col-md-7 offset-md-3 col-8 offset-2 ">-->
-<!--                <button class="back continue text-center" type="button" id="check">Check & Continue</button>-->
-<!--            </div>-->
-<!--        </div>-->
 
     </div>
 
@@ -178,7 +178,7 @@
                 <div class="modal-body">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

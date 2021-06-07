@@ -1,5 +1,5 @@
-
-function insertTrash(list,parent){
+let p=null;
+function insertTrash(list,parent,title){
     let trash=document.createElement("button");
     trash.classList.add("bottomButton");
     let itr=document.createElement("i");
@@ -7,9 +7,11 @@ function insertTrash(list,parent){
     itr.classList.add("fa-trash-alt");
     trash.id="trash"+parent.id;
     $(document).on("click","#trash"+parent.id,function (){
-        deleteReview(parent.id);
-        list.removeChild(parent);
+        document.getElementById("bodyM").innerHTML+=" "+title+"?"
+        $("#myModal").modal('show');
+        p=parent;
     });
+
     trash.appendChild(itr);
     return trash;
 }
@@ -50,7 +52,7 @@ function insertReview(data,list,country){
     div.appendChild(d);
 
 
-    div.appendChild(insertTrash(list,elem));
+    div.appendChild(insertTrash(list,elem,data["title"]));
     elem.appendChild(div);
     elem.innerHTML+="<br>";
     list.appendChild(elem);
@@ -83,7 +85,8 @@ function insertDefaultMsg(list,country){
     excl.src=exclURL;
     excl.style.marginBottom="10px";
     elem.appendChild(excl);
-    elem.innerHTML+=" It looks like you haven't wrote anything about your experiences in "+country+" jet! Hurry up and save your memories!";
+    if(country!=null)elem.innerHTML+=" It looks like you haven't written anything about your experiences in "+country+" yet! Hurry up and save your memories!";
+    else elem.innerHTML+=" It looks like you haven't wrote anything jet! Hurry up and save your memories!";
     elem.style.fontSize="30px";
     list.appendChild(elem);
 }
@@ -110,6 +113,10 @@ function insertData(data){
     if(data.length<=1){
         insertDefaultMsg(list,data[0]["country"]);
     }
+    $("#ok").on("click",function(){
+        deleteReview(p.id);
+        list.removeChild(p);
+    });
     for(let i=1;i<data.length;i++){
         insertReview(data[i],list,data[0]["country"]);
         insertOption(data[i]["place"],select,button,list);
@@ -144,6 +151,7 @@ $(document).ready(function(){
    $("#back").click(function(){
       window.location.href=backURL;
    });
+
 
 
 });

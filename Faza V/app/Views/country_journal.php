@@ -43,8 +43,6 @@
         }
         var baseURL2="<?= base_url('Journal/deleteReview')?>";
         function deleteReview(idrev){
-            // alert(idrev);
-            // alert("jana");
             $.ajax(
                 {
                     url:baseURL2,
@@ -52,11 +50,9 @@
                     data:{
                         "id_rev":idrev
                     },
-
-
                 }
             ).done(function (data){
-                alert(data);
+                alert("Review " + data+ " has been successfully deleted!");
             });
         }
 
@@ -112,6 +108,22 @@
         </div>
 
 
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete this memory?</h5>
+                </div>
+                <div class="modal-body" id="bodyM">
+                    Are you sure you want to delete
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal" id="ok">Ok</button>
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
     </div>
 
 
