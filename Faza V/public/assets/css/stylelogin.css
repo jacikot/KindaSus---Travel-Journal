@@ -1,0 +1,142 @@
+/* author: Dimitrije Panic */
+@font-face {
+    font-family: myFont;
+    src: url(../fontstyle/travel_journal_3.ttf);
+  }
+
+#mojModal{
+    font-family: myFont;
+    font-size: larger;
+}
+#myModal{
+    font-family: myFont;
+    font-size: larger;
+}
+#logo{
+    width: 10vw;
+    height: 10vh;
+    object-fit: contain;
+}
+
+#red{
+    height: 85vh;
+}
+
+
+#header{
+
+    vertical-align: middle !important;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+
+#dugme{
+    font-family:myFont !important;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+}
+
+.mybtn{
+    margin:auto !important;
+    /*font-family: myFont;*/
+    font-size: 150%;
+}
+
+.modal-title{
+    font-size: 130%;
+    /*font-family: myFont;*/
+    margin:auto !important;
+}
+
+.modal-body{
+    text-align: center !important;
+    font-size: 110%;
+    /*font-family: myFont;*/
+}
+.modal-footer {
+    text-align:center !important;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border: none;
+    -webkit-text-fill-color: white;
+    -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset ;
+    transition: background-color 5000s ease-in-out 0s;
+}
+.modal-header{
+    text-align:center !important;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 60%; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+    opacity: 60%;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+    opacity: 60%;
+}
+input{
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    border: none !important;
+    border-bottom: 2px solid white !important;
+    outline: none !important;
+    background-color: rgba(166, 159, 200, 0);
+    color: white !important;
+    text-indent: 5px;
+}
+
+.table {
+    font-family: myFont;
+    font-size: 150%;
+    color: white !important;
+}
+td {
+    text-align:center;
+    border:none !important;
+}
+.font{
+    font-family:MyFont;
+}
+
+
+body, .container-fluid {
+    height: 100vh;
+}
+
+.forma{
+    margin:auto !important;
+    background-color: rgba(166, 159, 200, 0.71);
+    backdrop-filter: blur(3px);
+}
+
+.header {
+    font-size:130%;
+}
+
+body{
+    /*izmeni ovo!! kao u registeru */
+    background-image: url(../images/login.jpg);
+    /*background-repeat: no-repeat;*/
+    object-fit: contain;
+    background-size: cover /*100% 100%*/;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+
+}
+

@@ -7,10 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body>
-<?php foreach ($badges as $badge) {?>
-    <h1><?= $badge->id ?></h1>
-    <h1><?= $badge->title ?></h1>
-<?php } ?>
+<body style="background-color: red">
+    <script>alert(JSON.stringify(<?= $i ?>))</script>
 </body>
 </html>

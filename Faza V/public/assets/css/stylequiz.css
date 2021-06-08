@@ -1,0 +1,97 @@
+/* author: Dimitrije Panic */
+@font-face {
+    font-family: myFont;
+    src: url(../fontstyle/travel_journal_3.ttf);
+  }
+
+#mojModal{
+    font-family: myFont;
+    font-size: larger;
+}
+#myModal{
+    font-family: myFont;
+    font-size: larger;
+}
+body{
+    background: url(../images/quiz.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+
+}
+
+#pozadina{
+    background-color: rgba(166, 81, 173, 0.52);
+    backdrop-filter: blur(3px);
+}
+.bgp{
+    background-color: #00105E !important;
+}
+td{
+    border:none !important;
+}
+
+#question{
+    font-family:myFont;
+    color:white;
+    opacity: 95%;
+    font-size: 5vh;
+}
+
+.progress{
+    margin:auto !important;
+    opacity: 60%;
+}
+label{
+    font-family:myFont;
+    color:white;
+    font-size: 4vh;
+
+}
+#naslov{
+    text-align:center;
+    font-size:10vh;
+    font-family:myFont;
+    color:white;
+    opacity: 80%;
+}
+#header{
+    vertical-align: middle !important;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+label:hover{
+    cursor:pointer;
+}
+
+.modal-footer{
+    display:flex !important;
+    flex-direction:row !important;
+    justify-content: space-between !important;
+}
+#foot{
+    text-align: left !important;
+}
+.rasporedi{
+    text-align:right;
+}
+
+.dugme{
+    font-size:4vh !important;
+    font-family:myFont;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+}
+.moj{
+
+    font-family:myFont;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+}
+
+#logo{
+    width: 10vw;
+    height: 10vh;
+    object-fit: contain;
+}

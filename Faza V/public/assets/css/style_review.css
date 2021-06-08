@@ -1,0 +1,98 @@
+/* autor: Adriana Vidic  */
+@font-face{
+    font-family: myFont;
+    src:url(../fontstyle/travel_journal_3.ttf);
+}
+
+
+.fas.fa-star{
+    display: inline;
+    color: #fbe3aa;
+    
+    
+}
+
+body{
+  
+    background: url(../images/background100.jpg) no-repeat center center fixed;;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    font-family: myFont;
+
+// color:white;
+    
+}
+
+
+::-webkit-scrollbar {
+    width: 7px;  
+   
+   padding-left: 5px;
+  
+
+ }
+  
+ ::-webkit-scrollbar-thumb {   
+   border-radius: 25px;
+   background: #3e8eb1;
+
+  }
+  
+ ::-webkit-scrollbar-track {     
+   background-color: transparent;
+ }
+
+
+.reviewParagraph{
+    background-attachment:unset;
+    background-color: rgba(62,143,180,0.8);
+    overflow:auto;
+    padding: 10px;
+   /* contain: content;
+    margin: auto;
+    width: available;
+
+    */
+    text-align: justify;
+
+    border-radius: 5px;
+
+}
+table{
+    border: none; !important;
+}
+td{
+    text-align: left;
+    background-attachment: unset;
+    background-color: rgba(252,106,146,0.4);
+}
+
+#logo{
+    width: 10vw;
+    height: 10vh;
+    object-fit: contain;
+}
+
+.naslov{
+    font-size: 5vh;
+
+}
+#red{
+    height: 85vh;
+}
+
+#header{
+    vertical-align: middle; !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btn{
+
+    font-family:myFont;
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+}
+

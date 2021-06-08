@@ -2,75 +2,88 @@
 
 namespace App\Controllers;
 
+use App\Models\Country;
 use App\Models\Place;
+use App\Models\RegisteredUser;
 use App\Models\Review;
+use App\Models\FoundUseful;
 use CodeIgniter\Model;
 
+/**
+ * Author: Jovan Djordjevic 0159/2018
+ */
+/**
+ * ListOfReviews – class for displaying reviews for a certain place
+ * for different kinds of users
+ *
+ * @version 1.0
+ */
 class ListOfReviews extends BaseController
 {
-
-    private function displayPage($fileName, $data)
+    public function index()
     {
-        $data['cssFile'] = $fileName;
-        return view("pages/$fileName", $data);
-    }
+        $idPlc = $this->request->getVar('idPlc');
+        $placeName = $this->request->getVar('placeName');
+        $countryName = $this->request->getVar('countryName');
+        $countryCode = $this->request->getVar('countryCode');
 
-    public function index($idPlc)
-    {
+        // if idPlc is an empty string, the user was redirected from the search & trending page whilst using search
+        // hence, there must be a check whether the parsed place exists in the database
+
+        // in all other cases, idPlc will be set, so no need to retrieve it from the database
+
+        if ($idPlc == "") {
+
+            // there was a search for a place
+
+            $countryModel = new Country();
+            $idCnt = $countryModel->getCountryIdByCode($countryCode);
+
+            $placeModel = new Place();
+            $idPlc = $placeModel->getPlaceId($idCnt, $placeName);
+        }
+
         $reviewModel = new Review();
-        $reviews = $reviewModel->getReviewsForPlace($idPlc);
+        $data = ['placeAndCountry' => "$placeName, $countryName", 'countryCode' => $countryCode];
 
-        $placeModel = new Place();
-        $placeAndCountry = $placeModel->getPlaceAndCountryNames($idPlc);
+        $idUsr = $this->session->get('userId');
 
-        $data = ['reviews' => $reviews, 'placeAndCountry' => $placeAndCountry, 'jsFile' => 'list_of_reviews'];
+//        $userModel = new RegisteredUser();
+//        $tokenCount = $userModel->getTokenCount(4);
+//        echo view("p1", ['i' => $tokenCount]);
 
-        if ($this->session->get('id_usr'))
+        if ($idUsr != null) {           // checking if a registered user or a guest is on this page
+
+            // a registered user is on this page
+
+            if ($idPlc != null) {               // checking if the place does exist in the database
+                $data['reviews'] = $reviewModel->getReviewsForPlaceUser($idPlc, $idUsr);
+            }
             return $this->displayPage('list_of_reviews_user', $data);
+        }
+
+        // a guest is on this page
+
+        if ($idPlc != null) {
+            $data['reviews'] = $reviewModel->getReviewsForPlaceGuest($idPlc);
+        }
         return $this->displayPage('list_of_reviews_guest', $data);
     }
 
-    public function login()
+    public function updateTokens()                                      // a method called using AJAX
     {
-        return $this->displayPage('login', []);
-    }
+        $idUsr = $this->session->get('userId');
+        $idRev = $this->request->getVar('idRev');
+        $idOwr = $this->request->getVar('idOwr');
+        $vote = $this->request->getVar('vote');
 
-    public function homepage()
-    {
-        return $this->displayPage('homepage', []);
-    }
-
-    public function register()
-    {
-        return $this->displayPage('register', []);
-    }
-
-    public function passport()
-    {
-        return $this->displayPage('map', []);
-    }
-
-    public function reviewGuest($id)
-    {
-        return $this->displayPage('review_guest', ['id' => $id]);
-    }
-
-    public function reviewUser($id)
-    {
-        return $this->displayPage('review_user', ['id' => $id]);
-    }
-
-    public function refresh()
-    {
-        $type = $this->request->getVar('type');
-        $direction = $this->request->getVar('direction');
-        $reviews = json_decode($this->request->getVar('reviews'));
+        $foundUsefulModel = new FoundUseful();
+        $foundUsefulModel->giveVote($idUsr, $idRev, $vote);         // note that the user has given a vote for this review
 
         $reviewModel = new Review();
-        $reviews = $reviewModel->orderReviews($type, $direction, $reviews);
+        $reviewModel->updateReviewTokens($idRev, $vote);            // update tokens of that review
 
-        foreach ($reviews as $review) {
-            echo $review->id;
-        }
+        $userModel = new RegisteredUser();
+        $userModel->updateOwnerTokens($idOwr, $vote);               // update tokens of the owner of the review
     }
 }
