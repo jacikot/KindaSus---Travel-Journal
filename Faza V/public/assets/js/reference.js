@@ -7,10 +7,10 @@ function sendIt(id,url){
         }
     }).done(function(data) {
         if(data === "Already in to-go list!"){
-            $("#head").text("Sorry..")
+            $("#d").text("Sorry..")
             $("#telo").text(data);
         } else {
-            $("#head").text("Congratulation!")
+            $("#d").text("Congratulation!")
             $("#telo").text("Successfully added " + data + " to To-Go list!");
         }
         $("#myModal").modal();

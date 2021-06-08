@@ -76,7 +76,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header" id="head">
-                        <h5 class="modal-title" id="exampleModalLabel"> Congratulation!</h5>
+                        <h5 class="modal-title" id="d"> Congratulation!</h5>
                     </div>
                     <div class="modal-body" id="telo">
 

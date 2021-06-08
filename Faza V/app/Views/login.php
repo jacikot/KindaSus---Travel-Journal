@@ -25,7 +25,7 @@
         }
 
         function goToAdmin(){
-            window.location.href =  "<?=base_url('Admin/index')?>";
+            window.location.href =  "<?=base_url('Admin')?>";
         }
 
         function forgotPass(){
