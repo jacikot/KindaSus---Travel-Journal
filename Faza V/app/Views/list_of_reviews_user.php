@@ -31,7 +31,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mt-1">
         <div class="offset-1 col-1">
             <?php if (isset($reviews) && count($reviews) > 0) {
                 echo $this->include('templates/sort_by');
