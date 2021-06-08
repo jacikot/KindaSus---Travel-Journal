@@ -227,4 +227,5 @@ function makeCell(service, trendingPlace, width, i) {
     });
 
     cell.append(frame.append(image).append(caption));
+    return cell;
 }
