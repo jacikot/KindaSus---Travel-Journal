@@ -62,10 +62,10 @@
                     <div class="modal-header" id="head">
                         <h5 class="modal-title" id="exampleModalLabel"> Are you sure?</h5>
                     </div>
-                    <div class="modal-body" id="telo">
+                    <div class="modal-body" id="telo1">
                         If you leave now your recommendation will be lost..
                     </div>
-                    <div class="modal-footer" id="foot">
+                    <div class="modal-footer" id="foot2">
                         <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-dark" onclick="goToMap()">Go To Map</button>
                     </div>
