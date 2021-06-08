@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\Country;
 use App\Models\Place;
+use App\Models\RegisteredUser;
 use App\Models\Review;
 use App\Models\Visited;
 use CodeIgniter\Model;
@@ -82,6 +83,9 @@ class Journal extends BaseController
         $user=$this->session->get('userId');
         $rev=$this->request->getVar("id_rev");
         $model=new Review();
+        $userModel=new RegisteredUser();
+        $tokens=$model->getTokrens($rev);
+        $userModel->updateTokens($user,$tokens);
         $path="../public/assets/db_files/".$user."/review_img/".$rev.'/';
         helper('filesystem');
         delete_files($path,true);

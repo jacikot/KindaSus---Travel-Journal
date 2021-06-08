@@ -5,13 +5,13 @@ $(document).ready(function(){
         let add=0;
         if(inputs.length==3)add=1;
         for (let i=0;i<inputs.length;i++){
-            remove("#t"+(i+2));
+            remove("#t"+(i+1));
         }
         let correct=true;
         let questions=[];
         for (let i=0;i<inputs.length;i++){
             if(inputs[i].value==""){
-                setReturnValues("Message","Field is required!","#t"+(i+2),"right");
+                setReturnValues("Message","Field is required!","#t"+(i+1),"right");
                 correct=false;
             }
             else {

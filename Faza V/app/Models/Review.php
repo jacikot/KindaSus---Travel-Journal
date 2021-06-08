@@ -178,4 +178,8 @@ class Review extends Model
         return $this->where('id_rev', $id)->find();
     }
 
+    public function getTokrens($id){
+        return $this->find($id)->token_count;
+    }
+
 }

@@ -128,4 +128,9 @@ class RegisteredUser extends Model
         if($uid==null) return null;
         return $uid[0]->id_usr;
     }
+    
+
+    public function updateTokens($uid,$tokens){
+        $this->where("id_usr", $uid)->set('token_count', "token_count - $tokens", false)->update();
+    }
 }

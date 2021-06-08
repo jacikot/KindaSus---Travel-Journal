@@ -61,7 +61,7 @@ function insertReview(data,list,country){
     });
 }
 let places=[];
-function insertOption(place,select,button,list){
+function insertOption(place,country,select,button,list){
 
     for(let i=0;i<places.length;i++){
         if(places[i]==place)return;
@@ -70,7 +70,11 @@ function insertOption(place,select,button,list){
     let opt=document.createElement("a");
     opt.classList.add("dropdown-item");
     opt.value=place;
-    opt.innerText=place;
+    let str= place+", "+country;
+    if(str.length>25)
+        opt.innerHTML=place+"<br>"+country;
+    else
+        opt.innerHTML=str;
     opt.addEventListener("click",function(){
        button.innerText=opt.innerText;
        eventHandler(list,opt);
@@ -110,6 +114,7 @@ function insertData(data){
     let list= document.getElementById("JournalList");
     let select=document.getElementById("menu");
     let button=document.getElementById("dropdownMenuButton");
+
     if(data.length<=1){
         insertDefaultMsg(list,data[0]["country"]);
     }
@@ -119,7 +124,7 @@ function insertData(data){
     });
     for(let i=1;i<data.length;i++){
         insertReview(data[i],list,data[0]["country"]);
-        insertOption(data[i]["place"],select,button,list);
+        insertOption(data[i]["place"],data[i]["country"],select,button,list);
     }
     $("body").fadeTo("slow",1);
 

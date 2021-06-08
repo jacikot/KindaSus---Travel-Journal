@@ -28,28 +28,12 @@
                     }
                 );
             }
-            function getUser(){
-                var baseURL2="<?= base_url('Password/getUser')?>";
-                $.ajax(
-                    {
-                        url:baseURL2,
-                        type:"GET",
-                        processData: false,
-                        contentType:false
-                    }
-                ).done(function (data){
-                    if(data==""){
-                        guestMode();
-                    }
-                });
-            }
             $(document).ready(function(){
                 $("#back").on("click",function (){
-                    window.location.href=
                     <?php if(!isset($_SESSION['forgot'])) { ?>  window.location.href=
                         "<?php echo base_url('Map')?>";
                     <?php } else { ?> window.location.href=
-                        "<?php echo base_url('GuestLogin')?>";
+                        "<?php echo base_url('GuestLogin/showLogin')?>";
                     <?php }?>
                 });
             });
@@ -58,16 +42,14 @@
 
     </script>
 </head>
-<body onload="getUser();">
-<!--<img src="--><?php //echo base_url("assets/images/logo2.png")?><!--" width="13%" height="17%"/>-->
-<!--<a href="--><?php //echo base_url('Map')?><!--" id="back"> <button class="back-to-home" type="button" id="backbutton">Passport</button></a>-->
+<body>
     <div class="container-fluid" style="display: none">
         <div class="row">
             <div class="col-lg-12 col-md-12 mt-2" id="header">
                 <img src="<?php echo base_url('assets/images/pic.png') ?>" id="logo"/>
                 <button class="btn btn-outline-light moj" id="back">
                     <?php if(!isset($_SESSION['forgot'])) { ?> Go To Map
-                    <?php } else { ?> Back To Home
+                    <?php } else { ?> Back To Login
                     <?php }?>
                 </button>
             </div>

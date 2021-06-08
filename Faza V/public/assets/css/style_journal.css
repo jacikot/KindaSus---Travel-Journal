@@ -82,7 +82,9 @@ html{
     margin-top:2%;
 
 }
-
+.dropdown{
+    width:100% !important;
+}
 .dropdown-toggle{
     width:100% !important;
     margin-top: 40px;
@@ -97,6 +99,7 @@ html{
     color: rgb(13, 45, 76) !important;
     cursor: pointer;
     font-width: bold;
+    text-align: center;
 }
 td{
     padding:0px !important;

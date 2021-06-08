@@ -1,0 +1,213 @@
+/* author: Jovan Djordjevic */
+@font-face{
+    font-family: fancyFont;
+    src: url(../fontstyle/travel_journal_3.ttf);
+}
+
+body{
+    background: url(../images/12.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: fancyFont !important;
+}
+
+#logo{
+    width: 10vw;
+    height: 10vh;
+    object-fit: contain;
+}
+
+#header{
+    vertical-align: middle !important;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+
+#header div {
+    display: flex;
+    align-items: center;
+}
+
+#header #go-to-map {
+    margin: auto 0;
+}
+
+#search {
+    margin-top: -540px;
+    width: 90%;
+    margin-left: -60px;
+}
+
+#search-title{
+    font-size: 31px;
+    font-style: italic;
+    margin-bottom: 15px;
+    color: white;
+}
+
+#search-box {
+    padding: 10px 20px;
+    border-radius: 12px;
+    background: #4754a2;
+}
+
+
+#search-txt {
+    width: 100%;
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 2px 2px 2px 12px;
+    outline: none;
+    line-height: 40px;
+    border: 1px solid #9ba3ca;
+    font-family: fancyFont !important;
+}
+
+#trending {
+    display: table;
+    padding: 15px;
+    font-style: italic;
+    text-align: center;
+    z-index: 55;
+    color: white;
+    margin-left: 80px;
+    margin-top: -20px;
+}
+
+
+#tr-gallery {
+    display: grid;
+    grid-template-columns: repeat(80, 7px);
+    grid-template-rows: repeat(40, 7px);
+    grid-gap: 7px;
+}
+
+.tr-gallery-frame {
+    margin: 0;
+    padding: 5px 5px 50px;
+    font-size: medium;
+    border-radius: 5px;
+    background-color: #4754a2;
+    color: white;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tr-gallery-frame figcaption {
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;;
+    right: 5px;;
+}
+
+.tr-gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.25s ease-in-out;
+    line-height: 240px;
+    display: inline-block;
+}
+
+.tr-gallery-img:hover {
+    cursor: pointer;
+    opacity: .7;
+}
+
+#tr-gallery-item-0{
+    grid-column-start: 1;
+    grid-column-end: 23;
+    grid-row-start: 1;
+    grid-row-end: 22;
+}
+
+#tr-gallery-item-1{
+    grid-column-start: 1;
+    grid-column-end: 13;
+    grid-row-start: 22;
+    grid-row-end: 41;
+}
+
+#tr-gallery-item-2{
+    grid-column-start: 23;
+    grid-column-end: 38;
+    grid-row-start: 1;
+    grid-row-end: 22;
+}
+
+#tr-gallery-item-3{
+    grid-column-start: 13;
+    grid-column-end: 38;
+    grid-row-start: 22;
+    grid-row-end: 41;
+}
+
+#tr-gallery-item-4{
+    grid-column-start: 38;
+    grid-column-end: 58 ;
+    grid-row-start: 22;
+    grid-row-end: 41;
+}
+
+#tr-gallery-item-5{
+    grid-column-start: 58;
+    grid-column-end: 81;
+    grid-row-start: 22;
+    grid-row-end: 41;
+}
+
+#tr-title{
+    text-align: left;
+    font-size: 36px;
+    display: table-caption;
+    caption-side: top;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333e7d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4754a2;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #9ba3ca;
+}
+
+.pac-container:after {
+    background-image: none !important;
+    height: 0;
+}
+
+.pac-container {
+    border-top: none;
+    margin-top: 5px;
+    font-family: fancyFont !important;
+}
+
+.pac-item {
+    padding: 5px;
+    font-size: 18px;
+}
+
+.pac-item-query {
+    font-size: 22px;
+}

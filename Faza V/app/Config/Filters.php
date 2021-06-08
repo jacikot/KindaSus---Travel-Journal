@@ -19,6 +19,8 @@ class Filters extends BaseConfig
 		'csrf'     => CSRF::class,
 		'toolbar'  => DebugToolbar::class,
 		'honeypot' => Honeypot::class,
+        'map' => \App\Filters\MapFilter::class,
+        'pass'=>\App\Filters\PasswordFilter::class,
 	];
 
 	/**
@@ -58,5 +60,8 @@ class Filters extends BaseConfig
 	 *
 	 * @var array
 	 */
-	public $filters = [];
+	public $filters = [
+	    "map"=>['before' => ['Map/*', 'Map','Journal/*','Journal']],
+        "pass"=>['before'=>['Password','Password/setPassword']],
+    ];
 }

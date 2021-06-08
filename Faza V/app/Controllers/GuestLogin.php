@@ -48,6 +48,7 @@ class GuestLogin extends BaseController
      * @return view
      */
     public function showLogin(){
+        $this->session->destroy();
         return view('login.php');
     }
 

@@ -91,6 +91,7 @@ class Password extends BaseController
         $username=$this->request->getVar('username');
         if(!isset($username)||$username==""){
             $user=$this->session->get('userId');
+
         }
         else{
             $user=$model->getUserId($username);
@@ -98,7 +99,8 @@ class Password extends BaseController
                 echo "User with that username does not exist!";
                 return;
             }
-            $this->session->set("usrId",$user);
+
+            $this->session->set("userId",$user);
             $this->session->set("forgot",1);
         }
 
