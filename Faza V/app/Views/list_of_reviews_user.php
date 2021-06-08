@@ -58,9 +58,8 @@
                                 else foreach ($reviews as $review) { ?>
                                     <tr>
                                         <td>
-
                                             <a class="review" href="ReviewOverview?idRev=<?= $review->idRev ?>">
-                                                        <div class="col-1"><img class="avatar" src="<?= base_url($review->avatarPath) ?>"></div>
+                                                <div class="col-1"><img class="avatar" src="<?= base_url($review->avatarPath) ?>"></div>
                                                 <div class="col-3"><span class="username"><?= $review->username ?></span></div>
                                                 <div class="col-4"><span class="title"><?= $review->title ?></span></div>
                                                 <div class="col-2">
@@ -84,9 +83,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-2">
-                                          <span class="date"><?php
-                                              $dateParts = explode('-', $review->date);
-                                              echo "$dateParts[2].$dateParts[1].$dateParts[0]."; ?></span>
+                                                  <span class="date"><?php
+                                                      $dateParts = explode('-', $review->date);
+                                                      echo "$dateParts[2].$dateParts[1].$dateParts[0]."; ?></span>
                                                 </div>
                                             </a>
                                         </td>

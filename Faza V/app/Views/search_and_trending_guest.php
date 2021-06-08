@@ -22,7 +22,7 @@
             <img src="<?php echo base_url('assets/images/pic.png') ?>" id="logo"/>
             <div>
                 <button id="back" class="btn btn-outline-light">
-                    Home
+                    Back to Home
                 </button>
                 <button id="login" class="btn btn-outline-light" style="margin: 0 10px">
                     Continue With Your Travels

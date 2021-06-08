@@ -119,7 +119,6 @@ $(document).ready(function () {
                     $("#outer-table-2").hide();
                     $("#sort-by").hide();
                 }
-				
                 else if ($("#review-table tbody tr").length === 0) {
                     let banner = $("<div></div>").attr("id", "fail-banner-rev").
                     html("OOPS! Looks like we haven't had reviews so far.. Let's just wait for these guys" +
@@ -131,7 +130,7 @@ $(document).ready(function () {
                 $(".modal-title").text("Success!");
                 message.text("User " + username + " successfully removed!");
 
-                // $("#admin-modal").modal({                  // ????
+                // $("#admin-modal").modal({
                 //     backdrop: 'static',
                 //     keyboard: false
                 // });

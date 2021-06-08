@@ -49,10 +49,7 @@
                                 foreach ($reviews as $review) { ?>
                                     <tr>
                                         <td>
-                                            <a class="review" href="<?php
-                                            $_SESSION['id_rev'] = $review->idRev;
-                                            echo site_url("ReviewOverview");
-                                            ?>">
+                                            <a class="review" href="ReviewOverview?idRev=<?= $review->idRev ?>">
                                                 <div class="col-1"><img class="avatar-rev" src="<?= base_url($review->avatarPath) ?>"></div>
                                                 <div class="col-2"><span class="username-rev"><?= $review->username ?></span></div>
                                                 <div class="col-3"><span class="title"><?= $review->title ?></span></div>
