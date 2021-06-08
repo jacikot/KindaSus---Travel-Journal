@@ -18,7 +18,7 @@ class Review extends Model
         // retrieving information about all the reviews for a certain place - called for guest
 
         return $this->select('review.id_rev AS idRev,
-                                registered_user.avatar_path AS avatarPath, 
+                                registered_user.avatar_path AS avatarPath,
                                 registered_user.username AS username, 
                                 review.title AS title, 
                                 review.token_count AS tokens, 

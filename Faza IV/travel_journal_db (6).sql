@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Jun 07, 2021 at 05:41 PM
--- Server version: 5.7.31
+-- Generation Time: Jun 08, 2021 at 02:04 AM
+-- Server version: 8.0.21
 -- PHP Version: 7.3.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -31,18 +31,19 @@ USE `travel_journal_db`;
 
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE IF NOT EXISTS `admin` (
-  `id_adm` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(20) CHARACTER SET utf8 NOT NULL,
-  `password` varchar(20) CHARACTER SET utf8 NOT NULL,
+  `id_adm` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `password` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id_adm`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id_adm`, `username`, `password`) VALUES
-(1, 'admin123', 'admin123');
+(1, 'admin123', 'admin123'),
+(2, 'adminka123', 'adminka123');
 
 -- --------------------------------------------------------
 
@@ -52,14 +53,14 @@ INSERT INTO `admin` (`id_adm`, `username`, `password`) VALUES
 
 DROP TABLE IF EXISTS `answer`;
 CREATE TABLE IF NOT EXISTS `answer` (
-  `id_ans` int(11) NOT NULL AUTO_INCREMENT,
-  `text` varchar(50) CHARACTER SET utf8 NOT NULL,
-  `heritage` tinyint(4) NOT NULL,
-  `relax` tinyint(4) NOT NULL,
-  `sightseeing` tinyint(4) NOT NULL,
-  `weather` tinyint(4) NOT NULL,
-  `populated` tinyint(4) NOT NULL,
-  `id_qst` int(11) NOT NULL,
+  `id_ans` int NOT NULL AUTO_INCREMENT,
+  `text` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `heritage` tinyint NOT NULL,
+  `relax` tinyint NOT NULL,
+  `sightseeing` tinyint NOT NULL,
+  `weather` tinyint NOT NULL,
+  `populated` tinyint NOT NULL,
+  `id_qst` int NOT NULL,
   PRIMARY KEY (`id_ans`),
   KEY `FK_id_qst_answer_idx` (`id_qst`)
 ) ENGINE=InnoDB AUTO_INCREMENT=91 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -152,45 +153,21 @@ INSERT INTO `answer` (`id_ans`, `text`, `heritage`, `relax`, `sightseeing`, `wea
 
 DROP TABLE IF EXISTS `awarded`;
 CREATE TABLE IF NOT EXISTS `awarded` (
-  `id_awd` int(11) NOT NULL AUTO_INCREMENT,
-  `id_usr` int(11) NOT NULL,
-  `id_bdg` int(11) NOT NULL,
+  `id_awd` int NOT NULL AUTO_INCREMENT,
+  `id_usr` int NOT NULL,
+  `id_bdg` int NOT NULL,
   PRIMARY KEY (`id_awd`),
   KEY `FK_id_usr_awarded_idx` (`id_usr`),
   KEY `FK_id_bdg_awarded_idx` (`id_bdg`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `awarded`
 --
 
 INSERT INTO `awarded` (`id_awd`, `id_usr`, `id_bdg`) VALUES
-(1, 1, 1),
-(2, 1, 12),
-(3, 1, 20),
-(4, 1, 21),
-(5, 1, 22),
-(6, 2, 1),
-(7, 2, 3),
-(8, 2, 4),
-(9, 2, 8),
-(10, 2, 9),
-(11, 2, 14),
-(12, 2, 16),
-(13, 2, 17),
-(14, 3, 2),
-(15, 3, 3),
-(16, 3, 10),
-(17, 3, 11),
-(18, 3, 13),
-(19, 3, 20),
-(20, 4, 1),
-(21, 4, 5),
-(22, 4, 16),
-(23, 1, 8),
-(24, 1, 13),
-(25, 7, 1),
-(26, 7, 8);
+(23, 1, 11),
+(24, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -200,10 +177,9 @@ INSERT INTO `awarded` (`id_awd`, `id_usr`, `id_bdg`) VALUES
 
 DROP TABLE IF EXISTS `badge`;
 CREATE TABLE IF NOT EXISTS `badge` (
-  `id_bdg` int(11) NOT NULL AUTO_INCREMENT,
-  `badge_path` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `title` varchar(30) CHARACTER SET utf8 NOT NULL,
-  `description` varchar(120) CHARACTER SET utf8 NOT NULL,
+  `id_bdg` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `description` varchar(120) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id_bdg`)
 ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -211,31 +187,31 @@ CREATE TABLE IF NOT EXISTS `badge` (
 -- Dumping data for table `badge`
 --
 
-INSERT INTO `badge` (`id_bdg`, `badge_path`, `title`, `description`) VALUES
-(1, 'path', 'Europe', 'Visit Europe'),
-(2, 'path', 'Asia', 'Visit Asia'),
-(3, 'path', 'Beginner', 'Get 10 tokens on your reviews'),
-(4, 'path', 'Medium', 'Get 100 tokens on your reviews'),
-(5, 'path', 'Superstar', 'Get 1000 tokens on your reviews'),
-(6, 'path', 'Africa', 'Visit Africa'),
-(7, 'path', 'North America', 'Visit North America'),
-(8, 'path', 'A newborn travelee', 'Complete 1 travel'),
-(9, 'path', 'Getting into the business', 'Complete 5 travels'),
-(10, 'path', 'Travelling maniac', 'Complete 20 travels'),
-(11, 'path', 'South America', 'Visit South America'),
-(12, 'path', 'Australia', 'Visit Australia'),
-(13, 'path', 'Freshman', 'Be a traveller for 30 days'),
-(14, 'title', 'Buddy', 'Be a traveller for 6 months'),
-(15, 'path', 'Veteran', 'Be a traveller for 1 year'),
-(16, 'path', 'how\'s the earth down there', 'visit all of the southern hemisphere continents in half a year'),
-(17, 'path', 'the ice king', 'visit antartica and return alive if possible'),
-(18, 'path', 'happy chinese new year', 'spend the chinese new year on a trip to china'),
-(19, 'path', 'the A student', 'visit 4 countries and 16 places whose name starts with A'),
-(20, 'path', 'the deserter', 'visit 3 deserts (we prefer desserts though)'),
-(21, 'path', 'rocky mountain lad', 'visit the great mountains'),
-(22, 'path', 'mr camouflage', 'change your avatar 3 times'),
-(23, 'path', 'the great game', 'visit 10 countries in a year'),
-(24, 'path', 'the ultimate master', 'visit all countries of the world');
+INSERT INTO `badge` (`id_bdg`, `title`, `description`) VALUES
+(1, 'Europe', 'Visit Europe'),
+(2, 'Asia', 'Visit Asia'),
+(3, 'Beginner', 'Get 10 tokens on your reviews'),
+(4, 'Medium', 'Get 100 tokens on your reviews'),
+(5, 'Superstar', 'Get 1000 tokens on your reviews'),
+(6, 'Africa', 'Visit Africa'),
+(7, 'North America', 'Visit North America'),
+(8, 'A newborn travelee', 'Complete 1 travel'),
+(9, 'Getting into the business', 'Complete 5 travels'),
+(10, 'Travelling maniac', 'Complete 20 travels'),
+(11, 'South America', 'Visit South America'),
+(12, 'Australia', 'Visit Australia'),
+(13, 'Freshman', 'Be a traveller for 30 days'),
+(14, 'Buddy', 'Be a traveller for 6 months'),
+(15, 'Veteran', 'Be a traveller for 1 year'),
+(16, 'how\'s the earth down there', 'visit all of the southern hemisphere continents in half a year'),
+(17, 'the ice king', 'visit antartica and return alive if possible'),
+(18, 'happy chinese new year', 'spend the chinese new year on a trip to china'),
+(19, 'the A student', 'visit 4 countries and 16 places whose name starts with A'),
+(20, 'the deserter', 'visit 3 deserts (we prefer desserts though)'),
+(21, 'rocky mountain lad', 'visit the great mountains'),
+(22, 'mr camouflage', 'change your avatar 3 times'),
+(23, 'the great game', 'visit 10 countries in a year'),
+(24, 'the ultimate master', 'visit all countries of the world');
 
 -- --------------------------------------------------------
 
@@ -245,8 +221,8 @@ INSERT INTO `badge` (`id_bdg`, `badge_path`, `title`, `description`) VALUES
 
 DROP TABLE IF EXISTS `continent`;
 CREATE TABLE IF NOT EXISTS `continent` (
-  `id_con` tinyint(4) NOT NULL AUTO_INCREMENT,
-  `name` varchar(13) CHARACTER SET utf8 NOT NULL,
+  `id_con` tinyint NOT NULL AUTO_INCREMENT,
+  `name` varchar(13) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id_con`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -271,10 +247,10 @@ INSERT INTO `continent` (`id_con`, `name`) VALUES
 
 DROP TABLE IF EXISTS `country`;
 CREATE TABLE IF NOT EXISTS `country` (
-  `id_cnt` int(11) NOT NULL AUTO_INCREMENT,
+  `id_cnt` int NOT NULL AUTO_INCREMENT,
   `code` char(2) NOT NULL COMMENT 'Two-letter country code (ISO 3166-1 alpha-2)',
   `name` varchar(64) NOT NULL COMMENT 'English country name',
-  `id_con` tinyint(4) NOT NULL,
+  `id_con` tinyint NOT NULL,
   PRIMARY KEY (`id_cnt`),
   UNIQUE KEY `idx_code` (`code`) USING BTREE,
   KEY `idx_continent_code` (`id_con`) USING BTREE
@@ -540,25 +516,13 @@ INSERT INTO `country` (`id_cnt`, `code`, `name`, `id_con`) VALUES
 
 DROP TABLE IF EXISTS `found_useful`;
 CREATE TABLE IF NOT EXISTS `found_useful` (
-  `id_fnd` int(11) NOT NULL AUTO_INCREMENT,
-  `id_usr` int(11) NOT NULL,
-  `id_rev` int(11) NOT NULL,
+  `id_fnd` int NOT NULL AUTO_INCREMENT,
+  `id_usr` int NOT NULL,
+  `id_rev` int NOT NULL,
   PRIMARY KEY (`id_fnd`),
   KEY `FK_id_usr_found_useful_idx` (`id_usr`),
   KEY `FK_id_rev_found_useful_idx` (`id_rev`)
-) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `found_useful`
---
-
-INSERT INTO `found_useful` (`id_fnd`, `id_usr`, `id_rev`) VALUES
-(2, 1, 2),
-(3, 1, 12),
-(4, 1, 13),
-(49, 7, 1),
-(50, 7, 2),
-(52, 7, 15);
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -568,32 +532,42 @@ INSERT INTO `found_useful` (`id_fnd`, `id_usr`, `id_rev`) VALUES
 
 DROP TABLE IF EXISTS `image`;
 CREATE TABLE IF NOT EXISTS `image` (
-  `id_img` int(11) NOT NULL AUTO_INCREMENT,
-  `image_path` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `id_rev` int(11) NOT NULL,
+  `id_img` int NOT NULL AUTO_INCREMENT,
+  `image_path` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `id_rev` int NOT NULL,
   PRIMARY KEY (`id_img`),
   KEY `FK_id_rev_image_idx` (`id_rev`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `image`
 --
 
 INSERT INTO `image` (`id_img`, `image_path`, `id_rev`) VALUES
-(1, 'path', 1),
-(2, 'path', 5),
-(3, 'path', 6),
-(4, 'path', 1),
-(5, 'path', 2),
-(6, 'path', 3),
-(7, 'path', 4),
-(8, 'path', 5),
-(9, 'path', 8),
-(10, 'path', 6),
-(11, 'path', 9),
-(12, 'path', 2),
-(13, 'path', 4),
-(14, 'path', 7);
+(15, '/assets/db_files/1/review_img/15/review.15_0.jpg', 15),
+(16, '/assets/db_files/1/review_img/15/review.15_1.jpg', 15),
+(17, '/assets/db_files/1/review_img/15/review.15_2.jpg', 15),
+(18, '/assets/db_files/1/review_img/15/review.15_3.jpg', 15),
+(19, '/assets/db_files/1/review_img/15/review.15_4.jpg', 15),
+(21, '/assets/db_files/1/review_img/19/review.19_0.jpg', 19),
+(22, '/assets/db_files/1/review_img/20/review.20_0.jpg', 20),
+(23, '/assets/db_files/1/review_img/20/review.20_1.jpg', 20),
+(24, '/assets/db_files/1/review_img/20/review.20_2.jpg', 20),
+(25, '/assets/db_files/1/review_img/21/review.21_0.jpg', 21),
+(26, '/assets/db_files/1/review_img/22/review.22_0.jpg', 22),
+(27, '/assets/db_files/1/review_img/22/review.22_1.jpg', 22),
+(28, '/assets/db_files/1/review_img/23/review.23_0.jpg', 23),
+(29, '/assets/db_files/1/review_img/23/review.23_1.jpg', 23),
+(30, '/assets/db_files/1/review_img/24/review.24_0.jpg', 24),
+(31, '/assets/db_files/1/review_img/24/review.24_1.jpg', 24),
+(32, '/assets/db_files/1/review_img/24/review.24_2.jpg', 24),
+(33, '/assets/db_files/1/review_img/24/review.24_3.jpg', 24),
+(34, '/assets/db_files/1/review_img/25/review.25_0.jpg', 25),
+(35, '/assets/db_files/1/review_img/26/review.26_0.jpg', 26),
+(36, '/assets/db_files/1/review_img/26/review.26_1.jpg', 26),
+(37, '/assets/db_files/2/review_img/29/review.29_0.jpg', 29),
+(38, '/assets/db_files/2/review_img/30/review.30_0.jpg', 30),
+(39, '/assets/db_files/2/review_img/31/review.31_0.jpg', 31);
 
 -- --------------------------------------------------------
 
@@ -603,40 +577,41 @@ INSERT INTO `image` (`id_img`, `image_path`, `id_rev`) VALUES
 
 DROP TABLE IF EXISTS `place`;
 CREATE TABLE IF NOT EXISTS `place` (
-  `id_plc` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) CHARACTER SET utf8 NOT NULL,
-  `categorized` tinyint(4) DEFAULT '0',
-  `heritage` tinyint(4) DEFAULT '0',
-  `relax` tinyint(4) DEFAULT '0',
-  `sightseeing` tinyint(4) DEFAULT '0',
-  `weather` tinyint(4) DEFAULT '0',
-  `populated` tinyint(4) DEFAULT '0',
-  `taken_survey` int(11) DEFAULT '0',
-  `id_cnt` int(11) NOT NULL,
+  `id_plc` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `categorized` tinyint DEFAULT '0',
+  `heritage` tinyint DEFAULT '0',
+  `relax` tinyint DEFAULT '0',
+  `sightseeing` tinyint DEFAULT '0',
+  `weather` tinyint DEFAULT '0',
+  `populated` tinyint DEFAULT '0',
+  `taken_survey` int DEFAULT '0',
+  `id_cnt` int NOT NULL,
   PRIMARY KEY (`id_plc`),
   KEY `FK_id_cnt_place_idx` (`id_cnt`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `place`
 --
 
 INSERT INTO `place` (`id_plc`, `name`, `categorized`, `heritage`, `relax`, `sightseeing`, `weather`, `populated`, `taken_survey`, `id_cnt`) VALUES
-(1, 'Paris', 1, 20, 12, 28, 15, 26, 0, 74),
+(1, 'Paris', 0, 0, 0, 0, 0, 0, 0, 74),
 (2, 'Shanghai', 0, 0, 0, 0, 0, 0, 0, 48),
-(3, 'Rome', 1, 29, 20, 28, 28, 18, 0, 109),
+(3, 'Rome', 0, 30, 12, 15, 27, 26, 3, 109),
 (4, 'Saint Petersburg', 0, 0, 0, 0, 0, 0, 0, 190),
-(5, 'Moscow', 1, 28, 20, 27, 8, 18, 0, 190),
+(5, 'Moscow', 0, 0, 0, 0, 0, 0, 0, 190),
 (6, 'Canberra', 0, 0, 0, 0, 0, 0, 0, 14),
 (7, 'Bogota', 0, 0, 0, 0, 0, 0, 0, 49),
 (8, 'Munich', 0, 0, 0, 0, 0, 0, 0, 56),
-(9, 'Los Angeles', 1, 10, 15, 23, 27, 24, 0, 230),
-(10, 'Bajina Basta', 1, 23, 27, 22, 20, 5, 0, 189),
-(11, 'Belgrade', 0, 0, 0, 0, 0, 0, 0, 189),
-(12, 'Zanzibar', 0, 0, 0, 0, 0, 0, 0, 226),
-(13, 'Milan', 0, 0, 0, 0, 0, 0, 0, 109),
-(14, 'Berlin', 0, 0, 0, 0, 0, 0, 0, 56),
-(15, 'Sicily', 0, 0, 0, 0, 0, 0, 0, 109);
+(9, 'Los Angeles', 0, 0, 0, 0, 0, 0, 0, 230),
+(10, 'Bajina Basta', 0, 0, 0, 0, 0, 0, 0, 189),
+(12, 'Florence', 0, 30, 15, 15, 30, 27, 1, 109),
+(13, 'Venice', 0, 29, 15, 20, 30, 24, 2, 109),
+(14, 'Milan', 0, 27, 3, 15, 21, 27, 2, 109),
+(15, 'Chaco', 0, 6, 18, 30, 27, 24, 1, 11),
+(16, 'Tivoli', 0, 0, 0, 0, 0, 0, 0, 109),
+(17, 'Crema', 0, 0, 0, 0, 0, 0, 0, 109);
 
 -- --------------------------------------------------------
 
@@ -646,11 +621,11 @@ INSERT INTO `place` (`id_plc`, `name`, `categorized`, `heritage`, `relax`, `sigh
 
 DROP TABLE IF EXISTS `question`;
 CREATE TABLE IF NOT EXISTS `question` (
-  `id_qst` int(11) NOT NULL AUTO_INCREMENT,
-  `text` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `type_quiz` tinyint(4) NOT NULL,
-  `type_review` tinyint(4) NOT NULL,
-  `form` tinyint(4) NOT NULL,
+  `id_qst` int NOT NULL AUTO_INCREMENT,
+  `text` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `type_quiz` tinyint NOT NULL,
+  `type_review` tinyint NOT NULL,
+  `form` tinyint NOT NULL,
   PRIMARY KEY (`id_qst`)
 ) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -703,35 +678,31 @@ INSERT INTO `question` (`id_qst`, `text`, `type_quiz`, `type_review`, `form`) VA
 
 DROP TABLE IF EXISTS `registered_user`;
 CREATE TABLE IF NOT EXISTS `registered_user` (
-  `id_usr` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `name` varchar(40) CHARACTER SET utf8 NOT NULL,
-  `surname` varchar(40) CHARACTER SET utf8 NOT NULL,
-  `e-mail` varchar(50) CHARACTER SET utf8 NOT NULL,
-  `security_answer_1` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `security_answer_2` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `security_answer_3` varchar(30) CHARACTER SET utf8 DEFAULT NULL,
-  `token_count` int(11) DEFAULT '0',
-  `avatar_path` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `id_usr` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `surname` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `e-mail` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `security_answer_1` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `security_answer_2` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `security_answer_3` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `token_count` int DEFAULT '0',
+  `avatar_path` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '/assets/images/default-avatar-2.jpg',
   `acc_creation_date` date NOT NULL,
-  `id_plc` int(11) NOT NULL,
+  `id_plc` int NOT NULL,
   PRIMARY KEY (`id_usr`),
   KEY `FK_id_plc_registered_user_idx` (`id_plc`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `registered_user`
 --
 
 INSERT INTO `registered_user` (`id_usr`, `username`, `password`, `name`, `surname`, `e-mail`, `security_answer_1`, `security_answer_2`, `security_answer_3`, `token_count`, `avatar_path`, `acc_creation_date`, `id_plc`) VALUES
-(1, 'sova', 'Kmdd5262', 'sova', 'sovlic', 'sova@sova.gm.com', NULL, NULL, NULL, 0, NULL, '2021-02-03', 4),
-(2, 'micko', 'micko123', 'milan', 'stamenic', 'milans288@gmail.com', 'crna', 'strela', 'radi', 0, 'path/micko1', '2021-05-26', 2),
-(3, 'jocko', 'jocko123', 'jovan', 'djordjevic', 'ab.jovan99@gmail.com', NULL, NULL, NULL, -1, 'cd/sdads/asd/ad', '2021-05-26', 3),
-(4, 'adriance', 'adriana79', 'Adriana', 'Vidic', 'vidic79adriana@gmail.com', 'da', 'ne', 'mozda', 1, 'assets\\images\\avatar.png', '2021-05-26', 1),
-(5, 'panaasonic', 'WSADwsad123', 'Jana', 'Jolic', 'joxa789@gmail.com', NULL, NULL, NULL, 0, '/assets/images/default-avatar-2.jpg', '2021-06-06', 11),
-(6, 'mika123', 'mika123', 'Pana', 'Panic', 'mika123@gmail.com', NULL, NULL, NULL, 0, '/assets/images/default-avatar-2.jpg', '2021-06-06', 11),
-(7, 'jacikot', 'sifraSIFRICA10', 'Jana', 'Toljaga', 'jana.toljaga725@yahoo.com', 'Srbija', 'cebe', 'Marina', 3, '/assets/db_files/7/avatar_img/avatar.png', '2021-06-06', 11);
+(1, 'adriance', 'Adriana79', 'Adriana', 'Vidic', 'vidic79adriana@gmail.com', 'Italy', 'Headphones', 'Elena', 0, '/assets/images/default-avatar-2.jpg', '2021-06-01', 3),
+(2, 'jockobocko', 'jole123', 'Jovan', 'Djordjevic', 'jole@gmail.com', 'da', 'ne', 'mozda', 0, '/assets/images/default-avatar-2.jpg', '2021-06-01', 10),
+(7, 'jacikot', 'jacikot123', 'Jana', 'Toljaga', 'jana.toljaga725@yahoo.com', 'Srbija', 'cebe', 'Marina', 0, '/assets/images/default-avatar-2.jpg', '2021-06-07', 14);
 
 -- --------------------------------------------------------
 
@@ -741,37 +712,36 @@ INSERT INTO `registered_user` (`id_usr`, `username`, `password`, `name`, `surnam
 
 DROP TABLE IF EXISTS `review`;
 CREATE TABLE IF NOT EXISTS `review` (
-  `id_rev` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(70) CHARACTER SET utf8 NOT NULL,
-  `text` text CHARACTER SET utf8 NOT NULL,
-  `privacy` tinyint(4) NOT NULL,
-  `token_count` int(11) DEFAULT '0',
+  `id_rev` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(70) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `text` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `privacy` tinyint NOT NULL,
+  `token_count` int DEFAULT '0',
   `date_posted` date NOT NULL,
-  `id_vis` int(11) NOT NULL,
+  `id_vis` int NOT NULL,
   PRIMARY KEY (`id_rev`),
   KEY `FK_id_vis_review_idx` (`id_vis`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `review`
 --
 
 INSERT INTO `review` (`id_rev`, `title`, `text`, `privacy`, `token_count`, `date_posted`, `id_vis`) VALUES
-(1, 'My beautiful trip to Moscow', 'Such an adventure', 0, 121, '2019-01-01', 2),
-(2, 'LA woman', 'USA!!', 0, 81, '2021-05-26', 7),
-(3, 'I love Paris', 'City of love <3', 0, 13, '2018-03-06', 1),
-(4, 'Paris is goals', 'I love it <3', 1, 244, '2020-05-26', 4),
-(5, 'City of light', 'France fest', 0, 406, '2021-05-26', 6),
-(6, 'ATP Rome!', 'GO NOLE.', 1, 29, '2020-01-11', 8),
-(7, 'Udao sam tastu u Bajinu Bastu', 'Nema raja bez rodnoga kraja', 0, 98, '2016-04-16', 9),
-(8, 'Italy at its finest', 'Lovely stuff', 0, 113, '2021-05-26', 10),
-(9, 'Bajina Basta u srcu', 'Prelepi mali grad na obalama tirkizne Drine koja predstavlja kicmu koja povezuje srpski narod sa obe njene strane. Srbija se saginjati nece!', 1, 84, '2020-08-17', 11),
-(10, 'I might just become Russian', 'Awesome stuff', 1, 5, '2020-12-11', 3),
-(11, 'Shanghai incredible <3', 'It was amazing to visit it.', 0, 18, '2008-02-04', 5),
-(12, 'Bogota was incredible', 'Amazing experience!', 0, 177, '2021-05-17', 12),
-(13, 'Munich was awesome', 'Amazing experience!', 0, 136, '2020-09-11', 13),
-(14, 'Sankt Petersburg - THE BEST', 'Amazing experience!', 0, 0, '2020-07-22', 14),
-(15, 'Peterhof', 'fewjonfjewnqf vjk jk v jk j jk kf k kjf q jf jj fj ejwj j jfs', 0, 1, '2021-06-07', 17);
+(15, 'like in a Fellini movie', 'Rome is a little bit different. There is something in Rome, incredible, like in a Fellini movie. Everybody’s screaming and laughing very loud', 0, 0, '2021-06-04', 19),
+(19, 'a sight to stir the coldest nature', 'This is the fairest picture on our planet, the most enchanting to look upon, the most satisfying to the eye and the spirit. To see the sun sink down, drowned on his pink and purple and golden floods, and overwhelm Florence with tides of color that make all the sharp lines dim and faint and turn the solid city to a city of dreams, is a sight to stir the coldest nature, and make a sympathetic one drunk with ecstasy.', 0, 0, '2021-06-18', 23),
+(20, 'one of the most elegant and grandest of cities', 'To build a city where it is impossible to build a city is madness in itself, but to build there one of the most elegant and grandest of cities is the madness of genius.', 0, 0, '2021-06-09', 24),
+(21, 'cathedral of Milan', 'I went daily to the cathedral of Milan, that singular mountain which was torn out of the rocks of Carrara. I saw the church for the first time in the clear moonlight; dazzlingly white stood the upper part of it in the infinitely blue ether. Round about, wherever I looked, from every corner, upon every little tower with which the building was, as it were, overlaid, projected marble figures. Its interior dazzled me more than St. Peter’s Church; the strange gloom, the light which streamed through the painted windows – the wonderful mystical world which revealed itself here – yes, it was a church of God!', 0, 0, '2021-06-11', 25),
+(22, 'a true metropolis:', 'Milan is a true metropolis: strong and fearless but welcoming, too. Little by little, I came to realize that I could become someone here.', 0, 0, '2021-06-11', 26),
+(23, 'Rome to me', 'If I’m in Rome for only 48 hours, I would consider it a sin against God to not eat cacio e pepe, the most uniquely Roman of pastas, in some crummy little joint where Romans eat. I’d much rather do that than go to the Vatican. That’s Rome to me.', 0, 0, '2021-06-10', 27),
+(24, 'City of the soul', 'I thought I knew everything when I came to Rome, but I soon found I had everything to learn. ', 0, 0, '2021-06-17', 28),
+(25, 'St. Mary of the Flowers.', 'And when I thought of Florence, it was like a miracle city embalmed and like a corolla, because it was called the city of lilies and its cathedral, St. Mary of the Flowers.', 0, 0, '2021-06-04', 29),
+(26, 'Impossible to stay a realist', 'A realist, in Venice, would become a romantic by mere faithfulness to what he saw before him.', 0, 0, '2021-06-04', 30),
+(27, 'Saint Petersburg - Northern beauty!', 'St. Petersburg is a Russian port city on the Baltic Sea. It was the imperial capital for 2 centuries, having been founded in 1703 by Peter the Great, subject of the city\'s iconic “Bronze Horseman” statue. It remains Russia\'s cultural center, with venues such as the Mariinsky Theatre hosting opera and ballet, and the State Russian Museum showcasing Russian art, from Orthodox icon paintings to Kandinsky works. ', 0, 0, '2021-06-07', 31),
+(28, 'Best vacation ever', 'Argetina is beautiful ', 0, 0, '2021-06-17', 32),
+(29, 'Paris is a moveable feast', 'If you are lucky enough to have lived in Paris as a young man, then wherever you go for the rest of your life it stays with you, for Paris is a moveable feast.', 0, 0, '2021-06-10', 33),
+(30, 'just Paris', 'That Paris exists and anyone could choose to live anywhere else in the world will always be a mystery to me.', 0, 0, '2021-06-10', 34),
+(31, 'Paris is a world', 'Paris is not a city; it’s a world.', 0, 0, '2021-06-02', 35);
 
 -- --------------------------------------------------------
 
@@ -781,37 +751,25 @@ INSERT INTO `review` (`id_rev`, `title`, `text`, `privacy`, `token_count`, `date
 
 DROP TABLE IF EXISTS `to-go`;
 CREATE TABLE IF NOT EXISTS `to-go` (
-  `id_tgl` int(11) NOT NULL AUTO_INCREMENT,
-  `id_usr` int(11) NOT NULL,
-  `id_plc` int(11) NOT NULL,
-  `crossed_off` tinyint(4) DEFAULT '0',
+  `id_tgl` int NOT NULL AUTO_INCREMENT,
+  `id_usr` int NOT NULL,
+  `id_plc` int NOT NULL,
+  `crossed_off` tinyint DEFAULT '0',
   PRIMARY KEY (`id_tgl`),
   KEY `FK_id_plc_to-go_idx` (`id_plc`),
   KEY `FK_id_usr_to-go_idx` (`id_usr`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `to-go`
 --
 
 INSERT INTO `to-go` (`id_tgl`, `id_usr`, `id_plc`, `crossed_off`) VALUES
-(1, 2, 4, 1),
-(2, 1, 6, 0),
-(3, 3, 7, 1),
-(4, 2, 5, 0),
-(5, 1, 4, 1),
-(6, 1, 6, 0),
-(7, 4, 2, 0),
-(8, 2, 5, 0),
-(9, 3, 9, 0),
-(10, 4, 2, 1),
-(11, 3, 1, 0),
-(12, 2, 4, 1),
-(13, 1, 8, 0),
-(17, 7, 12, 1),
-(19, 7, 14, 0),
-(20, 7, 9, 0),
-(21, 7, 5, 0);
+(1, 1, 7, 0),
+(2, 7, 9, 0),
+(21, 2, 12, 1),
+(23, 2, 16, 1),
+(24, 2, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -821,36 +779,36 @@ INSERT INTO `to-go` (`id_tgl`, `id_usr`, `id_plc`, `crossed_off`) VALUES
 
 DROP TABLE IF EXISTS `visited`;
 CREATE TABLE IF NOT EXISTS `visited` (
-  `id_vis` int(11) NOT NULL AUTO_INCREMENT,
-  `id_usr` int(11) NOT NULL,
-  `id_plc` int(11) NOT NULL,
+  `id_vis` int NOT NULL AUTO_INCREMENT,
+  `id_usr` int NOT NULL,
+  `id_plc` int NOT NULL,
   PRIMARY KEY (`id_vis`),
   KEY `FK_id_plc_visited_idx` (`id_plc`),
   KEY `FK_id_usr_visited_idx` (`id_usr`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `visited`
 --
 
 INSERT INTO `visited` (`id_vis`, `id_usr`, `id_plc`) VALUES
-(1, 1, 1),
-(2, 2, 5),
-(3, 3, 5),
-(4, 1, 1),
-(5, 2, 2),
-(6, 3, 1),
-(7, 4, 9),
-(8, 2, 3),
-(9, 3, 10),
-(10, 1, 3),
-(11, 4, 10),
-(12, 2, 7),
-(13, 4, 8),
-(14, 1, 4),
-(15, 2, 6),
-(16, 3, 8),
-(17, 7, 4);
+(19, 1, 3),
+(20, 1, 12),
+(21, 1, 12),
+(22, 1, 12),
+(23, 1, 12),
+(24, 1, 13),
+(25, 1, 14),
+(26, 1, 14),
+(27, 1, 3),
+(28, 1, 3),
+(29, 1, 12),
+(30, 1, 13),
+(31, 7, 4),
+(32, 1, 15),
+(33, 2, 1),
+(34, 2, 1),
+(35, 2, 1);
 
 --
 -- Constraints for dumped tables
