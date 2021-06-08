@@ -118,6 +118,10 @@ class Quiz extends BaseController
      * @return view
      */
     public function startQuiz(){
+        if($this->session->get('userId') == null){
+            echo "sorry unauthorized!...";
+            return;
+        }
         $this->answeredQuestions =[];
         $this->minId = 1;
         // jel ok da pretpostavim da je sve od 1 do maxa tu - msm da da
@@ -153,6 +157,10 @@ class Quiz extends BaseController
     * @throws UnauthorizedHttpException
     */
     public  function getRecommendation($id){
+        if($this->session->get('userId') == null){
+            echo "sorry unauthorized!...";
+            return;
+        }
         $placeModel = new Place();
         $place = $placeModel->find($id);
 
