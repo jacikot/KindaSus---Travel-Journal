@@ -104,14 +104,16 @@
 
             //potencijalno provera da li je dobra zemlja
             let message="";
-            if(!title1) message+="Please enter the title for your memory! ";
-            if(!place1) message+="Please enter the place you visited! ";
-            if(!country1) message+="Please enter the country you visited! ";
-            if(!date1) message+="Please choose the date of your travel! ";
-            if(!text1) message+="Please write your memory! ";
+            if(!title1) {message+="Please enter the title for your memory! "; setReturnValues("Please enter the title for your memory! ",'#title','right');}
+            if(!place1) {message+="Please enter the place you visited! "; setReturnValues("Please enter the place you visited! ",'#place','left');}
+            if(!country1){ message+="Please enter the country you visited! "; setReturnValues("Please enter the country you visited!",'#country','right');}
+            if(!date1){ message+="Please choose the date of your travel! "; setReturnValues("Please choose the date of your travel!",'#date','left');}
+            if(!text1){ message+="Please write your memory! "; setReturnValues("Please write your memory! ",'#text','right');}
 
             if(message!=""){
-                alert(message);
+
+
+
                 return;
             }
 
@@ -135,7 +137,11 @@
                     $('#file-upload5').val('');
                 }
                 else{
-                    alert(vr);
+                    $("#problemModal").empty();
+                    $("#problemModal").append(vr);
+                    $("#problemWithReview").modal();
+
+                    return;
                 }
             });
 
@@ -234,11 +240,12 @@
             //potencijalno provera da li je dobra zemlja
             let message="";
 
-            if(!place1) message+="Please enter the place you visited! "
-            if(!country1) message+="Please enter the country you visited! "
+            if(!place1) {message+="Please enter the place you visited! "; setReturnValues("Please enter the place you visited! ",'#place','left');}
+            if(!country1){ message+="Please enter the country you visited! ";setReturnValues("Please enter the country you visited! ",'#country','right');}
 
             if(message!=""){
-                alert(message);
+
+
                 return;
             }
 
@@ -255,8 +262,43 @@
                     $(".modal-title").text("Would you like to answer a few questions?");
                     $("#createdReview").modal();
                 }
+                else{
+                    $("#problemModal").empty();
+                    $("#problemModal").append(vr);
+                    $("#problemWithReview").modal();
+
+                    return;
+                }
             });
 
+        }
+
+
+        function setReturnValues(text,id,position){
+            $(id).attr('data-toggle',"popover");
+
+            $(id).attr("data-content", text);
+
+                $(id).attr("data-placement", position);
+
+            $(id).popover();
+            $(id).popover('enable');
+            $(id).popover('show');
+            setTimeout(remove,2000);
+        }
+        function remove(){
+            $('#text').popover('disable');
+            $('#title').popover('disable');
+            $('#place').popover('disable');
+            $('#country').popover('disable');
+            $('#date').popover('disable');
+
+
+            $('#text').popover('hide');
+            $('#title').popover('hide');
+            $('#place').popover('hide');
+            $('#country').popover('hide');
+            $('#date').popover('hide');
         }
 
 
@@ -411,8 +453,8 @@
                  </table>
              </div>
              <div class="modal-footer">
-                 <button type="button" class="btn modalButton" data-dismiss="modal">Close</button>
-                 <button type="button" class="btn modalButton" onclick="completeSurvey()" data-dismiss="modal">Done with survey</button>
+                 <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                 <button type="button" class="btn btn-dark" onclick="completeSurvey()" data-dismiss="modal">Done with survey</button>
              </div>
          </div>
      </div>
@@ -430,8 +472,8 @@
              </div>
              -->
              <div class="modal-footer" style="color: black">
-                 <button type="button" class="btn modalButton" data-dismiss="modal" style="text-align: left">Close</button>
-                 <button type="button" class="btn modalButton" data-dismiss="modal"  onclick="modalSurvey()">You bet</button>
+                 <button type="button" class="btn btn-dark" data-dismiss="modal" style="text-align: left">Close</button>
+                 <button type="button" class="btn btn-dark" data-dismiss="modal"  onclick="modalSurvey()">You bet</button>
              </div>
          </div>
      </div>
@@ -459,7 +501,7 @@
                      </div>
 
                  </label>
-                 <input id="file-upload1"   type="file" hidden/>
+                 <input id="file-upload1" onchange="document.getElementById('inputslike1').innerHTML=this.files[0].name"  type="file" hidden/>
                  <hr>
                  <label id="inputslike2" for="file-upload2" class="custom-file-upload">
                      <div class="mt-2 my-auto">
@@ -468,9 +510,9 @@
                      </div>
 
                  </label>
-                 <input id="file-upload2"  type="file" hidden/>
+                 <input id="file-upload2" onchange="document.getElementById('inputslike2').innerHTML=this.files[0].name" type="file" hidden/>
                  <hr>
-                 <label id="inputslike3" for="file-upload3" class="custom-file-upload">
+                 <label id="inputslike3" for="file-upload3"  class="custom-file-upload">
 
                      <div class="mt-2 my-auto">
                          Add 3rd pic!
@@ -478,7 +520,7 @@
                      </div>
 
                  </label>
-                 <input id="file-upload3"  type="file" hidden/>
+                 <input id="file-upload3" onchange="document.getElementById('inputslike3').innerHTML=this.files[0].name" type="file" hidden/>
                  <hr>
                  <label id="inputslike4" for="file-upload4" class="custom-file-upload">
                      <div class="mt-2 my-auto">
@@ -487,29 +529,52 @@
                      </div>
 
                  </label>
-                 <input id="file-upload4"  type="file" hidden/>
+                 <input id="file-upload4" onchange="document.getElementById('inputslike4').innerHTML=this.files[0].name" type="file" hidden/>
                  <hr>
 
-                 <label id="inputslike5" for="file-upload5" class="custom-file-upload">
+                 <label id="inputslike5" for="file-upload5"  class="custom-file-upload">
                      <div class="mt-2 my-auto">
                          Add 5th pic!
 
                      </div>
 
                  </label>
-                 <input id="file-upload5"  type="file" hidden/>
+                 <input id="file-upload5" onchange="document.getElementById('inputslike5').innerHTML=this.files[0].name" type="file" hidden/>
 
 
 
              </div>
 
              <div class="modal-footer" style="color: black">
-                 <button type="button" class="btn modalButton" data-dismiss="modal" style="text-align: left">Close</button>
-                 <button type="button" class="btn modalButton" data-dismiss="modal"  onclick="addPics()">Done with pics!</button>
+                 <button type="button" class="btn btn-dark" data-dismiss="modal" style="text-align: left">Close</button>
+                 <button type="button" class="btn btn-dark" data-dismiss="modal"  onclick="addPics()">Done with pics!</button>
              </div>
          </div>
      </div>
  </div>
+
+     <!-- modal for problems -->
+     <div class="modal fade" id="problemWithReview" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+             <div class="modal-content">
+
+                 <
+                 <div class="modal-body" style="color: black" id="problemModal">
+
+                 </div>
+
+                 <div class="modal-footer" style="color: black">
+                     <button type="button" class="btn btn-dark" data-dismiss="modal" style="text-align: left">Close</button>
+
+                 </div>
+             </div>
+         </div>
+     </div>
+
+
+
+
+
  </div>
 </body>
 

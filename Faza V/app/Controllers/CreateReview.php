@@ -119,6 +119,9 @@ function returns string value that represents the success of the function
      */
 
     public function addRev() {
+
+
+
         $id_vis=$this->addVisit($this->request->getVar('place'), $this->request->getVar('country'));
         $num=0;
         $id_pic=0;
@@ -160,7 +163,7 @@ function returns string value that represents the success of the function
 
                 } else {
                     if (!is_uploaded_file($img)) {
-                        echo "Not a good file..";
+                        echo "It looks like you did not upload a good file";
                         return;
                     }
                     $ext = strtolower(pathinfo($img->getName(), PATHINFO_EXTENSION));
@@ -171,12 +174,12 @@ function returns string value that represents the success of the function
                         'png'
                     );
                     if (!in_array($ext, $supported_image)) {
-                        echo $ext . " Inadequate type!";
+                        echo $ext . "It looks like your picture has inadequate type, try with a picture that has extension jpg/jpeg/png/gif";
                         return;
                     }
 
                     if ($img->getSize() > 150000000) {
-                        echo "File is too large!";
+                        echo "Oops, it looks like you uploaded too big file! Please try with smaller one";
                         return;
                     }
 

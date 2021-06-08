@@ -111,7 +111,7 @@
                         crossButton.click(function (){
                             crossFromToGo(place,country);
                             item.addClass("crossed");
-                            item.reload();
+
 
                         });
                         $(celDeleteCross).append(binButton);
@@ -120,9 +120,14 @@
                         $(row).append(celDeleteCross);
 
                         $("#togo_list").append(row);
+                        $("#infoToGo").empty();
+                        $("#infoToGo").append('You set a new travelling goal, congrats!');
+                        $("#messageToGo").modal();
                     }
                     else{
-                        alert(status);
+                        $("#infoToGo").empty();
+                        $("#infoToGo").append(status);
+                        $("#messageToGo").modal();
                     }
 
                 }
@@ -160,12 +165,17 @@
                 function (status){
 
                     if(status=='okay'){
+                        $("#infoToGo").empty();
+                        $("#infoToGo").append("You deleted one of your travelling goals");
+                        $("#messageToGo").modal();
                         $("#togo_list").empty();
                         myToGo();
-                        //fiksirati velicinu!
+
                     }
                     else{
-                        alert(status);
+                       $("#infoToGo").empty();
+                        $("#infoToGo").append(status);
+                        $("#messageToGo").modal();
                     }
 
                 }
@@ -187,6 +197,8 @@
 </head>
 <body onload="myToGo()">
 <div class=" container-fluid">
+
+
 
     <div class="row">
         <div class="col-lg-12 col-md-12 mt-2" id="header">
@@ -235,12 +247,52 @@
             </div>
 
             <div class="modal-footer" style="color: black">
-                <button type="button" class="btn modalButton" data-dismiss="modal" style="text-align: left">Close</button>
-                <input type="button"  class='modalButton' value='Set new travelling goal' onclick="addToList()">
+                <button type="button" class="btn btn-dark" data-dismiss="modal" style="text-align: left">Close</button>
+                <input type="button"  class='btn btn-dark' value='Set new travelling goal' data-dismiss="modal" onclick="addToList()">
             </div>
         </div>
     </div>
 </div>
+
+
+    <div class="modal fade" id="deleteToGo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <
+                <div class="modal-body" style="color: black" >
+                    Heads up, you are about to delete your travelling goal, are you sure you want to do that?
+                </div>
+
+                <div class="modal-footer" style="color: black">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal" style="text-align: left">Close</button>
+                    <button type="button" class="btn btn-dark"  data-dismiss="modal" style="text-align: left">I'm sure</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="messageToGo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <
+                <div class="modal-body" style="color: black" id="infoToGo">
+
+                </div>
+
+                <div class="modal-footer" style="color: black">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal"  style="text-align: left">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input id='flag' value="false" hidden/>
+
+
+
 </div>
 </body>
 
