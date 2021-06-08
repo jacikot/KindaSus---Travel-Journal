@@ -44,6 +44,7 @@
             let country1=document.getElementById('country').value;
 
 
+
             let date1=document.getElementById('date').value;
             let text1=document.getElementById('text').value;
 
@@ -92,7 +93,11 @@
                 }
             }
 
-            let prom="0";
+            let prom=document.getElementById('private').checked;
+           if(prom){prom=1;}
+           else{
+               prom=0;
+           }
             fd.append('title',title1);
             fd.append('text',text1);
             fd.append('date',date1);
@@ -355,8 +360,8 @@
            </tr>
            <tr>
 
-               <td>Set privacy status: &nbsp;<input type="radio"  name='privacy'  checked >Private
-                   <input type="radio" name='privacy'>Public</td>
+               <td>Set privacy status: &nbsp;<input type="radio"  name='privacy' id="private" checked >Private
+                   <input type="radio" name='privacy' id="public">Public</td>
                <td onclick="openPicsModal()" class="picUpload">
                    Add some pictures!
 

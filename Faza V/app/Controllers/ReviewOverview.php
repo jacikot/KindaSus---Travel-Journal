@@ -120,7 +120,7 @@ class ReviewOverview extends BaseController
             'id_rev'=>$review->id_rev,
             'title'=>$review->title,
             'text'=>$review->text,
-            'privacy'=>0,
+            'privacy'=>1,
             'token_count'=>$review->token_count,
             'id_vis'=>$review->id_vis,
             'date_posted'=>$review->date_posted
@@ -131,7 +131,7 @@ class ReviewOverview extends BaseController
          * function returns void
      */
     public function changeToPublic(){
-        $num=1;
+        $num=0;
         $id=$this->session->get('id_rev');
         $tmp_review=new Review();
         $review=$tmp_review->find($id);

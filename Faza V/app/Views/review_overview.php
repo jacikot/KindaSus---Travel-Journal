@@ -140,17 +140,17 @@
        });
        let cell4;
 
-       if(privacy==0) {
+       if(privacy==1) {
            cell4 = $("<td style='border: none'></td>").append(
                $("<input type='radio' id='privacyGroup' name='privacyGroup' checked onclick='markAsPrivate()'>")
-           ).append("Private").append(
+           ).append("Private<br>").append(
                $("<input type='radio' id='privacyGroup' name='privacyGroup'  onclick='markAsPublic()'>")
            ).append("Public");
        }
        else{
            cell4 = $("<td style='border: none'></td>").append(
                $("<input type='radio' id='privacyGroup' name='privacyGroup' onclick='markAsPrivate()'>")
-           ).append("Private").append(
+           ).append("Private<br>").append(
                $("<input type='radio' id='privacyGroup' name='privacyGroup' checked  onclick='markAsPublic()'>")
            ).append("Public");
        }
