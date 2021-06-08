@@ -21,8 +21,8 @@
         <div class="col-lg-12 col-md-12 mt-3" id="header">
             <img src="<?php echo base_url('assets/images/pic.png') ?>" id="logo"/>
             <div>
-                <button id="back" class="btn btn-outline-light">
-                    Back
+                <button id="search-and-trending" class="btn btn-outline-light">
+                    Search & Trending
                 </button>
                 <button id="login" class="btn btn-outline-light" style="margin: 0 10px">
                     Continue With Your Travels
@@ -34,7 +34,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row mt-1">
         <div class="offset-1 col-1">
             <?php if (isset($reviews) && count($reviews) > 0) {
                 echo $this->include('templates/sort_by');
@@ -61,10 +61,7 @@
                                     else foreach ($reviews as $review) { ?>
                                         <tr>
                                             <td>
-                                                <a class="review" href="<?php
-                                                $_SESSION['id_rev'] = $review->idRev;
-                                                echo site_url("ReviewOverview");
-                                                ?>">
+                                                <a class="review" href="ReviewOverview?idRev=<?= $review->idRev ?>">
                                                     <div class="col-1"><img class="avatar" src="<?= base_url($review->avatarPath) ?>"></div>
                                                     <div class="col-3"><span class="username"><?= $review->username ?></span></div>
                                                     <div class="col-4"><span class="title"><?= $review->title ?></span></div>

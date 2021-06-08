@@ -22,7 +22,11 @@ class ReviewOverview extends BaseController
 {
 
     public function index(){
-        return view('review_overview.php');
+        $id=$this->request->getVar('idRev');
+
+      if($id!=null)
+       $this->session->set('id_rev',$id);
+       return view('review_overview.php');
     }
 /*
  * function getRev gets the chosen review from the database and all of the data required for it (text, privacy status, date, title,

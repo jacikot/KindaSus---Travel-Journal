@@ -1,5 +1,4 @@
 
-//var arr = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua & Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia & Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central Arfrican Republic","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cuba","Curacao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauro","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","North Korea","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre & Miquelon","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","St Kitts & Nevis","St Lucia","St Vincent","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad & Tobago","Tunisia","Turkey","Turkmenistan","Turks & Caicos","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Vanu","Vatican City","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
 
 $(document).ready(function () {
 
@@ -52,49 +51,7 @@ $(document).ready(function () {
 
         });
         document.head.appendChild(script);
-// =======
-//       let script = document.createElement('script');
-//       script.src = 'https://maps.googleapis.com/maps/api/js?' +
-//           'key=AIzaSyCUy2DENYeQ9G2zDbrSw0Dr06ESnDUHWNk&libraries=places&callback=initAutocompleteAndTrending';
-//       script.async = true;
-//
-//       window.initAutocompleteAndTrending = function() {
-//
-//           initAutocomplete(autocomplete);
-//
-//           service = new google.maps.places.PlacesService(document.createElement('div'));
-//
-//           // an AJAX request to the controller to get all the trending places information
-//
-//           $.post("http://localhost:8080/SearchAndTrending/getTrendingPlaces", function (data) {
-//
-//               let trending = JSON.parse(data);
-//               // alert(JSON.stringify(trending));
-//               initTrending(service, trending);
-//           });
-//       };
-//
-//     window.addEventListener("load", event => {
-//
-//         // if an image fails to load, reinitialization of each such
-//         // image is tried a few more times during the loading of the page
-//
-//         setTimeout(function () {
-//             for (let i = 0; i < 6; i++) {
-//                 let image = document.querySelector("#tr-gallery-item-" + i + " .tr-gallery-img");
-//                 let isLoaded = image.complete && image.naturalHeight !== 0;
-//                 if (!isLoaded) {
-//                      // alert("not loaded " + i);
-//                     let imageHandler = setInterval(function () {
-//                         loadImage(service, image, imageHandler, i);
-//                     }, 100);
-//                 }
-//             }
-//         }, 100);
-//
-//     });
-//       document.head.appendChild(script);
-// >>>>>>> f66d658d8fd7024ff016bade2f2c66df831b1125
+
     }
 
     $(this).on("click", "#go-to-map", function (e) {
@@ -144,10 +101,6 @@ function loadImage(service, image, imageHandler, i) {
         // a country flag is displayed instead
 
         image.src = 'https://flagcdn.com/w2560/' + countryCode.toLowerCase() + '.png';
-// <<<<<<< HEAD
-// =======
-//         image.style.height = 'auto';
-// >>>>>>> f66d658d8fd7024ff016bade2f2c66df831b1125
     }
 
     let isLoaded = image.complete && image.naturalHeight !== 0;
@@ -215,7 +168,7 @@ function initAutocomplete(autocomplete) {
 }
 
 function initTrending(service, trending) {
-// <<<<<<< HEAD
+
 
     let widths = [60, 40, 15, 24, 22, 24, 15];
 
@@ -276,49 +229,4 @@ function makeCell(service, trendingPlace, width, i) {
 
     cell.append(frame.append(image).append(caption));
     return cell;
-// =======
-//     let trendingObj = $("#trending");
-//     let gallery = $("<div></div>").attr("id", "tr-gallery");
-//     for (let i = 0; i < trending.length; i++) {
-//         let idPlc = trending[i].idPlc;
-//         let placeName = trending[i].placeName;
-//         let countryName = trending[i].countryName;
-//         let countryCode = trending[i].countryCode;
-//
-//         let figure = $("<figure></figure>").attr("id", "tr-gallery-item-" + i).addClass("tr-gallery-frame");
-//         let image = $("<img>").addClass("tr-gallery-img").attr("alt", "Loading...");
-//
-//         image.attr("data-place_name", placeName)
-//             .attr("data-country_name", countryName)
-//             .attr("data-country_code", countryCode);
-//
-//         service.findPlaceFromQuery({
-//                 fields : ['photos'],
-//                 query : placeName + " " + countryName
-//             },
-//             function(results, status) {
-//                 if (status === google.maps.places.PlacesServiceStatus.OK) {
-//                     //console.log(placeName);
-//                     let photos = results[0].photos;
-//                     image.attr("src", photos[0].getUrl());
-//                 }
-//                 else {
-//                     console.log('error');
-//                 }
-//             }
-//         );
-//
-//         let span = $("<span></span>").text(placeName + ", " + countryName);
-//         let caption = $("<figcaption></figcaption>").append(span);
-//
-//         image.on("click", function() {
-//             window.location.href = "http://localhost:8080/ListOfReviews?" +
-//                 "idPlc=" + idPlc + "&placeName=" + placeName +
-//                 "&countryName=" + countryName + "&countryCode=" + countryCode;
-//         });
-//
-//         gallery.append(figure.append(image).append(caption));
-//     }
-//     trendingObj.append(gallery);
-// >>>>>>> f66d658d8fd7024ff016bade2f2c66df831b1125
 }
