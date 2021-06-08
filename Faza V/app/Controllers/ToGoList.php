@@ -98,14 +98,19 @@ public function addToToGoList(){
         $place=$placelist[0];
         $id_plc = $place->id_plc;
     }
-
-    $tmp_togo->insert([
-        'id_usr'=>$this->session->get('userId'),
-        'id_plc'=>$id_plc,
-        'crossed_off'=>$num
-    ]);
+        $flag=$tmp_togo->getListItem($this->session->get('userId'),$id_plc);
+    if($flag==null) {
+        $tmp_togo->insert([
+            'id_usr' => $this->session->get('userId'),
+            'id_plc' => $id_plc,
+            'crossed_off' => $num
+        ]);
 
         echo "okay";
+    }
+    else{
+        echo "It look like this destination is already one of your travelling goals! Maybe consider another one?";
+    }
 
 
 
