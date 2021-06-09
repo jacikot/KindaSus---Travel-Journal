@@ -49,7 +49,7 @@
                                 foreach ($reviews as $review) { ?>
                                     <tr>
                                         <td>
-                                            <a class="review" href="ReviewOverview?idRev=<?= $review->idRev ?>">
+                                            <a class="review" href="<?= site_url("ReviewOverview?idRev=$review->idRev") ?>">
                                                 <div class="col-1"><img class="avatar-rev" src="<?= base_url($review->avatarPath) ?>"></div>
                                                 <div class="col-2"><span class="username-rev"><?= $review->username ?></span></div>
                                                 <div class="col-3"><span class="title"><?= $review->title ?></span></div>

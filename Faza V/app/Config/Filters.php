@@ -19,8 +19,9 @@ class Filters extends BaseConfig
 		'csrf'     => CSRF::class,
 		'toolbar'  => DebugToolbar::class,
 		'honeypot' => Honeypot::class,
-        'map' => \App\Filters\MapFilter::class,
-        'pass'=>\App\Filters\PasswordFilter::class,
+        'regUser' => \App\Filters\RegisteredUserFilter::class,
+        'guest' => \App\Filters\GuestFilter::class,
+        'password' => \App\Filters\PasswordFilter::class
 	];
 
 	/**
@@ -61,7 +62,10 @@ class Filters extends BaseConfig
 	 * @var array
 	 */
 	public $filters = [
-	    "map"=>['before' => ['Map/*', 'Map','Journal/*','Journal']],
-        "pass"=>['before'=>['Password','Password/setPassword']],
+	    "regUser" => ['before' => ['Admin/*', 'Admin']],
+        "guest" => ['before' => ['Admin/*', 'Admin', 'Map/*', 'Map', 'Journal/*', 'Journal', 'Badges/*', 'Badges', 'ChangePic/*', 'ChangePic',
+            'CreateReview/*', 'CreateReview', 'Logout/*', 'Logout', 'Quiz/*', 'Quiz', 'ToGoList/*', 'ToGoList']],
+        "password" => ['before' => ['Password', 'Password/index', 'Password/setPassword',
+            'Password/validateQuestions', 'Password/validateAnswers', 'Password/getUser']]
     ];
 }

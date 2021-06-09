@@ -33,9 +33,12 @@ class RegisteredUser extends Model
 
         $path = '../public/assets/db_files/'.$idUsr;
         helper('filesystem');
-        delete_files($path, true);
-        rmdir($path);
-        return $this->delete($idUsr);
+
+        if (is_dir($path)) {
+            delete_files($path, true);
+            rmdir($path);
+        }
+        $this->delete($idUsr);
     }
 
     public function getTokenCount($idUsr)

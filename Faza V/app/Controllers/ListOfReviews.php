@@ -48,10 +48,6 @@ class ListOfReviews extends BaseController
 
         $idUsr = $this->session->get('userId');
 
-//        $userModel = new RegisteredUser();
-//        $tokenCount = $userModel->getTokenCount(4);
-//        echo view("p1", ['i' => $tokenCount]);
-
         if ($idUsr != null) {           // checking if a registered user or a guest is on this page
 
             // a registered user is on this page
