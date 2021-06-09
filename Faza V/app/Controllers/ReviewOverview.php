@@ -60,10 +60,11 @@ class ReviewOverview extends BaseController
 
         $type_of_user='guest';
         $found_type=false;
-
-        if(!$found_type && $this->session->get('userId')==null){ $type_of_user='guest'; $found_type=true;}
         if ( $found_type==false && $this->session->get('isAdmin') == 1) {$type_of_user = 'admin'; $found_type=true;}
-        if ($found_type==false && $this->session->get('userId') == $user->id_usr ) {$type_of_user = 'owner'; $found_type=true;}
+        if($found_type==false && $this->session->get('userId')==null){ $type_of_user='guest'; $found_type=true;}
+		if ($found_type==false && $this->session->get('userId') == $user->id_usr ) {$type_of_user = 'owner'; $found_type=true;}
+
+        
 
         if ( $found_type==false && $this->session->get('userId') != $user->id_usr) {$type_of_user = 'regUser'; $found_type=true;}
 
