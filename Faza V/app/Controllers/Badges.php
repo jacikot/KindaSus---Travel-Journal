@@ -47,10 +47,10 @@ class Badges extends BaseController
         if ($tokenCount >= 1000) {
             $awardedModel->giveBadgeIfNotGiven($idUsr, 5);
         }
-        elseif ($tokenCount >= 100) {
+        if ($tokenCount >= 100) {
             $awardedModel->giveBadgeIfNotGiven($idUsr, 4);
         }
-        elseif ($tokenCount >= 10) {
+        if ($tokenCount >= 10) {
             $awardedModel->giveBadgeIfNotGiven($idUsr, 3);
         }
     }
@@ -67,10 +67,10 @@ class Badges extends BaseController
         if ($travelCount >= 20) {
             $awardedModel->giveBadgeIfNotGiven($idUsr, 10);
         }
-        elseif ($travelCount >= 5) {
+        if ($travelCount >= 5) {
             $awardedModel->giveBadgeIfNotGiven($idUsr, 9);
         }
-        elseif ($travelCount >= 1) {
+        if ($travelCount >= 1) {
             $awardedModel->giveBadgeIfNotGiven($idUsr, 8);
         }
     }
@@ -91,10 +91,10 @@ class Badges extends BaseController
         if ($timePassed->y >= 1) {
             $awardedModel->giveBadgeIfNotGiven($idUsr, 15);
         }
-        elseif ($timePassed->m >= 6) {
+        if ($timePassed->m >= 6) {
             $awardedModel->giveBadgeIfNotGiven($idUsr, 14);
         }
-        elseif ($timePassed->m >= 1) {
+        if ($timePassed->m >= 1) {
             $awardedModel->giveBadgeIfNotGiven($idUsr, 13);
         }
     }
