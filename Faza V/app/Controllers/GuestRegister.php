@@ -77,7 +77,10 @@ class GuestRegister extends BaseController
         $q1 = $this->request->getVar('q0');
         $q2 = $this->request->getVar('q1');
         $q3 = $this->request->getVar('q2');
-
+        if($this->session->get('status')=="answered"){
+            echo "You have already answered! Press the button to continue!";
+            return;
+        }
         if(!isset($q1) || !isset($q2) || !isset($q3)){
             echo "All questions are a must!";
             return;

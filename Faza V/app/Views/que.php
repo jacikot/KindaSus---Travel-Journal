@@ -59,7 +59,8 @@
                         window.location.href="<?= base_url('Map')?>"
                         return;
                     }
-                    alert(data);
+                    $(".modal-body").html(data);
+                    $("#myModal").modal('show');
                     if(data=="Thank you for answering all questions!"){
                         $("#check").empty().append("Continue");
                     }
