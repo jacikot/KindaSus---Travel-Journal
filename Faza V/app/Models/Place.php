@@ -15,7 +15,7 @@ class Place extends Model
     protected $useAutoIncrement = true;
     protected $returnType = 'object';
     protected $allowedFields = ['name', 'categorized', 'heritage', 'relax',
-                                'sightseeing', 'weather', 'populated', 'id_cnt'];
+                                'sightseeing', 'weather', 'populated', 'id_cnt', 'taken_survey'];
 
     public function getAllCategorized(){
        return $this->where('categorized',1)->findAll();

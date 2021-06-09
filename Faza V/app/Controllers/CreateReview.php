@@ -284,7 +284,7 @@ function returns string value that represents the success of the function
             'weather'=>$new_points_weather,
             'populated'=>$new_points_populated,
             'taken_survey'=>$num_surveys,
-            'name'=>$place_obj->name,
+            'name'=>$place_obj->name
 
         ]);
 
