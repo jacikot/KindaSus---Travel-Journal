@@ -148,3 +148,7 @@ td{
     margin-top: auto !important;
     margin-bottom: auto !important;
 }
+
+textarea::placeholder{
+    color: black; !important;
+}
