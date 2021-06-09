@@ -65,7 +65,6 @@ class Filters extends BaseConfig
 	    "regUser" => ['before' => ['Admin/*', 'Admin']],
         "guest" => ['before' => ['Admin/*', 'Admin', 'Map/*', 'Map', 'Journal/*', 'Journal', 'Badges/*', 'Badges', 'ChangePic/*', 'ChangePic',
             'CreateReview/*', 'CreateReview', 'Logout/*', 'Logout', 'Quiz/*', 'Quiz', 'ToGoList/*', 'ToGoList']],
-        "password" => ['before' => ['Password', 'Password/index', 'Password/setPassword',
-            'Password/validateQuestions', 'Password/validateAnswers', 'Password/getUser']]
+        "password" => ['before' => ['Password', 'Password/index', 'Password/setPassword']]
     ];
 }
