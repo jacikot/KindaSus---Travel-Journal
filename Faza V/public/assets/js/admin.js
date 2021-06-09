@@ -164,8 +164,8 @@ function sortBy() {                                     // sorting the reviews u
     let tBody = $("#review-table tbody");
     tBody.find("tr").sort(function (a, b) {
         if (type == 'tokens') {
-            return (parseInt($(a).children('td').eq(0).find(".tokens").html()) -
-                parseInt($(b).children('td').eq(0).find(".tokens").html())) * ((direction == 'ASC') ? 1 : -1);
+            return (parseInt($(a).children('td').eq(0).find(".token-cnt").html()) -
+                parseInt($(b).children('td').eq(0).find(".token-cnt").html())) * ((direction == 'ASC') ? 1 : -1);
         }
         let aTmp = $(a).children('td').eq(0).find(".date").text().split(".");
         let bTmp = $(b).children('td').eq(0).find(".date").text().split(".");
