@@ -485,9 +485,7 @@
              </div>
 
              <div class="modal-body" style="color: black">
-                 Hey there! You can add up to five of your favourite pics in the fields below.. If you change your mind about some pics in the last
-                 minute, no worries just click on the problematic field and the image will be gone! And of course you can always just give up pics
-                 entirely and click on close
+                 Hey there! You can add up to five of your favourite pics in the fields below to keep your dream alive!
                  <br>
                  <hr>
                  <label id="inputslike1" for="file-upload1" class="custom-file-upload">
@@ -544,7 +542,9 @@
 
              <div class="modal-footer" style="color: black">
                  <button type="button" class="btn btn-dark" data-dismiss="modal" style="text-align: left">Close</button>
+                <!--
                  <button type="button" class="btn btn-dark" data-dismiss="modal"  onclick="addPics()">Done with pics!</button>
+                 -->
              </div>
          </div>
      </div>

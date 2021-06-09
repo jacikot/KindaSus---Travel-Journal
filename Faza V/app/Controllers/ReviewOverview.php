@@ -203,7 +203,7 @@ class ReviewOverview extends BaseController
 
                 ]);
 
-            $tmp_user->updateTokens($liker->id_usr);
+            $tmp_user->updateTokens($user->id_usr);
 
         }
         else $num--;
