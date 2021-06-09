@@ -2,16 +2,16 @@ $(document).ready(function(){
     $(".container-fluid").fadeTo("slow",1,"linear");
     function validateQuestions(){
         let inputs =document.getElementsByTagName("input");
-        let add=0;
-        if(inputs.length==3)add=1;
+        let add=2;
+        if(inputs.length==4)add=1;
         for (let i=0;i<inputs.length;i++){
-            remove("#t"+(i+1));
+            remove("#t"+(i+add));
         }
         let correct=true;
         let questions=[];
         for (let i=0;i<inputs.length;i++){
             if(inputs[i].value==""){
-                setReturnValues("Message","Field is required!","#t"+(i+1),"right");
+                setReturnValues("Message","Field is required!","#t"+(i+add),"right");
                 correct=false;
             }
             else {
