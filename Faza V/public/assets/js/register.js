@@ -142,7 +142,7 @@ function register(){
     }
 
     // za sad za email proveri samo da li ima @
-    if(/^\w+@([a-zA-Z]+\.)+[a-zA-Z]+$/.test(email) === false){
+    if(/^[\w\.]+@([a-zA-Z]+\.)+[a-zA-Z]+$/.test(email) === false){
         req = true;
         setReturnValues("Sorry..", "Inadequate email format", "#email","left");
     }
