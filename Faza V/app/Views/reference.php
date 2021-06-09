@@ -29,7 +29,7 @@
         function checkItOut(){
             window.location.href = "<?php
                 if(isset($data)){
-                   echo ''.base_url('ListOfReviews/index?'.'idPlc='.$data['id'].'&placeName='.
+                   echo ''.base_url('ListOfReviews?'.'idPlc='.$data['id'].'&placeName='.
                    $data['place']->name.'&countryName='.$data['country']->name.'&countryCode='.$data['country']->code);
                 }
             ?>";
