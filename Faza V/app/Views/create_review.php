@@ -354,8 +354,8 @@
                </td>
            </tr>
            <tr>
-               <td colspan="2">
-                   <textarea rows='5' class="rounded" cols="120" placeholder="Share your memories!" name="text" id="text" style="outline: none; text-align: justify"></textarea>
+               <td colspan="2"  >
+                   <textarea  class="rounded"  placeholder="Share your memories!" name="text" id="text" style="outline: none; text-align: justify"></textarea>
                </td>
            </tr>
            <tr>
