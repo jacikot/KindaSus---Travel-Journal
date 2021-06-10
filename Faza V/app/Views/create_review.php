@@ -330,7 +330,7 @@
          <div class="col-lg-3 col-md-1 col-sm-1 col-xs-1">
              &nbsp;&nbsp;
          </div>
-         <div class="col-lg-6 col-md-4 col-sm-12 col-xs-10 my-auto pozadina rounded" id="tab">
+         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-10 my-auto pozadina rounded" id="tab">
              <table class="table mt-2 mb-2" style="z-index: -1;!important;">
                  <tr>
                      <td colspan="2" class="naslov" style="text-align: center">
