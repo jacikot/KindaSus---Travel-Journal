@@ -72,7 +72,7 @@ function insertOption(place,country,select,button,list){
     opt.value=place;
     let str= place+", "+country;
     if(str.length>25)
-        opt.innerHTML=place+"<br>"+country;
+        opt.innerHTML=place+",<br>"+country;
     else
         opt.innerHTML=str;
     opt.addEventListener("click",function(){
@@ -135,7 +135,7 @@ function eventHandler(list,selected){
         list.removeChild(child);
         child=list.childNodes[0];
     }
-    let place=selected.innerText;
+    let place=selected.innerHTML;
 
     if(place=="All visited cities") {
 
