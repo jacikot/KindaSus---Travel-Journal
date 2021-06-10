@@ -1,0 +1,666 @@
+{
+  "id": "fbb427d5-3d11-4da9-b1f3-58d5ab07b0ac",
+  "version": "2.0",
+  "name": "pretrazivanje_destinacija",
+  "url": "http://localhost:8080",
+  "tests": [{
+    "id": "811822d3-a3e8-419b-b5f9-c84e89b274dd",
+    "name": "Отварање странице search & trending - гост",
+    "commands": [{
+      "id": "7ba6f442-635d-4804-933b-bb39989b5d7d",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bd73517a-6979-475e-a4c8-7dfe2073dafd",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1051x806",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e5dcfa2a-cfab-48f0-b402-6bbd8cb34d2c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Be My Guest",
+      "targets": [
+        ["linkText=Be My Guest", "linkText"],
+        ["css=#\\33 > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Be My Guest')]", "xpath:link"],
+        ["xpath=//div[@id='3']/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/SearchAndTrending/index']", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Be My Guest')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ead79aae-5479-4ee8-9c0d-394499919f0d",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=search-title",
+      "targets": [
+        ["id=search-title", "id"],
+        ["css=#search-title", "css:finder"],
+        ["xpath=//div[@id='search-title']", "xpath:attributes"],
+        ["xpath=//div[@id='search']/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "Have you got a destination in mind?"
+    }, {
+      "id": "6c0084d7-f896-4c69-b604-0ae17f8b351d",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=back",
+      "targets": [
+        ["id=back", "id"],
+        ["css=#back", "css:finder"],
+        ["xpath=//button[@id='back']", "xpath:attributes"],
+        ["xpath=//div[@id='header']/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Back to Home')]", "xpath:innerText"]
+      ],
+      "value": "Back to Home"
+    }, {
+      "id": "6844aee7-e2bf-4d43-a736-a29836eaa948",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=login",
+      "targets": [
+        ["id=login", "id"],
+        ["css=#login", "css:finder"],
+        ["xpath=//button[@id='login']", "xpath:attributes"],
+        ["xpath=//div[@id='header']/div/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Continue With Your Travels')]", "xpath:innerText"]
+      ],
+      "value": "Continue With Your Travels"
+    }, {
+      "id": "7e801ba7-9f12-4a62-bc79-5534dfebbd41",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=register",
+      "targets": [
+        ["id=register", "id"],
+        ["css=#register", "css:finder"],
+        ["xpath=//button[@id='register']", "xpath:attributes"],
+        ["xpath=//div[@id='header']/div/button[3]", "xpath:idRelative"],
+        ["xpath=//button[3]", "xpath:position"],
+        ["xpath=//button[contains(.,'Become A traveller')]", "xpath:innerText"]
+      ],
+      "value": "Become A traveller"
+    }]
+  }, {
+    "id": "348e1988-2d17-4c68-8801-3d44f08135f9",
+    "name": "Отварање странице search & trending – регистровани корисник",
+    "commands": [{
+      "id": "d9a282ae-91cf-45d7-8c97-1804052e1991",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f6ec83f3-3e9a-48f7-8c93-a61bc66a1b29",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1051x806",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7f1b941a-349b-42a7-b6e6-61ef9d81d5ea",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Continue With Your Travels",
+      "targets": [
+        ["linkText=Continue With Your Travels", "linkText"],
+        ["css=#\\35 > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Continue With Your Travels')]", "xpath:link"],
+        ["xpath=//div[@id='5']/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/GuestLogin/showLogin']", "xpath:href"],
+        ["xpath=//div[5]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Continue With Your Travels')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e1c2f3de-51d3-433e-b223-294905b4bf0e",
+      "comment": "",
+      "command": "click",
+      "target": "id=userId",
+      "targets": [
+        ["id=userId", "id"],
+        ["css=#userId", "css:finder"],
+        ["xpath=//input[@id='userId']", "xpath:attributes"],
+        ["xpath=//div[@id='red']/div[2]/table/tbody/tr[2]/td/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fc47c29a-09d5-49a0-88d8-957cbf341cb5",
+      "comment": "",
+      "command": "type",
+      "target": "id=userId",
+      "targets": [
+        ["id=userId", "id"],
+        ["css=#userId", "css:finder"],
+        ["xpath=//input[@id='userId']", "xpath:attributes"],
+        ["xpath=//div[@id='red']/div[2]/table/tbody/tr[2]/td/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "adriance"
+    }, {
+      "id": "6aeb6fa6-19a9-481d-a51e-e38fdedd018a",
+      "comment": "",
+      "command": "type",
+      "target": "id=passId",
+      "targets": [
+        ["id=passId", "id"],
+        ["css=#passId", "css:finder"],
+        ["xpath=//input[@id='passId']", "xpath:attributes"],
+        ["xpath=//div[@id='red']/div[2]/table/tbody/tr[3]/td/label/input", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/label/input", "xpath:position"]
+      ],
+      "value": "Adriana79"
+    }, {
+      "id": "93ced28c-7e1f-4740-b5e7-02166a16aece",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-light:nth-child(2)",
+      "targets": [
+        ["css=.btn-light:nth-child(2)", "css:finder"],
+        ["xpath=//button[@onclick='login()']", "xpath:attributes"],
+        ["xpath=//div[@id='red']/div[2]/table/tbody/tr[4]/td/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Go on')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bb970d86-f593-479f-a819-b8ed8449a1f3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mybtn",
+      "targets": [
+        ["css=.mybtn", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='myModal']/div/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Continue')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "422e67fd-cdc7-4ca9-8d54-47cfe76bcf1c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.b-search img",
+      "targets": [
+        ["css=.b-search img", "css:finder"],
+        ["xpath=//img[contains(@src,'http://localhost:8080/assets/images/search_trending1.png')]", "xpath:img"],
+        ["xpath=//a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "51f9bdba-7bf6-4d4c-b735-3ba229ea0297",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=search-title",
+      "targets": [
+        ["id=search-title", "id"],
+        ["css=#search-title", "css:finder"],
+        ["xpath=//div[@id='search-title']", "xpath:attributes"],
+        ["xpath=//div[@id='search']/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "Have you got a destination in mind?"
+    }, {
+      "id": "81d1acf9-26fa-44ea-91ec-f0366f4e7e30",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=go-to-map",
+      "targets": [
+        ["id=go-to-map", "id"],
+        ["css=#go-to-map", "css:finder"],
+        ["xpath=//button[@id='go-to-map']", "xpath:attributes"],
+        ["xpath=//div[@id='header']/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Go to Map')]", "xpath:innerText"]
+      ],
+      "value": "Go to Map"
+    }]
+  }, {
+    "id": "be7db7be-5182-4c62-be45-cd689e88b747",
+    "name": "Претраживање дестинације кликом на понуђену дестинацију",
+    "commands": [{
+      "id": "202aae98-f483-474a-8458-f64e153bab82",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1fb3ea16-8096-4c93-81b1-3c47eb8e7bfa",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1128x796",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "de6baa6c-7af5-4b15-ab71-bfc617e7c9c5",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Be My Guest",
+      "targets": [
+        ["linkText=Be My Guest", "linkText"],
+        ["css=#\\33 > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Be My Guest')]", "xpath:link"],
+        ["xpath=//div[@id='3']/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/SearchAndTrending/index']", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Be My Guest')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4aa8cbfc-ce7b-4a2c-9563-5cf51ad24975",
+      "comment": "",
+      "command": "click",
+      "target": "id=search-txt",
+      "targets": [
+        ["id=search-txt", "id"],
+        ["css=#search-txt", "css:finder"],
+        ["xpath=//input[@id='search-txt']", "xpath:attributes"],
+        ["xpath=//div[@id='search-box']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "db62dc20-376d-4cca-b9dc-66ed7ada1fa8",
+      "comment": "",
+      "command": "type",
+      "target": "id=search-txt",
+      "targets": [
+        ["id=search-txt", "id"],
+        ["css=#search-txt", "css:finder"],
+        ["xpath=//input[@id='search-txt']", "xpath:attributes"],
+        ["xpath=//div[@id='search-box']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "baji"
+    }, {
+      "id": "e16bf15b-e2a1-4e95-bce6-f44c9028dfac",
+      "comment": "",
+      "command": "mouseUp",
+      "target": "css=.row:nth-child(2)",
+      "targets": [
+        ["css=.row:nth-child(2)", "css:finder"],
+        ["xpath=//div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cdbd197b-7ce0-4ffd-9fc1-1ecc70a3a123",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=caption",
+      "targets": [
+        ["css=caption", "css:finder"],
+        ["xpath=//table[@id='outer-table']/caption", "xpath:idRelative"],
+        ["xpath=//caption", "xpath:position"]
+      ],
+      "value": " User reviews - Bajina Basta, Serbia   "
+    }]
+  }, {
+    "id": "fee84404-3433-49ba-9db8-3d69967df4c7",
+    "name": "Претраживање дестинације притиском на тастер Enter када је нека дестинација у фокусу",
+    "commands": [{
+      "id": "3943f552-ccc7-42de-9c0f-39005288c80f",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fa6bd26f-eeec-4500-b94e-a925c588e085",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1051x806",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4b0a04ff-719e-48ec-8bb2-7e808f8ae989",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Be My Guest",
+      "targets": [
+        ["linkText=Be My Guest", "linkText"],
+        ["css=#\\33 > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Be My Guest')]", "xpath:link"],
+        ["xpath=//div[@id='3']/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/SearchAndTrending/index']", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Be My Guest')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d74f177e-4d55-403b-a843-369e4d828039",
+      "comment": "",
+      "command": "click",
+      "target": "id=search-txt",
+      "targets": [
+        ["id=search-txt", "id"],
+        ["css=#search-txt", "css:finder"],
+        ["xpath=//input[@id='search-txt']", "xpath:attributes"],
+        ["xpath=//div[@id='search-box']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fbf533be-fb99-408f-80cf-1ced3c7d91b6",
+      "comment": "",
+      "command": "type",
+      "target": "id=search-txt",
+      "targets": [
+        ["id=search-txt", "id"],
+        ["css=#search-txt", "css:finder"],
+        ["xpath=//input[@id='search-txt']", "xpath:attributes"],
+        ["xpath=//div[@id='search-box']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "baj"
+    }, {
+      "id": "29a76a9e-9351-4f9b-bf90-76b935050f60",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=search-txt",
+      "targets": [
+        ["id=search-txt", "id"],
+        ["css=#search-txt", "css:finder"],
+        ["xpath=//input[@id='search-txt']", "xpath:attributes"],
+        ["xpath=//div[@id='search-box']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_DOWN}"
+    }, {
+      "id": "bda66840-f9ae-4b56-90c5-2d1d9e215ec8",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=search-txt",
+      "targets": [
+        ["id=search-txt", "id"],
+        ["css=#search-txt", "css:finder"],
+        ["xpath=//input[@id='search-txt']", "xpath:attributes"],
+        ["xpath=//div[@id='search-box']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_DOWN}"
+    }, {
+      "id": "b143f3a3-f84e-424a-add2-fc6bddbfe9b1",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=search-txt",
+      "targets": [
+        ["id=search-txt", "id"],
+        ["css=#search-txt", "css:finder"],
+        ["xpath=//input[@id='search-txt']", "xpath:attributes"],
+        ["xpath=//div[@id='search-box']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_DOWN}"
+    }, {
+      "id": "efe15496-da30-4c63-9212-d12c2d37cf39",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=search-txt",
+      "targets": [
+        ["id=search-txt", "id"],
+        ["css=#search-txt", "css:finder"],
+        ["xpath=//input[@id='search-txt']", "xpath:attributes"],
+        ["xpath=//div[@id='search-box']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_UP}"
+    }, {
+      "id": "97072c98-f491-42de-913f-6af48f84790c",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=search-txt",
+      "targets": [
+        ["id=search-txt", "id"],
+        ["css=#search-txt", "css:finder"],
+        ["xpath=//input[@id='search-txt']", "xpath:attributes"],
+        ["xpath=//div[@id='search-box']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "f93b9bfe-d811-48b5-9645-05e3235dd420",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=caption",
+      "targets": [
+        ["css=caption", "css:finder"],
+        ["xpath=//table[@id='outer-table']/caption", "xpath:idRelative"],
+        ["xpath=//caption", "xpath:position"]
+      ],
+      "value": " User reviews - Bajina Basta, Serbia   "
+    }]
+  }, {
+    "id": "ecc25174-afe6-4cb8-a1e2-0720310c59e4",
+    "name": "Неуспешно претраживање коришћењем тастера Enter",
+    "commands": [{
+      "id": "6416d5cf-ece6-4b75-9a5f-447ba65f50ef",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fa3dde0e-cbce-4818-b0d1-181f6c71ec2f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1051x806",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "81ed41b2-e84c-42f2-9615-29f1b791f8c4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Be My Guest",
+      "targets": [
+        ["linkText=Be My Guest", "linkText"],
+        ["css=#\\33 > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Be My Guest')]", "xpath:link"],
+        ["xpath=//div[@id='3']/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/SearchAndTrending/index']", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Be My Guest')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "abd6a7e9-6517-485c-a327-191435ce7bbe",
+      "comment": "",
+      "command": "click",
+      "target": "id=search-txt",
+      "targets": [
+        ["id=search-txt", "id"],
+        ["css=#search-txt", "css:finder"],
+        ["xpath=//input[@id='search-txt']", "xpath:attributes"],
+        ["xpath=//div[@id='search-box']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "573f6848-60a1-47ef-94ec-ca7830e07e29",
+      "comment": "",
+      "command": "type",
+      "target": "id=search-txt",
+      "targets": [
+        ["id=search-txt", "id"],
+        ["css=#search-txt", "css:finder"],
+        ["xpath=//input[@id='search-txt']", "xpath:attributes"],
+        ["xpath=//div[@id='search-box']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "bajina basta"
+    }, {
+      "id": "3a2dad84-64c0-4d03-b791-0e3fe26b7928",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=search-txt",
+      "targets": [
+        ["id=search-txt", "id"],
+        ["css=#search-txt", "css:finder"],
+        ["xpath=//input[@id='search-txt']", "xpath:attributes"],
+        ["xpath=//div[@id='search-box']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "35586334-caa3-4859-b418-2982a8c89ed1",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=modal-message",
+      "targets": [
+        ["id=modal-message", "id"],
+        ["css=#modal-message", "css:finder"],
+        ["xpath=//span[@id='modal-message']", "xpath:attributes"],
+        ["xpath=//div[@id='bad-input-modal']/div/div/div[2]/span", "xpath:idRelative"],
+        ["xpath=//div[2]/span", "xpath:position"]
+      ],
+      "value": "You have entered a place that doesn't exist.. Such a dreamer!"
+    }, {
+      "id": "11590cdb-c185-4ffe-a51b-197371aa93af",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.modal-title",
+      "targets": [
+        ["css=.modal-title", "css:finder"],
+        ["xpath=//div[@id='bad-input-modal']/div/div/div/h5", "xpath:idRelative"],
+        ["xpath=//h5", "xpath:position"],
+        ["xpath=//h5[contains(.,'Try again, buddy ...')]", "xpath:innerText"]
+      ],
+      "value": "Try again, buddy ..."
+    }, {
+      "id": "b722c758-edea-424e-9f4a-5f19d9cc05dc",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=modal-close",
+      "targets": [
+        ["id=modal-close", "id"],
+        ["css=#modal-close", "css:finder"],
+        ["xpath=//button[@id='modal-close']", "xpath:attributes"],
+        ["xpath=//div[@id='bad-input-modal']/div/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Close')]", "xpath:innerText"]
+      ],
+      "value": "Close"
+    }]
+  }, {
+    "id": "2c6e5670-2f15-417c-ac4b-7e8a5fcd515e",
+    "name": "Затварање модала",
+    "commands": [{
+      "id": "2ec7a00d-3dc3-4fe0-927f-6fa0769d9e6e",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "61b8ab1c-c2da-4ba7-ab9b-40e09833be83",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1053x807",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "aba86403-b34e-4443-900a-2aa3650be277",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Be My Guest",
+      "targets": [
+        ["linkText=Be My Guest", "linkText"],
+        ["css=#\\33 > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Be My Guest')]", "xpath:link"],
+        ["xpath=//div[@id='3']/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/SearchAndTrending/index']", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Be My Guest')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "046146f2-844c-4e96-aa44-309733fb5014",
+      "comment": "",
+      "command": "click",
+      "target": "id=search-txt",
+      "targets": [
+        ["id=search-txt", "id"],
+        ["css=#search-txt", "css:finder"],
+        ["xpath=//input[@id='search-txt']", "xpath:attributes"],
+        ["xpath=//div[@id='search-box']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b6f848a0-2ed6-4e09-b299-7408f710bdae",
+      "comment": "",
+      "command": "type",
+      "target": "id=search-txt",
+      "targets": [
+        ["id=search-txt", "id"],
+        ["css=#search-txt", "css:finder"],
+        ["xpath=//input[@id='search-txt']", "xpath:attributes"],
+        ["xpath=//div[@id='search-box']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "bajina basta"
+    }, {
+      "id": "1775f980-3a9d-4964-bf1f-ff30bb222900",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=search-txt",
+      "targets": [
+        ["id=search-txt", "id"],
+        ["css=#search-txt", "css:finder"],
+        ["xpath=//input[@id='search-txt']", "xpath:attributes"],
+        ["xpath=//div[@id='search-box']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "65479b76-2cd9-4d91-93e1-f8383bf46353",
+      "comment": "",
+      "command": "click",
+      "target": "id=modal-close",
+      "targets": [
+        ["id=modal-close", "id"],
+        ["css=#modal-close", "css:finder"],
+        ["xpath=//button[@id='modal-close']", "xpath:attributes"],
+        ["xpath=//div[@id='bad-input-modal']/div/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Close')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ca4cfd9f-67ab-40c1-a55e-c210d7c1d6c7",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=search-title",
+      "targets": [
+        ["id=search-title", "id"],
+        ["css=#search-title", "css:finder"],
+        ["xpath=//div[@id='search-title']", "xpath:attributes"],
+        ["xpath=//div[@id='search']/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "Have you got a destination in mind?"
+    }]
+  }],
+  "suites": [{
+    "id": "e13ba268-9be5-4603-8259-d8ca1a898c90",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["811822d3-a3e8-419b-b5f9-c84e89b274dd"]
+  }],
+  "urls": ["http://localhost:8080/"],
+  "plugins": []
+}
