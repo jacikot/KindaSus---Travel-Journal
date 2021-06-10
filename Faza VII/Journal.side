@@ -1,0 +1,793 @@
+{
+  "id": "01149a82-3bdf-45bb-98e2-62438b443bf6",
+  "version": "2.0",
+  "name": "Journal",
+  "url": "http://localhost:8080/",
+  "tests": [{
+    "id": "efb6f7aa-5d32-4cde-86c0-f6c68e88ba86",
+    "name": "ShowReviewList",
+    "commands": [{
+      "id": "b36abaaa-e2d2-4342-ae96-a99b3c6f7127",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "85669d85-5560-470e-bda4-1fd529bd1c60",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1217x784",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6a6b33ab-8541-42d6-8361-b0d3a97c1e75",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Continue With Your Travels",
+      "targets": [
+        ["linkText=Continue With Your Travels", "linkText"],
+        ["css=#\\35 > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Continue With Your Travels')]", "xpath:link"],
+        ["xpath=//div[@id='5']/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/GuestLogin/showLogin']", "xpath:href"],
+        ["xpath=//div[5]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Continue With Your Travels')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a72cc6ea-fc2e-4f48-86af-66f324381ef1",
+      "comment": "",
+      "command": "click",
+      "target": "id=userId",
+      "targets": [
+        ["id=userId", "id"],
+        ["css=#userId", "css:finder"],
+        ["xpath=//input[@id='userId']", "xpath:attributes"],
+        ["xpath=//div[@id='red']/div[2]/table/tbody/tr[2]/td/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "455020f4-7896-4297-9960-ff84aef85a6a",
+      "comment": "",
+      "command": "type",
+      "target": "id=userId",
+      "targets": [
+        ["id=userId", "id"],
+        ["css=#userId", "css:finder"],
+        ["xpath=//input[@id='userId']", "xpath:attributes"],
+        ["xpath=//div[@id='red']/div[2]/table/tbody/tr[2]/td/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "adriance"
+    }, {
+      "id": "8a0d5bc9-876e-4331-95e0-8992d53874d2",
+      "comment": "",
+      "command": "click",
+      "target": "id=passId",
+      "targets": [
+        ["id=passId", "id"],
+        ["css=#passId", "css:finder"],
+        ["xpath=//input[@id='passId']", "xpath:attributes"],
+        ["xpath=//div[@id='red']/div[2]/table/tbody/tr[3]/td/label/input", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f29d2a8b-124c-4c76-8462-78be350b28b0",
+      "comment": "",
+      "command": "type",
+      "target": "id=passId",
+      "targets": [
+        ["id=passId", "id"],
+        ["css=#passId", "css:finder"],
+        ["xpath=//input[@id='passId']", "xpath:attributes"],
+        ["xpath=//div[@id='red']/div[2]/table/tbody/tr[3]/td/label/input", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/label/input", "xpath:position"]
+      ],
+      "value": "Adriana79"
+    }, {
+      "id": "06178042-9d4e-411d-aa92-705a269851d9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-light:nth-child(2)",
+      "targets": [
+        ["css=.btn-light:nth-child(2)", "css:finder"],
+        ["xpath=//button[@onclick='login()']", "xpath:attributes"],
+        ["xpath=//div[@id='red']/div[2]/table/tbody/tr[4]/td/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Go on')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "923ac660-b2b4-4f7d-b627-a2bba41f13ac",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mybtn",
+      "targets": [
+        ["css=.mybtn", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='myModal']/div/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Continue')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6dddace3-d2f7-4622-8cd3-e02d13203b58",
+      "comment": "",
+      "command": "click",
+      "target": "css=.b-journal img",
+      "targets": [
+        ["css=.b-journal img", "css:finder"],
+        ["xpath=//img[contains(@src,'http://localhost:8080/assets/images/journal1.png')]", "xpath:img"],
+        ["xpath=//div[2]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0c307b76-b26c-4ede-863b-d0fc3ec604d7",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Journal",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a9212a39-575f-43a4-a002-55f5096c698b",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1:nth-child(1)",
+      "targets": [
+        ["css=h1:nth-child(1)", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'My Travel Journal')]", "xpath:innerText"]
+      ],
+      "value": "My Travel Journal"
+    }, {
+      "id": "87302fd9-adb4-4b4f-a604-9dfe725f327d",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=#\\31 5 b",
+      "targets": [
+        ["css=#\\31 5 b", "css:finder"],
+        ["xpath=//li[@id='15']/div/div[2]/a/b", "xpath:idRelative"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,' like in a Fellini movie  ')]", "xpath:innerText"]
+      ],
+      "value": " like in a Fellini movie  "
+    }, {
+      "id": "68baa97c-64da-47fb-a383-73e264739476",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=back",
+      "targets": [
+        ["id=back", "id"],
+        ["css=#back", "css:finder"],
+        ["xpath=//button[@id='back']", "xpath:attributes"],
+        ["xpath=//div[@id='header']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Go To Map')]", "xpath:innerText"]
+      ],
+      "value": "Go To Map"
+    }, {
+      "id": "59f40c62-3798-49fb-874c-d27121b6c7a3",
+      "comment": "",
+      "command": "click",
+      "target": "id=back",
+      "targets": [
+        ["id=back", "id"],
+        ["css=#back", "css:finder"],
+        ["xpath=//button[@id='back']", "xpath:attributes"],
+        ["xpath=//div[@id='header']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Go To Map')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "172ba1e0-3d18-4044-95a7-464ccc120a9b",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h1:nth-child(1)",
+      "targets": [
+        ["css=h1:nth-child(1)", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Travel Journal')]", "xpath:innerText"]
+      ],
+      "value": "Travel Journal"
+    }]
+  }, {
+    "id": "4c9f4053-b296-46ec-a00a-deeb664360bb",
+    "name": "ShowReview",
+    "commands": [{
+      "id": "f6a48c00-4813-4789-96c7-94610cf3027f",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d1b3046b-1783-42cd-b33f-074d63c9d28c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1221x784",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d064bc5c-1e73-4a33-adb9-10a8cf2ac5a0",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Continue With Your Travels",
+      "targets": [
+        ["linkText=Continue With Your Travels", "linkText"],
+        ["css=#\\35 > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Continue With Your Travels')]", "xpath:link"],
+        ["xpath=//div[@id='5']/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/GuestLogin/showLogin']", "xpath:href"],
+        ["xpath=//div[5]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Continue With Your Travels')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ea24ae50-e036-4361-9dc6-6a863c50626d",
+      "comment": "",
+      "command": "click",
+      "target": "id=userId",
+      "targets": [
+        ["id=userId", "id"],
+        ["css=#userId", "css:finder"],
+        ["xpath=//input[@id='userId']", "xpath:attributes"],
+        ["xpath=//div[@id='red']/div[2]/table/tbody/tr[2]/td/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0a9b2a25-128b-4a9c-b6ce-2dfa5401622e",
+      "comment": "",
+      "command": "type",
+      "target": "id=userId",
+      "targets": [
+        ["id=userId", "id"],
+        ["css=#userId", "css:finder"],
+        ["xpath=//input[@id='userId']", "xpath:attributes"],
+        ["xpath=//div[@id='red']/div[2]/table/tbody/tr[2]/td/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "adriance"
+    }, {
+      "id": "3fa9e6b3-1bb7-460f-873c-30f7926baf54",
+      "comment": "",
+      "command": "click",
+      "target": "id=passId",
+      "targets": [
+        ["id=passId", "id"],
+        ["css=#passId", "css:finder"],
+        ["xpath=//input[@id='passId']", "xpath:attributes"],
+        ["xpath=//div[@id='red']/div[2]/table/tbody/tr[3]/td/label/input", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ae974b62-2122-484c-aed9-0f57669a71ff",
+      "comment": "",
+      "command": "type",
+      "target": "id=passId",
+      "targets": [
+        ["id=passId", "id"],
+        ["css=#passId", "css:finder"],
+        ["xpath=//input[@id='passId']", "xpath:attributes"],
+        ["xpath=//div[@id='red']/div[2]/table/tbody/tr[3]/td/label/input", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/label/input", "xpath:position"]
+      ],
+      "value": "Adriana79"
+    }, {
+      "id": "383cbdc0-c37b-41e3-8681-8f0c58157c5f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-light:nth-child(2)",
+      "targets": [
+        ["css=.btn-light:nth-child(2)", "css:finder"],
+        ["xpath=//button[@onclick='login()']", "xpath:attributes"],
+        ["xpath=//div[@id='red']/div[2]/table/tbody/tr[4]/td/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Go on')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9a341ebb-8653-4378-9982-a04d40421610",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mybtn",
+      "targets": [
+        ["css=.mybtn", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='myModal']/div/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Continue')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4103deac-e7ff-4d58-9614-d15e9ade2c33",
+      "comment": "",
+      "command": "click",
+      "target": "css=.b-journal img",
+      "targets": [
+        ["css=.b-journal img", "css:finder"],
+        ["xpath=//img[contains(@src,'http://localhost:8080/assets/images/journal1.png')]", "xpath:img"],
+        ["xpath=//div[2]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3b0ba151-6351-4aef-9ef2-31cf3a1e5a35",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=#\\31 5 b",
+      "targets": [
+        ["css=#\\31 5 b", "css:finder"],
+        ["xpath=//li[@id='15']/div/div[2]/a/b", "xpath:idRelative"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,' like in a Fellini movie  ')]", "xpath:innerText"]
+      ],
+      "value": " like in a Fellini movie  "
+    }, {
+      "id": "4e78b648-b85a-463b-bf9f-8a240ab1ccac",
+      "comment": "",
+      "command": "click",
+      "target": "css=#\\31 5 b",
+      "targets": [
+        ["css=#\\31 5 b", "css:finder"],
+        ["xpath=//li[@id='15']/div/div[2]/a/b", "xpath:idRelative"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,' like in a Fellini movie  ')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "186264dc-567d-4f6f-82ac-32fe7f0a138d",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=titleRev",
+      "targets": [
+        ["id=titleRev", "id"],
+        ["css=#titleRev", "css:finder"],
+        ["xpath=//h2[@id='titleRev']", "xpath:attributes"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'like in a Fellini movie')]", "xpath:innerText"]
+      ],
+      "value": "like in a Fellini movie"
+    }, {
+      "id": "ee5ffa4f-2461-4eb5-8b1c-4d10cc33047b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@onclick='goHome()']", "xpath:attributes"],
+        ["xpath=//div[@id='header']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Back')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "061e2b2e-9ace-47cf-8d7d-94e0f4d34ca2",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=#\\32 5 b",
+      "targets": [
+        ["css=#\\32 5 b", "css:finder"],
+        ["xpath=//li[@id='25']/div/div[2]/a/b", "xpath:idRelative"],
+        ["xpath=//li[2]/div/div[2]/a/b", "xpath:position"],
+        ["xpath=//b[contains(.,' St. Mary of the Flowers.  ')]", "xpath:innerText"]
+      ],
+      "value": " St. Mary of the Flowers.  "
+    }, {
+      "id": "53e7c9e1-c088-4438-a51c-303991620e61",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=St. Mary of the Flowers.",
+      "targets": [
+        ["linkText=St. Mary of the Flowers.", "linkText"],
+        ["css=#\\32 5 .revName", "css:finder"],
+        ["xpath=//li[@id='25']/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/Journal/review/25']", "xpath:href"],
+        ["xpath=//li[2]/div/div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,' St. Mary of the Flowers.  ')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "33a4a9e5-0b85-4a71-8c5f-0996df9128cc",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=titleRev",
+      "targets": [
+        ["id=titleRev", "id"],
+        ["css=#titleRev", "css:finder"],
+        ["xpath=//h2[@id='titleRev']", "xpath:attributes"],
+        ["xpath=//h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'St. Mary of the Flowers.')]", "xpath:innerText"]
+      ],
+      "value": "St. Mary of the Flowers."
+    }, {
+      "id": "86126c0d-b89a-42db-86ff-6efbd3c09a56",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn",
+      "targets": [
+        ["css=.btn", "css:finder"],
+        ["xpath=//button[@onclick='goHome()']", "xpath:attributes"],
+        ["xpath=//div[@id='header']/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Back')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "c09a3682-abe3-40be-965e-afa5e39a24ca",
+    "name": "FilterPlace",
+    "commands": [{
+      "id": "13beb6ac-b21d-4942-a6fe-72199af6129a",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4f2d7e04-2dba-404b-b920-326d2752e047",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1226x788",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "75df0093-2422-4d05-b8a1-7175d443809b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Continue With Your Travels",
+      "targets": [
+        ["linkText=Continue With Your Travels", "linkText"],
+        ["css=#\\35 > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Continue With Your Travels')]", "xpath:link"],
+        ["xpath=//div[@id='5']/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/GuestLogin/showLogin']", "xpath:href"],
+        ["xpath=//div[5]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Continue With Your Travels')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ceaf1a40-3acd-4980-9a90-f5df840fe60f",
+      "comment": "",
+      "command": "click",
+      "target": "id=userId",
+      "targets": [
+        ["id=userId", "id"],
+        ["css=#userId", "css:finder"],
+        ["xpath=//input[@id='userId']", "xpath:attributes"],
+        ["xpath=//div[@id='red']/div[2]/table/tbody/tr[2]/td/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3aebfb1c-f3c6-4efd-bbc6-665e0c160431",
+      "comment": "",
+      "command": "type",
+      "target": "id=userId",
+      "targets": [
+        ["id=userId", "id"],
+        ["css=#userId", "css:finder"],
+        ["xpath=//input[@id='userId']", "xpath:attributes"],
+        ["xpath=//div[@id='red']/div[2]/table/tbody/tr[2]/td/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "adriance"
+    }, {
+      "id": "c7b64e78-5bf3-449a-b8d6-310068ccdde3",
+      "comment": "",
+      "command": "click",
+      "target": "id=passId",
+      "targets": [
+        ["id=passId", "id"],
+        ["css=#passId", "css:finder"],
+        ["xpath=//input[@id='passId']", "xpath:attributes"],
+        ["xpath=//div[@id='red']/div[2]/table/tbody/tr[3]/td/label/input", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ff08d1e-0d35-4870-b1c9-8aeea027fb9f",
+      "comment": "",
+      "command": "type",
+      "target": "id=passId",
+      "targets": [
+        ["id=passId", "id"],
+        ["css=#passId", "css:finder"],
+        ["xpath=//input[@id='passId']", "xpath:attributes"],
+        ["xpath=//div[@id='red']/div[2]/table/tbody/tr[3]/td/label/input", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/label/input", "xpath:position"]
+      ],
+      "value": "Adriana79"
+    }, {
+      "id": "2de8b1d7-06d4-4c95-bed8-a8d3a93358b8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-light:nth-child(2)",
+      "targets": [
+        ["css=.btn-light:nth-child(2)", "css:finder"],
+        ["xpath=//button[@onclick='login()']", "xpath:attributes"],
+        ["xpath=//div[@id='red']/div[2]/table/tbody/tr[4]/td/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Go on')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b28a4e2d-866d-4f94-9663-5a84aa48e699",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mybtn",
+      "targets": [
+        ["css=.mybtn", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='myModal']/div/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Continue')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b8c9c48e-024b-49c6-97d0-1d9b27a5eba1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.b-journal img",
+      "targets": [
+        ["css=.b-journal img", "css:finder"],
+        ["xpath=//img[contains(@src,'http://localhost:8080/assets/images/journal1.png')]", "xpath:img"],
+        ["xpath=//div[2]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dcc36e24-f558-4a7a-8fdd-49d7353f135c",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=#\\31 5 b",
+      "targets": [
+        ["css=#\\31 5 b", "css:finder"],
+        ["xpath=//li[@id='15']/div/div[2]/a/b", "xpath:idRelative"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,' like in a Fellini movie  ')]", "xpath:innerText"]
+      ],
+      "value": " like in a Fellini movie  "
+    }, {
+      "id": "e46923e2-fb6a-4952-9b88-7f1acc68afe5",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=placetime",
+      "targets": [
+        ["id=placetime", "id"],
+        ["css=#\\31 5 #placetime", "css:finder"],
+        ["xpath=//div[@id='placetime']", "xpath:attributes"],
+        ["xpath=//li[@id='15']/div/div", "xpath:idRelative"],
+        ["xpath=//li/div/div", "xpath:position"]
+      ],
+      "value": " Roma, Italy\\n 2021-06-04"
+    }, {
+      "id": "43c03c76-eb00-486d-82ab-71c7feccffd5",
+      "comment": "",
+      "command": "click",
+      "target": "id=dropdownMenuButton",
+      "targets": [
+        ["id=dropdownMenuButton", "id"],
+        ["css=#dropdownMenuButton", "css:finder"],
+        ["xpath=//button[@id='dropdownMenuButton']", "xpath:attributes"],
+        ["xpath=//div[@id='page']/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "785c06c1-2ac4-42a1-afff-fb9be0d6fbbc",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Florence, Italy",
+      "targets": [
+        ["linkText=Florence, Italy", "linkText"],
+        ["css=.dropdown-item:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Florence, Italy')]", "xpath:link"],
+        ["xpath=//div[@id='menu']/a[3]", "xpath:idRelative"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Florence, Italy')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "05080311-b6a4-4ef0-9942-fac9c4516185",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=placetime",
+      "targets": [
+        ["id=placetime", "id"],
+        ["css=#\\32 5 #placetime", "css:finder"],
+        ["xpath=//div[@id='placetime']", "xpath:attributes"],
+        ["xpath=//li[@id='25']/div/div", "xpath:idRelative"],
+        ["xpath=//li/div/div", "xpath:position"]
+      ],
+      "value": " Florence, Italy\\n 2021-06-04"
+    }, {
+      "id": "6aa3f04d-b50d-4702-9cda-017ec6a357cc",
+      "comment": "",
+      "command": "click",
+      "target": "id=dropdownMenuButton",
+      "targets": [
+        ["id=dropdownMenuButton", "id"],
+        ["css=#dropdownMenuButton", "css:finder"],
+        ["xpath=//button[@id='dropdownMenuButton']", "xpath:attributes"],
+        ["xpath=//div[@id='page']/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Florence, Italy')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6f6c8d3c-340a-4705-9527-622d06cf6cdd",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Milan, Italy",
+      "targets": [
+        ["linkText=Milan, Italy", "linkText"],
+        ["css=.dropdown-item:nth-child(5)", "css:finder"],
+        ["xpath=//a[contains(text(),'Milan, Italy')]", "xpath:link"],
+        ["xpath=//div[@id='menu']/a[5]", "xpath:idRelative"],
+        ["xpath=//a[5]", "xpath:position"],
+        ["xpath=//a[contains(.,'Milan, Italy')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "07d3c726-0586-408c-ae7b-5dadda6adb9e",
+      "comment": "",
+      "command": "assertText",
+      "target": "id=placetime",
+      "targets": [
+        ["id=placetime", "id"],
+        ["css=#\\32 1 #placetime", "css:finder"],
+        ["xpath=//div[@id='placetime']", "xpath:attributes"],
+        ["xpath=//li[@id='21']/div/div", "xpath:idRelative"],
+        ["xpath=//li/div/div", "xpath:position"]
+      ],
+      "value": " Milan, Italy\\n 2021-06-11"
+    }]
+  }, {
+    "id": "c6dfbc36-4dd3-4ac5-9724-c70f1dfbb936",
+    "name": "NoReviews",
+    "commands": [{
+      "id": "7aac7e12-b1db-4d33-a9e5-0a571e172f35",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:8080/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e47b91bc-6bbc-4002-a3f3-e8effc4d367d",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1215x784",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "75b1b232-16af-4f91-ab0c-5cf12b9de6ad",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Continue With Your Travels",
+      "targets": [
+        ["linkText=Continue With Your Travels", "linkText"],
+        ["css=#\\35 > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Continue With Your Travels')]", "xpath:link"],
+        ["xpath=//div[@id='5']/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost:8080/GuestLogin/showLogin']", "xpath:href"],
+        ["xpath=//div[5]/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Continue With Your Travels')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8d2fb0cd-4261-4090-a791-5de7a2aa7331",
+      "comment": "",
+      "command": "click",
+      "target": "id=userId",
+      "targets": [
+        ["id=userId", "id"],
+        ["css=#userId", "css:finder"],
+        ["xpath=//input[@id='userId']", "xpath:attributes"],
+        ["xpath=//div[@id='red']/div[2]/table/tbody/tr[2]/td/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "43d65c77-674a-41da-b66f-8b4d08648b6d",
+      "comment": "",
+      "command": "type",
+      "target": "id=userId",
+      "targets": [
+        ["id=userId", "id"],
+        ["css=#userId", "css:finder"],
+        ["xpath=//input[@id='userId']", "xpath:attributes"],
+        ["xpath=//div[@id='red']/div[2]/table/tbody/tr[2]/td/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "dummy123"
+    }, {
+      "id": "245b7b7a-3853-47f0-a70a-c58f0d88e8d4",
+      "comment": "",
+      "command": "click",
+      "target": "id=passId",
+      "targets": [
+        ["id=passId", "id"],
+        ["css=#passId", "css:finder"],
+        ["xpath=//input[@id='passId']", "xpath:attributes"],
+        ["xpath=//div[@id='red']/div[2]/table/tbody/tr[3]/td/label/input", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fcc2960d-1487-449c-8d95-f4f862698176",
+      "comment": "",
+      "command": "type",
+      "target": "id=passId",
+      "targets": [
+        ["id=passId", "id"],
+        ["css=#passId", "css:finder"],
+        ["xpath=//input[@id='passId']", "xpath:attributes"],
+        ["xpath=//div[@id='red']/div[2]/table/tbody/tr[3]/td/label/input", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/label/input", "xpath:position"]
+      ],
+      "value": "Dummy123"
+    }, {
+      "id": "0c21e91b-5e02-47b7-95e8-6a221e9e4217",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-light:nth-child(2)",
+      "targets": [
+        ["css=.btn-light:nth-child(2)", "css:finder"],
+        ["xpath=//button[@onclick='login()']", "xpath:attributes"],
+        ["xpath=//div[@id='red']/div[2]/table/tbody/tr[4]/td/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Go on')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "187b2ea9-ca83-46fb-952d-dbf0a1cb0b75",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mybtn",
+      "targets": [
+        ["css=.mybtn", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div[@id='myModal']/div/div/div[3]/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Continue')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "64af1ed2-dd06-48eb-96de-fb3a82681175",
+      "comment": "",
+      "command": "click",
+      "target": "css=.b-journal img",
+      "targets": [
+        ["css=.b-journal img", "css:finder"],
+        ["xpath=//img[contains(@src,'http://localhost:8080/assets/images/journal1.png')]", "xpath:img"],
+        ["xpath=//div[2]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d6ca752c-c5e3-4826-8a7e-a2b8f1fd86de",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.forList",
+      "targets": [
+        ["css=.forList", "css:finder"],
+        ["xpath=//ul[@id='JournalList']/li", "xpath:idRelative"],
+        ["xpath=//li", "xpath:position"]
+      ],
+      "value": "It looks like you haven't wrote anything jet! Hurry up and save your memories!"
+    }]
+  }],
+  "suites": [{
+    "id": "e3ba0b8f-8053-42fa-811f-dcbc81bff7d7",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost:8080/"],
+  "plugins": []
+}
